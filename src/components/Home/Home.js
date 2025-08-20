@@ -8,31 +8,48 @@ const Home = () => {
   return (
     <section style={{
       display: 'flex',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       justifyContent: 'space-between',
       minHeight: '80vh',
-      padding: '60px 40px 0 40px',
-      background: '#f8fafc',
+      padding: '48px 0 0 0',
+      background: 'linear-gradient(120deg, #f8fafc 70%, #eaf6fb 100%)',
       position: 'relative',
       overflow: 'hidden',
+      width: '100%'
     }}>
       {/* Left Side: Text */}
-      <div style={{ flex: 1, maxWidth: 600, zIndex: 2 }}>
+      <div style={{ flex: 1, maxWidth: 540, zIndex: 2, paddingLeft: 48, position: 'relative', minHeight: 160 }}>
         <h1 style={{
-          fontSize: 64,
+          fontSize: 72,
           fontWeight: 800,
           color: '#bfc2c7',
           margin: 0,
           letterSpacing: 2,
           lineHeight: 1.1,
+          whiteSpace: 'nowrap',
+          position: 'relative',
+          zIndex: 2
         }}>
           YOUR IT EXPERTS
+          <span style={{
+            position: 'absolute',
+            right: '-340px',
+            top: '-60px',
+            zIndex: 1,
+            pointerEvents: 'none',
+            opacity: 0.95
+          }}>
+            <img src={Appxpertsbiglog} alt="AppXperts 3D Logo" style={{ width: 410, maxWidth: '100%', filter: 'drop-shadow(0 8px 32px #1a3fa622)' }} />
+            {/* Badges overlay */}
+            <img src={Badge} alt="Badge" style={{ position: 'absolute', left: '18%', bottom: '10%', width: 54, zIndex: 2, boxShadow: '0 2px 8px #1a3fa622' }} />
+            <img src={Badge1} alt="Badge1" style={{ position: 'absolute', right: '18%', bottom: '10%', width: 54, zIndex: 2, boxShadow: '0 2px 8px #1a3fa622' }} />
+          </span>
         </h1>
         <p style={{
-          fontSize: 22,
-          fontWeight: 500,
+          fontSize: 24,
+          fontWeight: 600,
           color: '#222',
-          margin: '32px 0 18px 0',
+          margin: '36px 0 18px 0',
         }}>
           Turning your vision into digital<br />
           reality with precision and creativity.
@@ -41,7 +58,8 @@ const Home = () => {
           fontSize: 15,
           color: '#555',
           marginBottom: 32,
-          maxWidth: 480
+          maxWidth: 420,
+          lineHeight: 1.7
         }}>
           At AppXperts, we blend cutting-edge technology with innovative design to build software that powers your business growth. From custom applications to enterprise solutions, we help businesses digitally transform with confidence.
         </p>
@@ -66,28 +84,22 @@ const Home = () => {
             textDecoration: 'none',
             gap: 8
           }}>
-            <img src={Badge1} alt="Play" style={{ width: 32, height: 32, borderRadius: '50%' }} />
+            <img src={Badge1} alt="Play" style={{ width: 32, height: 32, borderRadius: '50%', boxShadow: '0 2px 8px #1a3fa622' }} />
             Watch a Video
           </a>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 48, marginTop: 18 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 64, marginTop: 18 }}>
           <div>
-            <span style={{ fontWeight: 700, fontSize: 28, color: '#1a3fa6' }}>95%</span><br />
+            <span style={{ fontWeight: 700, fontSize: 32, color: '#1a3fa6' }}>95%</span><br />
             <span style={{ color: '#888', fontSize: 15 }}>Projects<br />Completed</span>
           </div>
           <div>
-            <span style={{ fontWeight: 700, fontSize: 28, color: '#1a3fa6' }}>30+</span><br />
+            <span style={{ fontWeight: 700, fontSize: 32, color: '#1a3fa6' }}>30+</span><br />
             <span style={{ color: '#888', fontSize: 15 }}>Recognized<br />Creativity</span>
           </div>
         </div>
       </div>
-      {/* Right Side: 3D Logo and Badges */}
-      <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', minHeight: 400 }}>
-        <img src={Appxpertsbiglog} alt="AppXperts 3D Logo" style={{ width: 380, maxWidth: '100%', zIndex: 1, filter: 'drop-shadow(0 8px 32px #1a3fa622)' }} />
-        {/* Badges overlay */}
-        <img src={Badge} alt="Badge" style={{ position: 'absolute', left: '18%', bottom: '18%', width: 54, zIndex: 2 }} />
-        <img src={Badge1} alt="Badge1" style={{ position: 'absolute', right: '18%', bottom: '18%', width: 54, zIndex: 2 }} />
-      </div>
+  {/* Right Side: 3D Logo and Badges (now overlapped in heading) */}
     </section>
   );
 };

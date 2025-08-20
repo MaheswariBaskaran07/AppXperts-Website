@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from "../assets/images/footer-logo.png"
+import logo from "../assets/images/AX-LOGO.png"
 import mail from "../assets/Footer/mail.png"
 import linkedIn from "../assets/Footer/linkedin-in.png"
 import location from "../assets/Footer/location_on.png"
@@ -29,13 +29,22 @@ const Footer = () => {
         borderBottom: "1px solid #e3e8ee"
       }}>
         {/* Left: Logo and Description */}
-        <div style={{ flex: 1, minWidth: 220 }}>
-          <img src={logo} alt="AppXperts Logo" style={{ height: 38, marginBottom: 10 }} />
-          <div style={{ fontWeight: 700, fontSize: 16, color: '#1a3fa6', marginBottom: 6 }}>AppXperts</div>
-          <div style={{ color: '#555', fontSize: 14, marginBottom: 8 }}>
-            Smart Solutions. Real Results.<br />
-            We craft intelligent digital products and services that<br />
-            power business growth globally.
+        <div style={{ flex: 1, minWidth: 180, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', height: '100%' }}>
+          <img 
+            src={logo} 
+            alt="AppXperts Logo" 
+            style={{ 
+              width: 'auto',
+              maxWidth: 220,
+              objectFit: 'contain',
+              display: 'block',
+              marginBottom: 14,
+              marginLeft: 0
+            }} 
+          />
+          <div style={{ color: '#555', fontSize: 14, marginBottom: 8, textAlign: 'justify', maxWidth: 220, lineHeight: 1.6 }}>
+            <span style={{ fontWeight: 600, color: '#222' }}>Smart Solutions. Real Results.</span><br />
+            We craft intelligent digital products and services that power business growth globally.
           </div>
         </div>
         {/* Center: Quick Links */}
