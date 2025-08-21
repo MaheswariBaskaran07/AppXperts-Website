@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer
       style={{
-        background: "linear-gradient(90deg, #fff 0%, #2ecbfa 100%)",
+        background: "linear-gradient(90deg, #fff 0%, #b5e2f0ff 70%)",
         borderTop: "1px solid #e3e8ee",
         padding: "40px 0 0 0",
         fontFamily: "Poppins",
@@ -70,7 +70,7 @@ const Footer = () => {
               fontFamily: "Poppins",
             }}
           >
-            <span style={{ fontWeight: 600, color: "#222" }}>
+            <span style={{ fontSize:16, fontWeight: 600, color: "#222" }}>
               Smart Solutions. Real Results.
             </span>
             <br />
@@ -91,7 +91,7 @@ const Footer = () => {
           }}
         >
           <div>
-            <h4 style={{ fontWeight: 700, marginBottom: 10 }}>Quick Links</h4>
+            <h4 style={{ fontSize:20, fontWeight: 700, marginBottom: 10 }}>Quick Links</h4>
             <div style={{ display: "flex", gap: 40 }}>
               <ul
                 style={{
@@ -100,6 +100,7 @@ const Footer = () => {
                   margin: 0,
                   color: "#1a3fa6",
                   fontWeight: 500,
+                  fontSize:18,
                 }}
               >
                 <li>
@@ -140,7 +141,7 @@ const Footer = () => {
 
         {/* Right: Get in Touch */}
         <div style={{ flex: 2, minWidth: 260 }}>
-          <h4 style={{ fontWeight: 700, marginBottom: 10 }}>Get in Touch</h4>
+          <h4 style={{ fontSize:20,fontWeight: 700, marginBottom: 10 }}>Get in Touch</h4>
           <div
             style={{
               marginBottom: 8,
@@ -224,8 +225,8 @@ const Footer = () => {
               src={linkedIn}
               alt="linkedin"
               style={{
-                width: 32,
-                height: 32,
+                width: 28,
+                height: 28,
                 borderRadius: "50%",
                 background: "#f2f6fa",
                 padding: 4,
@@ -236,7 +237,7 @@ const Footer = () => {
         <a
           href="#top"
           style={{
-            background: "linear-gradient(90deg, #1a3fa6 60%, #2ecbfa 100%)",
+            background: "linear-gradient(90deg, #1a3fa6 0%, #2ecbfa 100%)",
             color: "#fff",
             padding: "8px 28px",
             borderRadius: 22,
