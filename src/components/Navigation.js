@@ -4,11 +4,11 @@ import logo from "../assets/images/logo-light.png";
 import "../App.css";
 
 const navItems = [
-  { name: "Home", link: "#" },
+  { name: "Home", link: "/" },
   { name: "About Us", link: "#" },
   { name: "Services", link: "#" },
   { name: "Products", link: "#" },
-  { name: "Clients", link: "#" },
+  { name: "Clients", link: "/clients" },
   { name: "Career", link: "#" },
   { name: "Contact Us", link: "#" },
 ];
