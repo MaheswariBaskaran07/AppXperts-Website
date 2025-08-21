@@ -5,9 +5,9 @@ import Icon2 from "../../assets/Home/Icon (2).png";
 
 const Solutions = () => {
   return (
-    <section style={{ padding: "60px 20px", textAlign: "center" }}>
+    <section style={{ padding: "20px 20px", textAlign: "center", fontFamily: 'Poppins' }}>
       {/* Heading */}
-      <h2 style={{ fontSize: "28px", fontWeight: "600", marginBottom: "40px" }}>
+      <h2 style={{ fontSize: "60px", fontWeight: "200", marginBottom: "40px" }}>
         Crafting Solutions in...
       </h2>
 
@@ -34,10 +34,10 @@ const Solutions = () => {
           }}
         >
           <img src={Icon} alt="IT Software" style={{ height: 60, marginBottom: 16 }} />
-          <h3 style={{ fontSize: "18px", fontWeight: "600", marginBottom: "12px" }}>
+          <h3 style={{ fontSize: "20px", fontWeight: "600", marginBottom: "12px" }}>
             IT Software Development
           </h3>
-          <p style={{ fontSize: "14px", color: "#555" }}>
+          <p style={{ fontSize: "17px", color: "#555" }}>
             Customized software solutions tailored to your business goals,
             ensuring performance, scalability, and seamless integration.
           </p>
@@ -56,10 +56,10 @@ const Solutions = () => {
           }}
         >
           <img src={Icon1} alt="Digital Marketing" style={{ height: 60, marginBottom: 16 }} />
-          <h3 style={{ fontSize: "18px", fontWeight: "600", marginBottom: "12px" }}>
+          <h3 style={{ fontSize: "20px", fontWeight: "600", marginBottom: "12px" }}>
             Digital Marketing
           </h3>
-          <p style={{ fontSize: "14px", color: "#555" }}>
+          <p style={{ fontSize: "17px", color: "#555" }}>
             Boost your online presence through SEO, strategic ads, and social
             media marketing to engage clients and drive measurable results.
           </p>
@@ -78,16 +78,32 @@ const Solutions = () => {
           }}
         >
           <img src={Icon2} alt="Brand Identity" style={{ height: 60, marginBottom: 16 }} />
-          <h3 style={{ fontSize: "18px", fontWeight: "600", marginBottom: "12px" }}>
+          <h3 style={{ fontSize: "20px", fontWeight: "600", marginBottom: "12px" }}>
             Brand Identity
           </h3>
-          <p style={{ fontSize: "14px", color: "#555" }}>
+          <p style={{ fontSize: "17px", color: "#555" }}>
             Creating strong, memorable brand identities that resonate with your
             audience and build long-term trust.
           </p>
         </div>
       </div>
 
+      {/* Learn More Button */}
+      <div style={{ margin: '0 auto 32px auto', textAlign: 'center' }}>
+        <a href="#learnmore" style={{
+          display: 'inline-block',
+          background: 'linear-gradient(90deg, #1a3fa6 60%, #2ecbfa 100%)',
+          color: '#fff',
+          padding: '12px 36px',
+          borderRadius: 22,
+          fontWeight: 600,
+          fontSize: 16,
+          textDecoration: 'none',
+          boxShadow: '0 2px 8px rgba(26,63,166,0.08)',
+          transition: 'background 0.2s',
+          fontFamily: 'Poppins, Arial, sans-serif'
+        }}>Learn More</a>
+      </div>
       {/* Moving blue ticker */}
       <div
         style={{
