@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Product from '../components/Products/Product';
+import Softwares from '../components/Products/Softwares';
 
 const ProductsPage = () => {
      useEffect(() => {
@@ -11,6 +12,7 @@ const ProductsPage = () => {
     <div>
       <Navigation />
       <Product />
+      <Softwares />
       <Footer />
     </div>
   )
