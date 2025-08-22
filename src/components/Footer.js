@@ -34,7 +34,7 @@ const Footer = () => {
           padding: "0 40px 32px 40px",
           borderBottom: "1px solid #e3e8ee",
           flexWrap: "wrap",
-          gap: 40,
+          
         }}
       >
         {/* Left: Logo and Description */}
@@ -70,7 +70,7 @@ const Footer = () => {
               fontFamily: "Poppins",
             }}
           >
-            <span style={{ fontSize:16, fontWeight: 600, color: "#222" }}>
+            <span style={{ fontSize:16, fontWeight: 400, color: "#222" }}>
               Smart Solutions. Real Results.
             </span>
             <br />
@@ -86,12 +86,12 @@ const Footer = () => {
             minWidth: 320,
             display: "flex",
             justifyContent: "center",
-            gap: 60,
+            
             fontFamily: "Poppins",
           }}
         >
           <div>
-            <h4 style={{ fontSize:20, fontWeight: 700, marginBottom: 10 }}>Quick Links</h4>
+            <h4 style={{ fontSize:20, fontWeight: 400, marginBottom: 10 }}>Quick Links</h4>
             <div style={{ display: "flex", gap: 40 }}>
               <ul
                 style={{
@@ -99,8 +99,8 @@ const Footer = () => {
                   padding: 0,
                   margin: 0,
                   color: "#1a3fa6",
-                  fontWeight: 500,
-                  fontSize:18,
+                  fontWeight: 400,
+                  fontSize:16,
                 }}
               >
                 <li>
@@ -118,61 +118,58 @@ const Footer = () => {
                 <li>
                   <a href="#" style={{ color: "#1a3fa6", textDecoration: "none" }}>Clients</a>
                 </li>
-              </ul>
-              <ul
-                style={{
-                  listStyle: "none",
-                  padding: 0,
-                  margin: 0,
-                  color: "#1a3fa6",
-                  fontWeight: 500,
-                }}
-              >
-                <li>
+                  <li>
                   <a href="#" style={{ color: "#1a3fa6", textDecoration: "none" }}>Career</a>
                 </li>
                 <li>
                   <a href="#" style={{ color: "#1a3fa6", textDecoration: "none" }}>Contact Us</a>
                 </li>
               </ul>
+            
             </div>
           </div>
         </div>
 
-        {/* Right: Get in Touch */}
-        <div style={{ flex: 2, minWidth: 260 }}>
-          <h4 style={{ fontSize:20,fontWeight: 700, marginBottom: 10 }}>Get in Touch</h4>
-          <div
-            style={{
-              marginBottom: 8,
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-            }}
-          >
-            <img src={call} alt="call" style={{ width: 20 }} />
-            <span>
-              IND +91 88255 28905 | SG +65 84399317 | UAE +971 508554043
-            </span>
+        {/* Right: Get in Touch - Split by Country */}
+        <div style={{ flex: 2.5, minWidth: 260 }}>
+          <h4 style={{ fontSize:20, fontWeight: 400, marginBottom: 10 }}>Get in Touch</h4>
+          <div style={{ display: 'flex', gap: 32, flexWrap: 'nowrap', minWidth: 540 }}>
+            {/* India */}
+            <div style={{ minWidth: 180, flex: 1 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+                <img src={call} alt="call" style={{ width: 20 }} />
+                <span style={{ fontWeight: 400, color: '#1a3fa6' }}>India</span>
+              </div>
+              <div style={{ color: '#222', marginBottom: 4, marginLeft: 28 }}>+91 88255 28905</div>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: 8, marginLeft: 0 }}>
+                <img src={location} alt="location" style={{ width: 20, marginTop: 2 }} />
+                <span style={{ color: '#555' }}>
+                  No 32, 2nd Floor, Swathika Flats,<br />
+                  Rukmani Nagar, Perumbakkam, Chennai - 600100
+                </span>
+              </div>
+            </div>
+            {/* Singapore */}
+            <div style={{ minWidth: 180, flex: 1 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+                <img src={call} alt="call" style={{ width: 20 }} />
+                <span style={{ fontWeight: 400, color: '#1a3fa6' }}>Singapore</span>
+              </div>
+              <div style={{ color: '#222', marginLeft: 28 }}>+65 84399317</div>
+            </div>
+            {/* UAE - now in same row */}
+            <div style={{ minWidth: 180, flex: 1 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+                <img src={call} alt="call" style={{ width: 20 }} />
+                <span style={{ fontWeight: 400, color: '#1a3fa6' }}>UAE</span>
+              </div>
+              <div style={{ color: '#222', marginLeft: 28 }}>+971 508554043</div>
+            </div>
           </div>
-          <div
-            style={{
-              marginBottom: 8,
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-            }}
-          >
+          {/* Common Mail */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 16 }}>
             <img src={mail} alt="mail" style={{ width: 20 }} />
-            <span>info@appxes.com</span>
-          </div>
-          <div style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
-            <img src={location} alt="location" style={{ width: 20, marginTop: 2 }} />
-            <span>
-              No 32, 2nd Floor, Swathika Flats,
-              <br />
-              Rukmani Nagar, Perumbakkam, Chennai - 600100
-            </span>
+            <span style={{ color: '#222' }}>info@appxes.com</span>
           </div>
         </div>
       </div>
@@ -237,11 +234,11 @@ const Footer = () => {
         <a
           href="#top"
           style={{
-            background: "linear-gradient(90deg, #1a3fa6 0%, #2ecbfa 100%)",
+            background: 'linear-gradient(180deg, #1a3fa6 60%, #2ecbfa 100%)',
             color: "#fff",
             padding: "8px 28px",
             borderRadius: 22,
-            fontWeight: 600,
+            fontWeight: 400,
             fontSize: 15,
             textDecoration: "none",
             boxShadow: "0 2px 8px rgba(26,63,166,0.08)",

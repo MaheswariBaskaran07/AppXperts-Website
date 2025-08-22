@@ -92,7 +92,7 @@ const Solutions = () => {
       <div style={{ margin: '0 auto 32px auto', textAlign: 'center' }}>
         <a href="#learnmore" style={{
           display: 'inline-block',
-          background: 'linear-gradient(90deg, #2ecbfa 0%, #1a3fa6 100%)',
+          background: 'linear-gradient(180deg, #2ecbfa 0%, #1a3fa6 100%)',
           color: '#fff',
           padding: '12px 36px',
           borderRadius: 22,
@@ -108,13 +108,15 @@ const Solutions = () => {
       <div
         style={{
           overflow: "hidden",
-          //  background: "linear-gradient(90deg, #ffffff 40%, #b3e7f7ff 100%)",
-           background:"#b3e7f7ff",
-         
+          background: "linear-gradient(90deg, #eaf6fb 0%, #b3e7f7 100%)",
+          borderRadius: 12,
+          border: '1px solid #d0eafd',
           color: "#fff",
-          padding: "12px 0",
+          padding: "16px 0 16px 0",
           position: "relative",
-          width: "100%"
+          width: "100%",
+          margin: '0 auto 24px auto',
+          boxShadow: '0 2px 12px #1a3fa610',
         }}
       >
         {(() => {
@@ -126,7 +128,7 @@ const Solutions = () => {
           ];
           return (
             <div className="tag-list" style={{ width: "100%", display: "flex", alignItems: "center" }}>
-              <div className="inner" style={{ display: "flex", width: "max-content", animation: "loop 15s linear infinite", gap: 64, minWidth: '2200px' }}>
+              <div className="inner" style={{ display: "flex", width: "max-content", animation: "loop 15s linear infinite", gap: 48, minWidth: '2200px' }}>
                 {tags.concat(tags).map((tag, idx) => (
                   <div
                     className="tag"
@@ -134,19 +136,20 @@ const Solutions = () => {
                     style={{
                       display: 'flex',
                       alignItems: 'center',
-                      background: "linear-gradient(90deg, #2ecbfa 0%, #1a3fa6 50%, #2ecbfa 100%)",
+                      background: 'linear-gradient(90deg, #2ecbfa 0%, #1a3fa6 60%, #2ecbfa 100%)',
                       color: '#fff',
-                      borderRadius: 4,
-                      padding: '3px 24px',
+                      borderRadius: 22,
+                      padding: '6px 32px',
                       marginRight: 0,
-                      fontSize: 15,
-                      fontWeight: 500,
-                      boxShadow: '0 1px 4px #1a3fa611',
-                      border: 'none',
-                      height: 32,
-                      minWidth: 220,
+                      fontSize: 16,
+                      fontWeight: 600,
+                      boxShadow: '0 2px 8px #1a3fa611',
+                      border: '1.5px solid #eaf6fb',
+                      height: 38,
+                      minWidth: 240,
                       justifyContent: 'center',
-                      letterSpacing: 0.2
+                      letterSpacing: 0.2,
+                      transition: 'box-shadow 0.2s',
                     }}
                   >
                     {tag}
