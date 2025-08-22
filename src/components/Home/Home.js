@@ -1,51 +1,74 @@
 
 import React from 'react';
-import Appxpertsbiglog from "../../assets/Home/ChatGPT Image Jul 31, 2025, 05_39_51 PM 1.png";
-import Badge from "../../assets/Home/Badge.png";
-import Badge1 from "../../assets/Home/Badge (1).png";
+import Appxpertsbiglog from "../../assets/Home/Section.png";
+import Badge1 from "../../assets/Home/Badge (1).png"
 
 const Home = () => {
   return (
     <section style={{
       display: 'flex',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       justifyContent: 'space-between',
       minHeight: '80vh',
-      padding: '60px 40px 0 40px',
-      background: '#f8fafc',
+      padding: '48px 0 0 0',
+      background: 'linear-gradient(120deg, #f8fafc 70%, #eaf6fb 100%)',
       position: 'relative',
       overflow: 'hidden',
+      width: '100%',
+      fontFamily: 'Poppins'
     }}>
       {/* Left Side: Text */}
-      <div style={{ flex: 1, maxWidth: 600, zIndex: 2 }}>
+  <div style={{ flex: 1.4, zIndex: 2, paddingLeft: 64, position: 'relative', minHeight: 180, width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
         <h1 style={{
-          fontSize: 64,
-          fontWeight: 800,
+          fontSize: 135,
+          fontWeight: 600,
           color: '#bfc2c7',
-          margin: 0,
+          margin: '0 0 8px 0',
+          top: -30,
           letterSpacing: 2,
           lineHeight: 1.1,
+          whiteSpace: 'nowrap',
+          position: 'relative',
+          zIndex: 2,
+          width: '100%'
         }}>
           YOUR IT EXPERTS
+          <span style={{
+            position: 'absolute',
+            right: '60px',
+            top: '35px',
+            zIndex: 1,
+            pointerEvents: 'none',
+            opacity: 0.97
+          }}>
+            <img src={Appxpertsbiglog} alt="AppXperts 3D Logo" style={{ width: 600, maxWidth: '100%', filter: 'drop-shadow(0 8px 32px #1a3fa622)' }} />
+            {/* Badges overlay */}
+            {/* <img src={Badge} alt="Badge" style={{ position: 'absolute', left: '5%', bottom: '4%', width: 80, zIndex: 2, boxShadow: '0 2px 8px #1a3fa622' }} />
+            <img src={Badge1} alt="Badge1" style={{ position: 'absolute', right: '-5%', bottom: '10%', width: 80, zIndex: 2, boxShadow: '0 2px 8px #1a3fa622' }} /> */}
+          </span>
         </h1>
         <p style={{
-          fontSize: 22,
-          fontWeight: 500,
+          fontSize: 24,
+          fontWeight: 600,
           color: '#222',
-          margin: '32px 0 18px 0',
+          margin: '12px 0 12px 0',
+          width: '100%',
+          maxWidth: 600
         }}>
           Turning your vision into digital<br />
           reality with precision and creativity.
         </p>
         <p style={{
-          fontSize: 15,
+          fontSize: 17,
           color: '#555',
-          marginBottom: 32,
-          maxWidth: 480
+          marginBottom: 20,
+          maxWidth: 600,
+          lineHeight: 1.7,
+          width: '100%'
         }}>
           At AppXperts, we blend cutting-edge technology with innovative design to build software that powers your business growth. From custom applications to enterprise solutions, we help businesses digitally transform with confidence.
         </p>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 18, marginBottom: 36 }}>
+  <div style={{ display: 'flex', alignItems: 'center', gap: 18, marginBottom: 20, width: '100%' }}>
           <a href="#knowmore" style={{
             background: 'linear-gradient(90deg, #1a3fa6 60%, #2ecbfa 100%)',
             color: '#fff',
@@ -66,28 +89,22 @@ const Home = () => {
             textDecoration: 'none',
             gap: 8
           }}>
-            <img src={Badge1} alt="Play" style={{ width: 32, height: 32, borderRadius: '50%' }} />
+            <img src={Badge1} alt="Play" style={{ width: 32, height: 32, borderRadius: '50%', boxShadow: '0 2px 8px #1a3fa622' }} />
             Watch a Video
           </a>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 48, marginTop: 18 }}>
+  <div style={{ display: 'flex', alignItems: 'center', gap: 64,  width: '100%' }}>
           <div>
-            <span style={{ fontWeight: 700, fontSize: 28, color: '#1a3fa6' }}>95%</span><br />
-            <span style={{ color: '#888', fontSize: 15 }}>Projects<br />Completed</span>
+            <span style={{ fontWeight: 700, fontSize: 32, color: '#1a3fa6' }}>95%</span><br />
+            <span style={{ color: '#888', fontSize: 15 }}>Projects Completed</span>
           </div>
           <div>
-            <span style={{ fontWeight: 700, fontSize: 28, color: '#1a3fa6' }}>30+</span><br />
-            <span style={{ color: '#888', fontSize: 15 }}>Recognized<br />Creativity</span>
+            <span style={{ fontWeight: 700, fontSize: 32, color: '#1a3fa6' }}>30+</span><br />
+            <span style={{ color: '#888', fontSize: 15 }}>Recognized Creativity</span>
           </div>
         </div>
       </div>
-      {/* Right Side: 3D Logo and Badges */}
-      <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', minHeight: 400 }}>
-        <img src={Appxpertsbiglog} alt="AppXperts 3D Logo" style={{ width: 380, maxWidth: '100%', zIndex: 1, filter: 'drop-shadow(0 8px 32px #1a3fa622)' }} />
-        {/* Badges overlay */}
-        <img src={Badge} alt="Badge" style={{ position: 'absolute', left: '18%', bottom: '18%', width: 54, zIndex: 2 }} />
-        <img src={Badge1} alt="Badge1" style={{ position: 'absolute', right: '18%', bottom: '18%', width: 54, zIndex: 2 }} />
-      </div>
+  {/* Right Side: 3D Logo and Badges (now overlapped in heading) */}
     </section>
   );
 };

@@ -1,0 +1,45 @@
+.booking-section {
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex; /* Centering */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px; /* Removed 60px top/bottom to avoid scroll */
+  background: linear-gradient(90deg, #fff 0%, #2ecbfa 100%);
+  font-family: 'Poppins';
+  box-sizing: border-box;
+  border-top: 150px solid #fff;
+  border-bottom: 150px solid #fff;
+}
+
+.booking-content h2 {
+  font-size: 40px;
+  font-weight: 400; /* ✅ changed from 400px to 400 */
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.booking-content p {
+  font-size: 30px;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.booking-button {
+  display: inline-block;
+  padding: 10px 22px;
+  background: linear-gradient(90deg, #2ecbfa 0%, #1a3fa6 100%);
+  color: #fff;
+  border-radius: 9999px; /* pill shape */
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.booking-button:hover {
+  background: linear-gradient(90deg, #1a3fa6 0%, #2ecbfa 100%);
+  color: #fff;
+}

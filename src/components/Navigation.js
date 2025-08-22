@@ -1,14 +1,14 @@
 
 import React from 'react';
-import logo from "../assets/images/logo-light.png";
+import logo from "../assets/images/AX-LOGO.png";
 import "../App.css";
 
 const navItems = [
-  { name: "Home", link: "#" },
+  { name: "Home", link: "/" },
   { name: "About Us", link: "/about" },
   { name: "Services", link: "#" },
   { name: "Products", link: "#" },
-  { name: "Clients", link: "#" },
+  { name: "Clients", link: "/clients" },
   { name: "Career", link: "#" },
   { name: "Contact Us", link: "#" },
 ];
@@ -25,12 +25,20 @@ const Navigation = () => {
       position: 'relative',
       zIndex: 10
     }}>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <img src={logo} alt="AppXperts Logo" style={{ height: 40, marginRight: 24 }} />
-        <span style={{ fontWeight: 700, fontSize: 18, color: '#1a3fa6', letterSpacing: 1 }}>APPXPERTS<br style={{ display: 'none' }} />
-          <span style={{ fontWeight: 400, fontSize: 10, color: '#888', letterSpacing: 0.5, display: 'block' }}>ENTERPRISE SOLUTIONS</span>
-        </span>
-      </div>
+   <div style={{ display: 'flex', alignItems: 'center',  }}>
+<img 
+  src={logo} 
+  alt="AppXperts Logo" 
+  style={{ 
+       // increase more
+    width: 'auto',
+    objectFit: 'contain',
+    display: 'block'
+  }} 
+/>
+
+</div>
+
       <ul style={{
         display: 'flex',
         alignItems: 'center',
@@ -38,6 +46,7 @@ const Navigation = () => {
         margin: 0,
         padding: 0,
         gap: 28
+        
       }}>
         {navItems.map((item) => (
           <li key={item.name}>
