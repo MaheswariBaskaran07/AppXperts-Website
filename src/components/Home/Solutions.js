@@ -92,7 +92,7 @@ const Solutions = () => {
       <div style={{ margin: '0 auto 32px auto', textAlign: 'center' }}>
         <a href="#learnmore" style={{
           display: 'inline-block',
-          background: 'linear-gradient(90deg, #1a3fa6 60%, #2ecbfa 100%)',
+          background: 'linear-gradient(90deg, #2ecbfa 0%, #1a3fa6 100%)',
           color: '#fff',
           padding: '12px 36px',
           borderRadius: 22,
@@ -108,34 +108,62 @@ const Solutions = () => {
       <div
         style={{
           overflow: "hidden",
-          whiteSpace: "nowrap",
-          background: "linear-gradient(90deg, #1a3fa6 60%, #2ecbfa 100%)",
+          //  background: "linear-gradient(90deg, #ffffff 40%, #b3e7f7ff 100%)",
+           background:"#b3e7f7ff",
+         
           color: "#fff",
           padding: "12px 0",
           position: "relative",
+          width: "100%"
         }}
       >
-        <div
-          style={{
-            display: "inline-block",
-            paddingLeft: "100%",
-            animation: "scroll 15s linear infinite",
-            fontSize: "16px",
-            fontWeight: "500",
-          }}
-        >
-          IT Software Development • Digital Marketing • Branding • Website
-          Development & Maintenance • IT Software Development • Digital
-          Marketing • Branding • Website Development & Maintenance
-        </div>
+        {(() => {
+          const tags = [
+            "IT Software Development",
+            "Digital Marketing",
+            "Branding",
+            "Website Development & Maintenance"
+          ];
+          return (
+            <div className="tag-list" style={{ width: "100%", display: "flex", alignItems: "center" }}>
+              <div className="inner" style={{ display: "flex", width: "max-content", animation: "loop 15s linear infinite", gap: 64, minWidth: '2200px' }}>
+                {tags.concat(tags).map((tag, idx) => (
+                  <div
+                    className="tag"
+                    key={idx}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      background: "linear-gradient(90deg, #2ecbfa 0%, #1a3fa6 50%, #2ecbfa 100%)",
+                      color: '#fff',
+                      borderRadius: 4,
+                      padding: '3px 24px',
+                      marginRight: 0,
+                      fontSize: 15,
+                      fontWeight: 500,
+                      boxShadow: '0 1px 4px #1a3fa611',
+                      border: 'none',
+                      height: 32,
+                      minWidth: 220,
+                      justifyContent: 'center',
+                      letterSpacing: 0.2
+                    }}
+                  >
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
       </div>
 
-      {/* Keyframes */}
+      {/* Keyframes for infinite scroll */}
       <style>
         {`
-          @keyframes scroll {
+          @keyframes loop {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
+            100% { transform: translateX(-50%); }
           }
         `}
       </style>
