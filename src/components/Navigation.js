@@ -68,7 +68,9 @@ const Navigation = () => {
         ))}
       </ul>
       <a href="#book" style={{
-        background: 'linear-gradient(90deg, #1a3fa6 60%, #2ecbfa 100%)',
+        background: 'linear-gradient(180deg, #1a3fa6 60%, #2ecbfa 100%)',
+
+
         color: '#fff',
         padding: '10px 28px',
         borderRadius: 22,

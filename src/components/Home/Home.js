@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Appxpertsbiglog from "../../assets/Home/Section.png";
-import Badge1 from "../../assets/Home/Badge (1).png"
+import Badge1 from "../../assets/Home/slow_motion_video.png"
 
 const Home = () => {
   return (
@@ -48,8 +48,8 @@ const Home = () => {
           </span>
         </h1>
         <p style={{
-          fontSize: 24,
-          fontWeight: 600,
+          fontSize: 32,
+          fontWeight: 400,
           color: '#222',
           margin: '12px 0 12px 0',
           width: '100%',
@@ -59,7 +59,8 @@ const Home = () => {
           reality with precision and creativity.
         </p>
         <p style={{
-          fontSize: 17,
+          fontSize: 16,
+          fontWeight: 400,
           color: '#555',
           marginBottom: 20,
           maxWidth: 600,
@@ -70,7 +71,9 @@ const Home = () => {
         </p>
   <div style={{ display: 'flex', alignItems: 'center', gap: 18, marginBottom: 20, width: '100%' }}>
           <a href="#knowmore" style={{
-            background: 'linear-gradient(90deg, #1a3fa6 60%, #2ecbfa 100%)',
+            background: 'linear-gradient(180deg, #1a3fa6 60%, #2ecbfa 100%)',
+
+
             color: '#fff',
             padding: '12px 32px',
             borderRadius: 22,
@@ -94,13 +97,13 @@ const Home = () => {
           </a>
         </div>
   <div style={{ display: 'flex', alignItems: 'center', gap: 64,  width: '100%' }}>
-          <div>
-            <span style={{ fontWeight: 700, fontSize: 32, color: '#1a3fa6' }}>95%</span><br />
-            <span style={{ color: '#888', fontSize: 15 }}>Projects Completed</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <span style={{ fontWeight: 700, fontSize: 32, color: '#111' }}>95</span><span style={{ fontWeight: 700, fontSize: 32, color: '#1a3fa6' }}>%</span>
+            <span style={{ color: '#888', fontWeight:400, fontFamily:'Poppins', fontSize: 16, marginLeft: 8 }}>Projects Completed</span>
           </div>
-          <div>
-            <span style={{ fontWeight: 700, fontSize: 32, color: '#1a3fa6' }}>30+</span><br />
-            <span style={{ color: '#888', fontSize: 15 }}>Recognized Creativity</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <span style={{ fontWeight: 700, fontSize: 32, color: '#111' }}>30</span><span style={{ fontWeight: 700, fontSize: 32, color: '#1a3fa6' }}>+</span>
+            <span style={{ color: '#888', fontWeight:400, fontFamily:'Poppins', fontSize: 16, marginLeft: 8 }}>Recognized Creativity</span>
           </div>
         </div>
       </div>
