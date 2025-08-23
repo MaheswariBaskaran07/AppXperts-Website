@@ -3,6 +3,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Product from '../components/Products/Product';
 import Softwares from '../components/Products/Softwares';
+import FAQ from '../components/Products/FAQ';
 
 const ProductsPage = () => {
      useEffect(() => {
@@ -13,6 +14,7 @@ const ProductsPage = () => {
       <Navigation />
       <Product />
       <Softwares />
+      <FAQ />
       <Footer />
     </div>
   )
