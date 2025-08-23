@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
 import AboutUsPage from './Pages/AboutUs';
-import Clients from './components/Clint/Clint';
 import ClientsPage from './Pages/ClientPage';
+import ProductsPage from './Pages/ProductsPage';
 
 
 function App() {
@@ -12,6 +11,7 @@ function App() {
     <BrowserRouter basename="/">
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/products" element={<ProductsPage />} />
         <Route path="/about" element={<AboutUsPage />} />
         <Route path='/clients' element={<ClientsPage/>} />
       </Routes>
