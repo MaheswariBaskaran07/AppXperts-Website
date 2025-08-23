@@ -45,23 +45,25 @@ const FAQ = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  // 2-column grid, 3 cards per column, left: heading+desc, right: grid
-  const leftColFaqs = faqs.slice(0, 3);
-  const rightColFaqs = faqs.slice(3, 6);
+  // All FAQs in a single column below heading/desc
+
+  // Split FAQs into two columns
+  const col1Faqs = faqs.slice(0, 3);
+  const col2Faqs = faqs.slice(3, 6);
 
   return (
     <section className="faq-section" style={{ fontFamily: 'Poppins' }}>
-      <div className="faq-left" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%', paddingRight: 32 }}>
-        <h2 style={{ fontSize: 40, fontWeight: 700, margin: 0, marginBottom: 16, color: '#111827', lineHeight: 1.1 }}>
-          Frequently Asked Questions on Products
+      <div style={{ display: 'flex', alignItems: 'center', gap: 60, marginBottom: 32 }}>
+        <h2 style={{ fontSize: 70, fontWeight: 500, margin: 0, color: '#111827', lineHeight: 1.1, whiteSpace: 'nowrap' }}>
+          Frequently Asked<br/> Questions on Products
         </h2>
         <p style={{ color: '#4b5563', fontSize: 16, margin: 0, lineHeight: 1.6, maxWidth: 420 }}>
           We don’t just deliver visuals—we build creative partnerships that leave a lasting impact. Hear directly from the people we’ve collaborated with, and discover how Opera has helped brands.
         </p>
       </div>
-      <div className="faq-right" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-          {leftColFaqs.map((faq, index) => (
+      <div className="faq-list" style={{ display: 'flex', flexDirection: 'row', gap: 20 }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 20 }}>
+          {col1Faqs.map((faq, index) => (
             <div
               key={index}
               className={`faq-item${openIndex === index ? " active" : ""}`}
@@ -98,8 +100,8 @@ const FAQ = () => {
             </div>
           ))}
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-          {rightColFaqs.map((faq, i) => {
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 20 }}>
+          {col2Faqs.map((faq, i) => {
             const index = i + 3;
             return (
               <div
