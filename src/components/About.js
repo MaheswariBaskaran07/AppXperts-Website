@@ -8,23 +8,39 @@ import Flutter from '../assets/About/FlutterDev.png'
 import UIUX from '../assets/About/UIUX.png'
 import BackEndDev from '../assets/About/BackEndDev.png'
 import FrontEndDev from '../assets/About/FrontEndDev.png'
+import Keerthana from '../assets/About/Keerthana.png'
+import Karthi from '../assets/About/Karthi.png'
+import Prakash from '../assets/About/Prakash.png'
+import gsap from "gsap";
 
 
 const About = () => {
   const slides = [
-    { id: 1, img: FrontEndDev, title: "Frontend Developer" },
-    { id: 2, img: BackEndDev, title: "Backend Developer" },
-    { id: 3, img: CEO, title: "CEO" },
-    { id: 4, img: Flutter, title: "Flutter Developer" },
-    { id: 5, img: UIUX, title: "UI/UX Designer" },
+    { id: 1, img: FrontEndDev, title: "Maheswari",description:"Frontend Developer" },
+    { id: 2, img: BackEndDev, title: "Rajeswari",description:"Backend Developer" },
+    { id: 3, img: CEO, title: "Mohamed Aasif",description:"CEO" },
+    { id: 4, img: Flutter, title: "Nagajothika",description:"Flutter Developer" },
+    { id: 5, img: UIUX, title: "Merin Albert",description:"UI/UX Designer" },
+    { id: 6, img: Keerthana, title: "Keerthana",description:"Frontend Developer" },
+    { id: 7, img: Prakash, title: "Prakash",description:"QA Engineer" },
+    { id: 8, img: Karthi, title: "Karthikeyan",description:"Frontend Developer" },
   ];
 
-  const [current, setCurrent] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const duplicatedSlides = [...slides, ...slides];
+
+  const [offset, setOffset] = useState(0);
+  const slideWidth = 220; // card width + margin
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 3000); // auto slide every 3 sec
+      setOffset((prev) => {
+        const newOffset = prev + 1;
+        // reset when half list is scrolled
+        return newOffset >= slides.length * slideWidth ? 0 : newOffset;
+      });
+    }, 15); // smaller = faster scroll
+
     return () => clearInterval(interval);
   }, [slides.length]);
 
@@ -67,7 +83,7 @@ const About = () => {
         <span
           style={{
             display: "block",          // 👈 force block so margins apply properly
-            background: "#003399",
+            background: 'linear-gradient(180deg, #46cff8ff 0%, #0d48eaff 100%)',
             color: "white",
             padding: "6px 14px",
             borderRadius: "20px",
@@ -143,7 +159,7 @@ const About = () => {
 
         <button
           style={{
-            background: "#007BFF",
+            background: 'linear-gradient(180deg, #2ecbfa 0%, #1a3fa6 100%)',
             color: "#fff",
             border: "none",
             padding: "12px 28px",
@@ -208,7 +224,7 @@ const About = () => {
               top: "-8px",          // ⬅️ increase to move further DOWN
               right: "-45px",        // ⬅️ adjust horizontal position
               display: "inline-block",
-              background: "#004aad",
+              background: 'linear-gradient(180deg, #2ecbfa 0%, #1a3fa6 100%)',
               color: "#fff",
               padding: "6px 14px",
               borderRadius: "9999px",
@@ -485,7 +501,7 @@ const About = () => {
         />
       </div>
     </div>
-    
+
     <div
       style={{
         background: "linear-gradient(to right, #f8f9fa, #eef5f9)",
@@ -498,15 +514,15 @@ const About = () => {
       <span
         style={{
           display: "inline-block",
-          backgroundColor: "#007BFF",
+          background: "linear-gradient(180deg, #2ecbfa 0%, #1a3fa6 100%)",
           color: "#fff",
           fontSize: "14px",
           fontWeight: "bold",
           borderRadius: "20px",
           padding: "4px 12px",
           marginBottom: "10px",
-          marginLeft: "-400px", 
-          transform: "rotate(-20deg) translateY(30px)", // ⬇️ rotation + move down
+          marginLeft: "-400px",
+          transform: "rotate(-20deg) translateY(30px)",
         }}
       >
         Our Team
@@ -524,65 +540,132 @@ const About = () => {
         The Brains Behind <br /> the Build
       </h2>
 
-      {/* Team Cards */}
+      {/* Infinite Auto Slider */}
       <div
-      style={{
-        position: "relative",
-        width: "100%",
-        maxWidth: "900px",
-        margin: "auto",
-        overflow: "hidden",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "40px 0",
-      }}
-    >
-      <div style={{ display: "flex", gap: "20px", transition: "all 0.5s" }}>
-        {slides.map((slide, index) => {
-          // Distance from current slide
-          const offset = (index - current + slides.length) % slides.length;
-
-          // Adjust scaling and position
-          let scale = 0.7;
-          let opacity = 0.5;
-          if (offset === 0) {
-            scale = 1.2; // center image bigger
-            opacity = 1;
-          } else if (offset === 1 || offset === slides.length - 1) {
-            scale = 0.9; // sides slightly bigger
-            opacity = 0.8;
-          }
-
-          return (
+        style={{
+          width: "100%",
+          maxWidth: "900px",
+          margin: "auto",
+          overflow: "hidden",
+          position: "relative",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            transform: `translateX(-${offset}px)`,
+            transition: "transform 0.05s linear",
+          }}
+        >
+          {duplicatedSlides.map((slide, index) => (
             <div
-              key={slide.id}
+              key={index}
               style={{
-                transform: `scale(${scale})`,
-                opacity,
-                transition: "transform 0.5s, opacity 0.5s",
-                textAlign: "center",
+                minWidth: "200px",
+                height: "260px",
+                marginRight: "20px",
+                borderRadius: "16px",
+                perspective: "1000px", // needed for 3D flip
               }}
             >
-              <img
-                src={slide.img}
-                alt={slide.title}
+              <div
                 style={{
-                  width: "160px",
-                  height: "200px",
-                  objectFit: "cover",
-                  borderRadius: "16px",
-                  boxShadow: offset === 0 ? "0 8px 20px rgba(0,0,0,0.3)" : "none",
+                  width: "100%",
+                  height: "100%",
+                  position: "relative",
+                  transformStyle: "preserve-3d",
+                  transition: "transform 0.8s",
                 }}
-              />
-              <p style={{ marginTop: "10px", fontWeight: "600" }}>{slide.title}</p>
+                className="flip-card"
+              >
+                {/* Front Side */}
+                <div
+                  style={{
+                    position: "absolute",
+                    width: "100%",
+                    height: "100%",
+                    backfaceVisibility: "hidden",
+                    borderRadius: "16px",
+                    overflow: "hidden",
+                    boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
+                  }}
+                >
+                  <img
+                    src={slide.img}
+                    alt={slide.title}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: 0,
+                      width: "100%",
+                      padding: "12px",
+                      background:
+                        "linear-gradient(to top, rgba(0,123,255,0.9), rgba(0,123,255,0))",
+                      color: "#fff",
+                      fontWeight: "600",
+                      fontSize: "16px",
+                      textAlign: "center",
+                    }}
+                  >
+                    {slide.title}
+                  </div>
+                </div>
+
+                {/* Back Side */}
+                <div
+                  style={{
+                    position: "absolute",
+                    width: "100%",
+                    height: "100%",
+                    backfaceVisibility: "hidden",
+                    background: "linear-gradient(180deg, #2ecbfa 0%, #1a3fa6 100%)",
+                    color: "#fff",
+                    transform: "rotateY(180deg)",
+                    borderRadius: "16px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontWeight: "bold",
+                    fontSize: "18px",
+                    padding: "10px",
+                    boxSizing: "border-box",
+                  }}
+                >
+                  {slide.description || "More Info"}
+                </div>
+              </div>
+
+              {/* Hover flip with CSS */}
+              <style>
+                {`
+                  .flip-card:hover {
+                    transform: rotateY(180deg);
+                  }
+                `}
+              </style>
             </div>
-          );
-        })}
+
+          ))}
+        </div>
       </div>
+
+      {/* 🔹 Add CSS for flip */}
+      <style>
+        {`
+          .card:hover {
+            transform: rotateY(180deg);
+          }
+        `}
+      </style>
     </div>
 
-    </div>
     </>
   );
 };
