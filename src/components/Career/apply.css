@@ -1,0 +1,51 @@
+/* apply.css */
+
+.apply-section {
+  background: linear-gradient(90deg, #def7ff 0%, #35cfff 100%);
+  padding: 60px 50px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.apply-content h2 {
+  font-family: "Poppins", sans-serif; /* Modern clean font */
+  font-size: 40px;
+  font-weight: 400;
+  color: #1f2937; /* Dark gray */
+  margin-bottom: 15px;
+}
+
+.apply-content p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000A1; /* Softer gray */
+  margin-bottom: 25px;
+}
+
+/* apply.css */
+
+.apply-button {
+  display: inline-block;
+  background: linear-gradient(180deg, #263fe3, #00a9e5); /* top → bottom */
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 9999px; /* pill shape */
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 4px 12px rgba(38, 63, 227, 0.3);
+}
+
+.apply-button:hover {
+  background: linear-gradient(0deg, #263fe3, #00a9e5); /* bottom → top on hover */
+  box-shadow: 0 6px 20px rgba(0, 169, 229, 0.45);
+  transform: translateY(-2px);
+}
+
+.apply-button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(38, 63, 227, 0.25);
+}

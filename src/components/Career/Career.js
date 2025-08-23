@@ -26,9 +26,9 @@ const Career = () => {
           top: 0,
           left: 0,
           width: "100%",
-          height: "100%", // top half overlay
+          height: "120%", // top half overlay
           background:
-            "linear-gradient(to bottom, rgba(159,171,255,0.85) 0%, rgba(162,231,255,0.65) 70%, rgba(162,231,255,0) 100%)",
+          "radial-gradient(circle at top center, rgba(167, 195, 253, 0.8) 0%, rgba(207, 226, 249, 0.84) 60%, rgba(255, 255, 255, 1) 100%)",
           pointerEvents: "none",
           zIndex: 2, // make sure it's above the image
         }}
