@@ -9,7 +9,7 @@ const navItems = [
   { name: "Services", link: "#" },
   { name: "Products", link: "#" },
   { name: "Clients", link: "/clients" },
-  { name: "Career", link: "#" },
+  { name: "Career", link: "/career" },
   { name: "Contact Us", link: "#" },
 ];
 

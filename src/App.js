@@ -1,9 +1,9 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
-import Clients from './components/Clint/Clint';
 import ClientsPage from './Pages/ClientPage';
+import CareerPage from './Pages/CareerPage';
 
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path='/clients' element={<ClientsPage/>} />
+        <Route path='/career' element={<CareerPage/>} />
       </Routes>
     </BrowserRouter>
   );
