@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Clients from '../components/Clint/Clint';
 import Footer from '../components/Footer';
+import Testimonials from '../components/Clint/Testimonial';
+import ClientLogoSction from '../components/Clint/OurClintSection';
 
 
 const ClientsPage = () => {
@@ -13,6 +15,8 @@ const ClientsPage = () => {
     <div>
      <Navigation/>
      <Clients/>
+     <ClientLogoSction/>
+     <Testimonials/>
      <Footer/>
     </div>
   );
