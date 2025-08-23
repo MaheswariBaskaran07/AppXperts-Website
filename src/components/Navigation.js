@@ -10,10 +10,13 @@ const navItems = [
   { name: "Products", link: "/products" },
   { name: "Clients", link: "/clients" },
   { name: "Career", link: "/career" },
-  { name: "Contact Us", link: "#" },
+  { name: "Contact Us", link: "/contact" },
 ];
 
 const Navigation = () => {
+  // Get current path for highlighting
+  const currentPath = window.location.pathname;
+
   return (
     <nav style={{
       display: 'flex',
@@ -25,20 +28,17 @@ const Navigation = () => {
       position: 'relative',
       zIndex: 10
     }}>
-   <div style={{ display: 'flex', alignItems: 'center',  }}>
-<img 
-  src={logo} 
-  alt="AppXperts Logo" 
-  style={{ 
-       // increase more
-    width: 'auto',
-    objectFit: 'contain',
-    display: 'block'
-  }} 
-/>
-
-</div>
-
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <img 
+          src={logo} 
+          alt="AppXperts Logo" 
+          style={{ 
+            width: 'auto',
+            objectFit: 'contain',
+            display: 'block'
+          }} 
+        />
+      </div>
       <ul style={{
         display: 'flex',
         alignItems: 'center',
@@ -46,31 +46,34 @@ const Navigation = () => {
         margin: 0,
         padding: 0,
         gap: 28
-        
       }}>
-        {navItems.map((item) => (
-          <li key={item.name}>
-            <a href={item.link} style={{
-              textDecoration: 'none',
-              color: '#222',
-              fontWeight: 500,
-              fontSize: 16,
-              padding: '6px 12px',
-              borderRadius: 4,
-              transition: 'background 0.2s, color 0.2s',
-            }}
-              onMouseOver={e => e.target.style.color = '#1a3fa6'}
-              onMouseOut={e => e.target.style.color = '#222'}
-            >
-              {item.name}
-            </a>
-          </li>
-        ))}
+        {navItems.map((item) => {
+          const isActive = item.link !== '#' && (item.link === '/' ? currentPath === '/' : currentPath.startsWith(item.link));
+          return (
+            <li key={item.name}>
+              <a
+                href={item.link}
+                style={{
+                  textDecoration: 'none',
+                  color: isActive ? '#1a3fa6' : '#222',
+                  fontWeight: 500,
+                  fontSize: 16,
+                  padding: '6px 12px',
+                  borderRadius: 4,
+                  background: isActive ? 'rgba(26,63,166,0.08)' : 'none',
+                  transition: 'background 0.2s, color 0.2s',
+                }}
+                onMouseOver={e => e.target.style.color = '#1a3fa6'}
+                onMouseOut={e => e.target.style.color = isActive ? '#1a3fa6' : '#222'}
+              >
+                {item.name}
+              </a>
+            </li>
+          );
+        })}
       </ul>
       <a href="#book" style={{
         background: 'linear-gradient(180deg, #1a3fa6 60%, #2ecbfa 100%)',
-
-
         color: '#fff',
         padding: '10px 28px',
         borderRadius: 22,

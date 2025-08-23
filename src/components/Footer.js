@@ -191,45 +191,10 @@ const Footer = () => {
       >
         <div>© 2025 AppXperts. All rights reserved.</div>
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-          <a href="#" aria-label="Facebook" rel="noopener noreferrer">
-            <img
-              src={fb}
-              alt="fb"
-              style={{
-                width: 32,
-                height: 32,
-                borderRadius: "50%",
-                background: "#f2f6fa",
-                padding: 4,
-              }}
-            />
-          </a>
-          <a href="#" aria-label="Instagram" rel="noopener noreferrer">
-            <img
-              src={insta}
-              alt="insta"
-              style={{
-                width: 32,
-                height: 32,
-                borderRadius: "50%",
-                background: "#f2f6fa",
-                padding: 4,
-              }}
-            />
-          </a>
-          <a href="#" aria-label="LinkedIn" rel="noopener noreferrer">
-            <img
-              src={linkedIn}
-              alt="linkedin"
-              style={{
-                width: 28,
-                height: 28,
-                borderRadius: "50%",
-                background: "#f2f6fa",
-                padding: 4,
-              }}
-            />
-          </a>
+       <a href="#" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}><img src={fb} alt="fb" style={{ width: 40, height: 40 }} /></a>
+              <a href="#" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}><img src={insta} alt="insta" style={{ width: 40, height: 40 }} /></a>
+              <a href="#" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}><img src={linkedIn} alt="linkedin" style={{ width: 18, height: 18 }} /></a>
+     
         </div>
         <a
           href="#top"
