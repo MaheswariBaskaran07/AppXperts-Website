@@ -6,7 +6,7 @@ import "../App.css";
 const navItems = [
   { name: "Home", link: "/" },
   { name: "About Us", link: "/about" },
-  { name: "Services", link: "#" },
+  { name: "Services", link: "/services" },
   { name: "Products", link: "/products" },
   { name: "Clients", link: "/clients" },
   { name: "Career", link: "#" },
