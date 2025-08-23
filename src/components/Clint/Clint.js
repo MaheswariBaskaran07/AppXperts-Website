@@ -14,8 +14,19 @@ import Logo9 from "../../assets/images/gallery/gallery-1-8.jpg";
 import Logo10 from "../../assets/images/gallery/gallery-1-9.jpg";
 import Logo11 from "../../assets/images/gallery/gallery1-11.jpg";
 import Logo12 from "../../assets/images/gallery/gallery1-12.jpg";
+import Logo13 from "../../assets/images/gallery/gallery1-13.jpg";
+import Logo14 from "../../assets/images/gallery/gallery1-14.jpg";
+import Logo15 from "../../assets/images/gallery/gallery1-15.jpg";
+import Logo16 from "../../assets/images/gallery/gallery1-16.jpg";
+import Logo17 from "../../assets/images/gallery/gallery1-17.jpg";
+import Logo18 from "../../assets/images/gallery/gallery1-18.jpg";
+import Logo19 from "../../assets/images/gallery/gallery1-19.jpg";
+import Logo20 from "../../assets/images/gallery/gallery1-20.jpg";
+import Logo21 from "../../assets/images/gallery/gallery1-21.jpg";
+import Logo22 from "../../assets/images/gallery/gallery1-22.jpg";
 
 import { FaStar } from "react-icons/fa";
+import Testimonials from "./Testimonial";
 
 const Clients = () => {
   // Put all logos in an array for easier rendering
@@ -32,24 +43,16 @@ const Clients = () => {
     Logo10,
     Logo11,
     Logo12,
-  ];
-
-  const testimonials = [
-    {
-      text: "I've been using this web hosting service for over a year and I’m really impressed with the uptime and support. The website has never gone down and the customer service is always quick to help with any issues I have. Highly recommend!",
-      name: "Vadivel Shanmugam",
-      role: "Manager",
-    },
-    {
-      text: "I've been using this web hosting service for over a year and I’m really impressed with the uptime and support. The website has never gone down and the customer service is always quick to help with any issues I have. Highly recommend!",
-      name: "Vadivel Shanmugam",
-      role: "Manager",
-    },
-    {
-      text: "I've been using this web hosting service for over a year and I’m really impressed with the uptime and support. The website has never gone down and the customer service is always quick to help with any issues I have. Highly recommend!",
-      name: "Vadivel Shanmugam",
-      role: "Manager",
-    },
+    Logo13,
+    Logo14,
+    Logo15,
+    Logo16,
+    Logo17,
+    Logo18,
+    Logo19,
+    Logo20,
+    Logo21,
+    Logo22,
   ];
 
   return (
@@ -70,16 +73,32 @@ const Clients = () => {
       >
         {/* Banner Section */}
         {/* Banner Section */}
+
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%", // top half overlay
+            background:
+              "linear-gradient(to bottom, rgba(159,171,255,0.85) 0%, rgba(162,231,255,0.65) 70%, rgba(162,231,255,0) 100%)",
+            pointerEvents: "none",
+            zIndex: 2, // make sure it's above the image
+          }}
+        />
+
         <div
           style={{
             position: "relative",
             width: "100%",
-            height: "700px", // banner height
+            height: "600px", // reduced from 700px
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             overflow: "hidden",
-            marginTop: "-80px",
+            marginTop: "-85px", // move more upwards
+            zIndex: 3,
           }}
         >
           {/* Banner Image */}
@@ -90,18 +109,7 @@ const Clients = () => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-            }}
-          />
-
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "50%", // pathi banner varai
-              background: "linear-gradient(to bottom, #9FABFF 0%, #A2E7FF 70%, rgba(162,231,255,0) 100%)",
-              pointerEvents: "none",
+              objectPosition: "top", // shows top part of image first
             }}
           />
 
@@ -109,13 +117,14 @@ const Clients = () => {
           <div
             style={{
               position: "absolute",
-              top: 60,
+              top: 80,
               left: 10,
               right: 10,
               width: "100%",
               height: "100%",
               overflow: "hidden",
               pointerEvents: "none",
+              zIndex: 2,
             }}
           >
             {[Logo1, Logo2, Logo3].map((logo, index) => (
@@ -164,13 +173,14 @@ const Clients = () => {
           <div
             style={{
               position: "absolute",
-              top: "50%",
+              top: "55%",
               left: "50%",
               transform: "translate(-50%, -50%)",
               color: "#000",
               textAlign: "center",
               maxWidth: "800px",
               padding: "0 20px",
+              zIndex: 3,
             }}
           >
             <h1
@@ -275,13 +285,13 @@ const Clients = () => {
 
       <section
         style={{
-          background: "#f8fafc", // outer background same as Figma
-          padding: "80px 40px",
+          background: "#fff", // outer background same as Figma
+          padding: "80px 60px",
           fontFamily: "'Poppins', sans-serif",
         }}
       >
         {/* White Container */}
-        <div
+        {/* <div
           style={{
             background: "#fff",
             borderRadius: "16px",
@@ -290,114 +300,28 @@ const Clients = () => {
             margin: "0 auto",
             padding: "80px 60px",
           }}
-        >
-          {/* Heading + Description Row */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "flex-start",
-              flexWrap: "wrap",
-              marginBottom: "50px",
-            }}
-          >
-            {/* Left Heading */}
-            <h2
-              style={{
-                fontSize: "32px",
-                fontWeight: 400,
-                color: "#1a1a1a",
-                flex: "1 1 40%",
-                margin: 0,
-              }}
-            >
-              Our Clients
-            </h2>
-
-            {/* Right Description */}
-            <p
-              style={{
-                fontSize: "16px",
-                fontWeight: 400,
-                color: "#000000A1",
-                lineHeight: 1.6,
-                maxWidth: "600px",
-                flex: "1 1 55%",
-                margin: 0,
-              }}
-            >
-              Building strong relationships with brands that inspire us — and
-              empowering them to achieve more.
-            </p>
-          </div>
-
-          {/* Logos Grid */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
-              gap: "24px",
-            }}
-          >
-            {clientLogos.map((logo, index) => (
-              <div
-                key={index}
-                style={{
-                  background: "#fff",
-                  borderRadius: "12px",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: "20px",
-                  height: "120px",
-                }}
-              >
-                <img
-                  src={logo}
-                  alt={`Client Logo ${index + 1}`}
-                  style={{
-                    maxWidth: "100%",
-                    maxHeight: "70px",
-                    objectFit: "contain",
-                  }}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section
-        style={{
-          padding: "100px 20px",
-          background: "#f8fafc",
-          fontFamily: "'Poppins', sans-serif",
-        }}
-      >
-        {/* Heading + Description */}
+        > */}
+        {/* Heading + Description Row */}
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
-            alignItems: "center",
+            alignItems: "flex-start",
             flexWrap: "wrap",
-            maxWidth: "1200px",
-            margin: "0 auto 60px auto",
-            gap: "20px",
-            textAlign: "left",
+            marginBottom: "50px",
           }}
         >
           {/* Left Heading */}
           <h2
             style={{
               fontSize: "32px",
-              fontWeight: 500,
+              fontWeight: 400,
               color: "#1a1a1a",
               flex: "1 1 40%",
               margin: 0,
             }}
           >
-            What Our Clients Are Saying
+            Our Clients
           </h2>
 
           {/* Right Description */}
@@ -407,96 +331,85 @@ const Clients = () => {
               fontWeight: 400,
               color: "#000000A1",
               lineHeight: 1.6,
+              maxWidth: "600px",
               flex: "1 1 55%",
               margin: 0,
             }}
           >
-            Our clients are at the heart of everything we do. Each testimonial
-            reflects our commitment to delivering value. From concept to
-            execution, we walk the journey with them. Read what they have to say
-            about working with us.
+            Building strong relationships with brands that inspire us — and
+            empowering them to achieve more.
           </p>
         </div>
 
-        {/* Testimonials Grid */}
+        {/* Logos Grid */}
         <div
           style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "30px",
-            flexWrap: "wrap",
-            maxWidth: "1200px",
-            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+            gap: "24px",
           }}
         >
-          {testimonials.map((t, index) => (
+          {clientLogos.map((logo, index) => (
             <div
+              className="card"
               key={index}
               style={{
-                flex: "1 1 300px",
-                maxWidth: "350px",
-                background:
-                  index === 2
-                    ? "linear-gradient(135deg, #2b6fe3, #1a3fa6)"
-                    : "#fff",
-                color: index === 2 ? "#fff" : "#000",
-                padding: "30px 25px",
+                background: "#fff",
                 borderRadius: "12px",
-                boxShadow:
-                  index === 2
-                    ? "0 6px 20px rgba(26,63,166,0.3)"
-                    : "0 6px 20px rgba(0,0,0,0.08)",
-                textAlign: "left",
-                transition: "all 0.3s ease",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "20px",
+                height: "120px",
+                transformStyle: "preserve-3d",
+                transition: "transform 0.8s",
               }}
             >
-              {/* Testimonial Text */}
-              <p
+              <img
+                src={logo}
+                alt={`Client Logo ${index + 1}`}
                 style={{
-                  fontSize: "14px",
-                  lineHeight: "1.6",
-                  marginBottom: "20px",
+                  maxWidth: "100%",
+                  maxHeight: "70px",
+                  objectFit: "contain",
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  width: "100%",
+                  height: "120px",
+                  backfaceVisibility: "hidden",
+                  background: "#1a3fa6",
+                  color: "#fff",
+                  borderRadius: "16px",
+                  boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "20px",
+                  transform: "rotateY(180deg)",
+                  fontSize: "16px",
+                  fontWeight: 500,
+                  textAlign: "center",
                 }}
               >
-                "{t.text}"
-              </p>
-
-              {/* Stars */}
-              <div style={{ display: "flex", marginBottom: "15px" }}>
-                {[...Array(5)].map((_, i) => (
-                  <FaStar
-                    key={i}
-                    size={16}
-                    color={index === 2 ? "#ffd700" : "#fbbf24"}
-                  />
-                ))}
-              </div>
-
-              {/* Client Info */}
-              <div>
-                <h4
-                  style={{
-                    fontSize: "16px",
-                    fontWeight: 600,
-                    marginBottom: "5px",
-                  }}
-                >
-                  {t.name}
-                </h4>
-                <p
-                  style={{
-                    fontSize: "14px",
-                    color: index === 2 ? "#e5e7eb" : "#666",
-                    margin: 0,
-                  }}
-                >
-                  {t.role}
-                </p>
+                Project {index + 1}
               </div>
             </div>
           ))}
         </div>
+        <style>
+          {`
+    .card:hover {
+      transform: rotateY(180deg);
+    }
+  `}
+        </style>
+        {/* </div> */}
       </section>
+      <Testimonials />
     </>
   );
 };
