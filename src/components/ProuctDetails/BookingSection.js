@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const CallToAction = () => {
+const BookingSection = () => {
 
     const [isHovered, setIsHovered] = useState(false);
 
@@ -22,7 +22,7 @@ const CallToAction = () => {
           color: "#000",
         }}
       >
-        Let’s Talk About Your Next Big Move
+        Book Your Demo Now
       </h2>
 
       {/* Subtitle */}
@@ -37,8 +37,7 @@ const CallToAction = () => {
           lineHeight: "1.6",
         }}
       >
-        Whether you’re starting from scratch or scaling up, we’re here to build
-        solutions that fit your vision...
+        "See our solutions in action and discover how AppXperts can simplify, scale, and supercharge your business. In this personalized session, our experts will walk you through the features that matter most to you — and answer all your questions in real time." 
       </p>
 
       {/* Button */}
@@ -65,4 +64,4 @@ const CallToAction = () => {
   );
 };
 
-export default CallToAction;
+export default BookingSection;

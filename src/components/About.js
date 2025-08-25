@@ -16,14 +16,15 @@ import Prakash from '../assets/About/Prakash.png'
 
 const About = () => {
   const slides = [
-    { id: 1, img: FrontEndDev, title: "Maheswari",description:"Frontend Developer" },
-    { id: 2, img: BackEndDev, title: "Rajeswari",description:"Backend Developer" },
-    { id: 3, img: CEO, title: "Mohamed Aasif",description:"CEO" },
+    { id: 1, img: CEO, title: "Mohamed Aasif", description: "CEO" },
+    { id: 2, img: '', title: "Mohamed Rabi", description: "" },
+    { id: 3, img: BackEndDev, title: "Rajeswari", description: "Backend Developer" },
     { id: 4, img: Flutter, title: "Nagajothika",description:"Flutter Developer" },
-    { id: 5, img: UIUX, title: "Merin Albert",description:"UI/UX Designer" },
-    { id: 6, img: Keerthana, title: "Keerthana",description:"Frontend Developer" },
-    { id: 7, img: Prakash, title: "Prakash",description:"QA Engineer" },
-    { id: 8, img: Karthi, title: "Karthikeyan",description:"Frontend Developer" },
+    { id: 5, img: FrontEndDev, title: "Maheswari", description: "Frontend Developer" },
+    { id: 6, img: UIUX, title: "Merin Albert",description:"UI/UX Designer" },
+    { id: 7, img: Keerthana, title: "Keerthana", description: "Frontend Developer" },
+    { id: 8, img: Karthi, title: "Karthikeyan", description: "Frontend Developer" },
+    { id: 9, img: Prakash, title: "Prakash",description:"QA Engineer" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
