@@ -11,7 +11,7 @@ import FrontEndDev from '../assets/About/FrontEndDev.png'
 import Keerthana from '../assets/About/Keerthana.png'
 import Karthi from '../assets/About/Karthi.png'
 import Prakash from '../assets/About/Prakash.png'
-import gsap from "gsap";
+// import gsap from "gsap";
 
 
 const About = () => {

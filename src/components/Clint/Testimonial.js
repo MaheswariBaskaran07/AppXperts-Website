@@ -2,8 +2,7 @@ import React from "react";
 import { FaStar } from "react-icons/fa";
 import logo from "../../assets/Client/Testimonials Card Bg.png";
 // import logo from "../../assets/Client/image.png";
-import Clintlogo from "../../assets/images/gallery/gallery-1-8.jpg"
-
+import Clintlogo from "../../assets/images/gallery/gallery-1-8.jpg";
 
 const testimonials = Array.from({ length: 5 }).map((_, i) => ({
   text: `“I've been using this web hosting service for over a year and I'm really impressed with the uptime and support. The website has never gone down and the customer service is always quick to help with any
@@ -84,7 +83,7 @@ const TestimonialCard = ({ testimonial, glow }) => {
           marginBottom: "15px",
           position: "relative",
           zIndex: 2,
-          alignItems:"center",
+          alignItems: "center",
           justifyContent: "center",
         }}
       >
@@ -130,6 +129,7 @@ export default function Testimonials() {
         overflow: "hidden",
         background: "#f8fafc",
         minHeight: "700px",
+        marginBottom: 0,
       }}
     >
       {/* Heading + Description */}
@@ -195,6 +195,7 @@ export default function Testimonials() {
       />
 
       {/* Carousel of testimonial cards */}
+      {/* Carousel of testimonial cards */}
       <div
         style={{
           display: "flex",
@@ -205,9 +206,10 @@ export default function Testimonials() {
           position: "relative",
           zIndex: 2,
           marginRight: "100px",
-          /* Hide scrollbar */
           scrollbarWidth: "none", // Firefox
           msOverflowStyle: "none", // IE 10+
+          clipPath: "inset(-50px -100px 0px -100px)",
+          // 👆 negative inset lets cards "go outside" the block while scrolling
         }}
         className="hide-scrollbar"
       >
@@ -215,7 +217,7 @@ export default function Testimonials() {
           <TestimonialCard
             key={index}
             testimonial={t}
-            highlight={index === 2}
+            glow={index === 2} // ✅ fix: you passed `highlight` before
           />
         ))}
       </div>
