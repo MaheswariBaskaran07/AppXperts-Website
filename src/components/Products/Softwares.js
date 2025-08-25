@@ -1,111 +1,163 @@
-import software from "../../assets/Product/Frame 1000009024.png";
+import React, { useState } from "react";
+import "./Cards.css";
 import eclipse from "../../assets/Product/Ellipse 4.png";
+import software from "../../assets/Product/Frame 1000009024.png";
 
-const cards = [
-  { title: "ERP Softwares", color: "#b3e7f7", },
-  { title: "CRM Softwares", color: "#b3e7f7", },
-  { title: "HRMS Softwares", color: "#b3e7f7", },
-  { title: "E-Commerce Platform", color: "#b3e7f7", },
-  { title: "School Management", color: "#b3e7f7", },
+const products = [
+  { title: "ERP Softwares", desc: "Streamline enterprise operations." },
+  { title: "CRM Softwares", desc: "Customized tools to boost your sales pipeline, improve communication, and drive stronger customer loyalty." },
+  { title: "Hospital Management", desc: "All-in-one platform for inventory, finance, and operations helping you make confident, data-driven decisions." },
+  { title: "E-Commerce Platform", desc: "Boost online sales." },
+  { title: "HRMS Softwares", desc: "Simplify HR and payroll." },
+  { title: "School Management", desc: "Manage admissions & academics." },
 ];
 
-const Softwares = () => {
-  return (
-    <section style={{ width: '100%', background: '#fff', fontFamily: 'Poppins', padding: '32px 0 0 0' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', marginBottom: 32 }}>
-          <div>
-            <h2 style={{ fontSize: 40, fontWeight: 500, margin: 0, color: '#111', lineHeight: 1.1 }}>Digital Solutions,<br />Tailored to Perform</h2>
-          </div>
-          <div style={{ maxWidth: 400, fontWeight: 400, color: '#888', fontSize: 16, marginTop: 12, textAlign: 'right', lineHeight: 1.6 }}>
-            From streamlining operations to boosting engagement — our products are built to deliver results, faster.
-          </div>
-        </div>
-        {/* Card Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(6, 1fr)',
-          gridTemplateRows: 'repeat(2, 1fr)',
-          gap: 28,
-          minHeight: 420,
-          marginBottom: 32
-        }}>
-          {/* Top Row */}
-          <div style={{ gridColumn: '1/3', gridRow: '1/2' }}>
-            <Card title={cards[0].title} color={cards[0].color} />
-          </div>
-          <div style={{ gridColumn: '3/5', gridRow: '1/2' }}>
-            <Card title={cards[1].title} color={cards[1].color} />
-          </div>
-          <div style={{ gridColumn: '5/7', gridRow: '1/2' }}>
-            <Card title={cards[2].title} color={cards[2].color} />
-          </div>
-          <div style={{ gridColumn: '1/2', gridRow: '2/3' }}>
-            <Card title={cards[3].title} color={cards[3].color} />
-          </div>
-          {/* Center Large Card */}
-          <div style={{ gridColumn: '2/6', gridRow: '2/3', background: '#f7f8fa', borderRadius: 18, boxShadow: '0 2px 12px #b3e7f733', display: 'flex', alignItems: 'center', padding: 24, minHeight: 170 }}>
-            <div style={{ flex: 1 }}>
-              <div style={{ fontWeight: 600, fontSize: 20, color: '#222', marginBottom: 8 }}>Hospital Management</div>
-              <div style={{ color: '#555', fontSize: 16, fontWeight: 400, marginBottom: 0, lineHeight: 1.6 }}>
-                All-in-one platform for inventory, finance, and operations – helping you make confident, data-driven decisions.
-              </div>
-            </div>
-            <img src={software} alt="Hospital Management" style={{ width: 110, height: 110, objectFit: 'contain', marginLeft: 18 }} />
-          </div>
-          <div style={{ gridColumn: '6/7', gridRow: '2/3' }}>
-            <Card title={cards[4].title} color={cards[4].color} />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+const Card = ({ title, desc, index, activeIndex, setActiveIndex }) => {
+  const isFlipped = activeIndex === index;
 
-function Card({ title, color, width }) {
   return (
-    <div style={{
-      background: 'linear-gradient(135deg, #ace3ff 60%, #cad1ff 100%)',
-      borderRadius: 18,
-      boxShadow: '0 2px 12px #b3e7f733',
-      minHeight: 170,
-      minWidth: width || 0,
-      width: width || 'auto',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-between',
-      padding: '24px 20px 16px 20px',
-      position: 'relative',
-      transition: 'box-shadow 0.2s',
-      overflow: 'hidden',
-    }}>
-      {/* Eclipse at bottom left */}
-      <img src={eclipse} alt="eclipse" style={{ position: 'absolute', left: 0, bottom: 0, width: 90, opacity: 0.32, zIndex: 0, pointerEvents: 'none' }} />
-      <div style={{ fontWeight: 400, fontSize: 20, color: '#222', marginBottom: 8, zIndex: 1, position: 'relative' }}>{title}</div>
-      <div style={{ color: '#555', fontSize: 14, marginBottom: 24, zIndex: 1, position: 'relative' }}></div>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', zIndex: 1, position: 'relative' }}>
-        <span style={{ color: '#888', fontSize: 15, fontWeight: 400 }}>Read More</span>
-        <span style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          width: 32,
-          height: 32,
-          borderRadius: '50%',
-          background: 'linear-gradient(135deg, #eaf6fb 0%, #b3e7f7 100%)',
-          color: '#1a3fa6',
-          fontWeight: 700,
-          fontSize: 18,
-          boxShadow: '0 1px 4px #b3e7f722',
-        }}>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 11L11 5" stroke="#222" strokeWidth="1.5" strokeLinecap="round"/>
-            <path d="M7.5 5H11V8.5" stroke="#222" strokeWidth="1.5" strokeLinecap="round"/>
-          </svg>
-        </span>
+    <div
+      className={`card ${isFlipped ? "flipped" : ""}`}
+      onClick={() => setActiveIndex(isFlipped ? null : index)}
+      style={{ position: 'relative' }}
+    >
+      <div className="card-inner">
+        <div className="card-front" style={{ position: 'relative', width: '100%', height: '100%' }}>
+          <div
+            style={{
+              fontWeight: 400,
+              fontSize: 20,
+              color: "#222",
+              marginBottom: 8,
+              paddingBottom: 40,
+              paddingLeft: 30,
+              zIndex: 1,
+              position: "relative",
+            }}
+          >
+            {title}
+          </div>
+          {/* Read More bottom left */}
+          <span
+            style={{
+              color: "#888",
+              fontSize: 15,
+              fontWeight: 400,
+              position: 'absolute',
+              left: 18,
+              bottom: 18,
+              zIndex: 2,
+            }}
+          >
+            Read More
+          </span>
+          {/* Arrow bottom right */}
+          <span
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: 32,
+              height: 32,
+              borderRadius: "50%",
+              background:
+                "linear-gradient(135deg, #eaf6fb 0%, #b3e7f7 100%)",
+              color: "#1a3fa6",
+              fontWeight: 700,
+              fontSize: 18,
+              boxShadow: "0 1px 4px #b3e7f722",
+              position: 'absolute',
+              right: 18,
+              bottom: 18,
+              zIndex: 2,
+            }}
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 11L11 5"
+                stroke="#222"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+              <path
+                d="M7.5 5H11V8.5"
+                stroke="#222"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+          </span>
+          <img
+            src={eclipse}
+            alt="eclipse"
+            style={{
+              position: "absolute",
+              left: 0,
+              bottom: 0,
+              width: 120,
+              opacity: 0.52,
+              zIndex: 0,
+              pointerEvents: "none",
+            }}
+          />
+        </div>
+        <div className="card-back" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', boxSizing: 'border-box', padding: 20 }}>
+          <h3 style={{ margin: 0, fontWeight: 600, fontSize: 20 }}>{title}</h3>
+          <p style={{ margin: '12px 0 0 0', fontSize: 15 }}>{desc}</p>
+          <img src={software} alt={title} style={{ width: 50, maxHeight: 50, marginTop: 10, objectFit: 'contain' }} />
+        </div>
       </div>
     </div>
   );
-}
+};
+
+const Softwares = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  return (
+    <div style={{ padding: "50px 20px" }}>
+      {/* Heading + Subtext */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 40 }}>
+        <h2 style={{ fontSize: 40, fontWeight: 500, marginLeft: 60, color: "#111", lineHeight: 1.1 }}>
+          Digital Solutions,<br />Tailored to Perform
+        </h2>
+        <div
+          style={{
+            maxWidth: 400,
+            fontWeight: 400,
+            color: "#888",
+            fontSize: 16,
+            marginTop: 30,
+            marginRight: 60,
+            textAlign: "right",
+            lineHeight: 1.6,
+          }}
+        >
+          From streamlining operations to boosting engagement — our products are built to deliver results, faster.
+        </div>
+      </div>
+
+      {/* Cards Grid */}
+      <div className="cards-grid">
+        {products.map((p, index) => (
+          <Card
+            key={index}
+            index={index}
+            activeIndex={activeIndex}
+            setActiveIndex={setActiveIndex}
+            title={p.title}
+            desc={p.desc}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Softwares;

@@ -168,6 +168,7 @@ const About = () => {
             fontSize: "16px",
             cursor: "pointer",
           }}
+          onClick={() => window.location.href = "/services"} // Navigate to Services page
         >
           Read more →
         </button>
