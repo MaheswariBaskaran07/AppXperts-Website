@@ -90,7 +90,7 @@ const Solutions = () => {
 
       {/* Learn More Button */}
       <div style={{ margin: '0 auto 32px auto', textAlign: 'center' }}>
-        <a href="#learnmore" style={{
+        <a href="/services" style={{
           display: 'inline-block',
           background: 'linear-gradient(180deg, #2ecbfa 0%, #1a3fa6 100%)',
           color: '#fff',
