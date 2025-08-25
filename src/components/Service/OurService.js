@@ -3,6 +3,7 @@ import IT from "../../assets/Services/IT.png";
 import Digital from "../../assets/Services/Digital.png";
 import Brand from "../../assets/Services/Brand.png";
 import Website from "../../assets/Services/Website.png";
+import Review from "../../assets/Services/Online Review.png";
 
 const OurService = () => {
   const services = [
@@ -19,9 +20,9 @@ const OurService = () => {
       icon: Digital,
     },
     {
-      title: "", // empty placeholder (gray box like in screenshot)
+      title: "", // placeholder slot
       description: "",
-      icon: null,
+      icon: Review,
       placeholder: true,
     },
     {
@@ -77,7 +78,7 @@ const OurService = () => {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)", // exactly 3 per row
+          gridTemplateColumns: "repeat(3, 1fr)",
           gap: "20px",
           maxWidth: "1100px",
           margin: "0 auto",
@@ -87,17 +88,17 @@ const OurService = () => {
           <div
             key={index}
             style={{
-              backgroundColor: service.placeholder ? "#d9d9d9" : "#f9f9f9",
+              backgroundColor: service.placeholder ? "#f9f9f9" : "#f9f9f9",
               padding: service.placeholder ? "0" : "30px 20px",
               borderRadius: "12px",
-              textAlign: "left",
+              textAlign: service.placeholder ? "center" : "left",
               boxShadow: service.placeholder
                 ? "none"
                 : "0 4px 12px rgba(0,0,0,0.05)",
               display: "flex",
               flexDirection: "column",
-              justifyContent: service.placeholder ? "center" : "flex-start",
-              alignItems: service.placeholder ? "center" : "flex-start",
+              justifyContent: "center",
+              alignItems: "center",
               minHeight: "220px",
               transition: "transform 0.3s ease, box-shadow 0.3s ease",
             }}
@@ -116,12 +117,22 @@ const OurService = () => {
               }
             }}
           >
-            {!service.placeholder && (
+            {service.placeholder ? (
+              <img
+                src={service.icon}
+                alt="Placeholder"
+                 style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover", // makes it fill the card
+                    borderRadius: "12px", // keeps same rounded corners as card
+                  }}
+              />
+            ) : (
               <>
-                {/* Circle Icon */}
+                {/* Icon */}
                 <div
                   style={{
-                    // background: "linear-gradient(135deg,#1976d2,#42a5f5)",
                     borderRadius: "50%",
                     width: "60px",
                     height: "60px",
@@ -145,7 +156,7 @@ const OurService = () => {
                 {/* Title */}
                 <h3
                   style={{
-                    fontSize: "18px",
+                    fontSize: "28px",
                     fontWeight: "bold",
                     marginBottom: "10px",
                   }}
@@ -156,7 +167,7 @@ const OurService = () => {
                 {/* Description */}
                 <p
                   style={{
-                    fontSize: "14px",
+                    fontSize: "16px",
                     color: "#555",
                     lineHeight: "1.6",
                   }}
