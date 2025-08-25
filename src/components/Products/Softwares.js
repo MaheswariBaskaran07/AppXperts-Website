@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Cards.css";
 import eclipse from "../../assets/Product/Ellipse 4.png";
 import software from "../../assets/Product/Frame 1000009024.png";
+import { Link } from "react-router-dom";
 
 const products = [
   { title: "ERP Softwares", desc: "Streamline enterprise operations." },
@@ -38,19 +39,22 @@ const Card = ({ title, desc, index, activeIndex, setActiveIndex }) => {
             {title}
           </div>
           {/* Read More bottom left */}
-          <span
-            style={{
-              color: "#888",
-              fontSize: 15,
-              fontWeight: 400,
-              position: 'absolute',
-              left: 18,
-              bottom: 18,
-              zIndex: 2,
-            }}
-          >
-            Read More
-          </span>
+          <Link to="/products/product-details">
+            <span
+              style={{
+                color: "#888",
+                fontSize: 15,
+                fontWeight: 400,
+                position: "absolute",
+                left: 18,
+                bottom: 18,
+                zIndex: 2,
+                cursor: "pointer",
+              }}
+            >
+              Read More
+            </span>
+          </Link>
           {/* Arrow bottom right */}
           <span
             style={{
