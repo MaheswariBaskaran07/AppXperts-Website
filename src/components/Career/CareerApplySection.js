@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import JobApplicationPopup from "./ApplicationFormPopup";
 
 const jobs = [
   {
@@ -52,6 +53,8 @@ const jobs = [
 ];
 
 const CareerSection = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <section
       style={{
@@ -162,16 +165,22 @@ const CareerSection = () => {
                 {job.skills}
               </p>
             </div>
-            <a
-              href={job.link}
+            <button
               style={{
                 color: "#2563eb",
+                fontFamily: "'Poppins', sans-serif",
+                fontSize:"14px",
                 fontWeight: "500",
                 textDecoration: "none",
                 marginTop: "auto",
                 display: "inline-block",
                 transition: "all 0.3s ease",
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                textAlign: "left",
               }}
+              onClick={() => setIsOpen(true)}
               onMouseEnter={(e) => {
                 e.target.style.color = "#1d4ed8";
                 e.target.style.transform = "translateX(4px)";
@@ -182,7 +191,9 @@ const CareerSection = () => {
               }}
             >
               Apply Now →
-            </a>
+            </button>
+
+            <JobApplicationPopup open={isOpen} setOpen={setIsOpen} />
           </div>
         ))}
       </div>

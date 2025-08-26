@@ -37,6 +37,7 @@
   text-decoration: none;
   transition: all 0.4s ease-in-out;
   box-shadow: 0 4px 12px rgba(38, 63, 227, 0.3);
+  border: none;
 }
 
 .apply-button:hover {
@@ -46,6 +47,34 @@
 }
 
 .apply-button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(38, 63, 227, 0.25);
+}
+
+
+
+.submit-button {
+  display: inline-block;
+  background: linear-gradient(180deg, #263fe3, #00a9e5); /* top → bottom */
+  color: #fff;
+  padding: 12px 28px; /* controls size, but still auto width/height */
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 9999px; /* pill shape */
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 4px 12px rgba(38, 63, 227, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: linear-gradient(0deg, #263fe3, #00a9e5); /* bottom → top on hover */
+  box-shadow: 0 6px 20px rgba(0, 169, 229, 0.45);
+  transform: translateY(-2px);
+}
+
+.submit-button:active {
   transform: translateY(0);
   box-shadow: 0 3px 10px rgba(38, 63, 227, 0.25);
 }

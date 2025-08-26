@@ -122,8 +122,6 @@ const ClientLogoSction = () => {
           empowering them to achieve more.
         </p>
       </div>
-
-      {/* Logos Grid */}
       <div
         style={{
           display: "grid",
@@ -143,17 +141,18 @@ const ClientLogoSction = () => {
               alignItems: "center",
               justifyContent: "center",
               padding: "20px",
-              height: "120px",
+              width: "140px", // ✅ Reduced width
+              height: "140px", // ✅ Increased height slightly
               transformStyle: "preserve-3d",
               transition: "transform 0.8s",
             }}
           >
             <img
               src={logo}
-              alt={`Client Logo ${index + 1}`}
+              alt={`Client ${index + 1}`}
               style={{
-                maxWidth: "100%",
-                maxHeight: "70px",
+                maxWidth: "80%",
+                maxHeight: "80%",
                 objectFit: "contain",
               }}
             />
@@ -161,7 +160,7 @@ const ClientLogoSction = () => {
               style={{
                 position: "absolute",
                 width: "100%",
-                height: "120px",
+                height: "140px",
                 backfaceVisibility: "hidden",
                 background: "linear-gradient(180deg, #2ecbfa 0%, #1a3fa6 100%)",
                 color: "#fff",
