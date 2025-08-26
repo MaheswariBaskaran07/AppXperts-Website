@@ -2,7 +2,6 @@ import React from "react";
 import logo from "../assets/images/AX-LOGO.png";
 import mail from "../assets/Footer/mail.png";
 import linkedIn from "../assets/Footer/linkedin-in.png";
-import location from "../assets/Footer/location_on.png";
 import call from "../assets/Footer/call.png";
 import fb from "../assets/Footer/1.png";
 import insta from "../assets/Footer/2.png";

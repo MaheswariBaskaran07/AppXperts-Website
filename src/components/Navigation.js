@@ -1,7 +1,8 @@
 
-import React from 'react';
+import React , { useState } from 'react';
 import logo from "../assets/images/AX-LOGO.png";
 import "../App.css";
+import BookNowPopup from './BookNowPopup';
 
 const navItems = [
   { name: "Home", link: "/" },
@@ -16,6 +17,7 @@ const navItems = [
 const Navigation = () => {
   // Get current path for highlighting
   const currentPath = window.location.pathname;
+   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav style={{
@@ -72,7 +74,8 @@ const Navigation = () => {
           );
         })}
       </ul>
-      <a href="#book" style={{
+      <button 
+       style={{
         background: 'linear-gradient(180deg, #1a3fa6 60%, #2ecbfa 100%)',
         color: '#fff',
         padding: '10px 28px',
@@ -82,9 +85,14 @@ const Navigation = () => {
         textDecoration: 'none',
         boxShadow: '0 2px 8px rgba(26,63,166,0.08)',
         transition: 'background 0.2s',
-      }}>
+        border: "none",
+      }}
+      onClick={() => setIsOpen(true)}
+      >
         Book Now
-      </a>
+      </button>
+          
+      <BookNowPopup open={isOpen} setOpen={setIsOpen} />
     </nav>
   );
 };
