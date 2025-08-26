@@ -1,7 +1,7 @@
 import React from "react";
 import Blog from "../../assets/Home/Blog.png";
 import mindGate from "../../assets/Home/Group 389.png";
-
+import erp from "../../assets/Home/erp.png"
 const testimonials = [
   {
     company: "Mindgate Solutions",
@@ -10,10 +10,10 @@ const testimonials = [
     logo: mindGate
   },
   {
-    company: "Mindgate Solutions",
-    text: "AppXperts provided skilled professionals who integrated smoothly with our team, ensuring project success with reliability and expertise.",
-    author: "Vaidevi | Manager",
-    logo: mindGate
+    company: "ERP Solutions",
+    text: "AppXperts delivered talented professionals who seamlessly aligned with our workflows, bringing consistency, expertise, and dedication to achieve project success.",
+    author: "Dennis | Founder",
+    logo: erp
   }
 ];
 

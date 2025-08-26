@@ -104,25 +104,25 @@ const Footer = () => {
                 }}
               >
                 <li>
-                  <a href="#" style={{ color: "#1a3fa6", textDecoration: "none" }}>Home</a>
+                  <a href="/" style={{ color: "#1a3fa6", textDecoration: "none" }}>Home</a>
                 </li>
                 <li>
-                  <a href="#" style={{ color: "#1a3fa6", textDecoration: "none" }}>About</a>
+                  <a href="/about" style={{ color: "#1a3fa6", textDecoration: "none" }}>About</a>
                 </li>
                 <li>
-                  <a href="#" style={{ color: "#1a3fa6", textDecoration: "none" }}>Services</a>
+                  <a href="/services" style={{ color: "#1a3fa6", textDecoration: "none" }}>Services</a>
                 </li>
                 <li>
-                  <a href="#" style={{ color: "#1a3fa6", textDecoration: "none" }}>Products</a>
+                  <a href="/products" style={{ color: "#1a3fa6", textDecoration: "none" }}>Products</a>
                 </li>
                 <li>
-                  <a href="#" style={{ color: "#1a3fa6", textDecoration: "none" }}>Clients</a>
+                  <a href="/clients" style={{ color: "#1a3fa6", textDecoration: "none" }}>Clients</a>
                 </li>
                   <li>
-                  <a href="#" style={{ color: "#1a3fa6", textDecoration: "none" }}>Career</a>
+                  <a href="/career" style={{ color: "#1a3fa6", textDecoration: "none" }}>Career</a>
                 </li>
                 <li>
-                  <a href="#" style={{ color: "#1a3fa6", textDecoration: "none" }}>Contact Us</a>
+                  <a href="/contact" style={{ color: "#1a3fa6", textDecoration: "none" }}>Contact Us</a>
                 </li>
               </ul>
             
@@ -141,13 +141,13 @@ const Footer = () => {
                 <span style={{ fontWeight: 400, color: '#1a3fa6' }}>India</span>
               </div>
               <div style={{ color: '#222', marginBottom: 4, marginLeft: 28 }}>+91 88255 28905</div>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: 8, marginLeft: 0 }}>
+              {/* <div style={{ display: 'flex', alignItems: 'flex-start', gap: 8, marginLeft: 0 }}>
                 <img src={location} alt="location" style={{ width: 20, marginTop: 2 }} />
                 <span style={{ color: '#555' }}>
                   No 32, 2nd Floor, Swathika Flats,<br />
                   Rukmani Nagar, Perumbakkam, Chennai - 600100
                 </span>
-              </div>
+              </div> */}
             </div>
             {/* Singapore */}
             <div style={{ minWidth: 180, flex: 1 }}>
@@ -191,10 +191,33 @@ const Footer = () => {
       >
         <div>© 2025 AppXperts. All rights reserved.</div>
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-       <a href="#" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}><img src={fb} alt="fb" style={{ width: 40, height: 40 }} /></a>
-              <a href="#" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}><img src={insta} alt="insta" style={{ width: 40, height: 40 }} /></a>
-              <a href="#" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}><img src={linkedIn} alt="linkedin" style={{ width: 18, height: 18 }} /></a>
-     
+      <a 
+  href="https://www.facebook.com/AppXes" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}
+>
+  <img src={fb} alt="fb" style={{ width: 40, height: 40 }} />
+</a>
+
+<a 
+  href="https://www.instagram.com/appxperts.solutions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}
+>
+  <img src={insta} alt="insta" style={{ width: 40, height: 40 }} />
+</a>
+
+<a 
+  href="https://www.linkedin.com/company/appxperts-enterprise-solutions/" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}
+>
+  <img src={linkedIn} alt="linkedin" style={{ width: 18, height: 18 }} />
+</a>
+
         </div>
         <a
           href="#top"
