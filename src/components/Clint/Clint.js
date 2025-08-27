@@ -2,12 +2,12 @@ import React from "react";
 import ClintBanner from "../../assets/Client/OurClientsBanner.png";
 
 // Example logo imports (add your logos inside assets/Client/Logos folder)
-import Logo1 from "../../assets/images/gallery/gallery-1-1.jpg";
-import Logo2 from "../../assets/images/gallery/gallery-1-10.jpg";
-import Logo3 from "../../assets/images/gallery/gallery-1-2.jpg";
-import Logo4 from "../../assets/images/gallery/gallery-1-3.jpg";
-import Logo5 from "../../assets/images/gallery/gallery-1-4.jpg";
-import Logo6 from "../../assets/images/gallery/gallery-1-5.jpg";
+import Logo1 from "../../assets/Client/Clint-Logos/Logo 1.png";
+import Logo2 from "../../assets/Client/Clint-Logos/Logo 2.png";
+import Logo3 from "../../assets/Client/Clint-Logos/Logo 3.png";
+import Logo4 from "../../assets/Client/Clint-Logos/Logo 4.png";
+import Logo5 from "../../assets/Client/Clint-Logos/Logo 5.png";
+import Logo6 from "../../assets/Client/Clint-Logos/Logo 6.png";
 
 const Clients = () => {
   return (
@@ -37,7 +37,7 @@ const Clients = () => {
           width: "100%",
           height: "120%", // top half overlay
           background:
-          "radial-gradient(circle at top center, rgba(167, 195, 253, 0.8) 0%, rgba(207, 226, 249, 0.84) 60%, rgba(255, 255, 255, 1) 100%)",
+            "radial-gradient(circle at top center, rgba(167, 195, 253, 0.8) 0%, rgba(207, 226, 249, 0.84) 60%, rgba(255, 255, 255, 1) 100%)",
           pointerEvents: "none",
           zIndex: 2, // make sure it's above the image
         }}
@@ -52,7 +52,7 @@ const Clients = () => {
           alignItems: "center",
           justifyContent: "center",
           overflow: "hidden",
-          marginTop: "-110px", // move more upwards 
+          marginTop: "-110px", // move more upwards
           zIndex: 3,
         }}
       >
@@ -64,10 +64,10 @@ const Clients = () => {
             height: "100%",
             objectFit: "cover", // fills but maintains ratio
             objectPosition: "center", // 👈 balanced top & bottom
-
           }}
         />
 
+        {/* Floating Logos */}
         {/* Floating Logos */}
         <div
           style={{
@@ -83,44 +83,83 @@ const Clients = () => {
           }}
         >
           {[Logo1, Logo2, Logo3].map((logo, index) => (
-            <img
+            <div
               key={index}
-              src={logo}
-              alt={`Floating Logo ${index}`}
               style={{
                 position: "absolute",
-                width: "70px",
-                height: "70px",
-                borderRadius: "50%",
-                objectFit: "cover",
-                opacity: 0.6,
+                top: `${10 + index * 12}%`,
+                left: `${5 + index * 8}%`,
                 animation: `floatAnimX${index} ${
                   8 + index * 3
                 }s ease-in-out infinite`,
-                top: `${10 + index * 12}%`, // keep at top side
-                left: `${5 + index * 8}%`, // cluster top-left
               }}
-            />
+            >
+              <div
+                style={{
+                  width: "90px",
+                  height: "90px",
+                  borderRadius: "50%",
+                  background:
+                    "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(173,216,230,0.5) 40%, rgba(135,206,235,0.3) 70%, rgba(173,216,230,0.1) 100%)",
+                  boxShadow:
+                    "inset -5px -5px 15px rgba(255,255,255,0.6), 0 0 15px rgba(135,206,250,0.5)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  overflow: "hidden",
+                }}
+              >
+                <img
+                  src={logo}
+                  alt={`Floating Logo ${index}`}
+                  style={{
+                    width: "60%",
+                    height: "60%",
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
+            </div>
           ))}
+
           {[Logo4, Logo5, Logo6].map((logo, index) => (
-            <img
-              key={index}
-              src={logo}
-              alt={`Floating Logo ${index}`}
+            <div
+              key={index + 3}
               style={{
                 position: "absolute",
-                width: "70px",
-                height: "70px",
-                borderRadius: "50%",
-                objectFit: "cover",
-                opacity: 0.6,
+                top: `${15 + index * 10}%`,
+                right: `${5 + index * 8}%`,
                 animation: `floatAnimX${index + 3} ${
                   9 + index * 3
                 }s ease-in-out infinite`,
-                top: `${15 + index * 10}%`, // top region only
-                right: `${5 + index * 8}%`, // cluster top-right
               }}
-            />
+            >
+              <div
+                style={{
+                  width: "90px",
+                  height: "90px",
+                  borderRadius: "50%",
+                  background:
+                    "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(173,216,230,0.5) 40%, rgba(135,206,235,0.3) 70%, rgba(173,216,230,0.1) 100%)",
+                  boxShadow:
+                    "inset -5px -5px 15px rgba(255,255,255,0.6), 0 0 15px rgba(135,206,250,0.5)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  overflow: "hidden",
+                }}
+              >
+                <img
+                  src={logo}
+                  alt={`Floating Logo ${index + 3}`}
+                  style={{
+                    width: "60%",
+                    height: "60%",
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
+            </div>
           ))}
         </div>
 
