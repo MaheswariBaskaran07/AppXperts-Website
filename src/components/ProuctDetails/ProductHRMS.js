@@ -1,7 +1,7 @@
 import React from "react";
-import ERP from '../../assets/ProductDetails/ERP.png'
+import HRMS from '../../assets/ProductDetails/HRMS.png'
 
-const ProductDetails = () => {
+const ProductHRMS = () => {
   return (
     <div
       style={{
@@ -27,7 +27,7 @@ const ProductDetails = () => {
             lineHeight: "1.3",
           }}
         >
-          ERP – Enterprise <br /> Resource Planning
+          HRMS – Human Resource <br /> Management System
         </h2>
         <p
           style={{
@@ -37,7 +37,7 @@ const ProductDetails = () => {
             marginBottom: "10px",
           }}
         >
-          Streamline Your Business with Smart ERP Solutions
+          Streamline HR Operations with Smarter HRMS Solutions
         </p>
         <p
           style={{
@@ -47,11 +47,11 @@ const ProductDetails = () => {
             marginBottom: "20px",
           }}
         >
-          Our ERP system is designed to bring all your core business operations
-          under one intelligent platform – from inventory and finance to
-          operations and reporting. With real-time data insights and
-          customization, you can cut down manual work, reduce errors, and make
-          faster, more informed decisions.
+          Our HRMS software is designed to bring all your human resource functions under one
+          intelligent platform – from recruitment and onboarding to payroll, attendance,
+          performance management, and compliance. With automation and real-time insights,
+          you can reduce manual work, improve employee satisfaction, and make data-driven
+          workforce decisions.
         </p>
         <a
           href="#"
@@ -66,7 +66,7 @@ const ProductDetails = () => {
         </a>
       </div>
 
-      {/* Right Side - Two Image Placeholders */}
+      {/* Right Side - Image */}
       <div
         style={{
           flex: 1,
@@ -75,12 +75,12 @@ const ProductDetails = () => {
         }}
       >
         <img
-          src={ERP}   // 👈 replace with your image path or imported image
-          alt="ERP"
+          src={HRMS}
+          alt="HRMS"
           style={{
-            height: "420px",      // was 200 + 20 gap + 200 → adjust as you like
+            height: "420px",
             width: "100%",
-            objectFit: "cover",   // keeps aspect ratio while covering
+            objectFit: "cover",
             borderRadius: "12px",
           }}
         />
@@ -89,4 +89,4 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails;
+export default ProductHRMS;

@@ -1,7 +1,7 @@
 import React from "react";
-import ERP from '../../assets/ProductDetails/ERP.png'
+import CRM from '../../assets/ProductDetails/CRM.png'
 
-const ProductDetails = () => {
+const ProductCRM = () => {
   return (
     <div
       style={{
@@ -27,7 +27,7 @@ const ProductDetails = () => {
             lineHeight: "1.3",
           }}
         >
-          ERP – Enterprise <br /> Resource Planning
+          CRM – Customer <br /> Relationship Management
         </h2>
         <p
           style={{
@@ -37,7 +37,7 @@ const ProductDetails = () => {
             marginBottom: "10px",
           }}
         >
-          Streamline Your Business with Smart ERP Solutions
+         Grow Customer Loyalty with Smarter CRM Solutions
         </p>
         <p
           style={{
@@ -47,11 +47,7 @@ const ProductDetails = () => {
             marginBottom: "20px",
           }}
         >
-          Our ERP system is designed to bring all your core business operations
-          under one intelligent platform – from inventory and finance to
-          operations and reporting. With real-time data insights and
-          customization, you can cut down manual work, reduce errors, and make
-          faster, more informed decisions.
+          Our CRM system is designed to centralize all your customer interactions and relationship management in one intelligent platform – from lead tracking and sales pipelines to customer support and engagement. With real-time insights and automation, you can improve communication, boost sales efficiency, and build stronger, long-lasting customer relationships.
         </p>
         <a
           href="#"
@@ -75,8 +71,8 @@ const ProductDetails = () => {
         }}
       >
         <img
-          src={ERP}   // 👈 replace with your image path or imported image
-          alt="ERP"
+          src={CRM}   // 👈 replace with your image path or imported image
+          alt="CRM"
           style={{
             height: "420px",      // was 200 + 20 gap + 200 → adjust as you like
             width: "100%",
@@ -89,4 +85,4 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails;
+export default ProductCRM;

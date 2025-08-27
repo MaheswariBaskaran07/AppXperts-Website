@@ -1,7 +1,7 @@
 import React from "react";
-import ERP from '../../assets/ProductDetails/ERP.png'
+import Ecommerce from "../../assets/ProductDetails/E-commerce.png";
 
-const ProductDetails = () => {
+const ProductEcommerce = () => {
   return (
     <div
       style={{
@@ -27,7 +27,7 @@ const ProductDetails = () => {
             lineHeight: "1.3",
           }}
         >
-          ERP – Enterprise <br /> Resource Planning
+          Ecommerce – Smart <br /> Online Store Management
         </h2>
         <p
           style={{
@@ -37,7 +37,7 @@ const ProductDetails = () => {
             marginBottom: "10px",
           }}
         >
-          Streamline Your Business with Smart ERP Solutions
+          Streamline Your Online Sales with Intelligent Ecommerce Solutions
         </p>
         <p
           style={{
@@ -47,11 +47,11 @@ const ProductDetails = () => {
             marginBottom: "20px",
           }}
         >
-          Our ERP system is designed to bring all your core business operations
-          under one intelligent platform – from inventory and finance to
-          operations and reporting. With real-time data insights and
-          customization, you can cut down manual work, reduce errors, and make
-          faster, more informed decisions.
+          Our Ecommerce system is designed to give you complete control over your
+          online store – from product listings and inventory to secure payments
+          and customer orders. With real-time analytics, integrated shipping, and
+          customizable storefronts, you can create seamless shopping experiences,
+          boost conversions, and scale your business effortlessly.
         </p>
         <a
           href="#"
@@ -66,7 +66,7 @@ const ProductDetails = () => {
         </a>
       </div>
 
-      {/* Right Side - Two Image Placeholders */}
+      {/* Right Side - Image */}
       <div
         style={{
           flex: 1,
@@ -75,12 +75,12 @@ const ProductDetails = () => {
         }}
       >
         <img
-          src={ERP}   // 👈 replace with your image path or imported image
-          alt="ERP"
+          src={Ecommerce}
+          alt="Ecommerce"
           style={{
-            height: "420px",      // was 200 + 20 gap + 200 → adjust as you like
+            height: "420px",
             width: "100%",
-            objectFit: "cover",   // keeps aspect ratio while covering
+            objectFit: "cover",
             borderRadius: "12px",
           }}
         />
@@ -89,4 +89,4 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails;
+export default ProductEcommerce;

@@ -5,15 +5,15 @@ import software from "../../assets/Product/Frame 1000009024.png";
 import { Link } from "react-router-dom";
 
 const products = [
-  { title: "ERP Softwares", desc: "Streamline enterprise operations." },
-  { title: "CRM Softwares", desc: "Customized tools to boost your sales pipeline, improve communication, and drive stronger customer loyalty." },
-  { title: "Hospital Management", desc: "All-in-one platform for inventory, finance, and operations helping you make confident, data-driven decisions." },
-  { title: "E-Commerce Platform", desc: "Boost online sales." },
-  { title: "HRMS Softwares", desc: "Simplify HR and payroll." },
-  { title: "School Management", desc: "Manage admissions & academics." },
+  { title: "ERP Softwares", desc: "Streamline enterprise operations.", link: "/products/product-details-erp" },
+  { title: "CRM Softwares", desc: "Customized tools to boost your sales pipeline, improve communication, and drive stronger customer loyalty.", link: "/products/product-details-crm" },
+  { title: "Hospital Management", desc: "All-in-one platform for inventory, finance, and operations helping you make confident, data-driven decisions.", link: "/products/product-details-hm" },
+  { title: "E-Commerce Platform", desc: "Boost online sales.", link: "/products/product-details-ecommerce" },
+  { title: "HRMS Softwares", desc: "Simplify HR and payroll.", link: "/products/product-details-hrms" },
+  { title: "School Management", desc: "Manage admissions & academics.", link: "/products/product-details-school" },
 ];
 
-const Card = ({ title, desc, index, activeIndex, setActiveIndex }) => {
+const Card = ({ title, desc, index, activeIndex, setActiveIndex ,link}) => {
   const isFlipped = activeIndex === index;
 
   return (
@@ -39,7 +39,7 @@ const Card = ({ title, desc, index, activeIndex, setActiveIndex }) => {
             {title}
           </div>
           {/* Read More bottom left */}
-          <Link to="/products/product-details">
+          <Link to={link}>
             <span
               style={{
                 color: "#888",
@@ -157,6 +157,7 @@ const Softwares = () => {
             setActiveIndex={setActiveIndex}
             title={p.title}
             desc={p.desc}
+            link={p.link}
           />
         ))}
       </div>
