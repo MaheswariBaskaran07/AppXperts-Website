@@ -1,7 +1,7 @@
 import React from "react";
-import ERP from '../../assets/ProductDetails/ERP.png'
+import School from '../../assets/ProductDetails/School.png'
 
-const ProductDetails = () => {
+const ProductSchool = () => {
   return (
     <div
       style={{
@@ -27,7 +27,7 @@ const ProductDetails = () => {
             lineHeight: "1.3",
           }}
         >
-          ERP – Enterprise <br /> Resource Planning
+          School Management <br /> Made Smarter
         </h2>
         <p
           style={{
@@ -37,7 +37,7 @@ const ProductDetails = () => {
             marginBottom: "10px",
           }}
         >
-          Streamline Your Business with Smart ERP Solutions
+          Simplify Education with Intelligent School ERP
         </p>
         <p
           style={{
@@ -47,11 +47,12 @@ const ProductDetails = () => {
             marginBottom: "20px",
           }}
         >
-          Our ERP system is designed to bring all your core business operations
-          under one intelligent platform – from inventory and finance to
-          operations and reporting. With real-time data insights and
-          customization, you can cut down manual work, reduce errors, and make
-          faster, more informed decisions.
+          Our School Management System is designed to bring all academic and 
+          administrative operations into one platform – from student admissions, 
+          attendance, timetable, and examinations to staff management and parent 
+          communication. With real-time data, online fee collection, and reporting, 
+          schools can reduce manual tasks, improve efficiency, and focus more on 
+          quality education.  
         </p>
         <a
           href="#"
@@ -66,7 +67,7 @@ const ProductDetails = () => {
         </a>
       </div>
 
-      {/* Right Side - Two Image Placeholders */}
+      {/* Right Side - Image */}
       <div
         style={{
           flex: 1,
@@ -75,12 +76,12 @@ const ProductDetails = () => {
         }}
       >
         <img
-          src={ERP}   // 👈 replace with your image path or imported image
-          alt="ERP"
+          src={School}   // 👈 School Management image
+          alt="School Management"
           style={{
-            height: "420px",      // was 200 + 20 gap + 200 → adjust as you like
+            height: "420px",
             width: "100%",
-            objectFit: "cover",   // keeps aspect ratio while covering
+            objectFit: "cover",
             borderRadius: "12px",
           }}
         />
@@ -89,4 +90,4 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails;
+export default ProductSchool;

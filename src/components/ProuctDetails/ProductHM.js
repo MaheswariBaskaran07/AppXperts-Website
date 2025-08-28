@@ -1,7 +1,7 @@
 import React from "react";
-import ERP from '../../assets/ProductDetails/ERP.png'
+import HM from '../../assets/ProductDetails/Hospital.png'
 
-const ProductDetails = () => {
+const ProductHM = () => {
   return (
     <div
       style={{
@@ -27,7 +27,7 @@ const ProductDetails = () => {
             lineHeight: "1.3",
           }}
         >
-          ERP – Enterprise <br /> Resource Planning
+          HMS – Hospital <br /> Management System
         </h2>
         <p
           style={{
@@ -37,7 +37,7 @@ const ProductDetails = () => {
             marginBottom: "10px",
           }}
         >
-          Streamline Your Business with Smart ERP Solutions
+          Streamline Healthcare Operations with Smart HMS Solutions
         </p>
         <p
           style={{
@@ -47,11 +47,13 @@ const ProductDetails = () => {
             marginBottom: "20px",
           }}
         >
-          Our ERP system is designed to bring all your core business operations
-          under one intelligent platform – from inventory and finance to
-          operations and reporting. With real-time data insights and
-          customization, you can cut down manual work, reduce errors, and make
-          faster, more informed decisions.
+          Our Hospital Management System is designed to bring all your
+          healthcare operations into one intelligent platform – from patient
+          registration, doctor scheduling, and electronic medical records to
+          billing, pharmacy, and laboratory management. With real-time insights
+          and automation, hospitals can improve patient care, reduce
+          administrative workload, minimize errors, and optimize overall
+          efficiency.
         </p>
         <a
           href="#"
@@ -66,7 +68,7 @@ const ProductDetails = () => {
         </a>
       </div>
 
-      {/* Right Side - Two Image Placeholders */}
+      {/* Right Side - Image */}
       <div
         style={{
           flex: 1,
@@ -75,12 +77,12 @@ const ProductDetails = () => {
         }}
       >
         <img
-          src={ERP}   // 👈 replace with your image path or imported image
-          alt="ERP"
+          src={HM}   // 👈 replace with your image path or imported image
+          alt="Hospital Management"
           style={{
-            height: "420px",      // was 200 + 20 gap + 200 → adjust as you like
+            height: "420px",
             width: "100%",
-            objectFit: "cover",   // keeps aspect ratio while covering
+            objectFit: "cover",
             borderRadius: "12px",
           }}
         />
@@ -89,4 +91,4 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails;
+export default ProductHM;

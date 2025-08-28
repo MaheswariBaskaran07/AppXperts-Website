@@ -11,20 +11,25 @@ import FrontEndDev from '../assets/About/FrontEndDev.png'
 import Keerthana from '../assets/About/Keerthana.png'
 import Karthi from '../assets/About/Karthi.png'
 import Prakash from '../assets/About/Prakash.png'
+import Rabi from '../assets/About/Rabi.png'
+import Karthika from '../assets/About/Karthika.png'
+import HR from '../assets/About/HR.png'
 // import gsap from "gsap";
 
 
 const About = () => {
   const slides = [
     { id: 1, img: CEO, title: "Mohamed Aasif", description: "CEO" },
-    { id: 2, img: '', title: "Mohamed Rabi", description: "" },
+    { id: 2, img: Rabi, title: "Mohamed Rabi", description: "Backend Developer" },
     { id: 3, img: BackEndDev, title: "Rajeswari", description: "Backend Developer" },
-    { id: 4, img: Flutter, title: "Nagajothika",description:"Flutter Developer" },
-    { id: 5, img: FrontEndDev, title: "Maheswari", description: "Frontend Developer" },
-    { id: 6, img: UIUX, title: "Merin Albert",description:"UI/UX Designer" },
-    { id: 7, img: Keerthana, title: "Keerthana", description: "Frontend Developer" },
-    { id: 8, img: Karthi, title: "Karthikeyan", description: "Frontend Developer" },
-    { id: 9, img: Prakash, title: "Prakash",description:"QA Engineer" },
+    { id: 4, img: HR, title: "Sunitha", description: "Human Resource Manager" },
+    { id: 5, img: Flutter, title: "Nagajothika",description:"Flutter Developer" },
+    { id: 6, img: FrontEndDev, title: "Maheswari", description: "Frontend Developer" },
+    { id: 7, img: UIUX, title: "Merin Albert",description:"UI/UX Designer" },
+    { id: 8, img: Keerthana, title: "Keerthana", description: "Frontend Developer" },
+    { id: 9, img: Karthi, title: "Karthikeyan", description: "Frontend Developer" },
+    { id: 10, img: Prakash, title: "Prakash", description: "QA Engineer" },
+    { id: 11, img: Karthika, title: "Karthika",description:"UI/UX Designer" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import BookNowPopup from "../BookNowPopup";
+
 
 const CallToAction = () => {
 
     const [isHovered, setIsHovered] = useState(false);
+     const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div
@@ -58,9 +61,12 @@ const CallToAction = () => {
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => setIsOpen(true)}
     >
       Book a meeting
     </button>
+    
+    <BookNowPopup open={isOpen} setOpen={setIsOpen} />
     </div>
   );
 };
