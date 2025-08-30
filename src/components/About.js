@@ -557,10 +557,22 @@ const About = () => {
           padding: "4px 12px",
           marginBottom: "10px",
           marginLeft: "-400px",
-          transform: "rotate(-20deg) translateY(30px)",
+          animation: "wiggleTilt 2.2s ease-in-out infinite",
         }}
       >
         Our Team
+        <style>
+          {`
+            @keyframes wiggleTilt {
+              0% { transform: rotate(-20deg) translateY(30px) scale(1); }
+              20% { transform: rotate(-10deg) translateY(25px) scale(1.08); }
+              40% { transform: rotate(-25deg) translateY(35px) scale(0.97); }
+              60% { transform: rotate(-15deg) translateY(28px) scale(1.04); }
+              80% { transform: rotate(-22deg) translateY(32px) scale(1.01); }
+              100% { transform: rotate(-20deg) translateY(30px) scale(1); }
+            }
+          `}
+        </style>
       </span>
 
       {/* Heading */}

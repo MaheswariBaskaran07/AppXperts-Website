@@ -57,12 +57,7 @@ const ProductHM = () => {
         </p>
         <a
           href="#"
-          style={{
-            fontSize: "18px",
-            color: "#007bff",
-            fontWeight: "500",
-            textDecoration: "none",
-          }}
+         className="submit-button"
         >
           Book a Demo Today →
         </a>

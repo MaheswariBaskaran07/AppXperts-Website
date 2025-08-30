@@ -1,4 +1,3 @@
-import React from "react";
 import img from "../../assets/Contact/Frame 1000009048.png";
 
 const ContactForm = () => {
@@ -28,7 +27,7 @@ const ContactForm = () => {
           <input type="text" placeholder="Phone Number" style={inputStyle} />
           <input type="text" placeholder="Subject" style={inputStyle} />
           <textarea placeholder="Message" rows={4} style={{ ...inputStyle, resize: "none" }} />
-          <button type="submit" style={buttonStyle}>Submit</button>
+          <button type="submit" style={{ width: 200 }} className="submit-button">Submit</button>
         </form>
       </div>
 
@@ -43,20 +42,6 @@ const inputStyle = {
   borderRadius: "8px",
   border: "1px solid #d1d5db",
   fontSize: "14px",
-};
-
-const buttonStyle = {
-      background: 'linear-gradient(180deg, #1a3fa6 60%, #2ecbfa 100%)',
-        color: '#fff',
-        padding: '10px 28px',
-        borderRadius: 22,
-        fontWeight: 600,
-        fontSize: 15,
-        width:200,
-        textDecoration: 'none',
-        border:"1px solid #1a3fa6",
-        transition: 'background 0.2s',
-  cursor: "pointer",
 };
 
 export default ContactForm;
