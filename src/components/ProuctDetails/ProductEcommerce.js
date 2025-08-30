@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Ecommerce from "../../assets/ProductDetails/E-commerce.png";
+import BookNowPopup from "../BookNowPopup";
 
 const ProductEcommerce = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
+     <>
+   <div style={{ marginLeft: "50px" }}>
+     <button
+          className="submit-button"
+          style={{ marginTop: "16px" }}
+          onClick={() => window.location.href = "/products"}
+        >
+          Go Back
+        </button>
+    </div>
     <div
       style={{
         display: "flex",
@@ -10,9 +22,8 @@ const ProductEcommerce = () => {
         justifyContent: "space-between",
         background: "#f9f9f9",
         borderRadius: "12px",
-        padding: "40px",
         maxWidth: "1000px",
-        margin: "40px auto",
+        margin: "0 auto",
         boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
       }}
     >
@@ -54,18 +65,13 @@ const ProductEcommerce = () => {
           boost conversions, and scale your business effortlessly.
         </p>
         <a
-          href="#"
-          style={{
-            fontSize: "18px",
-            color: "#007bff",
-            fontWeight: "500",
-            textDecoration: "none",
-          }}
+             onClick={() => setIsOpen(true)}
+        className="submit-button"
         >
           Book a Demo Today →
         </a>
       </div>
-
+ <BookNowPopup open={isOpen} setOpen={setIsOpen} />
       {/* Right Side - Image */}
       <div
         style={{
@@ -86,6 +92,7 @@ const ProductEcommerce = () => {
         />
       </div>
     </div>
+    </>
   );
 };
 

@@ -56,6 +56,7 @@ const Card = ({ title, desc, index, activeIndex, setActiveIndex ,link}) => {
             </span>
           </Link>
           {/* Arrow bottom right */}
+        <Link to={link}>
           <span
             style={{
               display: "inline-flex",
@@ -97,6 +98,7 @@ const Card = ({ title, desc, index, activeIndex, setActiveIndex ,link}) => {
               />
             </svg>
           </span>
+          </Link>
           <img
             src={eclipse}
             alt="eclipse"

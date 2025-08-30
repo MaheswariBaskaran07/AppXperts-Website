@@ -42,23 +42,12 @@ const BookingSection = () => {
 
       {/* Button */}
        <button
-      style={{
-        padding: "12px 28px",
-        background: isHovered
-          ? "linear-gradient(90deg, #1a3fa6 0%, #2ecbfa 100%)"
-          : "linear-gradient(180deg, #2ecbfa 0%, #1a3fa6 100%)",
-        color: "#fff",
-        fontSize: "18px",
-        fontWeight: "500",
-        border: "none",
-        borderRadius: "25px",
-        cursor: "pointer",
-        transition: "all 0.3s ease",
-      }}
+      className="submit-button"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+       onClick={() => window.location.href = "/contact"}
     >
-      Book a meeting
+      Contact Us Now
     </button>
     </div>
   );

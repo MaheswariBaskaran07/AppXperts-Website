@@ -75,18 +75,7 @@ const Navigation = () => {
         })}
       </ul>
       <button 
-       style={{
-        background: 'linear-gradient(180deg, #1a3fa6 60%, #2ecbfa 100%)',
-        color: '#fff',
-        padding: '10px 28px',
-        borderRadius: 22,
-        fontWeight: 600,
-        fontSize: 15,
-        textDecoration: 'none',
-        boxShadow: '0 2px 8px rgba(26,63,166,0.08)',
-        transition: 'background 0.2s',
-        border: "none",
-      }}
+     className='submit-button'
       onClick={() => setIsOpen(true)}
       >
         Book Now

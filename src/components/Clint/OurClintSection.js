@@ -35,33 +35,33 @@ import Testimonials from "./Testimonial";
 const ClientLogoSction = () => {
   // Put all logos in an array for easier rendering
   const clientLogos = [
-    Logo1,
-    Logo2,
-    Logo3,
-    Logo4,
-    Logo5,
-    Logo6,
-    Logo7,
-    Logo8,
-    Logo9,
-    Logo10,
-    Logo11,
-    Logo12,
-    Logo13,
-    Logo14,
-    Logo15,
-    Logo16,
-    Logo17,
-    Logo18,
-    Logo19,
-    Logo20,
-    Logo21,
-    Logo22,
-    Logo23,
-    Logo24,
-    Logo25,
-    Logo26,
-    Logo27,
+    { logo: Logo1, name: "Halal India" },
+    { logo: Logo2, name: "TSL Pharma" },
+    { logo: Logo3, name: "JPB" },
+    { logo: Logo4, name: "Celeste Birch" },
+    { logo: Logo5, name: "VSB" },
+    { logo: Logo6, name: "Makan mate" },
+    { logo: Logo7, name: "Pan Seas" },
+    { logo: Logo8, name: "SKP" },
+    { logo: Logo9, name: "SG fresh " },
+    { logo: Logo10, name: "Paradise @ 64" },
+    { logo: Logo11, name: "V Supermart" },
+    { logo: Logo12, name: "Indian Restaurant" },
+    { logo: Logo13, name: "SSR" },
+    { logo: Logo14, name: "Catchyfive" },
+    { logo: Logo15, name: "Mindgate" },
+    { logo: Logo16, name: "Jenny Engineering Services" },
+    { logo: Logo17, name: "Tony & Guy" },
+    { logo: Logo18, name: "Bro Go Burgers" },
+    { logo: Logo19, name: "Geniso" },
+    { logo: Logo20, name: "TSL" },
+    { logo: Logo21, name: "MGR" },
+    { logo: Logo22, name: "Sadar's" },
+    { logo: Logo23, name: "Hero" },
+    { logo: Logo24, name: "Reddot Solutions" },
+    { logo: Logo25, name: "Reddot Rebar" },
+    { logo: Logo26, name: "Reddot Skybot" },
+    { logo: Logo27, name: "Reddot Technologies" },
   ];
 
   return (
@@ -129,7 +129,7 @@ const ClientLogoSction = () => {
           gap: "24px",
         }}
       >
-        {clientLogos.map((logo, index) => (
+        {clientLogos.map((item, index) => (
           <div
             className="card"
             key={index}
@@ -148,7 +148,7 @@ const ClientLogoSction = () => {
             }}
           >
             <img
-              src={logo}
+              src={item.logo}
               alt={`Client ${index + 1}`}
               style={{
                 maxWidth: "80%",
@@ -176,7 +176,7 @@ const ClientLogoSction = () => {
                 textAlign: "center",
               }}
             >
-              Project {index + 1}
+              <p>{item.name}</p>
             </div>
           </div>
         ))}

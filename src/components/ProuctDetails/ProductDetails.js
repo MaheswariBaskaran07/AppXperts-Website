@@ -1,8 +1,21 @@
-import React from "react";
+import {useState} from "react";
 import ERP from '../../assets/ProductDetails/ERP.png'
+import BookNowPopup from "../BookNowPopup";
 
 const ProductDetails = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
+     <>
+   <div style={{ marginLeft: "50px" }}>
+     <button
+          className="submit-button"
+          style={{ marginTop: "16px" }}
+          onClick={() => window.location.href = "/products"}
+        >
+          Go Back
+        </button>
+    </div>
+
     <div
       style={{
         display: "flex",
@@ -10,9 +23,8 @@ const ProductDetails = () => {
         justifyContent: "space-between",
         background: "#f9f9f9",
         borderRadius: "12px",
-        padding: "40px",
         maxWidth: "1000px",
-        margin: "40px auto",
+        margin: "0 auto",
         boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
       }}
     >
@@ -37,7 +49,7 @@ const ProductDetails = () => {
             marginBottom: "10px",
           }}
         >
-          Streamline Your Business with Smart ERP Solutions
+          Streamline Your Business with Smart Celeste Birch
         </p>
         <p
           style={{
@@ -54,18 +66,13 @@ const ProductDetails = () => {
           faster, more informed decisions.
         </p>
         <a
-          href="#"
-          style={{
-            fontSize: "18px",
-            color: "#007bff",
-            fontWeight: "500",
-            textDecoration: "none",
-          }}
+           onClick={() => setIsOpen(true)}
+        className="submit-button"
         >
           Book a Demo Today →
         </a>
       </div>
-
+ <BookNowPopup open={isOpen} setOpen={setIsOpen} />
       {/* Right Side - Two Image Placeholders */}
       <div
         style={{
@@ -86,6 +93,7 @@ const ProductDetails = () => {
         />
       </div>
     </div>
+    </>
   );
 };
 

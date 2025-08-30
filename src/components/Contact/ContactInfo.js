@@ -76,7 +76,7 @@ const ContactInfo = () => {
               <a href="https://www.instagram.com/appxperts.solutions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
   target="_blank"  style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}><img src={insta} alt="insta" style={{ width: 40, height: 40 }} /></a>
               <a   href="https://www.linkedin.com/company/appxperts-enterprise-solutions/" 
-  target="_blank" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}><img src={linkedIn} alt="linkedin" style={{ width: 18, height: 18 }} /></a>
+  target="_blank" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}><img src={linkedIn} alt="linkedin" style={{ width: 20, height: 20 }} /></a>
             </div>
           </div>
           {/* Right: Dubai & Singapore */}

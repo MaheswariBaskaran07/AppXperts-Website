@@ -10,7 +10,7 @@ const Booking = () => {
       <div className="booking-content">
         <h2>Let’s build something great.</h2>
         <p>Your idea, our craft.</p>
-        <button onClick={() => setIsOpen(true)} className="booking-button">
+        <button onClick={() => setIsOpen(true)} className="submit-button">
           Book a meeting →
         </button>
       </div>
