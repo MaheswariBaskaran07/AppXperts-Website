@@ -45,8 +45,9 @@ const BookingSection = () => {
       className="submit-button"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+       onClick={() => window.location.href = "/contact"}
     >
-      Book a meeting
+      Contact Us Now
     </button>
     </div>
   );

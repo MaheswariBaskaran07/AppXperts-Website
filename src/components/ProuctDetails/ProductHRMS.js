@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import HRMS from '../../assets/ProductDetails/HRMS.png'
+import BookNowPopup from "../BookNowPopup";
 
 const ProductHRMS = () => {
+   const [isOpen, setIsOpen] = useState(false);
   return (
+     <>
+   <div style={{ marginLeft: "50px" }}>
+     <button
+          className="submit-button"
+          style={{ marginTop: "16px" }}
+          onClick={() => window.location.href = "/products"}
+        >
+          Go Back
+        </button>
+    </div>
+   
     <div
       style={{
         display: "flex",
@@ -10,9 +23,8 @@ const ProductHRMS = () => {
         justifyContent: "space-between",
         background: "#f9f9f9",
         borderRadius: "12px",
-        padding: "40px",
         maxWidth: "1000px",
-        margin: "40px auto",
+        margin: "0 auto",
         boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
       }}
     >
@@ -54,13 +66,13 @@ const ProductHRMS = () => {
           workforce decisions.
         </p>
         <a
-          href="#"
+          onClick={() => setIsOpen(true)}
          className="submit-button"
         >
           Book a Demo Today →
         </a>
       </div>
-
+ <BookNowPopup open={isOpen} setOpen={setIsOpen} />
       {/* Right Side - Image */}
       <div
         style={{
@@ -81,6 +93,7 @@ const ProductHRMS = () => {
         />
       </div>
     </div>
+    </>
   );
 };
 
