@@ -59,7 +59,7 @@ export default function BookNowPopup({ open, setOpen }) {
 
       const data = await res.json();
       if (data.Status === true) {
-        toast.success("Booking submitted successfully ✅");
+        toast.success("Booking submitted successfully");
         setTimeout(() => {
           setOpen(false); // Close popup
           setFormData({
