@@ -7,15 +7,16 @@ import fb from "../assets/Footer/1.png";
 import insta from "../assets/Footer/2.png";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer
       style={{
-        background: "linear-gradient(90deg, #fff 0%, #b5e2f0ff 70%)",
+        background: " #c0e9f5ff",
         borderTop: "1px solid #e3e8ee",
         padding: "40px 0 0 0",
-        fontFamily: "Poppins",
+        fontFamily: "Poppins, sans-serif",
         color: "#222",
-        fontSize: 15,
+        fontSize: 16,
         marginTop: 60,
         width: "100%",
         boxSizing: "border-box",
@@ -61,7 +62,7 @@ const Footer = () => {
           <p
             style={{
               color: "#555",
-              fontSize: 14,
+              fontSize: 16,
               marginBottom: 8,
               textAlign: "justify",
               maxWidth: 220,
@@ -90,8 +91,8 @@ const Footer = () => {
           }}
         >
           <div>
-            <h4 style={{ fontSize:20, fontWeight: 400, marginBottom: 10 }}>Quick Links</h4>
-            <div style={{ display: "flex", gap: 40 }}>
+            <h4 style={{ fontSize:16, fontWeight: 400, marginBottom: 10 }}>Quick Links</h4>
+            <div style={{ display: "flex", gap: 48 }}>
               <ul
                 style={{
                   listStyle: "none",
@@ -99,7 +100,11 @@ const Footer = () => {
                   margin: 0,
                   color: "#1a3fa6",
                   fontWeight: 400,
-                  fontSize:16,
+                  fontSize: 16,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 10,
+                  minWidth: 120
                 }}
               >
                 <li>
@@ -114,24 +119,38 @@ const Footer = () => {
                 <li>
                   <a href="/products" style={{ color: "#1a3fa6", textDecoration: "none" }}>Products</a>
                 </li>
+              </ul>
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
+                  color: "#1a3fa6",
+                  fontWeight: 400,
+                  fontSize: 16,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 10,
+                  minWidth: 120
+                }}
+              >
                 <li>
                   <a href="/clients" style={{ color: "#1a3fa6", textDecoration: "none" }}>Clients</a>
                 </li>
-                  <li>
+                <li>
                   <a href="/career" style={{ color: "#1a3fa6", textDecoration: "none" }}>Career</a>
                 </li>
                 <li>
                   <a href="/contact" style={{ color: "#1a3fa6", textDecoration: "none" }}>Contact Us</a>
                 </li>
               </ul>
-            
             </div>
           </div>
         </div>
 
         {/* Right: Get in Touch - Split by Country */}
-        <div style={{ flex: 2.5, minWidth: 260 }}>
-          <h4 style={{ fontSize:20, fontWeight: 400, marginBottom: 10 }}>Get in Touch</h4>
+        <div style={{ fontFamily:"Poppins, sans-serif", flex: 2.5, minWidth: 260 }}>
+          <h4 style={{ fontSize:16, fontWeight: 400, marginBottom: 10 }}>Get in Touch</h4>
           <div style={{ display: 'flex', gap: 32, flexWrap: 'nowrap', minWidth: 540 }}>
             {/* India */}
             <div style={{ minWidth: 180, flex: 1 }}>
@@ -154,7 +173,7 @@ const Footer = () => {
                 <img src={call} alt="call" style={{ width: 20 }} />
                 <span style={{ fontWeight: 400, color: '#1a3fa6' }}>Singapore</span>
               </div>
-              <div style={{ color: '#222', marginLeft: 28 }}>+65 84399317</div>
+              <div style={{  marginLeft: 28 }}>+65 84399317</div>
             </div>
             {/* UAE - now in same row */}
             <div style={{ minWidth: 180, flex: 1 }}>
@@ -162,13 +181,13 @@ const Footer = () => {
                 <img src={call} alt="call" style={{ width: 20 }} />
                 <span style={{ fontWeight: 400, color: '#1a3fa6' }}>UAE</span>
               </div>
-              <div style={{ color: '#222', marginLeft: 28 }}>+971 508554043</div>
+              <div style={{ marginLeft: 28 }}>+971 508554043</div>
             </div>
           </div>
           {/* Common Mail */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 16 }}>
             <img src={mail} alt="mail" style={{ width: 20 }} />
-            <span style={{ color: '#222' }}>info@appxes.com</span>
+            <span>info@appxes.com</span>
           </div>
         </div>
       </div>
@@ -182,13 +201,13 @@ const Footer = () => {
           maxWidth: 1200,
           margin: "0 auto",
           padding: "18px 40px 24px 40px",
-          fontSize: 14,
+          fontSize: 16,
           color: "#888",
           flexWrap: "wrap",
           gap: 20,
         }}
       >
-        <div>© 2025 AppXperts. All rights reserved.</div>
+        <div>© {currentYear} AppXperts. All rights reserved.</div>
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
       <a 
   href="https://www.facebook.com/AppXes" 
@@ -214,25 +233,15 @@ const Footer = () => {
   rel="noopener noreferrer"
   style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}
 >
-  <img src={linkedIn} alt="linkedin" style={{ width: 18, height: 18 }} />
+  <img src={linkedIn} alt="linkedin" style={{ width: 22, height: 22 }} />
 </a>
 
         </div>
         <a
           href="#top"
-          style={{
-            background: 'linear-gradient(180deg, #1a3fa6 60%, #2ecbfa 100%)',
-            color: "#fff",
-            padding: "8px 28px",
-            borderRadius: 22,
-            fontWeight: 400,
-            fontSize: 15,
-            textDecoration: "none",
-            boxShadow: "0 2px 8px rgba(26,63,166,0.08)",
-            marginLeft: 18,
-          }}
+          className="submit-button"
         >
-          Back to Top <span style={{ fontSize: 18, marginLeft: 6 }}>↑</span>
+          Back to Top <span style={{ fontSize: 16, marginLeft: 6 }}>↑</span>
         </a>
       </div>
     </footer>

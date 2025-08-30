@@ -37,7 +37,7 @@ const ProductDetails = () => {
             marginBottom: "10px",
           }}
         >
-          Streamline Your Business with Smart ERP Solutions
+          Streamline Your Business with Smart Celeste Birch
         </p>
         <p
           style={{

@@ -47,9 +47,22 @@ export default function BookNowPopup({ open, setOpen }) {
     });
   };
 
-  // ✅ Handle form submit
+  // ✅ Handle form submit with validation
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Phone: max 13 digits, only numbers
+    const phone = formData.MobileNo;
+    if (!/^[0-9]{1,13}$/.test(phone)) {
+      toast.error("Phone number must be up to 13 digits and contain only numbers");
+      return;
+    }
+    // Email: regex validation
+    const email = formData.EmailId;
+    const emailRegex = /^[\w-.]+@[\w-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
     try {
       const res = await fetch("http://localhost:3015/api/booking/AddBooking", {
         method: "POST",
@@ -77,7 +90,7 @@ export default function BookNowPopup({ open, setOpen }) {
       }
     } catch (error) {
       console.error("Error submitting booking:", error);
-  toast.error("Server error ❌");
+      toast.error("Server error ❌");
     }
   };
 
@@ -193,7 +206,12 @@ export default function BookNowPopup({ open, setOpen }) {
                   placeholder="+1 234 567"
                   style={inputStyle}
                   value={formData.MobileNo}
-                  onChange={handleChange}
+                  onChange={e => {
+                    // Only allow numbers, max 13 digits
+                    const val = e.target.value.replace(/[^0-9]/g, "").slice(0, 13);
+                    setFormData({ ...formData, MobileNo: val });
+                  }}
+                  maxLength={13}
                   required
                 />
               </div>

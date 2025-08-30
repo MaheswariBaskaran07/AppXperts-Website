@@ -90,19 +90,7 @@ const Solutions = () => {
 
       {/* Learn More Button */}
       <div style={{ margin: '0 auto 32px auto', textAlign: 'center' }}>
-        <a href="/services" style={{
-          display: 'inline-block',
-          background: 'linear-gradient(180deg, #2ecbfa 0%, #1a3fa6 100%)',
-          color: '#fff',
-          padding: '12px 36px',
-          borderRadius: 22,
-          fontWeight: 600,
-          fontSize: 16,
-          textDecoration: 'none',
-          boxShadow: '0 2px 8px rgba(26,63,166,0.08)',
-          transition: 'background 0.2s',
-          fontFamily: 'Poppins, Arial, sans-serif'
-        }}>Learn More</a>
+        <a href="/services" className="submit-button">Learn More</a>
       </div>
       {/* Moving blue ticker */}
       <div

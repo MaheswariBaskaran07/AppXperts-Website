@@ -70,19 +70,7 @@ const Home = () => {
           At AppXperts, we blend cutting-edge technology with innovative design to build software that powers your business growth. From custom applications to enterprise solutions, we help businesses digitally transform with confidence.
         </p>
   <div style={{ display: 'flex', alignItems: 'center', gap: 18, marginBottom: 20, width: '100%' }}>
-          <a href="/about" style={{
-            background: 'linear-gradient(180deg, #1a3fa6 60%, #2ecbfa 100%)',
-
-
-            color: '#fff',
-            padding: '12px 32px',
-            borderRadius: 22,
-            fontWeight: 600,
-            fontSize: 16,
-            textDecoration: 'none',
-            boxShadow: '0 2px 8px rgba(26,63,166,0.08)',
-            transition: 'background 0.2s',
-          }}>Know More</a>
+          <a href="/about" className='submit-button'>Know More</a>
           <a href="#video" style={{
             display: 'flex',
             alignItems: 'center',

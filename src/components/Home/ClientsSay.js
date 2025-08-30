@@ -1,7 +1,8 @@
-import React from "react";
+import {useState} from "react";
 import Blog from "../../assets/Home/Blog.png";
 import mindGate from "../../assets/Home/Group 389.png";
 import erp from "../../assets/Home/erp.png"
+import BookNowPopup from "../BookNowPopup";
 const testimonials = [
   {
     company: "Mindgate Solutions",
@@ -10,7 +11,7 @@ const testimonials = [
     logo: mindGate
   },
   {
-    company: "ERP Solutions",
+    company: "Celeste Birch",
     text: "AppXperts delivered talented professionals who seamlessly aligned with our workflows, bringing consistency, expertise, and dedication to achieve project success.",
     author: "Dennis | Founder",
     logo: erp
@@ -18,8 +19,9 @@ const testimonials = [
 ];
 
 const ClientsSay = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <section
+    <><section
       style={{
         display: "flex",
         flexDirection: "column",
@@ -37,7 +39,7 @@ const ClientsSay = () => {
             fontWeight: 200,
             color: "#222",
             lineHeight: 1.2,
-               minWidth: 400,
+            minWidth: 400,
             maxWidth: 600,
             margin: 0,
             textAlign: "left"
@@ -99,8 +101,7 @@ const ClientsSay = () => {
                   objectFit: "contain",
                   background: "#f8fafc",
                   boxShadow: "0 2px 8px #1a3fa611"
-                }}
-              />
+                }} />
             </div>
           ))}
         </div>
@@ -116,11 +117,19 @@ const ClientsSay = () => {
               boxShadow: "0 4px 32px #1a3fa611",
               background: "#fff",
               padding: 8
-            }}
-          />
+            }} />
         </div>
       </div>
-    </section>
+    </section><section className="booking-section">
+        <div className="booking-content">
+          <h2>Let’s build something great.</h2>
+          <p>Your idea, our craft.</p>
+          <button onClick={() => setIsOpen(true)} className="submit-button">
+            Book a meeting →
+          </button>
+        </div>
+        <BookNowPopup open={isOpen} setOpen={setIsOpen} />
+      </section></>
   );
 };
 

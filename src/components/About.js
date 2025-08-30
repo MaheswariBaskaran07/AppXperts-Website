@@ -14,29 +14,37 @@ import Prakash from '../assets/About/Prakash.png'
 import Rabi from '../assets/About/Rabi.png'
 import Karthika from '../assets/About/Karthika.png'
 import HR from '../assets/About/HR.png'
-// import gsap from "gsap";
+import ved from "../assets/About/about.mp4";
 
 
 const About = () => {
+  const [whatWeDoVisible, setWhatWeDoVisible] = useState(false);
+  useEffect(() => {
+    setTimeout(() => setWhatWeDoVisible(true), 600);
+  }, []);
+  const [aboutBadgeVisible, setAboutBadgeVisible] = useState(false);
+  useEffect(() => {
+    setTimeout(() => setAboutBadgeVisible(true), 200);
+  }, []);
   const slides = [
     { id: 1, img: CEO, title: "Mohamed Aasif", description: "CEO" },
     { id: 2, img: Rabi, title: "Mohamed Rabi", description: "Backend Developer" },
     { id: 3, img: BackEndDev, title: "Rajeswari", description: "Backend Developer" },
-    { id: 4, img: HR, title: "Sunitha", description: "Human Resource Manager" },
-    { id: 5, img: Flutter, title: "Nagajothika",description:"Flutter Developer" },
-    { id: 6, img: FrontEndDev, title: "Maheswari", description: "Frontend Developer" },
-    { id: 7, img: UIUX, title: "Merin Albert",description:"UI/UX Designer" },
-    { id: 8, img: Keerthana, title: "Keerthana", description: "Frontend Developer" },
-    { id: 9, img: Karthi, title: "Karthikeyan", description: "Frontend Developer" },
-    { id: 10, img: Prakash, title: "Prakash", description: "QA Engineer" },
-    { id: 11, img: Karthika, title: "Karthika",description:"UI/UX Designer" },
+    { id: 4, img: Flutter, title: "Nagajothika",description:"Flutter Developer" },
+    { id: 5, img: FrontEndDev, title: "Maheswari", description: "Frontend Developer" },
+    { id: 6, img: UIUX, title: "Merin Albert",description:"UI/UX Designer" },
+    { id: 7, img: Keerthana, title: "Keerthana", description: "Frontend Developer" },
+    { id: 8, img: Karthi, title: "Karthikeyan", description: "Frontend Developer" },
+    { id: 9, img: Prakash, title: "Prakash", description: "QA Engineer" },
+    { id: 10, img: Karthika, title: "Karthika",description:"UI/UX Designer" },
+       { id: 11, img: HR, title: "Sunitha", description: "Human Resource Manager" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const duplicatedSlides = [...slides, ...slides];
 
   const [offset, setOffset] = useState(0);
-  const slideWidth = 220; // card width + margin
+  const slideWidth = 250; // card width + margin
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -88,17 +96,19 @@ const About = () => {
         {/* Badge */}
         <span
           style={{
-            display: "block",          // 👈 force block so margins apply properly
+            display: "block",
             background: 'linear-gradient(180deg, #46cff8ff 0%, #0d48eaff 100%)',
             color: "white",
             padding: "6px 14px",
             borderRadius: "20px",
             fontSize: "14px",
             fontWeight: "500",
-            transform: "rotate(-20deg)",
-            marginBottom: "-25px",      // 👈 now this will work
-            marginLeft: "100px", 
-            width: "fit-content"       // 👈 keeps background only around text
+            transform: `rotate(-20deg) translateY(${aboutBadgeVisible ? '0' : '-40px'})`,
+            opacity: aboutBadgeVisible ? 1 : 0,
+            transition: "opacity 0.7s cubic-bezier(.4,2,.6,1), transform 0.7s cubic-bezier(.4,2,.6,1)",
+            marginBottom: "-25px",
+            marginLeft: "100px",
+            width: "fit-content"
           }}
         >
           About Us
@@ -164,15 +174,7 @@ const About = () => {
         </p>
 
         <button
-          style={{
-            background: 'linear-gradient(180deg, #2ecbfa 0%, #1a3fa6 100%)',
-            color: "#fff",
-            border: "none",
-            padding: "12px 28px",
-            borderRadius: "25px",
-            fontSize: "16px",
-            cursor: "pointer",
-          }}
+          className="submit-button"
           onClick={() => window.location.href = "/services"} // Navigate to Services page
         >
           Read more →
@@ -181,17 +183,29 @@ const About = () => {
 
       {/* Right Column */}
       <div style={{ flex: 1, textAlign: "center" }}>
-        <div
+      <div
           style={{
             width: "390px",
             height: "220px",
-            backgroundColor: "#ccc",
-            borderRadius: "30% / 50%", // oval shape
+            borderRadius: "30% / 50%",
+            overflow: "hidden",
             margin: "0 auto 20px",
+            backgroundColor: "#000"
           }}
         >
-          {/* If you want image instead of gray shape */}
-          {/* <img src={aboutImg} alt="About" style={{ width: "100%", height: "100%", borderRadius: "50% / 30%", objectFit: "cover" }} /> */}
+          <video
+            src={ved}
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              borderRadius: "30% / 50%"
+            }}
+          />
         </div>
 
         <p style={{ fontSize: "14px", color: "#000" }}>
@@ -228,8 +242,8 @@ const About = () => {
           <span
             style={{
               position: "absolute",
-              top: "-8px",          // ⬅️ increase to move further DOWN
-              right: "-45px",        // ⬅️ adjust horizontal position
+              top: "-8px",
+              right: "-45px",
               display: "inline-block",
               background: 'linear-gradient(180deg, #2ecbfa 0%, #1a3fa6 100%)',
               color: "#fff",
@@ -237,12 +251,22 @@ const About = () => {
               borderRadius: "9999px",
               fontSize: "14px",
               fontWeight: 500,
-              transform: "rotate(20deg)",
+              transform: `rotate(20deg)`,
               boxShadow: "0 6px 16px rgba(0,0,0,0.15)",
               whiteSpace: "nowrap",
+              animation: 'floatY 2.2s ease-in-out infinite',
             }}
           >
             What we do?
+            <style>
+              {`
+                @keyframes floatY {
+                  0% { transform: rotate(20deg) translateY(0); }
+                  50% { transform: rotate(20deg) translateY(-18px); }
+                  100% { transform: rotate(20deg) translateY(0); }
+                }
+              `}
+            </style>
           </span>
         </div>
         <div
@@ -253,7 +277,7 @@ const About = () => {
             padding: "30px",
             textAlign: "center",
             boxShadow: "0 6px 20px rgba(0,0,0,0.1)",
-            minHeight: "350px",
+            minHeight: "370px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-end", // push content to bottom
@@ -273,41 +297,45 @@ const About = () => {
           {/* Card 1 */}
           <div
             style={{
-              background: "#0000000A", // transparent effect
-              backdropFilter: "blur(61.886817932128906px)", // glass effect
+              background: "rgba(255,255,255,0.18)",
+              border: "1.5px solid rgba(255,255,255,0.35)",
+              backdropFilter: "blur(18px)",
+              WebkitBackdropFilter: "blur(18px)",
               borderRadius: "12px",
               padding: "20px 25px",
               textAlign: "left",
-              boxShadow: "0 4px 20px rgba(255, 255, 255, 1)",
+              boxShadow: "0 4px 20px rgba(255, 255, 255, 0.7)",
               minWidth: "95px",
               fontFamily: "Poppins",
             }}
           >
-            <h3 style={{ fontSize: "22px", color: "#ffffff", margin: 0 }}>320+</h3>
-            <p style={{ fontSize: "12px", color: "#ffffff", margin: 0 }}>
+            <h3 style={{ fontSize: "22px", color: "#000000", margin: 0 }}>320+</h3>
+            <p style={{ fontSize: "12px", color: "#000000", margin: 0 }}>
               Projects Successfully
             </p>
-            <p style={{ fontSize: "12px", color: "#ffffff", margin: 0 }}>Delivered</p>
+            <p style={{ fontSize: "12px", color: "#000000", margin: 0 }}>Delivered</p>
           </div>
 
           {/* Card 2 */}
           <div
             style={{
-              background: "#0000000A",
-              backdropFilter: "blur(61.886817932128906px)",
+              background: "rgba(255,255,255,0.18)",
+              border: "1.5px solid rgba(255,255,255,0.35)",
+              backdropFilter: "blur(18px)",
+              WebkitBackdropFilter: "blur(18px)",
               borderRadius: "12px",
               padding: "20px 25px",
-              textAlign: "left", // ✅ make consistent
-              boxShadow: "0 4px 20px rgba(255, 255, 255, 1)",
+              textAlign: "left",
+              boxShadow: "0 4px 20px rgba(255, 255, 255, 0.7)",
               minWidth: "95px",
               fontFamily: "Poppins",
             }}
           >
-            <h3 style={{ fontSize: "22px", color: "#ffffff", margin: 0 }}>92.1%</h3>
-            <p style={{ fontSize: "12px", color: "#ffffff", margin: 0 }}>
+            <h3 style={{ fontSize: "22px", color: "#000000", margin: 0 }}>92.1%</h3>
+            <p style={{ fontSize: "12px", color: "#000000", margin: 0 }}>
               Client Satisfaction
             </p>
-            <p style={{ fontSize: "12px", color: "#ffffff", margin: 0 }}>Rate</p>
+            <p style={{ fontSize: "12px", color: "#000000", margin: 0 }}>Rate</p>
           </div>
         </div>
         </div>
@@ -569,7 +597,7 @@ const About = () => {
               key={index}
               style={{
                 minWidth: "200px",
-                height: "260px",
+                height: "300px",
                 marginRight: "20px",
                 borderRadius: "16px",
                 perspective: "1000px", // needed for 3D flip
