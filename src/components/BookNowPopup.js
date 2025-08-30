@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../components/Career/apply.css";
 import logo from "../assets/Booknow demo.png";
 
+
 export default function BookNowPopup({ open, setOpen }) {
+  // ✅ Form state
+  const [formData, setFormData] = useState({
+    FirstName: "",
+    LastName: "",
+    EmailId: "",
+    MobileNo: "",
+    Subject: "",
+    Message: "",
+    Type: "Demo", // You can default it to "Demo" or leave empty
+  });
+
   if (!open) return null;
 
   const inputStyle = {
@@ -25,8 +39,52 @@ export default function BookNowPopup({ open, setOpen }) {
     fontFamily: "'Poppins', sans-serif",
   };
 
+  // ✅ Handle input change
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // ✅ Handle form submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("http://localhost:3015/api/booking/AddBooking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (data.Status === true) {
+        toast.success("Booking submitted successfully ✅");
+        setTimeout(() => {
+          setOpen(false); // Close popup
+          setFormData({
+            FirstName: "",
+            LastName: "",
+            EmailId: "",
+            MobileNo: "",
+            Subject: "",
+            Message: "",
+            Type: "Demo",
+          }); // Reset form
+        }, 1500);
+      } else {
+        toast.error("Failed to submit booking ❌");
+      }
+    } catch (error) {
+      console.error("Error submitting booking:", error);
+  toast.error("Server error ❌");
+    }
+  };
+
   return (
-    <div
+    <>
+      <ToastContainer position="top-center" autoClose={2000} />
+      <div
       style={{
         position: "fixed",
         top: 0,
@@ -49,51 +107,23 @@ export default function BookNowPopup({ open, setOpen }) {
           maxHeight: "105vh",
           overflowY: "auto",
           borderRadius: "12px",
-          background: "linear-gradient(to right, #e2eafcff, #ffffff)", // ✅ gradient popup
+          background: "linear-gradient(to right, #e2eafcff, #ffffff)",
           boxShadow: "0 8px 30px rgba(0,0,0,0.15)",
           display: "grid",
-          gridTemplateColumns: "1fr 1fr", // Left & Right
+          gridTemplateColumns: "1fr 1fr",
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* LEFT SIDE CONTENT */}
-        <div
-          style={{
-            padding: "40px",
-            borderTopLeftRadius: "12px",
-            borderBottomLeftRadius: "12px",
-          }}
-        >
-          <h2
-            style={{
-              fontSize: "32px",
-              fontWeight: "400",
-              marginBottom: "20px",
-              color: "#000000",
-              textAlign: 'left',
-            }}
-          >
-            Book Your Demo <br/> Now
+        {/* LEFT SIDE */}
+        <div style={{ padding: "40px" }}>
+          <h2 style={{ fontSize: "32px", fontWeight: "400", marginBottom: "20px", textAlign: "left" }}>
+            Book Your Demo <br /> Now
           </h2>
-          <p
-            style={{
-              fontSize: "14px",
-              color: "#000000A1",
-              lineHeight: "1.6",
-              marginBottom: "30px",
-              fontWeight: 400,
-            }}
-          >
+          <p style={{ fontSize: "14px", color: "#000000A1", lineHeight: "1.6", marginBottom: "30px" }}>
             See our solutions in action and discover how AppXperts can simplify,
-            scale, and supercharge your business. In this personalized session,
-            our experts will walk you through the features that matter most to
-            you — and answer all your questions in real time.
+            scale, and supercharge your business.
           </p>
-          <img
-            src={logo}
-            alt="Demo"
-            style={{ width: "100%", borderRadius: "10px" }}
-          />
+          <img src={logo} alt="Demo" style={{ width: "100%", borderRadius: "10px" }} />
         </div>
 
         {/* RIGHT SIDE FORM */}
@@ -103,70 +133,69 @@ export default function BookNowPopup({ open, setOpen }) {
             background: "#eeebebff",
             borderRadius: "12px",
             margin: "20px",
-            flex: 1, // ✅ take remaining space in grid column
+            flex: 1,
             display: "flex",
             flexDirection: "column",
           }}
         >
-          <h3
-            style={{
-              fontSize: "20px",
-              fontWeight: "500",
-              color: "#1C1C1C",
-              marginBottom: "10px",
-              marginTop: "5px",
-              textAlign: "left",
-            }}
-          >
+          <h3 style={{ fontSize: "20px", fontWeight: "500", marginBottom: "10px" }}>
             Fill the following details
           </h3>
 
-          <form
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "20px",
-              flex: 1, // ✅ form stretches inside container
-              marginTop: "15px",
-            }}
-          >
+          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             {/* First & Last Name */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "20px",
-              }}
-            >
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
               <div>
                 <label style={labelStyle}>First Name</label>
-                <input type="text" placeholder="Steve" style={inputStyle} />
+                <input
+                  type="text"
+                  name="FirstName"
+                  placeholder="Steve"
+                  style={inputStyle}
+                  value={formData.FirstName}
+                  onChange={handleChange}
+                  required
+                />
               </div>
               <div>
                 <label style={labelStyle}>Last Name</label>
-                <input type="text" placeholder="Rogers" style={inputStyle} />
+                <input
+                  type="text"
+                  name="LastName"
+                  placeholder="Rogers"
+                  style={inputStyle}
+                  value={formData.LastName}
+                  onChange={handleChange}
+                  required
+                />
               </div>
             </div>
 
             {/* Email & Phone */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "20px",
-              }}
-            >
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
               <div>
                 <label style={labelStyle}>Email</label>
                 <input
                   type="email"
+                  name="EmailId"
                   placeholder="steve@example.com"
                   style={inputStyle}
+                  value={formData.EmailId}
+                  onChange={handleChange}
+                  required
                 />
               </div>
               <div>
                 <label style={labelStyle}>Phone Number</label>
-                <input type="tel" placeholder="+1 234 567" style={inputStyle} />
+                <input
+                  type="tel"
+                  name="MobileNo"
+                  placeholder="+1 234 567"
+                  style={inputStyle}
+                  value={formData.MobileNo}
+                  onChange={handleChange}
+                  required
+                />
               </div>
             </div>
 
@@ -174,8 +203,12 @@ export default function BookNowPopup({ open, setOpen }) {
             <div>
               <label style={labelStyle}>Subject</label>
               <textarea
+                name="Subject"
                 placeholder="Enter Subject"
                 style={{ ...inputStyle, resize: "vertical" }}
+                value={formData.Subject}
+                onChange={handleChange}
+                required
               />
             </div>
 
@@ -183,8 +216,11 @@ export default function BookNowPopup({ open, setOpen }) {
             <div>
               <label style={labelStyle}>Message</label>
               <textarea
+                name="Message"
                 placeholder="Enter Message"
                 style={{ ...inputStyle, resize: "vertical" }}
+                value={formData.Message}
+                onChange={handleChange}
               />
             </div>
 
@@ -198,5 +234,6 @@ export default function BookNowPopup({ open, setOpen }) {
         </div>
       </div>
     </div>
+    </>
   );
 }
