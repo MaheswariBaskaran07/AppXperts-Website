@@ -1,0 +1,96 @@
+/* Floating animation for lamps */
+.lamp-float {
+  animation: lampFloat 3.5s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes lampFloat {
+  0% { transform: translateY(0px) rotate(-2deg) scale(1); }
+  50% { transform: translateY(-18px) rotate(2deg) scale(1.03); }
+  100% { transform: translateY(0px) rotate(-2deg) scale(1); }
+}
+
+/* Lamp ON: glowing yellow light and fire blast effect */
+.lamp-on {
+  filter: drop-shadow(0 0 30px #ffd700) drop-shadow(0 0 60px #ffe066);
+  transition: filter 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.lamp-light-beam {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 180px;
+  height: 350px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 1;
+  background: radial-gradient(ellipse 100% 60% at 50% 0%, 
+    rgba(255, 215, 0, 0.8) 0%, 
+    rgba(255, 235, 150, 0.6) 20%, 
+    rgba(255, 245, 200, 0.4) 40%, 
+    rgba(255, 255, 240, 0.2) 60%, 
+    transparent 100%);
+  border-radius: 50% 50% 50% 50% / 20% 20% 80% 80%;
+  animation: lampBeamFire 2.5s ease-in-out infinite alternate;
+}
+
+/* Left lamp beam effect */
+.lamp-light-beam-left {
+  position: absolute;
+  top: 100%;
+  left: 40%;
+  width: 180px;
+  height: 350px;
+  transform: translateX(-50%) skewX(-8deg);
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 1;
+  background: radial-gradient(ellipse 100% 60% at 40% 0%, 
+    rgba(255, 215, 0, 0.8) 0%, 
+    rgba(255, 235, 150, 0.6) 20%, 
+    rgba(255, 245, 200, 0.4) 40%, 
+    rgba(255, 255, 240, 0.2) 60%, 
+    transparent 100%);
+  border-radius: 50% 50% 50% 50% / 20% 20% 80% 80%;
+  animation: lampBeamFire 2.5s ease-in-out infinite alternate;
+}
+
+/* Right lamp beam effect */
+.lamp-light-beam-right {
+  position: absolute;
+  top: 100%;
+  left: -50%;
+  width: 180px;
+  height: 350px;
+  transform: translateX(-50%) skewX(8deg);
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 1;
+  background: radial-gradient(ellipse 100% 60% at 60% 0%, 
+    rgba(255, 215, 0, 0.8) 0%, 
+    rgba(255, 235, 150, 0.6) 20%, 
+    rgba(255, 245, 200, 0.4) 40%, 
+    rgba(255, 255, 240, 0.2) 60%, 
+    transparent 100%);
+  border-radius: 50% 50% 50% 50% / 20% 20% 80% 80%;
+  animation: lampBeamFire 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes lampBeamFire {
+  0% { opacity: 0.5; filter: blur(2px); }
+  50% { opacity: 0.9; filter: blur(8px); }
+  100% { opacity: 0.5; filter: blur(2px); }
+}
+
+/* Optional: subtle floating for the light beam too */
+.lamp-light-float {
+  animation: lampLightFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes lampLightFloat {
+  0% { transform: translateY(0px) scaleY(1); }
+  50% { transform: translateY(-10px) scaleY(1.04); }
+  100% { transform: translateY(0px) scaleY(1); }
+}
