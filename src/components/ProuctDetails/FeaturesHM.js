@@ -1,6 +1,6 @@
 import React from "react";
 import IT from "../../assets/Services/IT.png";
-import featureImage from "../../assets/ProductDetails/Features Overview-pana 1.png";
+import featureImage from "../../assets/ProductDetails/Hospital_in.png";
 
 const FeaturesHM = () => {
   const features = [

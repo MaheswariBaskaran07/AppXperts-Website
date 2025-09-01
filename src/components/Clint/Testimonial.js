@@ -1,131 +1,92 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
-import logo from "../../assets/Client/Testimonials Card Bg.png";
 import Clintlogo from "../../assets/images/gallery/gallery-1-8.jpg";
+import erp from "../../assets/images/gallery/gallery-1-2.jpg"
+import vsb from "../../assets/images/gallery/gallery-1-3.jpg"
+import "./Testimonials.css";
 
-const testimonials = Array.from({ length: 5 }).map((_, i) => ({
-  text: `“I've been using this web hosting service for over a year and I'm really impressed with the uptime and support. The website has never gone down and the customer service is always quick to help with any issues I have. Highly recommend!”`,
-  name: `Vadivel Shanmugam`,
-  role: "Manager",
-}));
+// 3D Carousel Component
+function Carousel3D({ testimonials }) {
+  const [angle, setAngle] = useState(0);
+  const cardCount = testimonials.length;
+  const radius = 400;
 
-const TestimonialCard = ({ testimonial, glow }) => (
-  <div
-    style={{
-      flex: "0 0 260px",
-      background: "#0000000A",
-      minHeight: "300px",
-      color: "#000",
-      padding: "30px 25px",
-      borderRadius: "12px",
-      boxShadow: "0 6px 20px rgba(0,0,0,0.08)",
-      backdropFilter: "blur(16px)",
-      WebkitBackdropFilter: "blur(16px)",
-      textAlign: "center",
-      position: "relative",
-      overflow: "hidden",
-      scrollSnapAlign: "start",
-      zIndex: 2,
-      marginRight: "20px",
-    }}
-  >
-    {glow && (
-      <>
-        <div
-          style={{
-            position: "absolute",
-            top: "20%",
-            left: "10%",
-            width: "120px",
-            height: "120px",
-            background: "rgba(43,111,227,0.25)",
-            borderRadius: "50%",
-            filter: "blur(80px)",
-            zIndex: 0,
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            bottom: "15%",
-            right: "10%",
-            width: "140px",
-            height: "140px",
-            background: "rgba(26,63,166,0.2)",
-            borderRadius: "50%",
-            filter: "blur(100px)",
-            zIndex: 0,
-          }}
-        />
-      </>
-    )}
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAngle((prev) => prev - 360 / cardCount);
+    }, 500);
+    return () => clearInterval(interval);
+  }, [cardCount]);
 
-    <p
-      style={{
-        fontSize: "14px",
-        lineHeight: "1.6",
-        marginBottom: "20px",
-        position: "relative",
-        zIndex: 2,
-      }}
-    >
-      "{testimonial.text}"
-    </p>
+  return (
+    <div className="carousel-container">
+      <div
+        className="carousel-3d"
+        style={{ transform: `translateZ(-${radius}px) rotateY(${angle}deg)` }}
+      >
+        {testimonials.map((t, i) => {
+          const cardAngle = (360 / cardCount) * i;
+          return (
+            <div
+              key={i}
+              className="carousel-3d-card"
+              style={{
+                transform: `rotateY(${cardAngle}deg) translateZ(${radius}px)`,
+              }}
+            >
+              <TestimonialCard testimonial={t} />
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
-    <div
-      style={{
-        display: "flex",
-        marginBottom: "15px",
-        position: "relative",
-        zIndex: 2,
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
+const testimonials = [
+  {
+    text: `“I've been using this web hosting service for over a year and I'm really impressed with the uptime and support. The website has never gone down and the customer service is always quick to help with any issues I have. Highly recommend!”`,
+    name: "Vadivel Shanmugam",
+    role: "Manager",
+    img: Clintlogo,
+  },
+  {
+    text: `“The design and user experience exceeded our expectations. The team was attentive to our needs and delivered a beautiful, functional website ahead of schedule.”`,
+    name: "VSB Builders",
+    role: "CEO",
+    img: vsb,
+  },
+  {
+    text: `“Excellent technical expertise! Our custom ERP solution works flawlessly and has streamlined our business operations. Support is always responsive.”`,
+    name: "Celeste Birch",
+    role: "CEO",
+    img: erp,
+  },
+];
+
+const TestimonialCard = ({ testimonial }) => (
+  <div className="testimonial-card">
+    <p>{testimonial.text}</p>
+    <div style={{ display: "flex", margin: "10px 0" }}>
       {[...Array(5)].map((_, i) => (
-        <FaStar key={i} size={16} color="#fbbf24" />
+        <FaStar key={i} size={16} color="#00eaff" />
       ))}
     </div>
-
-    <div style={{ marginBottom: "15px" }}>
-      <img
-        src={Clintlogo}
-        alt={testimonial.name}
-        style={{
-          width: "60px",
-          height: "60px",
-          borderRadius: "50%",
-          objectFit: "cover",
-          margin: "0 auto",
-        }}
-      />
-    </div>
-
-    <div style={{ position: "relative", zIndex: 2 }}>
-      <h4 style={{ fontSize: "16px", fontWeight: 600, marginBottom: "5px" }}>
-        {testimonial.name}
-      </h4>
-      <p style={{ fontSize: "14px", color: "#666", margin: 0 }}>
-        {testimonial.role}
-      </p>
+    <div className="testimonial-header">
+      <img src={testimonial.img} alt={testimonial.name} />
+      <div>
+        <h4>{testimonial.name}</h4>
+        <p style={{ color: "var(--secondary)", margin: 0 }}>
+          {testimonial.role}
+        </p>
+      </div>
     </div>
   </div>
 );
 
 export default function Testimonials() {
   return (
-    <section
-      style={{
-        padding: "100px 20px",
-        fontFamily: "'Poppins', sans-serif",
-        position: "relative",
-        overflow: "hidden",
-        background: "#f8fafc",
-        minHeight: "700px",
-        marginBottom: 0,
-      }}
-    >
-      {/* Heading + Description */}
+    <section className="testimonials-section">
       <div
         style={{
           display: "flex",
@@ -133,12 +94,12 @@ export default function Testimonials() {
           alignItems: "center",
           flexWrap: "wrap",
           maxWidth: "1200px",
-          margin: "0 auto 190px auto",
+          margin: "0 auto 10px auto",
           gap: "20px",
           textAlign: "left",
         }}
       >
-        <h2
+ < h2
           style={{
             fontSize: "32px",
             fontWeight: 500,
@@ -149,7 +110,7 @@ export default function Testimonials() {
         >
           What Our Clients Are Saying
         </h2>
-        <p
+         <p
           style={{
             fontSize: "16px",
             fontWeight: 400,
@@ -164,62 +125,8 @@ export default function Testimonials() {
           execution, we walk the journey with them. Read what they have to say
           about working with us.
         </p>
-      </div>
-
-      {/* Gradient background card on right */}
-      <div
-        style={{
-          position: "absolute",
-          top: 250,
-          right: 80,
-          width: "35%",
-          height: 600,
-          borderRadius: "50px 0 0 50px",
-          backgroundImage: `url("${logo}")`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          zIndex: 0,
-          overflow: "hidden",
-        }}
-      />
-
-      {/* Auto scrolling container */}
-      <div
-        style={{
-          display: "flex",
-          width: "100%",
-          overflow: "hidden",
-          position: "relative",
-          right: 120,
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            animation: "scroll 20s linear infinite",
-          }}
-        >
-          {/* Duplicate testimonials for seamless loop */}
-          {[...testimonials, ...testimonials].map((t, i) => (
-            <TestimonialCard
-              key={i}
-              testimonial={t}
-              glow={i === 2}
-            />
-          ))}
         </div>
-      </div>
-
-      {/* Scroll Animation */}
-      <style>
-        {`
-          @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-        `}
-      </style>
+      <Carousel3D testimonials={testimonials} />
     </section>
   );
 }

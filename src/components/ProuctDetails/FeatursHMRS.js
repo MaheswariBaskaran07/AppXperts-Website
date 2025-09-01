@@ -1,6 +1,6 @@
 import React from "react";
 import IT from "../../assets/Services/IT.png";
-import featureImage from "../../assets/ProductDetails/Features Overview-pana 1.png";
+import featureImage from "../../assets/ProductDetails/HRM_in.png";
 
 const FeaturesHRMS = () => {
   const features = [

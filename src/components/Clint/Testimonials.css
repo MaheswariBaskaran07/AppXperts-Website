@@ -1,0 +1,86 @@
+:root {
+  --primary: #0d48ea;
+  --secondary: #46cff8;
+  --accent: #ff00e5;
+  --background: #ffffff; /* White background */
+  --card-bg: linear-gradient(180deg, #46cff8ff 0%, #0d48eaff 100%);
+  --text-primary: #000000; /* Black text */
+  --text-secondary: #333333; /* Darker gray for softer contrast */
+  --glow-primary: 0 0 12px rgba(13, 72, 234, 0.4),
+    0 0 24px rgba(70, 207, 248, 0.3);
+  --card-width: 300px;
+  --card-height: 450px; /* Increased height */
+  --carousel-radius: 420px;
+  --transition-speed: 0.5s;
+}
+
+.testimonials-section {
+  position: relative;
+  min-height: 750px; /* Adjusted to fit taller cards */
+  /* padding: 100px 20px; */
+  background: var(--background);
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 550px; /* Adjusted for taller cards */
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-3d {
+  position: relative;
+  width: var(--carousel-radius);
+  height: var(--carousel-radius);
+  transform-style: preserve-3d;
+  transition: transform 1.5s ease-in-out;
+}
+
+.carousel-3d-card {
+  position: absolute;
+  width: var(--card-width);
+  height: var(--card-height);
+  left: 50%;
+  top: 50%;
+  transform-style: preserve-3d;
+  margin-left: calc(var(--card-width) / -2);
+  margin-top: calc(var(--card-height) / -2);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.testimonial-card {
+  background: var(--card-bg);
+  border: none;
+  border-radius: 20px;
+  color: var(--text-primary);
+  padding: 28px;
+  box-shadow: var(--glow-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  color: var(--text-primary); /* Black text */
+  line-height: 1.7;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.testimonial-header img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 12px rgba(70, 207, 248, 0.6);
+}
