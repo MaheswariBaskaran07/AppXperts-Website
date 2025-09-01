@@ -16,7 +16,7 @@ import Karthika from '../assets/About/Karthika.png';
 import HR from '../assets/About/HR.png';
 import ved from "../assets/About/about.mp4";
 import lamp from "../assets/Product/freepik--Lamps--inject-229.png"
-import rope from "../assets/Product/Swinging Rope.gif";
+import rope from "../assets/Product/rope.png";
 import "../components/Products/lamp.css";
 import { motion } from "framer-motion";
 import people from "../assets/About/Group 2188.png";
@@ -101,9 +101,10 @@ const About = () => {
      
     
        <div
+       className="people-float"
         style={{
           position: "absolute",
-             "top": "-140px",
+             "top": "-180px",
              "right": "60px",
           zIndex: 10,
           display: "flex",
@@ -116,9 +117,9 @@ const About = () => {
         <img
           src={rope}
           alt="Rope"
-          style={{ width: "400px", height: "700px", objectFit: "contain", userSelect: "none" }}
+           style={{width: "200px", height: "700px", objectFit: "contain", userSelect: "none" }}
         />
-        <span style={{ fontSize: "18px", color: "#bfa13b", marginTop: "12px",marginLeft:"250px", fontWeight: 600 }}>Click on Rope</span>
+        {/* <span style={{ fontSize: "18px", color: "#bfa13b", marginTop: "12px",marginLeft:"250px", fontWeight: 600 }}>Click on Rope</span> */}
       </div>
 
       <div

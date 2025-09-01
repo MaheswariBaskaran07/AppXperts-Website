@@ -4,7 +4,6 @@ import Clintlogo from "../../assets/images/gallery/gallery-1-8.jpg";
 import erp from "../../assets/images/gallery/gallery-1-2.jpg"
 import vsb from "../../assets/images/gallery/gallery-1-3.jpg"
 import "./Testimonials.css";
-import { img } from "framer-motion/client";
 
 // 3D Carousel Component
 function Carousel3D({ testimonials }) {
@@ -15,7 +14,7 @@ function Carousel3D({ testimonials }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setAngle((prev) => prev - 360 / cardCount);
-    }, 8000);
+    }, 500);
     return () => clearInterval(interval);
   }, [cardCount]);
 
