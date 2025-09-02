@@ -14,7 +14,7 @@ function Carousel3D({ testimonials }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setAngle((prev) => prev - 360 / cardCount);
-    }, 500);
+    }, 4000);
     return () => clearInterval(interval);
   }, [cardCount]);
 
