@@ -52,7 +52,7 @@ const About = () => {
     { id: 7, img: Keerthana, title: "Keerthana", description: "Frontend Developer" },
     { id: 8, img: Karthi, title: "Karthikeyan", description: "Frontend Developer" },
     { id: 9, img: Prakash, title: "Prakash", description: "QA Engineer" },
-    { id: 10, img: Karthika, title: "Karthika",description:"UI/UX Designer" },
+    { id: 10, img: Karthika, title: "Reshma",description:"UI/UX Designer" },
        { id: 11, img: HR, title: "Sunitha", description: "Human Resource Manager" },
   ];
 

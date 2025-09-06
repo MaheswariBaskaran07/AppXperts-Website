@@ -84,12 +84,12 @@ const ContactInfo = () => {
             <div style={{ fontWeight: 500, fontSize: 18, marginBottom: 10 }}>Dubai</div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 18 }}>
               <img src={call} alt="call" style={{ width: 18, height: 18 }} />
-              <span style={{ fontSize: 15, color: '#000000' }}>+91 88255 28905</span>
+              <span style={{ fontSize: 15, color: '#000000' }}>+971 508554043</span>
             </div>
             <div style={{ fontWeight: 500, fontSize: 18, marginBottom: 10 }}>Singapore</div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 18 }}>
               <img src={call} alt="call" style={{ width: 18, height: 18 }} />
-              <span style={{ fontSize: 15, color: '#000000' }}>+91 88255 28905</span>
+              <span style={{ fontSize: 15, color: '#000000' }}>+65 84399317</span>
             </div>
           </div>
         </div>
