@@ -3,16 +3,16 @@ import aboutBanner from "../assets/About/AboutBanner.png";
 import image from '../assets/About/ERP.png';
 import Quality from '../assets/About/Quality.png';
 import Frame from '../assets/About/Frame.png';
-import CEO from '../assets/About/CEO.png';
-import Flutter from '../assets/About/FlutterDev.png';
+import CEO from '../assets/About/AASIF.png';
+import Flutter from '../assets/About/Joe.png';
 import UIUX from '../assets/About/UIUX.png';
-import BackEndDev from '../assets/About/BackEndDev.png';
-import FrontEndDev from '../assets/About/FrontEndDev.png';
-import Keerthana from '../assets/About/Keerthana.png';
+import BackEndDev from '../assets/About/Rajeshwari.png';
+import Maheswari  from '../assets/About/Maheshwari.png';
+import Keerthana from '../assets/About/Maheshwari (1).png';
 import Karthi from '../assets/About/Karthi.png';
 import Prakash from '../assets/About/Prakash.png';
 import Rabi from '../assets/About/Rabi.png';
-import Karthika from '../assets/About/Karthika.png';
+import Karthika from '../assets/About/Resh.png';
 import HR from '../assets/About/HR.png';
 import ved from "../assets/About/about.mp4";
 import lamp from "../assets/Product/freepik--Lamps--inject-229.png"
@@ -47,7 +47,7 @@ const About = () => {
     { id: 2, img: Rabi, title: "Mohamed Rabi", description: "Backend Developer" },
     { id: 3, img: BackEndDev, title: "Rajeswari", description: "Backend Developer" },
     { id: 4, img: Flutter, title: "Nagajothika",description:"Flutter Developer" },
-    { id: 5, img: FrontEndDev, title: "Maheswari", description: "Frontend Developer" },
+    { id: 5, img: Maheswari, title: "Maheswari", description: "Frontend Developer" },
     { id: 6, img: UIUX, title: "Merin Albert",description:"UI/UX Designer" },
     { id: 7, img: Keerthana, title: "Keerthana", description: "Frontend Developer" },
     { id: 8, img: Karthi, title: "Karthikeyan", description: "Frontend Developer" },
