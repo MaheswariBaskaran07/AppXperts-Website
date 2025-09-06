@@ -151,11 +151,22 @@ const ClientsSay = () => {
           zIndex: 2,
         }}
       >
-        {/* Left side bubbles in zig-zag with more gap */}
+        {/* Floating bubbles for all skills */}
         {[
           { label: "React JS", color: "#61dafb", top: 8, left: "10%" },
           { label: "Flutter", color: "#42a5f5", top: 32, left: "20%" },
           { label: "Node JS", color: "#8cc84b", top: 60, left: "6%" },
+          { label: "Python", color: "#3776ab", top: 18, left: "30%" },
+          { label: ".NET", color: "#512bd4", top: 65, left: "38%" },
+          { label: "Angular", color: "#dd0031", top: 70, left: "28%" },
+          { label: "Spring Boot", color: "#6db33f", top: 65, left: "15%" },
+          { label: "React Native", color: "#00d8ff", top: 50, right: "35%" },
+          { label: "CSS", color: "#2965f1", top: 14, right: "10%" },
+          { label: "HTML", color: "#e34c26", top: 40, right: "2%" },
+          { label: "JS", color: "#f7df1e", top: 68, right: "6%" },
+          { label: "UI/UX", color: "#ffb300", top: 30, right: "18%" },
+          { label: "TypeScript", color: "#3178c6", top: 60, right: "24%" },
+          { label: "Java", color: "#e76f00", top: 80, right: "12%" },
         ].map((skill, i) => (
           <div
             key={skill.label}
@@ -163,48 +174,8 @@ const ClientsSay = () => {
               position: "absolute",
               top: `${skill.top}%`,
               left: skill.left,
-              animation: `floatAnimX${i} ${8 + i * 2}s ease-in-out infinite`,
-              zIndex: 2,
-            }}
-          >
-            <div
-              style={{
-                width: "110px",
-                height: "110px",
-                borderRadius: "50%",
-                background: `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), ${skill.color}33 40%, ${skill.color}22 70%, ${skill.color}11 100%)`,
-                boxShadow:
-                  "inset -5px -5px 15px rgba(255,255,255,0.6), 0 0 15px rgba(135,206,250,0.2)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                overflow: "hidden",
-                fontWeight: 600,
-                fontSize: "20px",
-                color: "#222",
-                letterSpacing: 1,
-                border: `2.5px solid ${skill.color}`,
-                pointerEvents: "auto",
-                userSelect: "none",
-              }}
-            >
-              {skill.label}
-            </div>
-          </div>
-        ))}
-        {/* Right side bubbles in zig-zag with more gap */}
-        {[
-          { label: "UI/UX", color: "#ffb300", top: 14, right: "10%" },
-          { label: "TypeScript", color: "#3178c6", top: 40, right: "20%" },
-          { label: "Java", color: "#e76f00", top: 68, right: "6%" },
-        ].map((skill, i) => (
-          <div
-            key={skill.label}
-            style={{
-              position: "absolute",
-              top: `${skill.top}%`,
               right: skill.right,
-              animation: `floatAnimX${i + 3} ${14 + i * 2}s ease-in-out infinite`,
+              animation: `floatAnimX${i % 6} ${8 + (i % 6) * 2}s ease-in-out infinite`,
               zIndex: 2,
             }}
           >

@@ -14,7 +14,7 @@ const Footer = () => {
         background: " #d4f0f8ff",
         borderTop: "1px solid #e3e8ee",
         padding: "40px 0 0 0",
-        fontFamily: "Poppins, sans-serif",
+        fontFamily: "Poppins",
         color: "#222",
         fontSize: 16,
         marginTop: 60,
@@ -70,7 +70,7 @@ const Footer = () => {
               fontFamily: "Poppins",
             }}
           >
-            <span style={{ fontSize:16, fontWeight: 400, color: "#222" }}>
+            <span style={{ fontStyle: "bold",   fontSize:16, fontWeight: 600, color: "#222" }}>
               Smart Solutions. Real Results.
             </span>
             <br />
@@ -91,7 +91,7 @@ const Footer = () => {
           }}
         >
           <div>
-            <h4 style={{ fontSize:16, fontWeight: 400, marginBottom: 10 }}>Quick Links</h4>
+            <h4 style={{ fontSize:16, fontWeight: 600,fontStyle: "bold", marginBottom: 10 }}>Quick Links</h4>
             <div style={{ display: "flex", gap: 48 }}>
               <ul
                 style={{
@@ -150,7 +150,7 @@ const Footer = () => {
 
         {/* Right: Get in Touch - Split by Country */}
         <div style={{ fontFamily:"Poppins, sans-serif", flex: 2.5, minWidth: 260 }}>
-          <h4 style={{ fontSize:16, fontWeight: 400, marginBottom: 10 }}>Get in Touch</h4>
+          <h4 style={{ fontSize:16, fontWeight: 600, fontStyle: "bold", marginBottom: 10 }}>Get in Touch</h4>
           <div style={{ display: 'flex', gap: 32, flexWrap: 'nowrap', minWidth: 540 }}>
             {/* India */}
             <div style={{ minWidth: 180, flex: 1 }}>
