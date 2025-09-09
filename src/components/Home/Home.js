@@ -71,7 +71,7 @@ const Home = () => {
         </p>
   <div style={{ display: 'flex', alignItems: 'center', gap: 18, marginBottom: 20, width: '100%' }}>
           <a href="/about" className='submit-button'>Know More</a>
-          <a href="#video" style={{
+          {/* <a href="#video" style={{
             display: 'flex',
             alignItems: 'center',
             color: '#1a3fa6',
@@ -82,7 +82,7 @@ const Home = () => {
           }}>
             <img src={Badge1} alt="Play" style={{ width: 32, height: 32, borderRadius: '50%', boxShadow: '0 2px 8px #1a3fa622' }} />
             Watch a Video
-          </a>
+          </a> */}
         </div>
   <div style={{ display: 'flex', alignItems: 'center', gap: 64,  width: '100%' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>

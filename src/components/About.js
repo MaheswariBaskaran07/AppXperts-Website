@@ -258,17 +258,15 @@ const About = () => {
           Who are we?
         </h1>
 
-        <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "20px" }}>
-          We're a close-knit team of UI/UX designers, developers, and strategists who
-          believe in blending creativity with functionality. At our core, we’re thinkers
-          and doers — constantly learning, adapting, and delivering with purpose.
+        <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "20px", textAlign: "justify" }}>
+          AppXperts Enterprise Solutions is a Software Development company which offers next-generation IT Services that could empower your businesses to become self-reliant and sufficient. It’s what we do, and we do it well. We address our clients’ unique needs with a healthy mix of tried and true methods, and progressive, innovative technologies evinced by our team of expert software developers. We pride ourselves in our ability to turn the most complex business requirements into intuitive software solutions, empowering our clients with the tools they need to seamlessly support and enhance their business operations. Whether a project requires
         </p>
 
-        <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "30px" }}>
+        <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "30px", textAlign: "justify" }}>
           Whether it’s designing enterprise-grade systems or crafting elegant brand
           identities, our goal remains the same: to empower businesses with tech that
-          works and design that speaks.
-        </p>
+          works and design that speaks. We address our clients’ unique needs with a healthy mix of tried and true methods, and progressive, innovative technologies evinced by our team of expert software developers.
+  </p>
 
         <button
           className="submit-button"
