@@ -3,6 +3,20 @@ import Blog from "../../assets/Home/Blog.png";
 import mindGate from "../../assets/Home/Group 389.png";
 import erp from "../../assets/Home/erp.png"
 import BookNowPopup from "../BookNowPopup";
+
+import TS from "../../assets/Home/skills/typescript.png";
+import ReactJS from "../../assets/Home/skills/atom.png";
+import NodeJS from "../../assets/Home/skills/node-js (1).png";
+import Python from "../../assets/Home/skills/python.png";
+import Flutter from "../../assets/Home/skills/flutter (1).png";
+import Angular from "../../assets/Home/skills/programing.png";
+import UIUX from "../../assets/Home/skills/ui-design.png";
+import JS from "../../assets/Home/skills/java-script (1).png";
+import AI from "../../assets/Home/skills/generative.png";
+import Java from "../../assets/Home/skills/Frame (2) (1).png";
+import HTML from "../../assets/Home/skills/browser.png";
+
+
 const testimonials = [
   {
     company: "Mindgate Solutions",
