@@ -103,8 +103,8 @@ const About = () => {
       {/* Rope at top-right corner */}
      
     
-       <div
-       className="people-float"
+          <div
+        className="people-float"
         style={{
           position: "absolute",
           top: "-180px",
@@ -120,11 +120,44 @@ const About = () => {
         <img
           src={rope}
           alt="Rope"
-          className="about-rope-img"
-          style={{width: "200px", height: "700px", objectFit: "contain", userSelect: "none" }}
+          className="product-rope-img"
+          style={{ width: "200px", height: "700px", objectFit: "contain", userSelect: "none" }}
         />
-        {/* <span style={{ fontSize: "18px", color: "#bfa13b", marginTop: "12px",marginLeft:"250px", fontWeight: 600 }}>Click on Rope</span> */}
       </div>
+      {/* Responsive rope image styles */}
+      <style>{`
+        @media (max-width: 1100px) {
+          .product-rope-img {
+            width: 120px !important;
+            height: 350px !important;
+          }
+          .people-float {
+            top: -80px !important;
+            right: 20px !important;
+          }
+        }
+        @media (max-width: 700px) {
+          .product-rope-img {
+            position: static !important;
+            width: 55px !important;
+            height: 110px !important;
+            margin: 0 auto !important;
+            display: block !important;
+            z-index: 100 !important;
+          }
+          .people-float {
+            position: absolute !important;
+            top: 0 !important;
+            right: 0 !important;
+            margin: 0 !important;
+            width: 60px !important;
+            height: auto !important;
+            z-index: 10 !important;
+            justify-content: center !important;
+            align-items: center !important;
+          }
+        }
+      `}</style>
 
       <div
         className="about-lamps-row"
@@ -887,15 +920,6 @@ const About = () => {
         }
         .about-lamps-row .lamp-float {
           width: 60px !important;
-        }
-        .about-lamps-row .people-float {
-          position: absolute !important;
-          top: 0 !important;
-          right: 0 !important;
-          margin: 0 !important;
-          width: 60px !important;
-          height: auto !important;
-          z-index: 10 !important;
         }
         .about-rope-img {
          position: static !important;

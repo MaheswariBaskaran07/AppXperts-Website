@@ -2,6 +2,7 @@ import { useState }  from "react";
 import people from "../../assets/Client/OurClientsBanner.png";
 import lamp from "../../assets/Product/freepik--Lamps--inject-229.png";
 import rope from "../../assets/Product/rope.png"
+import "./lamp.css"
 
 import { motion } from "framer-motion";
 // Example logo imports (add your logos inside assets/Client/Logos folder)
@@ -43,13 +44,13 @@ const Clients = () => {
       }}
     >
       {/* 🔹 Lamps Row */}
-      {/* Rope at top-right corner */}
-      <div
-      className="people-float"
+   
+           <div
+        className="people-float"
         style={{
           position: "absolute",
-             "top": "-180px",
-             "right": "60px",
+          top: "-180px",
+          right: "60px",
           zIndex: 10,
           display: "flex",
           flexDirection: "column",
@@ -61,49 +62,56 @@ const Clients = () => {
         <img
           src={rope}
           alt="Rope"
-          style={{width: "200px", height: "700px", objectFit: "contain", userSelect: "none" }}
+          className="product-rope-img"
+          style={{ width: "200px", height: "700px", objectFit: "contain", userSelect: "none" }}
         />
-        {/* <span style={{ fontSize: "18px", color: "#bfa13b", marginTop: "12px", fontWeight: 600 }}>Click on Rope</span> */}
       </div>
+      {/* Responsive rope image styles */}
+      <style>{`
+        @media (max-width: 1100px) {
+          .product-rope-img {
+            width: 120px !important;
+            height: 350px !important;
+          }
+          .people-float {
+            top: -80px !important;
+            right: 20px !important;
+          }
+        }
+        @media (max-width: 700px) {
+          .product-rope-img {
+            position: static !important;
+            width: 55px !important;
+            height: 110px !important;
+            margin: 0 auto !important;
+            display: block !important;
+            z-index: 100 !important;
+          }
+          .people-float {
+            position: absolute !important;
+            top: 0 !important;
+            right: 0 !important;
+            margin: 0 !important;
+            width: 60px !important;
+            height: auto !important;
+            z-index: 10 !important;
+            justify-content: center !important;
+            align-items: center !important;
+          }
+        }
+      `}</style>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "flex-start",
-          gap: "120px",
-          paddingTop: "20px",
-          position: "relative",
-        }}
-      >
-        {/* Lamp 1 */}
-        <motion.div
-          className={`lamp-float ${lamp1On ? "lamp-on" : ""}`}
-          style={{ position: "relative", width: "220px", height: "auto" }}
-        >
-          <img src={lamp} alt="Lamp1" style={{ width: "100%" }} />
-          {lamp1On && (
-            <>
-              <div className="lamp-light-beam-left lamp-light-float"></div>
-              <div className="lamp-light-beam-right lamp-light-float"></div>
-            </>
-          )}
-        </motion.div>
+   <div className="lamps-row">
+  <motion.div className={`lamp ${lamp1On ? "lamp-on" : ""}`}>
+    <img src={lamp} alt="Lamp1" style={{ width: "100%" }} />
+    {lamp1On && (<><div className="lamp-light-beam-left"></div><div className="lamp-light-beam-right"></div></>)}
+  </motion.div>
 
-        {/* Lamp 2 */}
-        <motion.div
-          className={`lamp-float ${lamp2On ? "lamp-on" : ""}`}
-          style={{ position: "relative", width: "220px", height: "auto" }}
-        >
-          <img src={lamp} alt="Lamp2" style={{ width: "100%" }} />
-          {lamp2On && (
-            <>
-              <div className="lamp-light-beam-left lamp-light-float"></div>
-              <div className="lamp-light-beam-right lamp-light-float"></div>
-            </>
-          )}
-        </motion.div>
-      </div>
+  <motion.div className={`lamp ${lamp2On ? "lamp-on" : ""}`}>
+    <img src={lamp} alt="Lamp2" style={{ width: "100%" }} />
+    {lamp2On && (<><div className="lamp-light-beam-left"></div><div className="lamp-light-beam-right"></div></>)}
+  </motion.div>
+</div>
 
       {/* 🔹 Content */}
       <div
@@ -115,24 +123,12 @@ const Clients = () => {
         }}
       >
         <h1
-            style={{
-              fontSize: "40px",
-              fontWeight: 500,
-              marginBottom: "20px",
-              color: "#1a1a1a",
-              lineHeight: 1.3,
-            }}
+          className="client-heading"
           >
             Trusted by Visionaries, <br /> Powered by Partnerships
           </h1>
           <p
-            style={{
-              fontSize: "14px",
-              fontWeight: 400,
-              color: "#444",
-              marginBottom: "240px",
-              lineHeight: 1.6,
-            }}
+           className="client-sub"
           >
             From startups to global enterprises, our clients choose AppXperts
             for innovative solutions, reliable delivery, and lasting results.
@@ -248,26 +244,7 @@ const Clients = () => {
           ))}
         </div>
         <div
-          style={{
-            position: "absolute",
-            right: "12%",
-            bottom: "35%",
-            background: "#1a3fa6",
-            color: "#fff",
-            fontWeight: 500,
-            fontSize: "16px",
-            width: "110px",
-            height: "110px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: "50%",
-            boxShadow: "0 4px 12px rgba(26,63,166,0.25)",
-            fontFamily: "'Poppins', sans-serif",
-            textAlign: "center",
-            lineHeight: "1.4",
-          }}
+        className="client-circle"
         >
           Clients <br /> 300+
         </div>
