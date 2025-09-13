@@ -5,7 +5,7 @@ import Badge1 from "../../assets/Home/slow_motion_video.png"
 
 const Home = () => {
   return (
-    <section style={{
+    <section className="home-section" style={{
       display: 'flex',
       alignItems: 'flex-start',
       justifyContent: 'space-between',
@@ -18,8 +18,8 @@ const Home = () => {
       fontFamily: 'Poppins'
     }}>
       {/* Left Side: Text */}
-  <div style={{ flex: 1.4, zIndex: 2, paddingLeft: 64, position: 'relative', minHeight: 180, width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
-        <h1 style={{
+      <div className="home-left" style={{ flex: 1.4, zIndex: 2, paddingLeft: 64, position: 'relative', minHeight: 180, width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+        <h1 className="home-title" style={{
           fontSize: 135,
           fontWeight: 600,
           color: '#bfc2c7',
@@ -27,27 +27,16 @@ const Home = () => {
           top: -30,
           letterSpacing: 2,
           lineHeight: 1.1,
-          whiteSpace: 'nowrap',
           position: 'relative',
           zIndex: 2,
-          width: '100%'
+          width: '100%',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis'
         }}>
           YOUR IT EXPERTS
-          <span style={{
-            position: 'absolute',
-            right: '60px',
-            top: '35px',
-            zIndex: 1,
-            pointerEvents: 'none',
-            opacity: 0.97
-          }}>
-            <img src={Appxpertsbiglog} alt="AppXperts 3D Logo" style={{ width: 600, maxWidth: '100%', filter: 'drop-shadow(0 8px 32px #1a3fa622)' }} />
-            {/* Badges overlay */}
-            {/* <img src={Badge} alt="Badge" style={{ position: 'absolute', left: '5%', bottom: '4%', width: 80, zIndex: 2, boxShadow: '0 2px 8px #1a3fa622' }} />
-            <img src={Badge1} alt="Badge1" style={{ position: 'absolute', right: '-5%', bottom: '10%', width: 80, zIndex: 2, boxShadow: '0 2px 8px #1a3fa622' }} /> */}
-          </span>
         </h1>
-        <p style={{
+        <p className="home-subtitle" style={{
           fontSize: 32,
           fontWeight: 400,
           color: '#222',
@@ -58,7 +47,7 @@ const Home = () => {
           Turning your vision into digital<br />
           reality with precision and creativity.
         </p>
-        <p style={{
+        <p className="home-desc" style={{
           fontSize: 16,
           fontWeight: 400,
           color: '#555',
@@ -69,7 +58,7 @@ const Home = () => {
         }}>
           At AppXperts, we blend cutting-edge technology with innovative design to build software that powers your business growth. From custom applications to enterprise solutions, we help businesses digitally transform with confidence.
         </p>
-  <div style={{ display: 'flex', alignItems: 'center', gap: 18, marginBottom: 20, width: '100%' }}>
+        <div className="home-btn-row" style={{ display: 'flex', alignItems: 'center', gap: 18, marginBottom: 20, width: '100%' }}>
           <a href="/about" className='submit-button'>Know More</a>
           {/* <a href="#video" style={{
             display: 'flex',
@@ -84,7 +73,7 @@ const Home = () => {
             Watch a Video
           </a> */}
         </div>
-  <div style={{ display: 'flex', alignItems: 'center', gap: 64,  width: '100%' }}>
+        <div className="home-stats-row" style={{ display: 'flex', alignItems: 'center', gap: 64,  width: '100%' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <span style={{ fontWeight: 700, fontSize: 32, color: '#111' }}>95</span><span style={{ fontWeight: 700, fontSize: 32, color: '#1a3fa6' }}>%</span>
             <span style={{ color: '#888', fontWeight:400, fontFamily:'Poppins', fontSize: 16, marginLeft: 8 }}>Projects Completed</span>
@@ -95,7 +84,131 @@ const Home = () => {
           </div>
         </div>
       </div>
-  {/* Right Side: 3D Logo and Badges (now overlapped in heading) */}
+      {/* Right Side: 3D Logo and Badges */}
+      <div className="home-right" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', minHeight: 180 }}>
+        <img src={Appxpertsbiglog} alt="AppXperts 3D Logo" className="home-main-logo" />
+      </div>
+      {/* Responsive Home Styles */}
+      <style>{`
+        .home-main-logo {
+          width: 600px;
+          position: absolute;
+          right: 60px;
+          top: 35px;
+          filter: drop-shadow(0 8px 32px #1a3fa622);
+          border-radius: 24px;
+          transition: width 0.3s, right 0.3s, top 0.3s;
+          z-index: 1;
+        }
+        .home-title {
+          z-index: 2;
+          position: relative;
+        }
+        .home-right {
+          position: relative;
+        }
+        @media (max-width: 1200px) {
+          .home-title {
+            font-size: 80px !important;
+          }
+          .home-left {
+            padding-left: 24px !important;
+          }
+          .home-main-logo {
+            width: 320px !important;
+            right: 24px !important;
+            top: 24px !important;
+          }
+        }
+        @media (max-width: 900px) {
+          .home-title {
+            font-size: 48px !important;
+          }
+          .home-subtitle {
+            font-size: 22px !important;
+          }
+          .home-left {
+            padding-left: 12px !important;
+          }
+          .home-section {
+            padding: 24px 0 0 0 !important;
+          }
+          .home-stats-row {
+            gap: 24px !important;
+          }
+          .home-main-logo {
+            width: 200px !important;
+            right: 12px !important;
+            top: 12px !important;
+          }
+        }
+        @media (max-width: 700px) {
+          .home-section {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            min-height: unset !important;
+            padding: 8px 0 0 0 !important;
+          }
+          .home-left {
+            padding-left: 0 !important;
+            min-height: unset !important;
+            width: 100% !important;
+          }
+          .home-title {
+            font-size: 28px !important;
+            margin-bottom: 8px !important;
+            text-align: center !important;
+            white-space: normal !important;
+            word-break: break-word !important;
+            overflow-wrap: break-word !important;
+            line-height: 1.2 !important;
+            z-index: 2 !important;
+            position: relative !important;
+            padding-top: 32px !important;
+          }
+          .home-subtitle {
+            font-size: 14px !important;
+            margin-bottom: 8px !important;
+            text-align: center !important;
+          }
+          .home-desc {
+            font-size: 13px !important;
+            margin-bottom: 10px !important;
+            text-align: center !important;
+          }
+          .home-btn-row {
+            flex-direction: column !important;
+            gap: 10px !important;
+            align-items: center !important;
+            width: 100% !important;
+          }
+          .home-stats-row {
+            flex-direction: column !important;
+            gap: 10px !important;
+            align-items: center !important;
+            width: 100% !important;
+          }
+          .home-stats-row > div {
+            justify-content: center !important;
+          }
+          .home-right {
+            width: 100% !important;
+            margin-top: 12px !important;
+            display: flex !important;
+            justify-content: center !important;
+            position: static !important;
+          }
+          .home-main-logo {
+            width: 100px !important;
+            margin: 0 auto !important;
+            display: block !important;
+            position: static !important;
+            right: unset !important;
+            top: unset !important;
+            z-index: 1 !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
