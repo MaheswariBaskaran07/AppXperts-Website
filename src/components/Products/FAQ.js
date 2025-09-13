@@ -52,97 +52,41 @@ const FAQ = () => {
   const col2Faqs = faqs.slice(3, 6);
 
   return (
-    <section className="faq-section" style={{ fontFamily: 'Poppins' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 60, marginBottom: 32 }}>
-        <h2 style={{ fontSize: 70, fontWeight: 500, margin: 0, color: '#111827', lineHeight: 1.1, whiteSpace: 'nowrap' }}>
-          Frequently Asked<br/> Questions on Products
-        </h2>
-        <p style={{ color: '#4b5563', fontSize: 16, margin: 0, lineHeight: 1.6, maxWidth: 420 }}>
-          We don’t just deliver visuals—we build creative partnerships that leave a lasting impact. Hear directly from the people we’ve collaborated with, and discover how Opera has helped brands.
-        </p>
+    <section className="faq-section">
+  <div className="faq-header">
+    <h2>
+      Frequently Asked <br /> Questions on Products
+    </h2>
+    <p>
+      We don’t just deliver visuals—we build creative partnerships that leave a
+      lasting impact. Hear directly from the people we’ve collaborated with, and
+      discover how Opera has helped brands.
+    </p>
+  </div>
+
+  <div className="faq-list">
+    {/* Left + Right FAQs auto handled by CSS grid */}
+    {faqs.map((faq, index) => (
+      <div
+        key={index}
+        className={`faq-item${openIndex === index ? " active" : ""}`}
+      >
+        <button
+          className="faq-question"
+          onClick={() => toggleFAQ(index)}
+          aria-expanded={openIndex === index}
+        >
+          <span>{faq.question}</span>
+          <img src={openIndex === index ? sub : plus} alt="toggle" />
+        </button>
+        {openIndex === index && (
+          <div className="faq-answer">{faq.answer}</div>
+        )}
       </div>
-      <div className="faq-list" style={{ display: 'flex', flexDirection: 'row', gap: 20 }}>
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 20 }}>
-          {col1Faqs.map((faq, index) => (
-            <div
-              key={index}
-              className={`faq-item${openIndex === index ? " active" : ""}`}
-              style={openIndex === index ? { boxShadow: '0 4px 24px 0 rgba(59,130,246,0.10)', background: 'linear-gradient(90deg, #ACE3FF 0%, #CAD1FF 100%)' } : {}}
-            >
-              <button
-                className="faq-question"
-                onClick={() => toggleFAQ(index)}
-                aria-expanded={openIndex === index}
-                style={openIndex === index ? { background: 'linear-gradient(90deg, #ACE3FF 0%, #CAD1FF 100%)' } : {}}
-              >
-                <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <span style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: 24,
-                    height: 24,
-                    borderRadius: '50%',
-                    background: openIndex === index ? '#e0edff' : '#f3f4f6',
-                    color: openIndex === index ? '#2563eb' : '#6b7280',
-                    fontSize: 16,
-                    marginRight: 8,
-                  }}>
-                    <img src={openIndex === index ? icon : cal} alt="icon" style={{ width: 28, height: 28 }}/>
-                  </span>
-                  <span style={{ fontWeight: openIndex === index ? 600 : 600, color: openIndex === index ? '#000000' : '#000000' }}>{faq.question}</span>
-                </span>
-                <img src={openIndex === index ? sub : plus} alt="icon" style={{ width: 28, height: 28 }}/>
-              </button>
-              {openIndex === index && (
-                <div className="faq-answer" style={{ color: '#000000', fontWeight: 400 }}>{faq.answer}</div>
-              )}
-            </div>
-          ))}
-        </div>
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 20 }}>
-          {col2Faqs.map((faq, i) => {
-            const index = i + 3;
-            return (
-              <div
-                key={index}
-                className={`faq-item${openIndex === index ? " active" : ""}`}
-                style={openIndex === index ? { boxShadow: '0 4px 24px 0 rgba(59,130,246,0.10)', background: 'linear-gradient(90deg, #ACE3FF 0%, #CAD1FF 100%)' } : {}}
-              >
-                <button
-                  className="faq-question"
-                  onClick={() => toggleFAQ(index)}
-                  aria-expanded={openIndex === index}
-                  style={openIndex === index ? { background: 'linear-gradient(90deg, #ACE3FF 0%, #CAD1FF 100%)' } : {}}
-                >
-                  <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                    <span style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: 24,
-                      height: 24,
-                      borderRadius: '50%',
-                      background: openIndex === index ? '#e0edff' : '#f3f4f6',
-                      color: openIndex === index ? '#2563eb' : '#6b7280',
-                      fontSize: 16,
-                      marginRight: 8,
-                    }}>
-                      <img src={openIndex === index ? icon : cal} alt="icon" style={{ width: 28, height: 28 }}/>
-                    </span>
-                    <span style={{ fontWeight: openIndex === index ? 600 : 600, color: openIndex === index ? '#000000' : '#000000' }}>{faq.question}</span>
-                  </span>
-                  <img src={openIndex === index ? sub : plus} alt="icon" style={{ width: 28, height: 28 }}/>
-                </button>
-                {openIndex === index && (
-                  <div className="faq-answer" style={{ color: '#000000', fontWeight: 400 }}>{faq.answer}</div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+    ))}
+  </div>
+</section>
+
   );
 };
 

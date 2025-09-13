@@ -129,7 +129,7 @@ const Softwares = () => {
   return (
     <div style={{ padding: "50px 20px" }}>
       {/* Heading + Subtext */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 40 }}>
+      {/* <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 40 }}>
         <h2 style={{ fontSize: 40, fontWeight: 500, marginLeft: 60, color: "#111", lineHeight: 1.1 }}>
           Digital Solutions,<br />Tailored to Perform
         </h2>
@@ -147,7 +147,14 @@ const Softwares = () => {
         >
           From streamlining operations to boosting engagement — our products are built to deliver results, faster.
         </div>
-      </div>
+      </div> */}
+      <div className="cards-heading">
+  <h2>Digital Solutions,<br />Tailored to Perform</h2>
+  <p>
+    From streamlining operations to boosting engagement — our products are built to deliver results, faster.
+  </p>
+</div>
+
 
       {/* Cards Grid */}
       <div className="cards-grid">
