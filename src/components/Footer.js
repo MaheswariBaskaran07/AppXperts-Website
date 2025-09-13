@@ -21,10 +21,12 @@ const Footer = () => {
         width: "100%",
         boxSizing: "border-box",
         overflowX: "hidden",
+        position: "relative"
       }}
     >
       {/* Top Row */}
       <div
+        className="footer-top-row"
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -34,11 +36,11 @@ const Footer = () => {
           padding: "0 40px 32px 40px",
           borderBottom: "1px solid #e3e8ee",
           flexWrap: "wrap",
-          
         }}
       >
         {/* Left: Logo and Description */}
         <div
+          className="footer-logo-desc"
           style={{
             flex: 1,
             minWidth: 200,
@@ -81,12 +83,12 @@ const Footer = () => {
 
         {/* Center: Quick Links */}
         <div
+          className="footer-quick-links"
           style={{
             flex: 2,
             minWidth: 320,
             display: "flex",
             justifyContent: "center",
-            
             fontFamily: "Poppins",
           }}
         >
@@ -148,10 +150,10 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Right: Get in Touch - Split by Country */}
-        <div style={{ fontFamily:"Poppins, sans-serif", flex: 2.5, minWidth: 260 }}>
+  {/* Right: Get in Touch - Split by Country */}
+  <div className="footer-get-in-touch" style={{ fontFamily:"Poppins, sans-serif", flex: 2.5, minWidth: 260 }}>
           <h4 style={{ fontSize:16, fontWeight: 600, fontStyle: "bold", marginBottom: 10 }}>Get in Touch</h4>
-          <div style={{ display: 'flex', gap: 32, flexWrap: 'nowrap', minWidth: 540 }}>
+          <div className="footer-contact-row" style={{ display: 'flex', gap: 32, flexWrap: 'nowrap', minWidth: 540 }}>
             {/* India */}
             <div style={{ minWidth: 180, flex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
@@ -194,6 +196,7 @@ const Footer = () => {
 
       {/* Bottom Row */}
       <div
+        className="footer-bottom-row"
         style={{
           display: "flex",
           alignItems: "center",
@@ -244,6 +247,46 @@ const Footer = () => {
           Back to Top <span style={{ fontSize: 16, marginLeft: 6 }}>↑</span>
         </a>
       </div>
+      {/* Responsive Footer Styles */}
+      <style>{`
+        @media (max-width: 900px) {
+          .footer-top-row {
+            padding: 0 18px 32px 18px;
+          }
+          .footer-bottom-row {
+            padding: 18px 18px 24px 18px;
+          }
+        }
+        @media (max-width: 700px) {
+          .footer-top-row {
+            flex-direction: column;
+            align-items: stretch;
+            padding: 0 8px 24px 8px;
+          }
+          .footer-logo-desc {
+            align-items: center;
+            margin-bottom: 24px;
+          }
+          .footer-quick-links {
+            justify-content: flex-start;
+            margin-bottom: 24px;
+          }
+          .footer-get-in-touch {
+            margin-bottom: 24px;
+          }
+          .footer-contact-row {
+            flex-direction: column;
+            gap: 12px;
+            min-width: unset;
+          }
+          .footer-bottom-row {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 18px 8px 24px 8px;
+          }
+        }
+      `}</style>
     </footer>
   );
 };

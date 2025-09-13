@@ -1,5 +1,9 @@
+/* ===============================
+   Card Container
+================================ */
 .card {
-  width: 370px;
+  width: 100%;
+  max-width: 370px; /* prevents stretching too wide */
   height: 180px;
   border-radius: 15px;
   background: transparent; /* let inner handle bg */
@@ -8,6 +12,7 @@
   position: relative;
 }
 
+/* Inner flip wrapper */
 .card-inner {
   position: relative;
   width: 100%;
@@ -20,17 +25,18 @@
   transform: rotateY(180deg);
 }
 
+/* Front + Back Faces */
 .card-front,
 .card-back {
   position: absolute;
   top: 0;
-  left: 0;         /* ✅ keep both sides stacked */
+  left: 0; /* keep stacked */
   width: 100%;
   height: 100%;
   border-radius: 15px;
   padding: 20px;
   box-sizing: border-box;
-  backface-visibility: hidden; /* ✅ hide backside when flipped */
+  backface-visibility: hidden; /* hide backside */
 }
 
 .card-front {
@@ -47,24 +53,128 @@
   justify-content: center;
 }
 
-/* Cards grid container */
+/* ===============================
+   Cards Grid
+================================ */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards per row by default */
-  gap: 30px; /* spacing between cards */
-  justify-items: center; /* center cards horizontally */
+  grid-template-columns: repeat(3, 1fr); /* 3 per row on desktop */
+  gap: 30px;
+  justify-items: center; /* center cards in grid */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Responsive for tablets */
+/* ===============================
+   Responsive Breakpoints
+================================ */
+
+/* Tablet (2 per row) */
 @media (max-width: 1024px) {
   .cards-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .card {
+    max-width: 100%; /* take full available space */
   }
 }
 
-/* Responsive for mobile */
+/* Mobile (1 per row) */
 @media (max-width: 640px) {
   .cards-grid {
-    grid-template-columns: 1fr; /* 1 card per row */
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    height: 160px; /* slightly smaller */
+  }
+
+  .card-front,
+  .card-back {
+    padding: 15px;
+  }
+}
+
+/* ===============================
+   Cards Heading (title + subtext)
+================================ */
+.cards-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  gap: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+/* Title */
+.cards-heading h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #111;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Subtext */
+.cards-heading .subtext {
+  max-width: 400px;
+  font-weight: 400;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: right;
+}
+
+/* ===============================
+   Responsive Breakpoints
+================================ */
+
+/* Tablet (stack heading + text vertically but still aligned) */
+@media (max-width: 1024px) {
+  .cards-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 15px;
+  }
+
+  .cards-heading h2 {
+    font-size: 32px;
+  }
+
+  .cards-heading .subtext {
+    text-align: left;
+    font-size: 15px;
+    max-width: 100%;
+  }
+}
+
+/* Mobile (centered, smaller text) */
+@media (max-width: 640px) {
+  .cards-heading {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .cards-heading h2 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .cards-heading .subtext {
+    font-size: 14px;
+    color: #777;
+    max-width: 90%;
+    text-align: center;
   }
 }

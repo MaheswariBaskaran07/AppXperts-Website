@@ -6,8 +6,16 @@ import { motion } from "framer-motion";
 import lamp from "../../assets/Product/freepik--Lamps--inject-229.png";
 import rope from "../../assets/Product/rope.png"
 import "../../components/Products/lamp.css"
+import React from "react";
 
 const Service = () => { 
+  // Track window width for responsive rendering
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  React.useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
       const [lamp1On, setLamp1On] = useState(false);
   const [lamp2On, setLamp2On] = useState(false);
 
@@ -39,13 +47,12 @@ const Service = () => {
       }}
     >
       {/* 🔹 Lamps Row */}
-      {/* Rope at top-right corner */}
-      <div
-      className="people-float"
+          <div
+        className="people-float"
         style={{
           position: "absolute",
-             "top": "-180px",
-             "right": "60px",
+          top: "-180px",
+          right: "60px",
           zIndex: 10,
           display: "flex",
           flexDirection: "column",
@@ -57,10 +64,44 @@ const Service = () => {
         <img
           src={rope}
           alt="Rope"
-         style={{width: "200px", height: "700px", objectFit: "contain", userSelect: "none" }}
+          className="product-rope-img"
+          style={{ width: "200px", height: "700px", objectFit: "contain", userSelect: "none" }}
         />
-        {/* <span style={{ fontSize: "18px", color: "#bfa13b", marginTop: "12px", fontWeight: 600 }}>Click on Rope</span> */}
       </div>
+      {/* Responsive rope image styles */}
+      <style>{`
+        @media (max-width: 1100px) {
+          .product-rope-img {
+            width: 120px !important;
+            height: 350px !important;
+          }
+          .people-float {
+            top: -80px !important;
+            right: 20px !important;
+          }
+        }
+        @media (max-width: 700px) {
+          .product-rope-img {
+            position: static !important;
+            width: 55px !important;
+            height: 110px !important;
+            margin: 0 auto !important;
+            display: block !important;
+            z-index: 100 !important;
+          }
+          .people-float {
+            position: absolute !important;
+            top: 0 !important;
+            right: 0 !important;
+            margin: 0 !important;
+            width: 60px !important;
+            height: auto !important;
+            z-index: 10 !important;
+            justify-content: center !important;
+            align-items: center !important;
+          }
+        }
+      `}</style>
 
       <div
         style={{
@@ -140,6 +181,7 @@ const Service = () => {
       <img
         src={people}
         alt="People"
+        className="about-people-img"
         style={{
           position: "absolute",
           bottom: "0",
@@ -151,7 +193,18 @@ const Service = () => {
           zIndex: 1,
         }}
       />
-      
+        <style>{` .about-people-img {
+          position: static !important;
+          top: unset !important;
+          right: unset !important;
+          left: unset !important;
+          transform: none !important;
+          width: 100% !important;
+          max-width: 1500px !important;
+          margin: 12px auto 0 auto !important;
+          display: block !important;
+          z-index: 1 !important;
+        }`}</style>
     </div>
    <OurService />
          <CallToAction />
@@ -159,3 +212,18 @@ const Service = () => {
     )
 }
 export default Service;
+// Responsive rope image styles
+<style>{`
+  @media (max-width: 1100px) {
+    .service-rope-img {
+      width: 120px !important;
+      height: 350px !important;
+    }
+  }
+  @media (max-width: 700px) {
+    .service-rope-img {
+      display: none !important;
+    }
+    
+  }
+`}</style>

@@ -22,6 +22,29 @@ import { motion } from "framer-motion";
 import people from "../assets/About/Group 2188.png";
 
 const About = () => {
+  // Fix: Define slides array for team slider
+  const slides = [
+    { img: CEO, title: "Aasif (CEO)", description: "Visionary leader and founder." },
+    { img: Flutter, title: "Joe (Flutter Dev)", description: "Mobile app specialist." },
+    { img: UIUX, title: "UI/UX Designer", description: "Designs seamless experiences." },
+    { img: BackEndDev, title: "Rajeshwari (Backend)", description: "Server-side expert." },
+    { img: Maheswari, title: "Maheswari (Frontend)", description: "Frontend developer." },
+    { img: Keerthana, title: "Keerthana (Frontend)", description: "Frontend developer." },
+    { img: Karthi, title: "Karthi (DevOps)", description: "Deployment & automation." },
+    { img: Prakash, title: "Prakash (QA)", description: "Quality assurance." },
+    { img: Rabi, title: "Rabi (Fullstack)", description: "Fullstack developer." },
+    { img: Karthika, title: "Karthika (Support)", description: "Customer support." },
+    { img: HR, title: "HR", description: "Human resources." },
+  ];
+
+  // Fix: duplicatedSlides for infinite slider
+  const duplicatedSlides = [...slides, ...slides];
+
+  // Fix: aboutBadgeVisible for About Us badge animation
+  const [aboutBadgeVisible, setAboutBadgeVisible] = useState(false);
+  useEffect(() => {
+    setTimeout(() => setAboutBadgeVisible(true), 400);
+  }, []);
    const [lamp1On, setLamp1On] = useState(false);
   const [lamp2On, setLamp2On] = useState(false);
 
@@ -38,27 +61,6 @@ const About = () => {
   useEffect(() => {
     setTimeout(() => setWhatWeDoVisible(true), 600);
   }, []);
-  const [aboutBadgeVisible, setAboutBadgeVisible] = useState(false);
-  useEffect(() => {
-    setTimeout(() => setAboutBadgeVisible(true), 200);
-  }, []);
-  const slides = [
-    { id: 1, img: CEO, title: "Mohamed Aasif", description: "CEO" },
-    { id: 2, img: Rabi, title: "Mohamed Rabi", description: "Backend Developer" },
-    { id: 3, img: BackEndDev, title: "Rajeswari", description: "Backend Developer" },
-    { id: 4, img: Flutter, title: "Nagajothika",description:"Flutter Developer" },
-    { id: 5, img: Maheswari, title: "Maheswari", description: "Frontend Developer" },
-    { id: 6, img: UIUX, title: "Merin Albert",description:"UI/UX Designer" },
-    { id: 7, img: Keerthana, title: "Keerthana", description: "Frontend Developer" },
-    { id: 8, img: Karthi, title: "Karthikeyan", description: "Frontend Developer" },
-    { id: 9, img: Prakash, title: "Prakash", description: "QA Engineer" },
-    { id: 10, img: Karthika, title: "Reshma",description:"UI/UX Designer" },
-       { id: 11, img: HR, title: "Sunitha", description: "Human Resource Manager" },
-  ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const duplicatedSlides = [...slides, ...slides];
-
   const [offset, setOffset] = useState(0);
   const slideWidth = 250; // card width + margin
 
@@ -77,6 +79,7 @@ const About = () => {
   return (
     <>
     <div
+      className="about-main"
       style={{
         position: "relative",
         textAlign: "center",
@@ -100,12 +103,12 @@ const About = () => {
       {/* Rope at top-right corner */}
      
     
-       <div
-       className="people-float"
+          <div
+        className="people-float"
         style={{
           position: "absolute",
-             "top": "-180px",
-             "right": "60px",
+          top: "-180px",
+          right: "60px",
           zIndex: 10,
           display: "flex",
           flexDirection: "column",
@@ -117,12 +120,47 @@ const About = () => {
         <img
           src={rope}
           alt="Rope"
-           style={{width: "200px", height: "700px", objectFit: "contain", userSelect: "none" }}
+          className="product-rope-img"
+          style={{ width: "200px", height: "700px", objectFit: "contain", userSelect: "none" }}
         />
-        {/* <span style={{ fontSize: "18px", color: "#bfa13b", marginTop: "12px",marginLeft:"250px", fontWeight: 600 }}>Click on Rope</span> */}
       </div>
+      {/* Responsive rope image styles */}
+      <style>{`
+        @media (max-width: 1100px) {
+          .product-rope-img {
+            width: 120px !important;
+            height: 350px !important;
+          }
+          .people-float {
+            top: -80px !important;
+            right: 20px !important;
+          }
+        }
+        @media (max-width: 700px) {
+          .product-rope-img {
+            position: static !important;
+            width: 55px !important;
+            height: 110px !important;
+            margin: 0 auto !important;
+            display: block !important;
+            z-index: 100 !important;
+          }
+          .people-float {
+            position: absolute !important;
+            top: 0 !important;
+            right: 0 !important;
+            margin: 0 !important;
+            width: 60px !important;
+            height: auto !important;
+            z-index: 10 !important;
+            justify-content: center !important;
+            align-items: center !important;
+          }
+        }
+      `}</style>
 
       <div
+        className="about-lamps-row"
         style={{
           display: "flex",
           justifyContent: "center",
@@ -130,6 +168,7 @@ const About = () => {
           gap: "120px",
           top:"-30px",
           position: "relative",
+          zIndex: 9
         }}
       >
         {/* Lamp 1 */}
@@ -175,7 +214,7 @@ const About = () => {
       ></div>
 
       {/* Content */}
-      <div style={{ position: "relative", zIndex: 2, maxWidth: "1300px" }}>
+  <div className="about-content" style={{ position: "relative", zIndex: 2, maxWidth: "1300px" }}>
         {/* Badge */}
         <span
           style={{
@@ -198,6 +237,7 @@ const About = () => {
         </span>
         {/* Heading */}
         <h1
+          className="about-heading"
           style={{
             fontSize: "48px",
             fontWeight: "bold",
@@ -227,21 +267,23 @@ const About = () => {
         </p>
       </div>
         <img
-        src={people}
-        alt="People"
-        style={{
-          position: "absolute",
-          bottom: "0",
-          top: "240px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "100%",
-          maxWidth: "1500px",
-          zIndex: 1,
-        }}
-      />
+          src={people}
+          alt="People"
+          className="about-people-img"
+          style={{
+            position: "absolute",
+            bottom: "0",
+            top: "240px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "100%",
+            maxWidth: "1500px",
+            zIndex: 1,
+          }}
+        />
     </div>
     <div
+      className="about-who-row"
       style={{
         display: "flex",
         justifyContent: "space-between",
@@ -309,6 +351,7 @@ const About = () => {
       </div>
     </div>
     <div
+      className="about-ideas-row"
       style={{
         display: "flex",
         alignItems: "center",
@@ -517,6 +560,7 @@ const About = () => {
       </div>
     </div>
     <div
+      className="about-why-row"
       style={{
         maxWidth: "1000px",
         margin: "0 auto",
@@ -633,6 +677,7 @@ const About = () => {
     </div>
 
     <div
+      className="about-team-row"
       style={{
         background: "linear-gradient(to right, #f8f9fa, #eef5f9)",
         padding: "60px 20px",
@@ -808,6 +853,101 @@ const About = () => {
       </style>
     </div>
 
+    {/* Responsive About Styles */}
+    <style>{`
+      @media (max-width: 1100px) {
+        .about-main {
+          padding: 24px 8px 60px 8px !important;
+        }
+        .about-content {
+          max-width: 900px !important;
+        }
+        .about-heading {
+          font-size: 32px !important;
+        }
+        .about-lamps-row {
+          gap: 40px !important;
+        }
+        .about-who-row, .about-ideas-row {
+          padding: 40px 12px !important;
+        }
+        .about-why-row {
+          padding: 32px 8px !important;
+        }
+        .about-team-row {
+          padding: 32px 8px !important;
+        }
+      }
+      @media (max-width: 700px) {
+        .about-main {
+          padding: 12px 0 24px 0 !important;
+        }
+        .about-content {
+          max-width: 100% !important;
+        }
+        .about-heading {
+          font-size: 22px !important;
+          margin-top: 12px !important;
+        }
+        .about-lamps-row {
+          flex-direction: column !important;
+          gap: 12px !important;
+          align-items: center !important;
+        }
+        .about-who-row, .about-ideas-row {
+          flex-direction: column !important;
+          padding: 18px 4px !important;
+        }
+        .about-why-row {
+          padding: 18px 4px !important;
+        }
+        .about-team-row {
+          padding: 18px 4px !important;
+        }
+        .about-why-row h2, .about-team-row h2 {
+          font-size: 22px !important;
+        }
+        .about-why-row p, .about-team-row p {
+          font-size: 13px !important;
+        }
+        .about-ideas-row > div, .about-who-row > div {
+          width: 100% !important;
+          padding: 0 !important;
+        }
+        .about-ideas-row img, .about-content img, .about-main img {
+          max-width: 100% !important;
+          height: auto !important;
+        }
+        .about-lamps-row .lamp-float {
+          width: 60px !important;
+        }
+        .about-rope-img {
+         position: static !important;
+         top: unset !important;
+         right: unset !important;
+         left: unset !important;
+         width: 55px !important;
+         height: 110px !important;
+         margin: 0 auto !important;
+         display: block !important;
+         z-index: 100 !important;
+         background: #fff3cd !important;
+         border: 2px solid #bfa13b !important;
+        }
+        .about-people-img {
+          position: static !important;
+          top: unset !important;
+          right: unset !important;
+          left: unset !important;
+          transform: none !important;
+          width: 100% !important;
+          max-width: 1500px !important;
+          margin: 12px auto 0 auto !important;
+          display: block !important;
+          z-index: 1 !important;
+        }
+      }
+    `}</style>
     </>
   );
 };

@@ -4,6 +4,7 @@ import Digital from "../../assets/Services/Digital.png";
 import Brand from "../../assets/Services/Brand.png";
 import Website from "../../assets/Services/Website.png";
 import Review from "../../assets/Services/Online Review.png";
+import "./OurService.css"
 
 const OurService = () => {
   const services = [
@@ -49,7 +50,7 @@ const OurService = () => {
     <div
       style={{
         fontFamily: "Poppins",
-        padding: "60px 20px",
+        padding: "40px 8px",
         textAlign: "center",
         backgroundColor: "#fff",
       }}
@@ -76,31 +77,27 @@ const OurService = () => {
 
       {/* Grid */}
       <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "20px",
-          maxWidth: "1100px",
-          margin: "0 auto",
-        }}
-      >
+        className="ourservice-grid"  >
         {services.map((service, index) => (
           <div
             key={index}
+            className="ourservice-card"
             style={{
               backgroundColor: service.placeholder ? "#f9f9f9" : "#f9f9f9",
-              padding: service.placeholder ? "0" : "30px 20px",
-              borderRadius: "12px",
+              padding: service.placeholder ? "0" : "18px 10px",
+              borderRadius: "10px",
               textAlign: service.placeholder ? "center" : "left",
               boxShadow: service.placeholder
                 ? "none"
-                : "0 4px 12px rgba(0,0,0,0.05)",
+                : "0 2px 8px rgba(0,0,0,0.04)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              minHeight: "220px",
+              minHeight: "140px",
               transition: "transform 0.3s ease, box-shadow 0.3s ease",
+              maxWidth: "260px",
+              margin: "0 auto",
             }}
             onMouseEnter={(e) => {
               if (!service.placeholder) {
@@ -134,20 +131,20 @@ const OurService = () => {
                 <div
                   style={{
                     borderRadius: "50%",
-                    width: "60px",
-                    height: "60px",
+                    width: "40px",
+                    height: "40px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    marginBottom: "20px",
+                    marginBottom: "12px",
                   }}
                 >
                   <img
                     src={service.icon}
                     alt={service.title}
                     style={{
-                      width: "80px",
-                      height: "80px",
+                      width: "38px",
+                      height: "38px",
                       objectFit: "contain",
                     }}
                   />
@@ -156,9 +153,9 @@ const OurService = () => {
                 {/* Title */}
                 <h3
                   style={{
-                    fontSize: "28px",
+                    fontSize: "18px",
                     fontWeight: "bold",
-                    marginBottom: "10px",
+                    marginBottom: "8px",
                   }}
                 >
                   {service.title}
@@ -167,9 +164,9 @@ const OurService = () => {
                 {/* Description */}
                 <p
                   style={{
-                    fontSize: "16px",
+                    fontSize: "13px",
                     color: "#555",
-                    lineHeight: "1.6",
+                    lineHeight: "1.5",
                   }}
                 >
                   {service.description}
@@ -184,3 +181,4 @@ const OurService = () => {
 };
 
 export default OurService;
+ 

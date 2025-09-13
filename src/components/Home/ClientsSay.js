@@ -2,8 +2,6 @@ import {useState} from "react";
 import Blog from "../../assets/Home/Blog.png";
 import mindGate from "../../assets/Home/Group 389.png";
 import erp from "../../assets/Home/erp.png"
-import BookNowPopup from "../BookNowPopup";
-
 import TS from "../../assets/Home/skills/typescript.png";
 import ReactJS from "../../assets/Home/skills/atom.png";
 import NodeJS from "../../assets/Home/skills/node-js (1).png";
@@ -15,7 +13,10 @@ import JS from "../../assets/Home/skills/java-script (1).png";
 import AI from "../../assets/Home/skills/generative.png";
 import Java from "../../assets/Home/skills/Frame (2) (1).png";
 import HTML from "../../assets/Home/skills/browser.png";
-
+import CSS from "../../assets/Home/skills/css.svg";
+import native from "../../assets/Home/skills/react native.svg";
+import BookNowPopup from "../BookNowPopup";
+import dot from "../../assets/Home/skills/net.svg"
 
 const testimonials = [
   {
@@ -165,22 +166,22 @@ const ClientsSay = () => {
           zIndex: 2,
         }}
       >
-        {/* Floating bubbles for all skills */}
+        {/* Floating bubbles for all skills with icons */}
         {[
-          { label: "React JS", color: "#61dafb", top: 8, left: "10%" },
-          { label: "Flutter", color: "#42a5f5", top: 32, left: "20%" },
-          { label: "Node JS", color: "#8cc84b", top: 60, left: "6%" },
-          { label: "Python", color: "#3776ab", top: 18, left: "30%" },
-          { label: ".NET", color: "#512bd4", top: 65, left: "38%" },
-          { label: "Angular", color: "#dd0031", top: 70, left: "28%" },
-          { label: "Spring Boot", color: "#6db33f", top: 65, left: "15%" },
-          { label: "React Native", color: "#00d8ff", top: 50, right: "35%" },
-          { label: "CSS", color: "#2965f1", top: 14, right: "10%" },
-          { label: "HTML", color: "#e34c26", top: 40, right: "2%" },
-          { label: "JS", color: "#f7df1e", top: 68, right: "6%" },
-          { label: "UI/UX", color: "#ffb300", top: 30, right: "18%" },
-          { label: "TypeScript", color: "#3178c6", top: 60, right: "24%" },
-          { label: "Java", color: "#e76f00", top: 80, right: "12%" },
+          { label: "React JS", color: "#61dafb", top: 8, left: "10%", icon: ReactJS },
+          { label: "Flutter", color: "#42a5f5", top: 32, left: "20%", icon: Flutter },
+          { label: "Node JS", color: "#8cc84b", top: 60, left: "6%", icon: NodeJS },
+          { label: "Python", color: "#3776ab", top: 18, left: "30%", icon: Python },
+          { label: "AI", color: "#512bd4", top: 65, left: "38%", icon: AI },
+          { label: "Angular", color: "#dd0031", top: 70, left: "28%", icon: Angular },
+          { label: "CSS", color: "#6db33f", top: 65, left: "15%", icon: CSS },
+          { label: "React Native", color: "#00d8ff", top: 50, right: "35%", icon: native },
+          { label: ".NET", color: "#2965f1", top: 14, right: "10%", icon: dot },
+          { label: "HTML", color: "#e34c26", top: 40, right: "2%", icon: HTML },
+          { label: "JS", color: "#f7df1e", top: 68, right: "6%", icon: JS },
+          { label: "UI/UX", color: "#ffb300", top: 30, right: "18%", icon: UIUX },
+          { label: "TypeScript", color: "#3178c6", top: 60, right: "24%", icon: TS },
+          { label: "Java", color: "#e76f00", top: 80, right: "12%", icon: Java },
         ].map((skill, i) => (
           <div
             key={skill.label}
@@ -202,6 +203,7 @@ const ClientsSay = () => {
                 boxShadow:
                   "inset -5px -5px 15px rgba(255,255,255,0.6), 0 0 15px rgba(135,206,250,0.2)",
                 display: "flex",
+                flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
                 overflow: "hidden",
@@ -212,8 +214,10 @@ const ClientsSay = () => {
                 border: `2.5px solid ${skill.color}`,
                 pointerEvents: "auto",
                 userSelect: "none",
+                gap: "8px"
               }}
             >
+              <img src={skill.icon} alt={skill.label} style={{ width: "38px", height: "38px", marginBottom: "2px" }} />
               {skill.label}
             </div>
           </div>
@@ -268,11 +272,13 @@ const ClientsSay = () => {
 
       {/* Section Content */}
       <div style={{ position: "relative", zIndex: 3, margin: "0 auto", marginTop: 80, maxWidth: 500 }}>
-       <h2>Let’s build something great.</h2>
-          <p>Your idea, our craft.</p>
-          <button onClick={() => setIsOpen(true)} className="submit-button">
-            Book a meeting →
-          </button>
+        <h2>Let’s build something great.</h2>
+        <p>Your idea, our craft.</p>
+        <button onClick={() => setIsOpen(true)} className="submit-button">
+          Book a meeting →
+        </button>
+        <BookNowPopup open={isOpen} setOpen={setIsOpen} />
+
       </div>
     </section>
 
