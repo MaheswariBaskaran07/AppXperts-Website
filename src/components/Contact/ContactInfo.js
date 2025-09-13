@@ -11,10 +11,11 @@ const ContactInfo = () => {
     <section
       style={{
         width: "100%",
-        padding: "60px 20px",
+        padding: "32px 4px",
         fontFamily: "Poppins",
         position: "relative",
         background: "linear-gradient(135deg, #f8fdff 0%, #1a8fff 100%)",
+        boxSizing: "border-box"
       }}
     >
       {/* Background image */}
@@ -42,14 +43,14 @@ const ContactInfo = () => {
           position: "relative",
           zIndex: 1,
           background: "#fff",
-          borderRadius: "16px",
-          padding: "40px 30px",
+          borderRadius: "12px",
+          padding: "18px 8px",
           maxWidth: "1100px",
           margin: "0 auto",
-          boxShadow: "0 6px 20px rgba(0,0,0,0.1)",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
           display: "flex",
           flexDirection: "column",
-          gap: "32px",
+          gap: "18px",
         }}
       >
         {/* Heading */}
@@ -69,8 +70,8 @@ const ContactInfo = () => {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: "24px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            gap: "12px",
           }}
         >
           {/* India */}
@@ -88,10 +89,10 @@ const ContactInfo = () => {
             <div style={labelStyle}>Socials</div>
             <div style={{ display: "flex", gap: 12 }}>
               <a href="https://www.facebook.com/AppXes" target="_blank" rel="noreferrer" style={socialStyle}>
-                <img src={fb} alt="fb" style={{ width: 22, height: 22 }} />
+                <img src={fb} alt="fb" style={{ width: 40, height: 40 }} />
               </a>
               <a href="https://www.instagram.com/appxperts.solutions" target="_blank" rel="noreferrer" style={socialStyle}>
-                <img src={insta} alt="insta" style={{ width: 22, height: 22 }} />
+                <img src={insta} alt="insta" style={{ width: 40, height: 40 }} />
               </a>
               <a href="https://www.linkedin.com/company/appxperts-enterprise-solutions/" target="_blank" rel="noreferrer" style={socialStyle}>
                 <img src={linkedIn} alt="linkedin" style={{ width: 20, height: 20 }} />
@@ -114,10 +115,10 @@ const ContactInfo = () => {
             <div style={labelStyle}>Socials</div>
             <div style={{ display: "flex", gap: 12 }}>
               <a href="https://www.facebook.com/AppXes" target="_blank" rel="noreferrer" style={socialStyle}>
-                <img src={fb} alt="fb" style={{ width: 22, height: 22 }} />
+                <img src={fb} alt="fb" style={{ width: 40, height: 40 }} />
               </a>
               <a href="https://www.instagram.com/appxperts.solutions" target="_blank" rel="noreferrer" style={socialStyle}>
-                <img src={insta} alt="insta" style={{ width: 22, height: 22 }} />
+                <img src={insta} alt="insta" style={{ width: 40, height: 40 }} />
               </a>
               <a href="https://www.linkedin.com/company/appxperts-enterprise-solutions/" target="_blank" rel="noreferrer" style={socialStyle}>
                 <img src={linkedIn} alt="linkedin" style={{ width: 20, height: 20 }} />
@@ -140,10 +141,10 @@ const ContactInfo = () => {
             <div style={labelStyle}>Socials</div>
             <div style={{ display: "flex", gap: 12 }}>
               <a href="https://www.facebook.com/AppXes" target="_blank" rel="noreferrer" style={socialStyle}>
-                <img src={fb} alt="fb" style={{ width: 22, height: 22 }} />
+                <img src={fb} alt="fb" style={{ width: 40, height: 40 }} />
               </a>
               <a href="https://www.instagram.com/appxperts.solutions" target="_blank" rel="noreferrer" style={socialStyle}>
-                <img src={insta} alt="insta" style={{ width: 22, height: 22 }} />
+                <img src={insta} alt="insta" style={{ width: 40, height: 40 }} />
               </a>
               <a href="https://www.linkedin.com/company/appxperts-enterprise-solutions/" target="_blank" rel="noreferrer" style={socialStyle}>
                 <img src={linkedIn} alt="linkedin" style={{ width: 20, height: 20 }} />
@@ -158,32 +159,32 @@ const ContactInfo = () => {
 
 // Shared Styles
 const cardStyle = (bg) => ({
-  padding: "20px",
+  padding: "10px",
   borderRadius: "12px",
   background: bg,
   display: "flex",
   flexDirection: "column",
-  gap: "12px",
+  gap: "8px",
   boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
   transition: "transform 0.3s ease, box-shadow 0.3s ease",
   cursor: "pointer",
 });
 
 const titleStyle = { fontSize: "18px", fontWeight: 600, color: "#1a1a1a" };
-const infoRow = { display: "flex", alignItems: "center", gap: 10 };
-const iconStyle = { width: 18, height: 18 };
-const textStyle = { fontSize: 15, color: "#1a1a1a" };
-const labelStyle = { fontWeight: 500, fontSize: 15, marginTop: 10, color: "#374151" };
+const infoRow = { display: "flex", alignItems: "center", gap: 6 };
+const iconStyle = { width: 14, height: 14 };
+const textStyle = { fontSize: 13, color: "#1a1a1a" };
+const labelStyle = { fontWeight: 500, fontSize: 13, marginTop: 6, color: "#374151" };
 
 const socialStyle = {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  width: 36,
-  height: 36,
+  width: 28,
+  height: 28,
   borderRadius: "50%",
   background: "#fff",
-  boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+  boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
 };
 
 export default ContactInfo;

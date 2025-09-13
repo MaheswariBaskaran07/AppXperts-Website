@@ -16,6 +16,7 @@ import HTML from "../../assets/Home/skills/browser.png";
 import CSS from "../../assets/Home/skills/css.svg";
 import native from "../../assets/Home/skills/react native.svg";
 import BookNowPopup from "../BookNowPopup";
+import dot from "../../assets/Home/skills/net.svg"
 
 const testimonials = [
   {
@@ -175,7 +176,7 @@ const ClientsSay = () => {
           { label: "Angular", color: "#dd0031", top: 70, left: "28%", icon: Angular },
           { label: "CSS", color: "#6db33f", top: 65, left: "15%", icon: CSS },
           { label: "React Native", color: "#00d8ff", top: 50, right: "35%", icon: native },
-          { label: ".NET", color: "#2965f1", top: 14, right: "10%", icon: CSS },
+          { label: ".NET", color: "#2965f1", top: 14, right: "10%", icon: dot },
           { label: "HTML", color: "#e34c26", top: 40, right: "2%", icon: HTML },
           { label: "JS", color: "#f7df1e", top: 68, right: "6%", icon: JS },
           { label: "UI/UX", color: "#ffb300", top: 30, right: "18%", icon: UIUX },
