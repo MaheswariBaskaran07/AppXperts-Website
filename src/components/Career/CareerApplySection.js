@@ -7,7 +7,6 @@ const jobs = [
     desc: "Join our mobile team to craft high-quality, scalable, and visually stunning apps. Collaborate with designers and backend engineers to deliver seamless user experiences.",
     skills:
       "Key Skills: Dart, Flutter SDK, API Integration, UI/UX Implementation, Git",
-    link: "#",
     bg: "#EFF0FF",
   },
   {
@@ -15,7 +14,6 @@ const jobs = [
     desc: "Build interactive, responsive, and scalable web applications using React.js. Work closely with designers to turn concepts into pixel-perfect user interfaces.",
     skills:
       "Key Skills: React.js, JavaScript (ES6+), HTML, CSS, Redux, REST APIs, Git",
-    link: "#",
     bg: "#DCE7FF",
   },
   {
@@ -23,7 +21,6 @@ const jobs = [
     desc: "Design and implement robust backend services and APIs. Ensure system scalability, security, and performance for high-traffic applications.",
     skills:
       "Key Skills: Node.js, Express.js, .NET Core, REST/GraphQL APIs, SQL/NoSQL Databases, Authentication",
-    link: "#",
     bg: "#FFFDEF",
   },
   {
@@ -31,7 +28,6 @@ const jobs = [
     desc: "Ensure product quality by writing and executing test cases, identifying bugs, and collaborating with developers for smooth releases.",
     skills:
       "Key Skills: Manual Testing, Automation Testing (Selenium/Jest), Test Cases, Bug Tracking, CI/CD",
-    link: "#",
     bg: "#DEF7FF",
   },
   {
@@ -39,7 +35,6 @@ const jobs = [
     desc: "Create visually stunning, intuitive, and user-friendly designs. Translate requirements into wireframes, mockups, and prototypes that delight users.",
     skills:
       "Key Skills: Figma, Adobe XD, Wireframing, Prototyping, Design Systems, User Research",
-    link: "#",
     bg: "#FFE5E5",
   },
   {
@@ -47,7 +42,6 @@ const jobs = [
     desc: "Lead HR operations, recruitment, and employee engagement strategies. Drive talent management and foster a positive workplace culture.",
     skills:
       "Key Skills: Talent Acquisition, Employee Relations, Payroll, HR Policies, Compliance",
-    link: "#",
     bg: "#FFE8FA",
   },
 ];
@@ -63,14 +57,15 @@ const CareerSection = () => {
         backgroundColor: "#fff",
       }}
     >
+      {/* 🔹 Heading + Description */}
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "center",
+          alignItems: "flex-start",
           flexWrap: "wrap",
           maxWidth: "1200px",
-          margin: "0 auto 100px auto",
+          margin: "0 auto 60px auto",
           gap: "20px",
           textAlign: "left",
         }}
@@ -81,7 +76,7 @@ const CareerSection = () => {
             fontSize: "40px",
             fontWeight: 500,
             color: "#1a1a1a",
-            flex: "1 1 40%",
+            flex: "1 1 350px",
             margin: 0,
           }}
         >
@@ -95,7 +90,7 @@ const CareerSection = () => {
             fontWeight: 400,
             color: "#000000A1",
             lineHeight: 1.6,
-            flex: "1 1 55%",
+            flex: "1 1 500px",
             margin: 0,
           }}
         >
@@ -107,96 +102,118 @@ const CareerSection = () => {
         </p>
       </div>
 
-      {/* Job Cards */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "60px",
-          justifyContent: "center",
-        }}
-      >
+      {/* 🔹 Job Cards Grid */}
+      <div className="career-grid">
         {jobs.map((job, index) => (
-          <div
-            key={index}
-            style={{
-              backgroundColor: job.bg,
-              padding: "28px",
-              borderRadius: "18px",
-              boxShadow: "0 6px 14px rgba(0,0,0,0.08)",
-              textAlign: "left",
-              maxWidth: "500px",
-              margin: "0 auto",
-              minHeight: "240px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-            }}
-          >
+          <div key={index} className="career-card" style={{ backgroundColor: job.bg }}>
             <div>
-              <h3
-                style={{
-                  fontSize: "22px",
-                  fontWeight: "600",
-                  marginBottom: "12px",
-                }}
-              >
-                {job.title}
-              </h3>
-              <p
-                style={{
-                  color: "#000000",
-                  marginBottom: "12px",
-                  lineHeight: "1.6",
-                  fontSize: "15px",
-                  fontWeight: 400,
-                }}
-              >
-                {job.desc}
-              </p>
-              <p
-                style={{
-                  fontSize: "14px",
-                  color: "#000000",
-                  marginBottom: "20px",
-                  fontWeight: 600,
-                }}
-              >
-                {job.skills}
-              </p>
+              <h3>{job.title}</h3>
+              <p className="desc">{job.desc}</p>
+              <p className="skills">{job.skills}</p>
             </div>
             <button
-              style={{
-                color: "#2563eb",
-                fontFamily: "'Poppins', sans-serif",
-                fontSize:"14px",
-                fontWeight: "500",
-                textDecoration: "none",
-                marginTop: "auto",
-                display: "inline-block",
-                transition: "all 0.3s ease",
-                background: "transparent",
-                border: "none",
-                cursor: "pointer",
-                textAlign: "left",
-              }}
+              className="apply-btn"
               onClick={() => setIsOpen(true)}
-              onMouseEnter={(e) => {
-                e.target.style.color = "#1d4ed8";
-                e.target.style.transform = "translateX(4px)";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.color = "#2563eb";
-                e.target.style.transform = "translateX(0px)";
-              }}
             >
               Apply Now →
             </button>
-
             <JobApplicationPopup open={isOpen} setOpen={setIsOpen} />
           </div>
         ))}
       </div>
+
+      {/* 🔹 Styles */}
+      <style>
+        {`
+          .career-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+
+          .career-card {
+            padding: 28px;
+            border-radius: 18px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+            text-align: left;
+            min-height: 260px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+
+          .career-card h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+          }
+
+          .career-card .desc {
+            color: #000;
+            margin-bottom: 12px;
+            line-height: 1.6;
+            font-size: 15px;
+            font-weight: 400;
+          }
+
+          .career-card .skills {
+            font-size: 14px;
+            color: #000;
+            margin-bottom: 20px;
+            font-weight: 600;
+          }
+
+          .apply-btn {
+            color: #2563eb;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            margin-top: auto;
+            display: inline-block;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.3s ease;
+          }
+
+          .apply-btn:hover {
+            color: #1d4ed8;
+            transform: translateX(4px);
+          }
+
+          /* 🔹 Tablet */
+          @media (max-width: 1024px) {
+            .career-grid {
+              grid-template-columns: 1fr 1fr;
+              gap: 30px;
+            }
+
+            .career-card h3 {
+              font-size: 20px;
+            }
+          }
+
+          /* 🔹 Mobile */
+          @media (max-width: 768px) {
+            .career-grid {
+              grid-template-columns: 1fr;
+              gap: 25px;
+            }
+
+            h2 {
+              font-size: 28px !important;
+            }
+
+            .career-card {
+              padding: 20px;
+            }
+          }
+        `}
+      </style>
     </section>
   );
 };

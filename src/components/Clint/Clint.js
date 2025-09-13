@@ -139,6 +139,7 @@ const Clients = () => {
       <img
         src={people}
         alt="People"
+        className="about-people-img"
         style={{
           position: "absolute",
           bottom: "0",
@@ -150,6 +151,18 @@ const Clients = () => {
           zIndex: 1,
         }}
       />
+        <style>{` .about-people-img {
+          position: static !important;
+          top: unset !important;
+          right: unset !important;
+          left: unset !important;
+          transform: none !important;
+          width: 100% !important;
+          max-width: 1500px !important;
+          margin: 12px auto 0 auto !important;
+          display: block !important;
+          z-index: 1 !important;
+        }`}</style>
       <div
           style={{
             position: "absolute",

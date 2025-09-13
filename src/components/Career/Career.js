@@ -36,13 +36,12 @@ const Career = () => {
       }}
     >
       {/* 🔹 Lamps Row */}
-      {/* Rope at top-right corner */}
-      <div
-      className="people-float"
+          <div
+        className="people-float"
         style={{
           position: "absolute",
-             "top": "-180px",
-             "right": "60px",
+          top: "-180px",
+          right: "60px",
           zIndex: 10,
           display: "flex",
           flexDirection: "column",
@@ -54,10 +53,44 @@ const Career = () => {
         <img
           src={rope}
           alt="Rope"
- style={{width: "200px", height: "700px", objectFit: "contain", userSelect: "none" }}
+          className="product-rope-img"
+          style={{ width: "200px", height: "700px", objectFit: "contain", userSelect: "none" }}
         />
-        {/* <span style={{ fontSize: "18px", color: "#bfa13b", marginLeft: "222px", fontWeight: 600 }}>Click on Rope</span> */}
       </div>
+      {/* Responsive rope image styles */}
+      <style>{`
+        @media (max-width: 1100px) {
+          .product-rope-img {
+            width: 120px !important;
+            height: 350px !important;
+          }
+          .people-float {
+            top: -80px !important;
+            right: 20px !important;
+          }
+        }
+        @media (max-width: 700px) {
+          .product-rope-img {
+            position: static !important;
+            width: 55px !important;
+            height: 110px !important;
+            margin: 0 auto !important;
+            display: block !important;
+            z-index: 100 !important;
+          }
+          .people-float {
+            position: absolute !important;
+            top: 0 !important;
+            right: 0 !important;
+            margin: 0 !important;
+            width: 60px !important;
+            height: auto !important;
+            z-index: 10 !important;
+            justify-content: center !important;
+            align-items: center !important;
+          }
+        }
+      `}</style>
 
       <div
         style={{
@@ -138,6 +171,7 @@ const Career = () => {
       <img
         src={people}
         alt="People"
+        className="about-people-img"
         style={{
           position: "absolute",
           bottom: "0",
@@ -149,6 +183,18 @@ const Career = () => {
           zIndex: 1,
         }}
       />
+          <style>{` .about-people-img {
+          position: static !important;
+          top: unset !important;
+          right: unset !important;
+          left: unset !important;
+          transform: none !important;
+          width: 100% !important;
+          max-width: 1500px !important;
+          margin: 12px auto 0 auto !important;
+          display: block !important;
+          z-index: 1 !important;
+        }`}</style>
     </div>
 
   );
