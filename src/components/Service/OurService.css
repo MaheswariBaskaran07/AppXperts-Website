@@ -1,0 +1,36 @@
+.ourservice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .ourservice-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .ourservice-card {
+    min-height: 100px !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 10px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .ourservice-card h3 {
+    font-size: 14px !important;
+  }
+  .ourservice-card p {
+    font-size: 12px !important;
+  }
+  .ourservice-card img {
+    width: 26px !important;
+    height: 26px !important;
+  }
+}
