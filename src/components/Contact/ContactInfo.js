@@ -84,7 +84,7 @@ const ContactInfo = () => {
             <div style={labelStyle}>Email</div>
             <div style={infoRow}>
               <img src={mail} alt="mail" style={iconStyle} />
-              <span style={textStyle}>info@appxes.gmail.com</span>
+              <span style={textStyle}>info@appxes.com</span>
             </div>
             <div style={labelStyle}>Socials</div>
             <div style={{ display: "flex", gap: 12 }}>
@@ -110,7 +110,7 @@ const ContactInfo = () => {
              <div style={labelStyle}>Email</div>
             <div style={infoRow}>
               <img src={mail} alt="mail" style={iconStyle} />
-              <span style={textStyle}>info@appxes.gmail.com</span>
+              <span style={textStyle}>info@appxes.com</span>
             </div>
             <div style={labelStyle}>Socials</div>
             <div style={{ display: "flex", gap: 12 }}>
@@ -136,7 +136,7 @@ const ContactInfo = () => {
              <div style={labelStyle}>Email</div>
             <div style={infoRow}>
               <img src={mail} alt="mail" style={iconStyle} />
-              <span style={textStyle}>info@appxes.gmail.com</span>
+              <span style={textStyle}>info@appxes.com</span>
             </div>
             <div style={labelStyle}>Socials</div>
             <div style={{ display: "flex", gap: 12 }}>
