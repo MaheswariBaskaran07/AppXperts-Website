@@ -6,7 +6,7 @@
   align-items: center;
   text-align: center;
   background: linear-gradient(90deg, #fff 40%, #97e5fd 100%);
-  font-family: 'Poppins';
+  font-family: "Poppins, sans-serif";
   box-sizing: border-box;
 }
 

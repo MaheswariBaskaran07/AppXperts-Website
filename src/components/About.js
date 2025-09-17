@@ -84,7 +84,7 @@ const About = () => {
         position: "relative",
         textAlign: "center",
         padding: "40px 20px 100px", // 👈 less padding on top
-        fontFamily: "Poppins",
+        fontFamily: "Poppins, sans-serif",
         backgroundImage: `url(${aboutBanner})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -289,7 +289,7 @@ const About = () => {
         justifyContent: "space-between",
         alignItems: "center",
         padding: "80px 60px",
-        fontFamily: "Poppins",
+        fontFamily: "Poppins, sans-serif",
         minHeight: "300px",
         // background: "#bcd7f1ff", // ✅ Solid light blue
       }}
@@ -358,7 +358,7 @@ const About = () => {
         justifyContent: "space-between",
         padding: "60px 80px",
         background: "linear-gradient(to bottom right, #f9f9f9, #eaf1ff)",
-        fontFamily: "Poppins",
+        fontFamily: "Poppins, sans-serif",
       }}
     >
       {/* Left Section */}
@@ -366,7 +366,7 @@ const About = () => {
           <div style={{ position: "relative", display: "inline-block", marginBottom: "20px" }}>
           <h2
             style={{
-              fontFamily: "Poppins",
+              fontFamily: "Poppins, sans-serif",
               fontSize: "48px",
               fontWeight: 600,
               lineHeight: 1.2,
@@ -444,7 +444,7 @@ const About = () => {
               textAlign: "left",
               boxShadow: "0 4px 20px rgba(255, 255, 255, 0.7)",
               minWidth: "95px",
-              fontFamily: "Poppins",
+              fontFamily: "Poppins, sans-serif",
             }}
           >
             <h3 style={{ fontSize: "22px", color: "#000000", margin: 0 }}>320+</h3>
@@ -466,7 +466,7 @@ const About = () => {
               textAlign: "left",
               boxShadow: "0 4px 20px rgba(255, 255, 255, 0.7)",
               minWidth: "95px",
-              fontFamily: "Poppins",
+              fontFamily: "Poppins, sans-serif",
             }}
           >
             <h3 style={{ fontSize: "22px", color: "#000000", margin: 0 }}>92.1%</h3>
@@ -565,7 +565,7 @@ const About = () => {
         maxWidth: "1000px",
         margin: "0 auto",
         padding: "60px 20px",
-        fontFamily: "Poppins",
+        fontFamily: "Poppins, sans-serif",
         textAlign: "center",
       }}
     >
@@ -682,7 +682,7 @@ const About = () => {
         background: "linear-gradient(to right, #f8f9fa, #eef5f9)",
         padding: "60px 20px",
         textAlign: "center",
-        fontFamily: "Poppins",
+        fontFamily: "Poppins, sans-serif",
       }}
     >
       {/* Label */}

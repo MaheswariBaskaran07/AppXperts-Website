@@ -14,7 +14,7 @@ const Footer = () => {
         background: " #d4f0f8ff",
         borderTop: "1px solid #e3e8ee",
         padding: "40px 0 0 0",
-        fontFamily: "Poppins",
+        fontFamily: "Poppins, sans-serif",
         color: "#222",
         fontSize: 16,
         marginTop: 60,
@@ -47,7 +47,7 @@ const Footer = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
-            fontFamily: "Poppins",
+            fontFamily: "Poppins, sans-serif",
           }}
         >
           <img
@@ -69,7 +69,7 @@ const Footer = () => {
               textAlign: "justify",
               maxWidth: 220,
               lineHeight: 1.6,
-              fontFamily: "Poppins",
+              fontFamily: "Poppins, sans-serif",
             }}
           >
             <span style={{ fontStyle: "bold",   fontSize:16, fontWeight: 600, color: "#222" }}>
@@ -89,7 +89,7 @@ const Footer = () => {
             minWidth: 320,
             display: "flex",
             justifyContent: "center",
-            fontFamily: "Poppins",
+            fontFamily: "Poppins, sans-serif",
           }}
         >
           <div>

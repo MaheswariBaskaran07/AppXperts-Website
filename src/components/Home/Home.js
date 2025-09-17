@@ -15,7 +15,7 @@ const Home = () => {
       position: 'relative',
       overflow: 'hidden',
       width: '100%',
-      fontFamily: 'Poppins'
+      fontFamily: "Poppins, sans-serif"
     }}>
       {/* Left Side: Text */}
       <div className="home-left" style={{ flex: 1.4, zIndex: 2, paddingLeft: 64, position: 'relative', minHeight: 180, width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>

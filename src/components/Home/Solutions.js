@@ -5,7 +5,7 @@ import Icon2 from "../../assets/Home/Icon (2).png";
 
 const Solutions = () => {
   return (
-    <section style={{ padding: "20px 20px", textAlign: "center", fontFamily: 'Poppins' }}>
+    <section style={{ padding: "20px 20px", textAlign: "center", fontFamily: "Poppins, sans-serif" }}>
       {/* Heading */}
       <h2 style={{ fontSize: "60px", fontWeight: "200", marginBottom: "40px" }}>
         Crafting Solutions in...

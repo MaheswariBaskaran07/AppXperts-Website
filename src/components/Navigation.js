@@ -1,8 +1,7 @@
-
-import React , { useState } from 'react';
+import React, { useState } from "react";
 import logo from "../assets/images/AX-LOGO.png";
 import "../App.css";
-import BookNowPopup from './BookNowPopup';
+import BookNowPopup from "./BookNowPopup";
 
 const navItems = [
   { name: "Home", link: "/" },
@@ -17,7 +16,7 @@ const navItems = [
 const Navigation = () => {
   // Get current path for highlighting
   const currentPath = window.location.pathname;
-   const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   // Responsive menu toggle
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,39 +24,37 @@ const Navigation = () => {
   return (
     <nav className="nav-responsive">
       <div className="nav-logo">
-        <img 
-          src={logo} 
-          alt="AppXperts Logo" 
-        />
+        <img src={logo} alt="AppXperts Logo" />
       </div>
       <div className="nav-menu-center">
-        <ul className={`nav-list${menuOpen ? ' nav-list-open' : ''}`}> 
-        {navItems.map((item) => {
-          const isActive = item.link !== '#' && (item.link === '/' ? currentPath === '/' : currentPath.startsWith(item.link));
-          return (
-            <li key={item.name}>
-              <a
-                href={item.link}
-                className={isActive ? 'nav-active' : ''}
-              >
-                {item.name}
-              </a>
-            </li>
-          );
-        })}
-        <li>
-          <button 
-            className='submit-button nav-book-btn'
-            onClick={() => setIsOpen(true)}
-          >
-            Book Now
-          </button>
-        </li>
+        <ul className={`nav-list${menuOpen ? " nav-list-open" : ""}`}>
+          {navItems.map((item) => {
+            const isActive =
+              item.link !== "#" &&
+              (item.link === "/"
+                ? currentPath === "/"
+                : currentPath.startsWith(item.link));
+            return (
+              <li key={item.name}>
+                <a href={item.link} className={isActive ? "nav-active" : ""}>
+                  {item.name}
+                </a>
+              </li>
+            );
+          })}
+          <li>
+            <button
+              className="submit-button nav-book-btn"
+              onClick={() => setIsOpen(true)}
+            >
+              Book Now
+            </button>
+          </li>
         </ul>
       </div>
       {/* Hamburger for mobile - right aligned */}
       <button className="nav-hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-        <span style={{fontSize: 28, lineHeight: 1}}>&#9776;</span>
+        <span style={{ fontSize: 28, lineHeight: 1 }}>&#9776;</span>
       </button>
       <BookNowPopup open={isOpen} setOpen={setIsOpen} />
       {/* Responsive CSS */}
@@ -130,51 +127,66 @@ const Navigation = () => {
         .nav-book-btn {
           margin-left: 12px;
         }
-        @media (max-width: 700px) {
-          .nav-hamburger {
-            display: block;
-            position: absolute;
-            right: 18px;
-            top: 18px;
-            margin-left: 0;
-          }
-          .nav-menu-center {
-            flex: unset;
-            width: 100%;
-            display: block;
-          }
-          .nav-list {
-            position: absolute;
-            top: 60px;
-            left: 0;
-            right: 0;
-            background: #fff;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            padding: 18px 0 8px 0;
-            display: none;
-          }
-          .nav-list.nav-list-open {
-            display: flex;
-          }
-          .nav-list li {
-            width: 100%;
-            margin: 0;
-          }
-          .nav-list a, .nav-book-btn {
-            width: 100%;
-            text-align: left;
-            padding: 12px 24px;
-            font-size: 18px;
-            border-radius: 0;
-          }
-          .nav-book-btn {
-            margin-left: 0;
-            margin-top: 8px;
-          }
-        }
+@media (max-width: 700px) {
+  .nav-hamburger {
+    display: block;
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    margin-left: 0;
+  }
+  .nav-menu-center {
+    flex: unset;
+    width: 100%;
+    display: block;
+  }
+  .nav-list {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 18px 0 8px 0;
+    display: none;
+  }
+  .nav-list.nav-list-open {
+    display: flex;
+  }
+  .nav-list li {
+    width: 100%;
+    margin: 0;
+  }
+  .nav-list a, .nav-book-btn {
+    width: 100%;
+    text-align: left;
+    padding: 8px 16px;   /* reduced height (was 14px 24px) */
+    font-size: 18px;
+    border-radius: 0;
+  }
+  /* active link style */
+  .nav-list a.nav-active {
+    color: #1a3fa6;
+    background: rgba(26,63,166,0.08);
+    border-left: 4px solid #1a3fa6;
+    padding: 8px 16px;   /* ensure same slim padding */
+  }
+  .nav-list a:hover {
+    background: rgba(26,63,166,0.05);
+    border-left: 4px solid #1a3fa6;
+    color: #1a3fa6;
+    padding: 8px 16px;   /* keep slim */
+  }
+  .nav-book-btn {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+}
+
+
       `}</style>
     </nav>
   );

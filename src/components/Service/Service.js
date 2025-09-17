@@ -34,7 +34,7 @@ const Service = () => {
       style={{
         position: "relative",
         textAlign: "center",
-        fontFamily: "Poppins",
+        fontFamily: "Poppins, sans-serif",
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",

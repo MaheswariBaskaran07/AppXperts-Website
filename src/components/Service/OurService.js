@@ -49,7 +49,7 @@ const OurService = () => {
   return (
     <div
       style={{
-        fontFamily: "Poppins",
+        fontFamily: "Poppins, sans-serif",
         padding: "40px 8px",
         textAlign: "center",
         backgroundColor: "#fff",

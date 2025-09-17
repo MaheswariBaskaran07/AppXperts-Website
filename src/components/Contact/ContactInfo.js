@@ -12,7 +12,7 @@ const ContactInfo = () => {
       style={{
         width: "100%",
         padding: "32px 4px",
-        fontFamily: "Poppins",
+        fontFamily: "Poppins, sans-serif",
         position: "relative",
         background: "linear-gradient(135deg, #f8fdff 0%, #1a8fff 100%)",
         boxSizing: "border-box"

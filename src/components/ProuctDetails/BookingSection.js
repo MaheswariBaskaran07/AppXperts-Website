@@ -10,7 +10,7 @@ const BookingSection = () => {
         padding: "60px 20px",
         background: "linear-gradient(to right, #dff6ff, #00b4ff)",
         textAlign: "center",
-        fontFamily: "Poppins",
+        fontFamily: "Poppins, sans-serif",
       }}
     >
       {/* Heading */}
