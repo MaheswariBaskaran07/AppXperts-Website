@@ -22,22 +22,19 @@ import people from "../assets/About/Group 2188.png";
 const About = () => {
   // Fix: Define slides array for team slider
   const slides = [
-    { img: CEO, title: "Mohammed Aasif", description: "Visionary leader and founder." },
-    { img: Rabi, title: "Mohammed Rabi", description: "Server-side expert." },
-    { img: BackEndDev, title: "Rajeshwari", description: "Server-side expert." },
-    { img: Flutter, title: "NagaJothika", description: "Mobile app specialist." },
-     { img: Maheswari, title: "Maheswari", description: "Web app specialist." },
-     {img: people,title:"Fathima",description:"Business Specialist."},
-     { img: Karthi, title: "Karthik", description: "Web app specialist." },
-     { img: Keerthana, title: "Keerthana", description: "Web app developer." },
-     { img: Karthika, title: "Reshma", description: "UI/UX designer." },
-    { img: Prakash, title: "Prakash", description: "Quality assurance." },
-     { img: people, title: "Karthika", description: "Front end developer." },
-    { img: people, title: "Keerthana", description: "Back end developer." },
+    { img: CEO,       title: "Mohammed Aasif",   role: "Founder & CEO",         about: "Leads strategy and delivery. Passionate about building products that scale and delight customers." },
+    { img: Rabi,      title: "Mohammed Rabi",    role: "Backend Engineer",      about: "Designs APIs and services. Focus on reliability, performance and clean architecture." },
+    { img: BackEndDev,title: "Rajeshwari",       role: "Backend Engineer",      about: "Database modeling and integrations. Loves solving complex data problems." },
+    { img: Flutter,   title: "NagaJothika",      role: "Mobile Developer",      about: "Crafts smooth mobile experiences using Flutter and native capabilities." },
+    { img: Maheswari, title: "Maheswari",        role: "Web Developer",         about: "Builds accessible, fast web apps with modern tooling and patterns." },
+    { img: people,    title: "Fathima",          role: "Business Specialist",   about: "Bridges business goals and product execution with a customer-first approach." },
+    { img: Karthi,    title: "Karthik",          role: "Web Developer",         about: "Frontend engineering, state management and design systems." },
+    { img: Keerthana, title: "Keerthana",        role: "Web Developer",         about: "UI implementation and pixel-perfect layouts with responsive behavior." },
+    { img: Karthika,  title: "Reshma",           role: "UI/UX Designer",        about: "Designs intuitive user journeys and clean visual interfaces." },
+    { img: Prakash,   title: "Prakash",          role: "QA Engineer",           about: "Owns quality strategy, automation and release confidence." },
+    { img: people,    title: "Karthika",         role: "Frontend Developer",    about: "Components, accessibility and performance optimization." },
+    { img: people,    title: "Keerthana",        role: "Backend Developer",     about: "APIs, security and platform observability." },
   ];
-
-  // Fix: duplicatedSlides for infinite slider
-  const duplicatedSlides = [...slides, ...slides];
 
   // Fix: aboutBadgeVisible for About Us badge animation
   const [aboutBadgeVisible, setAboutBadgeVisible] = useState(false);
@@ -60,21 +57,6 @@ const About = () => {
   useEffect(() => {
     setTimeout(() => setWhatWeDoVisible(true), 600);
   }, []);
-  const [offset, setOffset] = useState(0);
-  const slideWidth = 250; // card width + margin
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setOffset((prev) => {
-        const newOffset = prev + 1;
-        // reset when half list is scrolled
-        return newOffset >= slides.length * slideWidth ? 0 : newOffset;
-      });
-    }, 15); // smaller = faster scroll
-
-    return () => clearInterval(interval);
-  }, [slides.length]);
-
   return (
     <>
     <div
@@ -684,7 +666,6 @@ const About = () => {
         fontFamily: "Poppins, sans-serif",
       }}
     >
-      {/* Label */}
       <span
         style={{
           display: "inline-block",
@@ -704,17 +685,13 @@ const About = () => {
           {`
             @keyframes wiggleTilt {
               0% { transform: rotate(-20deg) translateY(30px) scale(1); }
-              20% { transform: rotate(-10deg) translateY(25px) scale(1.08); }
-              40% { transform: rotate(-25deg) translateY(35px) scale(0.97); }
-              60% { transform: rotate(-15deg) translateY(28px) scale(1.04); }
-              80% { transform: rotate(-22deg) translateY(32px) scale(1.01); }
+              50% { transform: rotate(-15deg) translateY(28px) scale(1.04); }
               100% { transform: rotate(-20deg) translateY(30px) scale(1); }
             }
           `}
         </style>
       </span>
 
-      {/* Heading */}
       <h2
         style={{
           fontSize: "48px",
@@ -726,130 +703,138 @@ const About = () => {
         The Brains Behind <br /> the Build
       </h2>
 
-      {/* Infinite Auto Slider */}
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "900px",
-          margin: "auto",
-          overflow: "hidden",
-          position: "relative",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            transform: `translateX(-${offset}px)`,
-            transition: "transform 0.05s linear",
-          }}
-        >
-          {duplicatedSlides.map((slide, index) => (
-            <div
-              key={index}
-              style={{
-                minWidth: "200px",
-                height: "300px",
-                marginRight: "20px",
-                borderRadius: "16px",
-                perspective: "1000px", // needed for 3D flip
-              }}
-            >
-              <div
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  position: "relative",
-                  transformStyle: "preserve-3d",
-                  transition: "transform 0.8s",
-                }}
-                className="flip-card"
-              >
-                {/* Front Side */}
-                <div
-                  style={{
-                    position: "absolute",
-                    width: "100%",
-                    height: "100%",
-                    backfaceVisibility: "hidden",
-                    borderRadius: "16px",
-                    overflow: "hidden",
-                    boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
-                  }}
-                >
-                  <img
-                    src={slide.img}
-                    alt={slide.title}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                  <div
-                    style={{
-                      position: "absolute",
-                      bottom: 0,
-                      left: 0,
-                      width: "100%",
-                      padding: "12px",
-                      background:
-                        "linear-gradient(to top, rgba(0,123,255,0.9), rgba(0,123,255,0))",
-                      color: "#fff",
-                      fontWeight: "600",
-                      fontSize: "16px",
-                      textAlign: "center",
-                    }}
-                  >
-                    {slide.title}
-                  </div>
-                </div>
-
-                {/* Back Side */}
-                <div
-                  style={{
-                    position: "absolute",
-                    width: "100%",
-                    height: "100%",
-                    backfaceVisibility: "hidden",
-                    background: "linear-gradient(180deg, #2ecbfa 0%, #1a3fa6 100%)",
-                    color: "#fff",
-                    transform: "rotateY(180deg)",
-                    borderRadius: "16px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontWeight: "bold",
-                    fontSize: "18px",
-                    padding: "10px",
-                    boxSizing: "border-box",
-                  }}
-                >
-                  {slide.description || "More Info"}
+      {/* Team Grid (6 per row on desktop) */}
+      <div className="team-grid">
+        {slides.map((m, i) => (
+          <div
+            className="team-card"
+            key={i}
+            tabIndex={0}
+            aria-label={`${m.title} - ${m.role}`}
+            onClick={(e) => e.currentTarget.classList.toggle("is-flipped")}
+          >
+            <div className="card-inner">
+              {/* Front */}
+              <div className="card-face card-front">
+                <img className="team-photo" src={m.img} alt={m.title} />
+                <div className="team-info">
+                  <h3 className="team-name">{m.title}</h3>
+                  <p className="team-role">{m.role}</p>
                 </div>
               </div>
-
-              {/* Hover flip with CSS */}
-              <style>
-                {`
-                  .flip-card:hover {
-                    transform: rotateY(180deg);
-                  }
-                `}
-              </style>
+              {/* Back */}
+              <div className="card-face card-back">
+                <h3 className="team-name">{m.title}</h3>
+                <p className="team-role">{m.role}</p>
+                <p className="team-about">{m.about}</p>
+              </div>
             </div>
-
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
 
-      {/* 🔹 Add CSS for flip */}
-      <style>
-        {`
-          .card:hover {
-            transform: rotateY(180deg);
-          }
-        `}
-      </style>
+      {/* Grid + flip styles */}
+      <style>{`
+        .team-grid {
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+          gap: 20px;
+        }
+
+        /* Card container provides height via aspect-ratio */
+        .team-card {
+          background: transparent;
+          border-radius: 14px;
+          perspective: 1000px;
+          cursor: pointer;
+          aspect-ratio: 3 / 4;
+          outline: none;
+        }
+
+        .card-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          transform-style: preserve-3d;
+          transition: transform .6s cubic-bezier(.2,.6,.3,1);
+          border-radius: 14px;
+          box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        .team-card:hover .card-inner,
+        .team-card:focus-within .card-inner,
+        .team-card.is-flipped .card-inner {
+          transform: rotateY(180deg);
+        }
+
+        .card-face {
+          position: absolute;
+          inset: 0;
+          backface-visibility: hidden;
+          border-radius: 14px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          background: #fff;
+        }
+
+        .card-front .team-photo {
+          width: 100%;
+          height: 72%;
+          object-fit: cover;
+          display: block;
+        }
+        .team-info {
+          padding: 10px 12px 16px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          justify-content: center;
+          height: 28%;
+        }
+        .team-name {
+          margin: 0;
+          font-size: 16px;
+          font-weight: 600;
+          color: #111;
+        }
+        .team-role {
+          margin: 0;
+          font-size: 13px;
+          color: #666;
+        }
+
+        .card-back {
+          transform: rotateY(180deg);
+          background: linear-gradient(180deg, #f8fbff 0%, #eaf4ff 100%);
+          padding: 16px;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
+        }
+        .team-about {
+          margin: 10px 0 0;
+          font-size: 12.5px;
+          line-height: 1.55;
+          color: #334155;
+        }
+
+        /* Hover elevation */
+        .team-card:hover .card-inner {
+          box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+        }
+
+        /* Breakpoints */
+        @media (max-width: 1300px) { .team-grid { grid-template-columns: repeat(5, 1fr); } }
+        @media (max-width: 1100px) { .team-grid { grid-template-columns: repeat(4, 1fr); } }
+        @media (max-width: 900px)  { .team-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 600px)  { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 380px)  { .team-grid { grid-template-columns: 1fr; } }
+      `}</style>
     </div>
 
     {/* Responsive About Styles */}
