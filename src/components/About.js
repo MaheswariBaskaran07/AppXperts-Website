@@ -5,7 +5,6 @@ import Quality from '../assets/About/Quality.png';
 import Frame from '../assets/About/Frame.png';
 import CEO from '../assets/About/AASIF.png';
 import Flutter from '../assets/About/Joe.png';
-import UIUX from '../assets/About/UIUX.png';
 import BackEndDev from '../assets/About/Rajeshwari.png';
 import Maheswari  from '../assets/About/Maheshwari.png';
 import Keerthana from '../assets/About/Maheshwari (1).png';
@@ -13,7 +12,6 @@ import Karthi from '../assets/About/Karthi.png';
 import Prakash from '../assets/About/Prakash.png';
 import Rabi from '../assets/About/Rabi.png';
 import Karthika from '../assets/About/Resh.png';
-import HR from '../assets/About/HR.png';
 import ved from "../assets/About/about.mp4";
 import lamp from "../assets/Product/freepik--Lamps--inject-229.png"
 import rope from "../assets/Product/rope.png";
@@ -24,17 +22,18 @@ import people from "../assets/About/Group 2188.png";
 const About = () => {
   // Fix: Define slides array for team slider
   const slides = [
-    { img: CEO, title: "Aasif (CEO)", description: "Visionary leader and founder." },
-    { img: Flutter, title: "Joe (Flutter Dev)", description: "Mobile app specialist." },
-    { img: UIUX, title: "UI/UX Designer", description: "Designs seamless experiences." },
-    { img: BackEndDev, title: "Rajeshwari (Backend)", description: "Server-side expert." },
-    { img: Maheswari, title: "Maheswari (Frontend)", description: "Frontend developer." },
-    { img: Keerthana, title: "Keerthana (Frontend)", description: "Frontend developer." },
-    { img: Karthi, title: "Karthi (DevOps)", description: "Deployment & automation." },
-    { img: Prakash, title: "Prakash (QA)", description: "Quality assurance." },
-    { img: Rabi, title: "Rabi (Fullstack)", description: "Fullstack developer." },
-    { img: Karthika, title: "Karthika (Support)", description: "Customer support." },
-    { img: HR, title: "HR", description: "Human resources." },
+    { img: CEO, title: "Mohammed Aasif", description: "Visionary leader and founder." },
+    { img: Rabi, title: "Mohammed Rabi", description: "Server-side expert." },
+    { img: BackEndDev, title: "Rajeshwari", description: "Server-side expert." },
+    { img: Flutter, title: "NagaJothika", description: "Mobile app specialist." },
+     { img: Maheswari, title: "Maheswari", description: "Web app specialist." },
+     {img: people,title:"Fathima",description:"Business Specialist."},
+     { img: Karthi, title: "Karthik", description: "Web app specialist." },
+     { img: Keerthana, title: "Keerthana", description: "Web app developer." },
+     { img: Karthika, title: "Reshma", description: "UI/UX designer." },
+    { img: Prakash, title: "Prakash", description: "Quality assurance." },
+     { img: people, title: "Karthika", description: "Front end developer." },
+    { img: people, title: "Keerthana", description: "Back end developer." },
   ];
 
   // Fix: duplicatedSlides for infinite slider
