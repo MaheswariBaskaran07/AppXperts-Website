@@ -18,6 +18,7 @@ import rope from "../assets/Product/rope.png";
 import "../components/Products/lamp.css";
 import { motion } from "framer-motion";
 import people from "../assets/About/Group 2188.png";
+import Roadmap from "./roadmap";
 
 const About = () => {
   // Fix: Define slides array for team slider
@@ -656,7 +657,7 @@ const About = () => {
         />
       </div>
     </div>
-
+<Roadmap/>
     <div
       className="about-team-row"
       style={{
