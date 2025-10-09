@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Blog from "../../assets/Home/Blog.png";
 import mindGate from "../../assets/Home/Group 389.png";
 import erp from "../../assets/Home/erp.png";
@@ -17,6 +17,7 @@ import CSS from "../../assets/Home/skills/css.svg";
 import native from "../../assets/Home/skills/react native.svg";
 import BookNowPopup from "../BookNowPopup";
 import dot from "../../assets/Home/skills/net.svg";
+import ClientVedio from "../../assets/Home/clientVedio.mp4"
 import "./ClientSays.css";
 
 const testimonials = [
@@ -36,12 +37,34 @@ const testimonials = [
 
 const ClientsSay = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+
+  // Close on ESC and lock scroll while modal is open
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') setShowVideo(false);
+    };
+    if (showVideo) {
+      document.addEventListener('keydown', onKey);
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.removeEventListener('keydown', onKey);
+        document.body.style.overflow = prev;
+      };
+    }
+  }, [showVideo]);
   return (
     <>
       <section className="clients-section">
         {/* Title + Description */}
         <div className="clients-header">
-          <h2>What Our Clients Are Saying</h2>
+          <div className="clients-header-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap', marginBottom: 12 }}>
+            <h2 className="clients-title" style={{ margin: 0 }}>What Our Clients Are Saying</h2>
+            <div className="home-btn-row" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+              <a href="/clients" className='submit-button'>Know More</a>
+            </div>
+          </div>
           <p>
             Our clients are at the heart of everything we do. <br />
             Each testimonial reflects our commitment to delivering value. <br />
@@ -49,7 +72,7 @@ const ClientsSay = () => {
             Read what they have to say about working with us.
           </p>
         </div>
-
+  
         {/* Testimonials + Image */}
         <div className="clients-content">
           {/* Testimonials */}
@@ -66,12 +89,80 @@ const ClientsSay = () => {
             ))}
           </div>
 
-          {/* Blog Image */}
-          <div className="clients-image">
+          {/* Blog Image + Video trigger */}
+          <div className="clients-image" style={{ position: 'relative' }}>
             <img src={Blog} alt="Clients Illustration" />
+
+            {/* Creative pill button to open client video */}
+            <button
+              type="button"
+              className="video-chip"
+              onClick={() => setShowVideo(true)}
+              aria-label="Play client video"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: 8 }}>
+                <circle cx="12" cy="12" r="11" fill="white" opacity="0.25"/>
+                <path d="M9.5 7.5L17 12L9.5 16.5V7.5Z" fill="white"/>
+              </svg>
+             Click to Hear Their Words of Trust
+            </button>
+
+            {/* Styles for video pill and modal */}
+            <style>{`
+              .video-chip {
+                position: absolute;
+                right: 12px;
+                bottom: 12px;
+                display: inline-flex;
+                align-items: center;
+                padding: 12px 16px;
+                border-radius: 999px;
+                border: none;
+                color: #fff;
+                font-weight: 700;
+                letter-spacing: .2px;
+                background: linear-gradient(180deg, #2ecbfa 0%, #1a3fa6 100%);
+                box-shadow: 0 8px 20px rgba(26,63,166,.25);
+                cursor: pointer;
+                transition: transform .15s ease, box-shadow .15s ease;
+                z-index: 1;
+                border: 1px solid rgba(255,255,255,.5);
+              }
+              .video-chip::after {
+                content: "";
+                position: absolute;
+                inset: -6px;
+                border-radius: 999px;
+                background: radial-gradient(closest-side, rgba(46,203,250,.35), rgba(26,63,166,0));
+                filter: blur(6px);
+                animation: chipPulse 1.8s ease-in-out infinite;
+                z-index: -1;
+              }
+              .video-chip:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(26,63,166,.32); }
+
+              @keyframes chipPulse { 0%,100% { opacity:.55; } 50% { opacity:.15; } }
+
+              .video-modal { position: fixed; inset: 0; backdrop-filter: blur(3px); background: rgba(0,0,0,.55); display:flex; align-items:center; justify-content:center; z-index: 1000; padding: 24px; }
+              .video-box { width: min(960px, 94vw); aspect-ratio: 16 / 9; background: #000; border-radius: 14px; position: relative; box-shadow: 0 24px 64px rgba(0,0,0,.4); overflow: hidden; border: 1px solid rgba(255,255,255,.12); }
+              .video-box video { position: relative; z-index: 1; width: 100%; height: 100%; display:block; }
+              .video-close { position: absolute; top: 10px; right: 10px; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,.95); border: none; cursor: pointer; display:flex; align-items:center; justify-content:center; box-shadow: 0 6px 18px rgba(0,0,0,.25); z-index: 3; }
+              .video-close:hover { background: #fff; }
+            `}</style>
           </div>
         </div>
       </section>
+
+      {/* Video Modal */}
+      {showVideo && (
+        <div className="video-modal" role="dialog" aria-modal="true" onClick={() => setShowVideo(false)}>
+          <div className="video-box" onClick={(e) => e.stopPropagation()}>
+            <button className="video-close" aria-label="Close video" onClick={() => setShowVideo(false)}>
+              ✕
+            </button>
+            <video src={ClientVedio} controls autoPlay playsInline />
+          </div>
+        </div>
+      )}
 
       {/* --- Skills Floating Section --- */}
       <section
