@@ -9,7 +9,7 @@ const Home = () => {
       display: 'flex',
       alignItems: 'flex-start',
       justifyContent: 'space-between',
-      minHeight: '80vh',
+      minHeight: '90vh',
       padding: '48px 0 0 0',
       background: 'linear-gradient(120deg, #f8fafc 70%, #eaf6fb 100%)',
       position: 'relative',
@@ -85,20 +85,26 @@ const Home = () => {
         </div>
       </div>
       {/* Right Side: 3D Logo and Badges */}
-      <div className="home-right" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', minHeight: 180 }}>
+      <div className="home-right" style={{ flex: 1, display: 'flex', justifyContent: 'flex-end', alignItems: 'center', position: 'relative', minHeight: '68vh', paddingRight: 24 }}>
         <img src={Appxpertsbiglog} alt="AppXperts 3D Logo" className="home-main-logo" />
       </div>
       {/* Responsive Home Styles */}
       <style>{`
         .home-main-logo {
-          width: 600px;
+          /* Large, responsive logo (like image 2) without clipping */
           position: absolute;
-          right: 60px;
-          top: 35px;
+          right: 0;
+          top: 70%;
+          transform: translateY(-50%);
+          width: clamp(520px, 50vw, 980px);
+          max-height: 82vh; /* keep inside viewport height */
+          height: auto;
+          object-fit: contain;
           filter: drop-shadow(0 8px 32px #1a3fa622);
           border-radius: 24px;
-          transition: width 0.3s, right 0.3s, top 0.3s;
+          transition: width 0.3s ease, max-height 0.3s ease, transform 0.3s ease;
           z-index: 1;
+          pointer-events: none;
         }
         .home-title {
           z-index: 2;
@@ -106,6 +112,7 @@ const Home = () => {
         }
         .home-right {
           position: relative;
+          min-height: clamp(520px, 72vh, 900px);
         }
         @media (max-width: 1200px) {
           .home-title {
@@ -115,9 +122,8 @@ const Home = () => {
             padding-left: 24px !important;
           }
           .home-main-logo {
-            width: 320px !important;
-            right: 24px !important;
-            top: 24px !important;
+            width: clamp(400px, 44vw, 760px) !important;
+            max-height: 74vh !important;
           }
         }
         @media (max-width: 900px) {
@@ -137,9 +143,10 @@ const Home = () => {
             gap: 24px !important;
           }
           .home-main-logo {
-            width: 200px !important;
-            right: 12px !important;
-            top: 12px !important;
+            width: 260px !important;
+            max-height: 60vh !important;
+            position: static !important;
+            transform: none !important;
           }
         }
         @media (max-width: 700px) {
