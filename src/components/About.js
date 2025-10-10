@@ -199,6 +199,7 @@ const About = () => {
   <div className="about-content" style={{ position: "relative", zIndex: 2, maxWidth: "1300px" }}>
         {/* Badge */}
         <span
+          className="about-badge"
           style={{
             display: "block",
             background: 'linear-gradient(180deg, #46cff8ff 0%, #0d48eaff 100%)',
@@ -211,7 +212,8 @@ const About = () => {
             opacity: aboutBadgeVisible ? 1 : 0,
             transition: "opacity 0.7s cubic-bezier(.4,2,.6,1), transform 0.7s cubic-bezier(.4,2,.6,1)",
             marginBottom: "-20px",
-            marginLeft: "290px",
+            /* Clamp the horizontal offset so it never pushes content beyond the viewport on small screens */
+            marginLeft: "clamp(0px, 20vw, 290px)",
             width: "fit-content"
           }}
         >
@@ -840,6 +842,18 @@ const About = () => {
 
     {/* Responsive About Styles */}
     <style>{`
+      /* Global guards to prevent horizontal scrolling on this page */
+      :root, html, body, #root {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+      .about-main, .about-content, .about-who-row, .about-ideas-row, .about-why-row, .about-team-row {
+        box-sizing: border-box;
+        overflow-x: hidden;
+        width: 100%;
+      }
+      img, video { max-width: 100%; height: auto; }
       @media (max-width: 1100px) {
         .about-main {
           padding: 24px 8px 60px 8px !important;
@@ -873,6 +887,15 @@ const About = () => {
         .about-heading {
           font-size: 22px !important;
           margin-top: 12px !important;
+        }
+        /* Keep the badge centered and inside the viewport on phones */
+        .about-badge {
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          left: 0 !important; right: 0 !important;
+          transform: rotate(-12deg) translateY(0) !important;
+          text-align: center !important;
+          display: inline-block !important;
         }
         .about-lamps-row {
           flex-direction: column !important;
