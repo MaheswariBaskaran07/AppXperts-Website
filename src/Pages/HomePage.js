@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import Solutions from '../components/Home/Solutions';
 import ClientsSay from '../components/Home/ClientsSay';
 import Booking from '../components/Home/Booking';
+import FloatingWhatsApp from '../components/FloatingWhatsApp';
 
 const HomePage = () => {
      useEffect(() => {
@@ -18,6 +19,7 @@ const HomePage = () => {
       <ClientsSay />
       {/* <Booking /> */}
       <Footer />
+      <FloatingWhatsApp phone={'+91 88255 28905'} />
     </div>
   )
 }

@@ -127,6 +127,8 @@ const Home = () => {
           line-height: 1.5;
           width: 100%;
           overflow-wrap: anywhere;
+          word-break: break-word;
+          hyphens: auto;
         }
         @media (max-width: 1200px) {
           .home-title {
@@ -188,18 +190,18 @@ const Home = () => {
             line-height: 1.2 !important;
             z-index: 2 !important;
             position: relative !important;
-            padding-top: 32px !important;
+            padding-top: 16px !important;
             /* Ensure the heading isn't clipped off-screen on phones */
             top: 0 !important;
           }
           .home-subtitle {
             font-size: 14px !important;
-            margin-bottom: 8px !important;
+            margin-bottom: 6px !important;
             text-align: center !important;
           }
           .home-desc {
             font-size: 13px !important;
-            margin-bottom: 10px !important;
+            margin-bottom: 8px !important;
             text-align: center !important;
           }
           .home-btn-row {
@@ -222,6 +224,13 @@ const Home = () => {
             padding: 0 12px !important;
             font-size: 12px !important;
             margin-top: 6px !important;
+            margin-bottom: 8px !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            line-height: 1.4 !important;
+            word-break: break-word !important;
+            overflow-wrap: anywhere !important;
+            hyphens: auto !important;
           }
           .home-right {
             width: 100% !important;
@@ -242,6 +251,9 @@ const Home = () => {
             top: unset !important;
             z-index: 1 !important;
           }
+        }
+        @media (max-width: 360px) {
+          .home-office-info { font-size: 11px !important; }
         }
       `}</style>
     </section>
