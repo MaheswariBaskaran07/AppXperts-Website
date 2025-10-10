@@ -279,16 +279,16 @@ const About = () => {
       }}
     >
       {/* Left Column */}
-      <div style={{ flex: 1, paddingRight: "40px", color: "#000" }}>
-        <h1 style={{ fontSize: "48px", fontWeight: "bold", marginBottom: "20px" }}>
+      <div className="about-who-left" style={{ flex: 1, paddingRight: "40px", color: "#000" }}>
+        <h1 className="who-title" style={{ fontSize: "48px", fontWeight: "bold", marginBottom: "20px" }}>
           Who are we?
         </h1>
 
-        <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "20px", textAlign: "justify" }}>
+        <p className="who-paragraph" style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "20px", textAlign: "justify" }}>
           AppXperts Enterprise Solutions is a Software Development company which offers next-generation IT Services that could empower your businesses to become self-reliant and sufficient. It’s what we do, and we do it well. We address our clients’ unique needs with a healthy mix of tried and true methods, and progressive, innovative technologies evinced by our team of expert software developers. We pride ourselves in our ability to turn the most complex business requirements into intuitive software solutions, empowering our clients with the tools they need to seamlessly support and enhance their business operations. Whether a project requires
         </p>
 
-        <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "30px", textAlign: "justify" }}>
+        <p className="who-paragraph" style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "30px", textAlign: "justify" }}>
           Whether it’s designing enterprise-grade systems or crafting elegant brand
           identities, our goal remains the same: to empower businesses with tech that
           works and design that speaks. We address our clients’ unique needs with a healthy mix of tried and true methods, and progressive, innovative technologies evinced by our team of expert software developers.
@@ -303,14 +303,16 @@ const About = () => {
       </div>
 
       {/* Right Column */}
-      <div style={{ flex: 1, textAlign: "center" }}>
+      <div className="about-who-right" style={{ flex: 1, textAlign: "center" }}>
       <div
+          className="who-video-wrap"
           style={{
-            width: "390px",
-            height: "220px",
-            borderRadius: "30% / 50%",
+            width: "100%",
+            maxWidth: "480px",
+            aspectRatio: "16 / 9",
+            borderRadius: "16px",
             overflow: "hidden",
-            margin: "0 auto 20px",
+            margin: "0 auto 16px",
             backgroundColor: "#000"
           }}
         >
@@ -324,7 +326,7 @@ const About = () => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              borderRadius: "30% / 50%"
+              borderRadius: "inherit"
             }}
           />
         </div>
@@ -869,6 +871,10 @@ const About = () => {
         .about-lamps-row {
           gap: 40px !important;
         }
+        /* Who are we - medium screens */
+        .about-who-left { padding-right: 16px !important; }
+        .about-who-right { padding-left: 16px !important; }
+        .who-video-wrap { max-width: 560px !important; }
         .about-who-row, .about-ideas-row {
           padding: 40px 12px !important;
         }
@@ -906,8 +912,14 @@ const About = () => {
         }
         .about-who-row, .about-ideas-row {
           flex-direction: column !important;
-          padding: 18px 4px !important;
+          padding: 18px 8px !important;
+          gap: 14px !important;
         }
+        .about-who-left { padding-right: 0 !important; }
+        .about-who-right { padding-left: 0 !important; text-align: center !important; }
+        .who-title { font-size: 28px !important; margin-bottom: 10px !important; }
+        .who-paragraph { font-size: 14px !important; text-align: left !important; }
+        .who-video-wrap { max-width: 100% !important; border-radius: 12px !important; }
         .about-why-row {
           padding: 18px 4px !important;
         }
