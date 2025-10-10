@@ -223,9 +223,30 @@ const Roadmap = () => {
         }
 
         @media (max-width:640px) {
-          .roadmap-canvas { height: 420px; }
-          .label-top { bottom: 56px; }
-          .label-bottom { top: 56px; }
+          /* Switch to a vertical timeline layout on phones */
+          .roadmap-canvas { height: auto; padding: 8px 4px 12px; }
+          .road-wrap { position: relative; transform: none; height: auto; }
+          .road-svg { display: none; }
+          .road-wrap::before {
+            content: "";
+            position: absolute;
+            left: 28px;
+            top: 0; bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #cfe8ff, #99c2ff);
+          }
+          .phase {
+            position: static !important;
+            left: auto !important; top: auto !important;
+            transform: none !important;
+            display: flex; align-items: center; gap: 12px;
+            margin: 14px 0;
+          }
+          .pin { width: 28px; height: 28px; transform: none; flex: 0 0 28px; }
+          .phase-label { position: static !important; text-align: left; min-width: 0; }
+          .label-top, .label-bottom { position: static !important; transform: none !important; left: auto !important; top: auto !important; bottom: auto !important; }
+          .label-title { font-size: 14px; }
+          .label-sub { font-size: 12px; }
         }
       `}</style>
     </section>
