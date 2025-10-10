@@ -129,6 +129,8 @@ const Home = () => {
         @media (max-width: 900px) {
           .home-title {
             font-size: 48px !important;
+            /* Reset negative offset from inline style on medium screens */
+            top: 0 !important;
           }
           .home-subtitle {
             font-size: 22px !important;
@@ -172,6 +174,8 @@ const Home = () => {
             z-index: 2 !important;
             position: relative !important;
             padding-top: 32px !important;
+            /* Ensure the heading isn't clipped off-screen on phones */
+            top: 0 !important;
           }
           .home-subtitle {
             font-size: 14px !important;
@@ -204,9 +208,12 @@ const Home = () => {
             display: flex !important;
             justify-content: center !important;
             position: static !important;
+            /* Reduce large min-height coming from inline styles on mobile */
+            min-height: 220px !important;
+            padding-right: 0 !important;
           }
           .home-main-logo {
-            width: 100px !important;
+            width: 120px !important;
             margin: 0 auto !important;
             display: block !important;
             position: static !important;
