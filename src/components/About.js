@@ -579,6 +579,7 @@ const About = () => {
 
       {/* Features */}
       <div
+        className="why-grid"
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
@@ -607,6 +608,7 @@ const About = () => {
         ].map((item, i) => (
           <div
             key={i}
+            className="why-card"
             style={{
               display: "flex",
               gap: "15px",
@@ -631,10 +633,10 @@ const About = () => {
               style={{ width: "40px", height: "40px", flexShrink: 0 }}
             />
             <div>
-              <p style={{ fontWeight: "600", fontSize: "20px", margin: "0 0 8px" }}>
+              <p className="why-title" style={{ fontWeight: "600", fontSize: "20px", margin: "0 0 8px" }}>
                 {item.title}
               </p>
-              <p style={{ color: "#666", fontSize: "16px", lineHeight: "1.6", margin: 0 }}>
+              <p className="why-desc" style={{ color: "#666", fontSize: "16px", lineHeight: "1.6", margin: 0 }}>
                 {item.desc}
               </p>
             </div>
@@ -912,6 +914,22 @@ const About = () => {
         .about-team-row {
           padding: 18px 4px !important;
         }
+        /* Why Choose Us grid/cards on phones */
+        .why-grid {
+          grid-template-columns: 1fr !important;
+          gap: 12px !important;
+          margin-bottom: 16px !important;
+        }
+        .why-card {
+          padding: 12px !important;
+          gap: 12px !important;
+        }
+        .why-card img {
+          width: 28px !important;
+          height: 28px !important;
+        }
+        .why-title { font-size: 16px !important; }
+        .why-desc  { font-size: 13px !important; line-height: 1.5 !important; }
         .about-why-row h2, .about-team-row h2 {
           font-size: 22px !important;
         }
