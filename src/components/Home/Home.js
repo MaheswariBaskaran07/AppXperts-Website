@@ -129,6 +129,8 @@ const Home = () => {
           overflow-wrap: anywhere;
           word-break: break-word;
           hyphens: auto;
+          display: block;
+          box-sizing: border-box;
         }
         @media (max-width: 1200px) {
           .home-title {
@@ -231,6 +233,7 @@ const Home = () => {
             word-break: break-word !important;
             overflow-wrap: anywhere !important;
             hyphens: auto !important;
+            box-sizing: border-box !important;
           }
           .home-right {
             width: 100% !important;

@@ -10,7 +10,7 @@ const FloatingWhatsApp = ({ phone = '+918825528905', message = 'Hi, I would like
       aria-label="Chat on WhatsApp"
       className="floating-whatsapp"
     >
-      <i className="bi bi-whatsapp" aria-hidden="true" style={{ fontSize: 28, lineHeight: 1 }} />
+      <i className="bi bi-whatsapp" aria-hidden="true" style={{ fontSize: 30, lineHeight: 1, color: '#fff' }} />
       <style>{`
         .floating-whatsapp {
           position: fixed;
@@ -32,6 +32,7 @@ const FloatingWhatsApp = ({ phone = '+918825528905', message = 'Hi, I would like
         .floating-whatsapp:active { transform: translateY(0); }
         @media (max-width: 700px) {
           .floating-whatsapp { right: 12px; bottom: 12px; width: 52px; height: 52px; }
+          .floating-whatsapp .bi-whatsapp { font-size: 28px; }
         }
       `}</style>
     </a>
