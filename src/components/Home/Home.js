@@ -9,8 +9,8 @@ const Home = () => {
       display: 'flex',
       alignItems: 'flex-start',
       justifyContent: 'space-between',
-      minHeight: '90vh',
-      padding: '48px 0 0 0',
+  minHeight: '90vh',
+  padding: '32px 0 0 0',
       background: 'linear-gradient(120deg, #f8fafc 70%, #eaf6fb 100%)',
       position: 'relative',
       overflow: 'hidden',
@@ -40,7 +40,7 @@ const Home = () => {
           fontSize: 32,
           fontWeight: 400,
           color: '#222',
-          margin: '12px 0 12px 0',
+          margin: '6px 0 8px 0',
           width: '100%',
           maxWidth: 600
         }}>
@@ -51,14 +51,14 @@ const Home = () => {
           fontSize: 16,
           fontWeight: 400,
           color: '#555',
-          marginBottom: 20,
+          marginBottom: 14,
           maxWidth: 600,
           lineHeight: 1.7,
           width: '100%'
         }}>
           At AppXperts, we blend cutting-edge technology with innovative design to build software that powers your business growth. From custom applications to enterprise solutions, we help businesses digitally transform with confidence.
         </p>
-        <div className="home-btn-row" style={{ display: 'flex', alignItems: 'center', gap: 18, marginBottom: 20, width: '100%' }}>
+        <div className="home-btn-row" style={{ display: 'flex', alignItems: 'center', gap: 18, marginBottom: 14, width: '100%' }}>
           <a href="/about" className='submit-button'>Know More</a>
           {/* <a href="#video" style={{
             display: 'flex',
@@ -73,6 +73,10 @@ const Home = () => {
             Watch a Video
           </a> */}
         </div>
+        {/* Registered office info (moved up for visibility) */}
+        <p className="home-office-info" style={{ marginTop: 6 }}>
+          <strong>Registered office at:</strong> Xperts Software Solutions Private Limited, D.51, Iron Steel Market Sathangadu, Manali, Tiruvallur, Ambattur, Tamil Nadu, 600068
+        </p>
         <div className="home-stats-row" style={{ display: 'flex', alignItems: 'center', gap: 64,  width: '100%' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <span style={{ fontWeight: 700, fontSize: 32, color: '#111' }}>95</span><span style={{ fontWeight: 700, fontSize: 32, color: '#1a3fa6' }}>%</span>
@@ -83,6 +87,7 @@ const Home = () => {
             <span style={{ color: '#888', fontWeight:400, fontFamily:'Poppins', fontSize: 16, marginLeft: 8 }}>Recognized Creativity</span>
           </div>
         </div>
+        
       </div>
       {/* Right Side: 3D Logo and Badges */}
       <div className="home-right" style={{ flex: 1, display: 'flex', justifyContent: 'flex-end', alignItems: 'center', position: 'relative', minHeight: '68vh', paddingRight: 24 }}>
@@ -114,6 +119,15 @@ const Home = () => {
           position: relative;
           min-height: clamp(520px, 72vh, 900px);
         }
+        .home-office-info {
+          margin-top: 10px;
+          color: #475569;
+          font-size: 13px;
+          max-width: 680px;
+          line-height: 1.5;
+          width: 100%;
+          overflow-wrap: anywhere;
+        }
         @media (max-width: 1200px) {
           .home-title {
             font-size: 80px !important;
@@ -144,6 +158,7 @@ const Home = () => {
           .home-stats-row {
             gap: 24px !important;
           }
+          .home-office-info { font-size: 12px !important; }
           .home-main-logo {
             width: 260px !important;
             max-height: 60vh !important;
@@ -201,6 +216,12 @@ const Home = () => {
           }
           .home-stats-row > div {
             justify-content: center !important;
+          }
+          .home-office-info {
+            text-align: center !important;
+            padding: 0 12px !important;
+            font-size: 12px !important;
+            margin-top: 6px !important;
           }
           .home-right {
             width: 100% !important;
