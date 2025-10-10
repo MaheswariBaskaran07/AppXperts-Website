@@ -10,7 +10,17 @@ const ContactPage = () => {
       window.scrollTo(0, 0);
     }, []);
   return (
-    <div>
+    <div className="page-contact" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
+      <style>{`
+        html, body, #root {
+          margin: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          overflow-x: hidden !important;
+        }
+        .page-contact { width: 100%; max-width: 100%; overflow-x: hidden; }
+        .page-contact img, .page-contact video { max-width: 100%; height: auto; }
+      `}</style>
       <Navigation />
       <ContactUs />
       <ContactForm />

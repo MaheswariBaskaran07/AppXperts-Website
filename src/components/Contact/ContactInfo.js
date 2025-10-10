@@ -17,7 +17,7 @@ const ContactInfo = () => {
   ];
 
   return (
-    <section className="contact-section">
+  <section className="contact-section">
       {/* background */}
       <div className="contact-bg">
         <img src={logo} alt="bg" />
@@ -104,6 +104,10 @@ const ContactInfo = () => {
           padding: 36px 18px;
           position: relative;
           color: #000;
+          width: 100%;
+          max-width: 100%;
+          overflow-x: hidden;
+          box-sizing: border-box;
         }
 
         .contact-bg {
@@ -130,6 +134,7 @@ const ContactInfo = () => {
           display: flex;
           flex-direction: column;
           gap: 18px;
+          width: 100%;
         }
 
         .contact-title {
@@ -153,6 +158,7 @@ const ContactInfo = () => {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
           gap: 16px;
+          width: 100%;
         }
 
         .contact-card {
@@ -173,10 +179,12 @@ const ContactInfo = () => {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          gap: 12px;
         }
 
         .contact-card-body {
           flex: 1;
+          min-width: 0; /* allow text to wrap inside flex container */
         }
 
         .contact-card-title {
@@ -196,6 +204,7 @@ const ContactInfo = () => {
           display: flex;
           align-items: center;
           gap: 6px;
+          flex-wrap: wrap; /* prevent overflow on narrow screens */
         }
 
         .contact-icon {
@@ -207,6 +216,7 @@ const ContactInfo = () => {
           color: #0b63f2;
           font-weight: 600;
           font-size: 13px;
+          overflow-wrap: anywhere;
         }
 
         /* circular flag on right */
@@ -239,6 +249,8 @@ const ContactInfo = () => {
           align-items: center;
           justify-content: space-between;
           flex-wrap: wrap;
+          width: 100%;
+          box-sizing: border-box;
         }
 
         .contact-email {
@@ -288,16 +300,30 @@ const ContactInfo = () => {
           transition: all 0.2s ease;
         }
 
+        /* Ensure social images don't overflow buttons even if inline sizes are set */
+        .social-btn img { width: 28px !important; height: 28px !important; object-fit: contain; }
+
         .social-btn:hover {
           transform: translateY(-4px);
           box-shadow: 0 14px 30px rgba(15,118,255,0.12);
         }
 
         @media (max-width: 600px) {
+          .contact-section { padding: 24px 12px; }
+          .contact-grid { grid-template-columns: minmax(0, 1fr); }
           .contact-flag-circle {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
           }
+          .contact-title { font-size: 24px; }
+          .contact-card { padding: 12px; }
+          .contact-card-content { gap: 10px; }
+          .contact-bottom { gap: 12px; flex-direction: column; align-items: stretch; }
+          .contact-email { flex: 1 1 100%; }
+          .contact-email-link { overflow-wrap: anywhere; }
+          .contact-socials { gap: 8px; }
+          .social-btn { width: 36px; height: 36px; }
+          .social-btn img { width: 22px !important; height: 22px !important; }
         }
       `}</style>
     </section>

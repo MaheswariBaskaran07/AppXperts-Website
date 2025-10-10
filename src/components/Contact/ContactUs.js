@@ -21,6 +21,7 @@ const ContactUs = () => {
   return (
 
   <div
+      className="contact-hero"
       style={{
         position: "relative",
         textAlign: "center",
@@ -60,6 +61,9 @@ const ContactUs = () => {
       </div>
       {/* Responsive rope image styles */}
       <style>{`
+        /* Guard against horizontal scroll on Contact hero */
+        .contact-hero { width: 100%; max-width: 100%; overflow-x: hidden; }
+        img, video { max-width: 100%; height: auto; }
         @media (max-width: 1100px) {
           .product-rope-img {
             width: 120px !important;
@@ -90,6 +94,8 @@ const ContactUs = () => {
             justify-content: center !important;
             align-items: center !important;
           }
+          .contact-hero h1 { font-size: 26px !important; }
+          .contact-hero p { font-size: 14px !important; padding: 0 8px !important; }
         }
       `}</style>
 
@@ -182,18 +188,18 @@ const ContactUs = () => {
           zIndex: 1,
         }}
       />
-          <style>{` .about-people-img {
+          <style>{` @media (max-width: 700px) { .about-people-img {
           position: static !important;
           top: unset !important;
           right: unset !important;
           left: unset !important;
           transform: none !important;
           width: 100% !important;
-          max-width: 1500px !important;
+          max-width: 100% !important;
           margin: 12px auto 0 auto !important;
           display: block !important;
           z-index: 1 !important;
-        }`}</style>
+        } }`}</style>
     </div>
 
 

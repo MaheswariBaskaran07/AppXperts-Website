@@ -2,9 +2,27 @@ import img from "../../assets/Contact/Frame 1000009048.png";
 
 const ContactForm = () => {
   return (
-    <section style={sectionStyle}>
+    <section className="contact-form-section" style={sectionStyle}>
+      <style>{`
+        @media (max-width: 700px) {
+          .contact-form-section { padding: 16px !important; }
+          .contact-form-left, .contact-form-right {
+            flex: 1 1 100% !important;
+            min-width: 0 !important;
+          }
+          .contact-form-right { padding: 12px !important; }
+          .contact-form-section h2 { font-size: 24px !important; }
+          .contact-form-section h3 { font-size: 18px !important; }
+          .contact-form-section p  { font-size: 14px !important; }
+          .contact-form-section input,
+          .contact-form-section textarea { width: 100% !important; min-width: 0 !important; }
+          .contact-form-section button { width: 100% !important; align-self: stretch !important; }
+          .contact-form-img { max-width: 100% !important; }
+          .name-row { display: grid !important; grid-template-columns: 1fr !important; gap: 10px !important; }
+        }
+      `}</style>
       {/* Left Column */}
-      <div style={leftColStyle}>
+      <div className="contact-form-left" style={leftColStyle}>
         <h2 style={headingStyle}>We’re Just a Message Away</h2>
         <p style={descStyle}>
           Have a project in mind, a question about our services, or simply want
@@ -12,14 +30,14 @@ const ContactForm = () => {
           to life. Reach out today—let’s start creating something remarkable
           together.
         </p>
-        <img src={img} alt="Contact Us" style={imgStyle} />
+        <img src={img} alt="Contact Us" style={imgStyle} className="contact-form-img" />
       </div>
 
       {/* Right Column - Form */}
-      <div style={formWrapperStyle}>
+      <div className="contact-form-right" style={formWrapperStyle}>
         <h3 style={formHeadingStyle}>Fill the following details</h3>
         <form style={formStyle}>
-          <div style={nameRowStyle}>
+          <div className="name-row" style={nameRowStyle}>
             <input type="text" placeholder="First Name" style={inputStyle} />
             <input type="text" placeholder="Last Name" style={inputStyle} />
           </div>
@@ -44,15 +62,18 @@ const ContactForm = () => {
 const sectionStyle = {
   display: "flex",
   alignItems: "flex-start",
-  gap: "50px",
-  padding: "50px",
+  gap: "clamp(16px, 4vw, 50px)",
+  padding: "clamp(16px, 4vw, 50px)",
   fontFamily: "Poppins, sans-serif",
   flexWrap: "wrap", // ✅ allows stacking
+  maxWidth: "1100px",
+  margin: "0 auto",
+  boxSizing: "border-box",
 };
 
 const leftColStyle = {
   flex: "1 1 45%",
-  minWidth: "300px",
+  minWidth: "min(300px, 100%)",
 };
 
 const headingStyle = {
@@ -77,9 +98,9 @@ const imgStyle = {
 const formWrapperStyle = {
   flex: "1 1 45%",
   backgroundColor: "#f9fafb",
-  padding: "32px",
+  padding: "clamp(16px, 3.2vw, 32px)",
   borderRadius: "12px",
-  minWidth: "300px",
+  minWidth: "min(300px, 100%)",
 };
 
 const formHeadingStyle = {
@@ -96,21 +117,22 @@ const formStyle = {
 
 const nameRowStyle = {
   display: "flex",
-  gap: "16px",
+  gap: "clamp(8px, 2.5vw, 16px)",
   flexWrap: "wrap", // ✅ stack on mobile
 };
 
 const inputStyle = {
   flex: 1,
-  minWidth: "140px", // prevents inputs from collapsing
+  minWidth: "min(140px, 100%)", // prevents inputs from overflowing small screens
   padding: "12px 16px",
   borderRadius: "8px",
   border: "1px solid #d1d5db",
   fontSize: "14px",
+  boxSizing: "border-box",
 };
 
 const buttonStyle = {
-  width: "200px",
+  width: "min(200px, 100%)",
   padding: "12px",
   backgroundColor: "#2563eb",
   color: "#fff",
