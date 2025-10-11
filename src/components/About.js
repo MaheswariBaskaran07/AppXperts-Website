@@ -24,7 +24,6 @@ import people from "../assets/About/Group 2188.png";
 import Roadmap from "./roadmap";
 
 const About = () => {
-  // Fix: Define slides array for team slider
   const slides = [
     { img: CEO,        title: "Mohammed Aasif",   role: "Founder & CEO",          about: "With over 13 years of diverse experience in IT encompassing development, support, testing, implementation, customer management, sales, business development, project management, team leadership, and customer relations, I bring a comprehensive skill set to drive business growth and development.", linkedin: "https://www.linkedin.com/in/mohamed-aasif-b9039773/" },
     { img: Rabi,       title: "Mohammed Rabi",    role: "Backend Engineer",       about: "Designs APIs and services. Focus on reliability, performance and clean architecture.", linkedin: "" },
