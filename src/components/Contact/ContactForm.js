@@ -5,7 +5,7 @@ const ContactForm = () => {
     <section className="contact-form-section" style={sectionStyle}>
       <style>{`
         @media (max-width: 700px) {
-          .contact-form-section { padding: 16px !important; }
+          .contact-form-section { padding: 16px !important; flex-wrap: wrap !important; }
           .contact-form-left, .contact-form-right {
             flex: 1 1 100% !important;
             min-width: 0 !important;
@@ -65,7 +65,7 @@ const sectionStyle = {
   gap: "clamp(16px, 4vw, 50px)",
   padding: "clamp(16px, 4vw, 50px)",
   fontFamily: "Poppins, sans-serif",
-  flexWrap: "wrap", // ✅ allows stacking
+  flexWrap: "nowrap", // keep side-by-side on laptop/desktop
   maxWidth: "1100px",
   margin: "0 auto",
   boxSizing: "border-box",
