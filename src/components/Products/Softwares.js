@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import "./Cards.css";
 import eclipse from "../../assets/Product/Ellipse 4.png";
 import software from "../../assets/Product/Frame 1000009024.png";

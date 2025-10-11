@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import BookingSection from '../components/ProuctDetails/BookingSection';
 import ProductEcommerce from '../components/ProuctDetails/ProductEcommerce';
 import FeaturesEcommerce from '../components/ProuctDetails/FeaturesEcommerce';
+import FloatingWhatsApp from '../components/FloatingWhatsApp';
 
 const ProductDetailsEcommerce = () => {
      useEffect(() => {
@@ -16,6 +17,7 @@ const ProductDetailsEcommerce = () => {
       <FeaturesEcommerce />
       <BookingSection />
       <Footer />
+       <FloatingWhatsApp phone={'+91 88255 28905'} />
     </div>
   )
 }

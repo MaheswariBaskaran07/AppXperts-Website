@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import BookingSection from '../components/ProuctDetails/BookingSection';
 import ProductHRMS from '../components/ProuctDetails/ProductHRMS';
 import FeaturesHRMS from '../components/ProuctDetails/FeatursHMRS';
+import FloatingWhatsApp from '../components/FloatingWhatsApp';
 
 const ProductDetailsHRMS = () => {
      useEffect(() => {
@@ -16,6 +17,7 @@ const ProductDetailsHRMS = () => {
       <FeaturesHRMS />
       <BookingSection />
       <Footer />
+       <FloatingWhatsApp phone={'+91 88255 28905'} />
     </div>
   )
 }
