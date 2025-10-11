@@ -4,6 +4,7 @@ import Clients from '../components/Clint/Clint';
 import Footer from '../components/Footer';
 import Testimonials from '../components/Clint/Testimonial';
 import ClientLogoSction from '../components/Clint/OurClintSection';
+import FloatingWhatsApp from '../components/FloatingWhatsApp';
 
 
 const ClientsPage = () => {
@@ -18,6 +19,7 @@ const ClientsPage = () => {
      <ClientLogoSction/>
      <Testimonials/>
      <Footer/>
+     <FloatingWhatsApp phone={'+91 88255 28905'} />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import ContactUs from '../components/Contact/ContactUs';
 import ContactForm from '../components/Contact/ContactForm';
 import ContactInfo from '../components/Contact/ContactInfo';
+import FloatingWhatsApp from '../components/FloatingWhatsApp';
 
 const ContactPage = () => {
      useEffect(() => {
@@ -26,6 +27,7 @@ const ContactPage = () => {
       <ContactForm />
       <ContactInfo />
       <Footer />
+      <FloatingWhatsApp phone={'+91 88255 28905'} />
     </div>
   )
 }

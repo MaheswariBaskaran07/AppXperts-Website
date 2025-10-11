@@ -3,6 +3,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import About from '../components/About';
 import Service from '../components/Service/Service';
+import FloatingWhatsApp from '../components/FloatingWhatsApp';
 
 const ServicesPage = () => {
      useEffect(() => {
@@ -13,6 +14,7 @@ const ServicesPage = () => {
         <Navigation />
         <Service />
         <Footer/>
+        <FloatingWhatsApp phone={'+91 88255 28905'} />
     </div>
   )
 }
