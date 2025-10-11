@@ -74,30 +74,30 @@ const ContactInfo = () => {
               href="https://www.facebook.com/AppXes"
               target="_blank"
               rel="noreferrer"
-              className="social-btn"
+              className="social-btn fb-btn"
               aria-label="Facebook"
             >
-              <img style={{ width: "48px", height: "48px" }} src={fb} alt="fb" />
+              <img className="social-img fb-img" src={fb} alt="fb" />
             </a>
 
             <a
               href="https://www.instagram.com/appxperts.solutions"
               target="_blank"
               rel="noreferrer"
-              className="social-btn"
+              className="social-btn insta-btn"
               aria-label="Instagram"
             >
-              <img style={{ width: "64px", height: "64px" }} src={insta} alt="insta" />
+              <img className="social-img insta-img" src={insta} alt="insta" />
             </a>
 
             <a
               href="https://www.linkedin.com/company/appxperts-enterprise-solutions/"
               target="_blank"
               rel="noreferrer"
-              className="social-btn"
+              className="social-btn linkedin-btn"
               aria-label="LinkedIn"
             >
-              <img style={{ width: "24px", height: "24px" }} src={linkedIn} alt="linkedin" />
+              <img className="social-img linkedin-img" src={linkedIn} alt="linkedin" />
             </a>
           </div>
         </div>
@@ -323,8 +323,15 @@ const ContactInfo = () => {
           transition: all 0.2s ease;
         }
 
-        /* Ensure social images don't overflow buttons even if inline sizes are set */
-        .social-btn img { width: 28px !important; height: 28px !important; object-fit: contain; }
+        /* Base social icon sizes */
+        .social-img { width: 28px; height: 28px; object-fit: contain; }
+
+        /* Make FB and Instagram larger than LinkedIn */
+        .fb-btn, .insta-btn { width: 44px; height: 44px; }
+        .linkedin-btn { width: 40px; height: 40px; }
+
+        .fb-img, .insta-img { width: 36px; height: 36px; }
+        .linkedin-img { width: 24px; height: 24px; }
 
         .social-btn:hover {
           transform: translateY(-4px);
@@ -346,8 +353,11 @@ const ContactInfo = () => {
           .contact-registered { font-size: 12px; }
           .contact-email-link { overflow-wrap: anywhere; }
           .contact-socials { gap: 8px; }
-          .social-btn { width: 36px; height: 36px; }
-          .social-btn img { width: 22px !important; height: 22px !important; }
+          /* Slightly reduce on small screens while keeping FB/IG bigger than LinkedIn */
+          .fb-btn, .insta-btn { width: 40px; height: 40px; }
+          .linkedin-btn { width: 34px; height: 34px; }
+          .fb-img, .insta-img { width: 30px; height: 30px; }
+          .linkedin-img { width: 22px; height: 22px; }
         }
       `}</style>
     </section>
