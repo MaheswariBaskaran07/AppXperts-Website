@@ -61,6 +61,12 @@ const ContactInfo = () => {
             </div>
           </div>
 
+          {/* Registered office info (centered, 2 lines on desktop) */}
+          <div className="contact-registered">
+            <strong>Registered office at:</strong> Xperts Software Solutions Private Limited, D.51, Iron Steel Market Sathangadu, Manali,<br />
+            Tiruvallur, Ambattur, Tamil Nadu, 600068
+          </div>
+
           <div className="contact-socials">
             <div className="contact-follow">Follow Us</div>
 
@@ -81,7 +87,7 @@ const ContactInfo = () => {
               className="social-btn"
               aria-label="Instagram"
             >
-              <img style={{ width: "48px", height: "48px" }} src={insta} alt="insta" />
+              <img style={{ width: "64px", height: "64px" }} src={insta} alt="insta" />
             </a>
 
             <a
@@ -245,13 +251,30 @@ const ContactInfo = () => {
           border-radius: 12px;
           padding: 12px 16px;
           box-shadow: 0 12px 28px rgba(11,37,70,0.06);
-          display: flex;
+          display: grid;
+          grid-template-columns: 1fr auto 1fr;
           align-items: center;
-          justify-content: space-between;
-          flex-wrap: wrap;
+          gap: 12px;
           width: 100%;
           box-sizing: border-box;
         }
+
+        .contact-registered {
+          grid-column: 2;
+          text-align: center;
+          font-size: 13px;
+          color: #35546e;
+          margin: 0; /* keep perfectly centered */
+          line-height: 1.5;
+          overflow-wrap: anywhere;
+          word-break: break-word;
+          hyphens: auto;
+          max-width: 720px;
+          justify-self: center;
+        }
+
+        .contact-email { justify-self: start; }
+        .contact-socials { justify-self: end; }
 
         .contact-email {
           display: flex;
@@ -318,8 +341,9 @@ const ContactInfo = () => {
           .contact-title { font-size: 24px; }
           .contact-card { padding: 12px; }
           .contact-card-content { gap: 10px; }
-          .contact-bottom { gap: 12px; flex-direction: column; align-items: stretch; }
+          .contact-bottom { display: flex; gap: 12px; flex-direction: column; align-items: stretch; }
           .contact-email { flex: 1 1 100%; }
+          .contact-registered { font-size: 12px; }
           .contact-email-link { overflow-wrap: anywhere; }
           .contact-socials { gap: 8px; }
           .social-btn { width: 36px; height: 36px; }

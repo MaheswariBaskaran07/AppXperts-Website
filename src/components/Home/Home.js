@@ -73,10 +73,6 @@ const Home = () => {
             Watch a Video
           </a> */}
         </div>
-        {/* Registered office info (moved up for visibility) */}
-        <p className="home-office-info" style={{ marginTop: 6 }}>
-          <strong>Registered office at:</strong> Xperts Software Solutions Private Limited, D.51, Iron Steel Market Sathangadu, Manali, Tiruvallur, Ambattur, Tamil Nadu, 600068
-        </p>
         <div className="home-stats-row" style={{ display: 'flex', alignItems: 'center', gap: 64,  width: '100%' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <span style={{ fontWeight: 700, fontSize: 32, color: '#111' }}>95</span><span style={{ fontWeight: 700, fontSize: 32, color: '#1a3fa6' }}>%</span>
@@ -119,19 +115,7 @@ const Home = () => {
           position: relative;
           min-height: clamp(520px, 72vh, 900px);
         }
-        .home-office-info {
-          margin-top: 10px;
-          color: #475569;
-          font-size: 13px;
-          max-width: 680px;
-          line-height: 1.5;
-          width: 100%;
-          overflow-wrap: anywhere;
-          word-break: break-word;
-          hyphens: auto;
-          display: block;
-          box-sizing: border-box;
-        }
+     
         @media (max-width: 1200px) {
           .home-title {
             font-size: 80px !important;
@@ -162,7 +146,6 @@ const Home = () => {
           .home-stats-row {
             gap: 24px !important;
           }
-          .home-office-info { font-size: 12px !important; }
           .home-main-logo {
             width: 260px !important;
             max-height: 60vh !important;
@@ -221,20 +204,6 @@ const Home = () => {
           .home-stats-row > div {
             justify-content: center !important;
           }
-          .home-office-info {
-            text-align: center !important;
-            padding: 0 12px !important;
-            font-size: 12px !important;
-            margin-top: 6px !important;
-            margin-bottom: 8px !important;
-            max-width: 100% !important;
-            width: 100% !important;
-            line-height: 1.4 !important;
-            word-break: break-word !important;
-            overflow-wrap: anywhere !important;
-            hyphens: auto !important;
-            box-sizing: border-box !important;
-          }
           .home-right {
             width: 100% !important;
             margin-top: 12px !important;
@@ -254,9 +223,6 @@ const Home = () => {
             top: unset !important;
             z-index: 1 !important;
           }
-        }
-        @media (max-width: 360px) {
-          .home-office-info { font-size: 11px !important; }
         }
       `}</style>
     </section>
