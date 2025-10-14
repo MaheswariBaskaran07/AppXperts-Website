@@ -4,7 +4,7 @@ const Roadmap = () => {
   // Pins placed along the road with approximate vertical alignment to the curve
   const phases = [
     {
-      quarter: "Q1 2021 Sep",
+      quarter: "2021 Sep",
       title: "Launched Chennai Office",
       items: ["Performance tuning", "Accessibility audit", "Security hardening"],
       pos: 8, // percent from left
@@ -12,7 +12,7 @@ const Roadmap = () => {
       labelPos: "bottom",
     },
     {
-      quarter: "Q2 2022 Jan",
+      quarter: "2022 Jan",
       title: "Launched Singapore Office",
       items: [
         "New modules (Analytics, Integrations)",
@@ -24,7 +24,7 @@ const Roadmap = () => {
       labelPos: "top",
     },
     {
-      quarter: "Q3 2023 Jan",
+      quarter: "2023 Jan",
       title: "Launched ERP Module",
       items: [
         "Major UI overhaul",
@@ -36,7 +36,7 @@ const Roadmap = () => {
       labelPos: "bottom",
     },
     {
-      quarter: "Q4 2025 Feb",
+      quarter: "2025 Feb",
       title: "Launched Dubai Office",
       items: [
         "New features & integrations",
