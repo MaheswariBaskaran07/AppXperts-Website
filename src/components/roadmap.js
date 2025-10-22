@@ -1,15 +1,12 @@
 import React from "react";
 
 const Roadmap = () => {
-  // Pins placed along the road with approximate vertical alignment to the curve
+  // Timeline data (kept from previous content; displayed in alternating layout)
   const phases = [
     {
       quarter: "2021 Sep",
       title: "Launched Chennai Office",
       items: ["Performance tuning", "Accessibility audit", "Security hardening"],
-      pos: 8, // percent from left
-      pinTop: 60, // percent from top (approximate center of road)
-      labelPos: "bottom",
     },
     {
       quarter: "2022 Jan",
@@ -19,21 +16,15 @@ const Roadmap = () => {
         "Beta for select clients",
         "API public docs",
       ],
-      pos: 28,
-      pinTop: 40,
-      labelPos: "top",
     },
     {
       quarter: "2023 Jan",
-      title: "Launched ERP Module",
+      title: "Launched ERP ",
       items: [
         "Major UI overhaul",
         "New features & integrations",
         "Mobile app launch",
       ],
-      pos: 52,
-      pinTop: 70,
-      labelPos: "bottom",
     },
     {
       quarter: "2025 Feb",
@@ -43,210 +34,195 @@ const Roadmap = () => {
         "Major UI overhaul",
         "Global marketing push",
       ],
-      pos: 76,
-      pinTop: 82,
-      labelPos: "top",
     },
     {
       quarter: "Ongoing",
       title: "Continuing Progress",
       items: ["Expanding features", "New integrations", "Global rollout"],
-      pos: 100,
-      pinTop: 70,
-      labelPos: "bottom",
       final: true,
     },
   ];
 
   return (
-    <section className="roadmap-visual" aria-labelledby="roadmap-title">
-      <h2 id="roadmap-title" className="roadmap-title">
-        Company Roadmap
-      </h2>
+  <section className="timeline-section" aria-labelledby="timeline-title">
+  <h2 id="timeline-title" className="timeline-title">Our Journey</h2>
+  <p className="timeline-sub">The evolution of AppXperts from its foundation to industry leadership.</p>
 
-      <div className="roadmap-canvas">
-        <div className="road-wrap">
-        {/* Responsive curved road SVG (no horizontal scroll) */}
-        <svg
-          className="road-svg"
-          viewBox="0 0 1260 360"
-          preserveAspectRatio="none"
-          aria-hidden
-        >
-          {/* Outer dark road */}
-          <path
-            d="M0,230 C200,100 420,80 620,230 C820,370 1040,360 1260,250"
-            stroke="#071733"
-            strokeWidth="80"
-            strokeLinecap="round"
-            fill="none"
-          />
-          {/* Inner road for contrast */}
-          <path
-            d="M0,230 C200,100 420,80 620,230 C820,370 1040,360 1260,250"
-            stroke="#101827"
-            strokeWidth="52"
-            strokeLinecap="round"
-            fill="none"
-          />
-          {/* Dashed center line */}
-          <path
-            d="M0,230 C200,100 420,80 620,230 C820,370 1040,360 1260,250"
-            stroke="#f0fbff"
-            strokeWidth="6"
-            strokeDasharray="28 18"
-            strokeLinecap="round"
-            fill="none"
-          />
-        </svg>
-
-        {/* Pins on the road + labels above/below */}
-        {phases.map((p, i) => (
+      <div className="timeline">
+        {phases.map((p, index) => (
           <div
-            key={p.quarter}
-            className="phase"
-            style={{ left: `${p.pos}%`, top: `${p.pinTop}%` }}
+            key={`${p.title}-${p.quarter}`}
+            className={`timeline-row ${index % 2 === 0 ? 'left' : 'right'}`}
           >
-            <div className="pin" aria-hidden>
-              <div className="pin-inner">{p.final ? "•" : i + 1}</div>
+            {/* Card column */}
+            <div className="timeline-col card-col">
+              <div className="card">
+                <div className="card-head">
+                  <i className="bi bi-calendar3 card-icon" aria-hidden="true"></i>
+                  <time className="card-date">{p.quarter}</time>
+                </div>
+                <h3 className="card-title">{p.title}</h3>
+                {p.items && p.items.length > 0 && (
+                  <ul className="card-list" aria-label="Highlights">
+                    {p.items.map((it, i) => (
+                      <li key={i}>{it}</li>
+                    ))}
+                  </ul>
+                )}
+                {p.final && (
+                  <p className="card-final">Still progressing — more to come!</p>
+                )}
+              </div>
             </div>
 
-            <div className={`phase-label ${p.labelPos === 'top' ? 'label-top' : 'label-bottom'}`}>
-              <div className="label-title">{p.title}</div>
-              {p.final ? (
-                <div className="label-sub">Still progressing — more to come!</div>
-              ) : (
-                <div className="label-sub">{p.quarter}</div>
-              )}
+            {/* Center dot column */}
+            <div className="timeline-col dot-col">
+              <span className="dot pulse" aria-hidden></span>
             </div>
+
+            {/* Spacer column */}
+            <div className="timeline-col empty-col" />
           </div>
         ))}
-        </div>
       </div>
 
       <style>{`
-        .roadmap-visual {
-          background: linear-gradient(180deg, #eaf6ff 0%, #ffffff 100%);
-          padding: 56px 16px 96px; /* moved up by reducing top padding */
+        .timeline-section {
+          background: #ffffff; /* plain white background as requested */
+          padding: 36px 12px 40px; /* reduced vertical padding */
           font-family: Poppins, sans-serif;
-          overflow-x: hidden; /* prevent horizontal scroll */
-          overflow-y: visible; /* allow labels to extend vertically if needed */
+          overflow: hidden;
+        }
+        .timeline-title {
+          text-align: center;
+          font-weight: 800;
+          font-size: 28px; /* slightly smaller */
+          color: #061a33;
+          margin: 0 0 6px; /* tighter */
+        }
+        .timeline-title::after {
+          content: "";
+          display: block;
+          width: 56px; height: 4px;
+          background: #0f76ff; /* accent underline */
+          border-radius: 999px;
+          margin: 8px auto 0;
+        }
+        .timeline-sub {
+          text-align: center;
+          color: #475569;
+          max-width: 720px;
+          margin: 0 auto 6px;
+          font-weight: 500;
+          font-size: 14px;
         }
 
-        .roadmap-title {
-          text-align:center;
-          font-weight:800;
-          font-size:30px;
-          color:#061a33;
-          margin-bottom:30px;
-        }
-
-        .roadmap-canvas {
+        /* Core timeline */
+        .timeline {
           position: relative;
           width: 100%;
           max-width: 1200px;
-          height: 560px; /* taller to fit diagonal road and labels */
-          margin: 0 auto;
-          overflow: visible;
+          margin: 16px auto 0 auto; /* reduced top margin */
+          padding: 12px 8px; /* tighter */
+        }
+        .timeline::before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 0; bottom: 0;
+          width: 3px;
+          background: #e5e7eb;
+          transform: translateX(-50%);
         }
 
-        .road-wrap {
-          position: absolute;
-          inset: 0;
-          transform: translateY(-8%) rotate(-10deg) scale(0.9); /* raise the road slightly */
-          transform-origin: center;
-        }
-
-        .road-svg {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          display: block;
-          filter: drop-shadow(0 10px 24px rgba(4,37,84,0.14));
-        }
-
-        .phase {
-          position: absolute;
-          transform: translate(-50%, -50%) rotate(10deg); /* counter-rotate to match -10deg road */
+        .timeline-row {
           display: flex;
+          justify-content: space-between;
           align-items: center;
-          gap: 8px;
-          pointer-events: none;
+          width: 100%;
+          margin-bottom: 16px; /* tighter row spacing */
+        }
+    .timeline-row.right { flex-direction: row-reverse; }
+    /* Shift only the right-side CARD across all views; keep dot centered */
+  .timeline-row.right .card-col { padding-left: 12px; }
+  @media (min-width: 641px) { .timeline-row.right .card-col { padding-left: 22px; } }
+  /* Laptop/Desktop: shift only the right-side CARD further right; keep dot centered */
+  @media (min-width: 1024px) { .timeline-row.right .card-col { padding-left: 22px; transform: translateX(70px); } }
+  .timeline-col { display: flex; align-items: center; }
+    .card-col, .empty-col { width: 48%; }
+    .dot-col { width: 4%; display: flex; justify-content: center; }
+    /* Ensure dots are exactly centered on the vertical line on tablet/desktop by anchoring to the row */
+    @media (min-width: 641px) {
+      .timeline-row { position: relative; }
+      .timeline-row .dot { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; }
+    }
+
+        .card {
+          width: 100%;
+          /* Blue base + light accent only at bottom-right corner */
+          background: 
+            radial-gradient(circle at 96% 88%, rgba(70,207,248,0.95) 0%, rgba(70,207,248,0.55) 22%, rgba(70,207,248,0) 60%),
+            linear-gradient(180deg, #0f5cf8 0%, #0d48eaff 100%);
+          border-radius: 16px;
+          padding: 12px 18px; /* reduced vertical padding */
+          height: 130px; /* fixed card height as requested */
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          box-shadow: 0 12px 28px rgba(6,26,51,0.16), 0 6px 16px rgba(13,72,234,0.18);
+          border: 0;
+          transition: transform .15s ease, box-shadow .15s ease;
+        }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(6,26,51,0.22); }
+  .card-head { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+    .card-icon { color: #ffffff; font-size: 16px; line-height: 1; }
+    .card-date { color: #e6efff; font-size: 12.5px; font-weight: 600; }
+  .card-title { margin: 0 0 4px; font-size: 18px; font-weight: 700; color: #ffffff; }
+  .card-list { margin: 0; padding-left: 18px; color: #f0f6ff; font-size: 13.5px; line-height: 1.42; flex: 1 1 auto; overflow: hidden; }
+  .card-list li { margin: 0; }
+    .card-final { margin: 6px 0 0; color: #ffffff; font-weight: 600; font-size: 14px; }
+
+        .dot {
+          position: relative;
+          width: 12px; height: 12px; /* slightly smaller */
+          background: linear-gradient(180deg, #46cff8ff 0%, #0d48eaff 100%); /* blue theme */
+          border: 4px solid #fff;
+          border-radius: 999px;
+          box-shadow: 0 0 0 3px #d7e6ff, 0 8px 18px rgba(6,26,51,0.12);
+        }
+        .dot.pulse::after {
+          content: "";
+          position: absolute;
+          inset: -6px;
+          border-radius: 999px;
+          border: 2px solid rgba(13,72,234,0.55); /* blue pulse */
+          animation: pulse 1.5s ease-out infinite;
+        }
+        @keyframes pulse {
+          0% { transform: scale(0.95); opacity: 1; }
+          70% { transform: scale(1.2); opacity: 0.25; }
+          100% { transform: scale(1.4); opacity: 0; }
         }
 
-        .pin {
-          width: 40px;
-          height: 40px;
-          border-radius: 50% 50% 50% 8px;
-          background: linear-gradient(180deg,#4aa3ff,#0f76ff);
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          box-shadow: 0 8px 18px rgba(6,26,51,0.28);
-          pointer-events: auto;
-          transform: translateY(-6px);
+        /* Responsive */
+        @media (max-width: 900px) {
+          .card-col, .empty-col { width: 47%; }
+          .dot-col { width: 6%; }
+          .card-title { font-size: 16px; }
         }
-
-        .pin-inner {
-          color: #fff;
-          font-weight:700;
-        }
-
-        /* Labels (top/bottom) */
-        .phase-label {
-          pointer-events: auto;
-          text-align: center;
-          min-width: 160px;
-        }
-  .label-top { transform: translate(-50%, -100%); position: absolute; left: 50%; bottom: 64px; }
-  .label-bottom { transform: translate(-50%, 100%); position: absolute; left: 50%; top: 64px; }
-        .label-title {
-          font-weight: 800;
-          font-size: 16px;
-          background: linear-gradient(180deg, #2ecbfa 0%, #1a3fa6 100%);
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-          letter-spacing: -0.2px;
-        }
-        .label-sub { font-size: 12px; color: #334155; margin-top: 2px; }
-
-        /* Final/ongoing label styling tweak */
-        .phase.final .label-title { text-decoration: underline wavy rgba(15,118,255,0.5); }
-
-        /* Responsive tweaks */
-        @media (max-width:900px) {
-          .roadmap-canvas { height: 480px; }
-          .pin { width: 36px; height: 36px; }
-          .label-title { font-size: 14px; }
-        }
-
-        @media (max-width:640px) {
-          /* Switch to a vertical timeline layout on phones */
-          .roadmap-canvas { height: auto; padding: 8px 4px 12px; }
-          .road-wrap { position: relative; transform: none; height: auto; }
-          .road-svg { display: none; }
-          .road-wrap::before {
-            content: "";
-            position: absolute;
-            left: 28px;
-            top: 0; bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, #cfe8ff, #99c2ff);
-          }
-          .phase {
-            position: static !important;
-            left: auto !important; top: auto !important;
-            transform: none !important;
-            display: flex; align-items: center; gap: 12px;
-            margin: 14px 0;
-          }
-          .pin { width: 28px; height: 28px; transform: none; flex: 0 0 28px; }
-          .phase-label { position: static !important; text-align: left; min-width: 0; }
-          .label-top, .label-bottom { position: static !important; transform: none !important; left: auto !important; top: auto !important; bottom: auto !important; }
-          .label-title { font-size: 14px; }
-          .label-sub { font-size: 12px; }
+        @media (max-width: 640px) {
+          .timeline::before { left: 28px; transform: none; }
+          .timeline-row { flex-direction: row !important; align-items: flex-start; gap: 10px; }
+          .timeline-row.right { flex-direction: row !important; }
+          /* create a little more breathing room between line/dot and the card */
+          .dot-col { order: 0; width: 56px; justify-content: center; }
+          .card-col { order: 1; width: calc(100% - 66px); padding-left: 12px; }
+          .timeline-row.right .card-col { padding-left: 12px; }
+          .empty-col { display: none; }
+          .card { padding: 7px; }
+          .card-title { font-size: 15px; }
+          .card-list { font-size: 13px; line-height: 1.2; }
+          .dot { width: 10px; height: 10px; }
         }
       `}</style>
     </section>
