@@ -62,7 +62,7 @@ const Roadmap = () => {
                   <time className="card-date">{p.quarter}</time>
                 </div>
                 <h3 className="card-title">{p.title}</h3>
-                {p.items && p.items.length > 0 && (
+              {/* {p.items && p.items.length > 0 && (
                   <ul className="card-list" aria-label="Highlights">
                     {p.items.map((it, i) => (
                       <li key={i}>{it}</li>
@@ -71,7 +71,7 @@ const Roadmap = () => {
                 )}
                 {p.final && (
                   <p className="card-final">Still progressing — more to come!</p>
-                )}
+                )} */} 
               </div>
             </div>
 
@@ -159,26 +159,49 @@ const Roadmap = () => {
 
         .card {
           width: 100%;
+          position: relative; /* for glossy overlays */
           /* Blue base + light accent only at bottom-right corner */
-          background: 
+          background:
             radial-gradient(circle at 96% 88%, rgba(70,207,248,0.95) 0%, rgba(70,207,248,0.55) 22%, rgba(70,207,248,0) 60%),
             linear-gradient(180deg, #0f5cf8 0%, #0d48eaff 100%);
           border-radius: 16px;
-          padding: 12px 18px; /* reduced vertical padding */
-          height: 130px; /* fixed card height as requested */
+          padding: 8px 14px; /* slightly tighter */
+          min-height: 56px; /* reduced a bit */
           display: flex;
           flex-direction: column;
+          align-items: center; /* center horizontally */
+          justify-content: center; /* center vertically */
           overflow: hidden;
-          box-shadow: 0 12px 28px rgba(6,26,51,0.16), 0 6px 16px rgba(13,72,234,0.18);
-          border: 0;
-          transition: transform .15s ease, box-shadow .15s ease;
+          /* crystal-like depth */
+          box-shadow: 0 12px 28px rgba(6,26,51,0.16), 0 6px 16px rgba(13,72,234,0.18), inset 0 1px 0 rgba(255,255,255,0.35);
+          border: 1px solid rgba(255,255,255,0.28);
+          transition: transform .18s ease, box-shadow .18s ease;
         }
-    .card:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(6,26,51,0.22); }
-  .card-head { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+        /* subtle glossy sheen */
+        .card::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(180deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.12) 38%, rgba(255,255,255,0) 60%);
+          border-radius: inherit;
+          pointer-events: none;
+        }
+        /* small diagonal sparkle */
+        .card::after {
+          content: "";
+          position: absolute;
+          top: -35%; left: -10%;
+          width: 55%; height: 130%;
+          background: radial-gradient(ellipse at top left, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0) 60%);
+          transform: rotate(16deg);
+          pointer-events: none;
+        }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 18px 44px rgba(13,72,234,0.24), 0 12px 26px rgba(6,26,51,0.22); }
+  .card-head { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 2px; }
     .card-icon { color: #ffffff; font-size: 16px; line-height: 1; }
-    .card-date { color: #e6efff; font-size: 12.5px; font-weight: 600; }
-  .card-title { margin: 0 0 4px; font-size: 18px; font-weight: 700; color: #ffffff; }
-  .card-list { margin: 0; padding-left: 18px; color: #f0f6ff; font-size: 13.5px; line-height: 1.42; flex: 1 1 auto; overflow: hidden; }
+    .card-date { color: #e6efff; font-size: 12.5px; font-weight: 600; text-align: center; }
+  .card-title { margin: 0; font-size: 18px; font-weight: 700; color: #ffffff; text-align: center; }
+  .card-list { margin: 0; padding-left: 18px; color: #f0f6ff; font-size: 13.5px; line-height: 1.42; flex: 1 1 auto; overflow: hidden; text-align: center; }
   .card-list li { margin: 0; }
     .card-final { margin: 6px 0 0; color: #ffffff; font-weight: 600; font-size: 14px; }
 
