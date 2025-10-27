@@ -246,7 +246,7 @@ const About = () => {
             paddingBottom: "30px"
           }}
         >
-          At AppXperts, we blend cutting-edge technology with innovative design
+          At <strong>AppXperts (Xperts Software Solutions Private Limited)</strong>, we blend cutting-edge technology with innovative design
           to build software that powers your business growth. From custom
           applications to enterprise solutions, we help businesses digitally
           transform with confidence.
@@ -287,7 +287,7 @@ const About = () => {
         </h1>
 
         <p className="who-paragraph" style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "20px", textAlign: "justify" }}>
-          AppXperts Enterprise Solutions is a Software Development company which offers next-generation IT Services that could empower your businesses to become self-reliant and sufficient. It’s what we do, and we do it well. We address our clients’ unique needs with a healthy mix of tried and true methods, and progressive, innovative technologies evinced by our team of expert software developers. We pride ourselves in our ability to turn the most complex business requirements into intuitive software solutions, empowering our clients with the tools they need to seamlessly support and enhance their business operations. Whether a project requires
+          <strong>AppXperts Enterprise Solutions (Xperts Software Solutions Private Limited)</strong> is a Software Development company which offers next-generation IT Services that could empower your businesses to become self-reliant and sufficient. It’s what we do, and we do it well. We address our clients’ unique needs with a healthy mix of tried and true methods, and progressive, innovative technologies evinced by our team of expert software developers. We pride ourselves in our ability to turn the most complex business requirements into intuitive software solutions, empowering our clients with the tools they need to seamlessly support and enhance their business operations. Whether a project requires
         </p>
 
         <p className="who-paragraph" style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "30px", textAlign: "justify" }}>
@@ -478,7 +478,7 @@ const About = () => {
             marginBottom: "30px",
           }}
         >
-          At AppXperts, we bridge creativity with functionality. Whether you’re
+          At <strong>Appxperts (Xperts Software Solutions Private Limited)</strong>, we bridge creativity with functionality. Whether you’re
           launching a product, building a platform, or crafting your brand story
           — we help you bring your vision to life with precision, clarity, and
           style.
@@ -577,7 +577,7 @@ const About = () => {
           margin: "0 auto 50px auto",
         }}
       >
-        At AppXperts, we don’t just build digital products — we craft solutions
+        At <strong>Appxperts (Xperts Software Solutions Private Limited)</strong>, we don’t just build digital products — we craft solutions
         that <br/>matter. Here’s why businesses trust us:
       </p>
 

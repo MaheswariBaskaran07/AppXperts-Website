@@ -20,11 +20,11 @@ const HomePage = () => {
         <title>AppXperts – Digital Solutions & Enterprise Software Development</title>
         <meta
           name="description"
-          content="AppXperts Enterprise Solutions offers expert software development, digital transformation, UI/UX design, cloud solutions, and enterprise app development to help businesses innovate and grow."
+          content="<strong>AppXperts Enterprise Solutions (Xperts Software Solutions Private Limited)</strong> offers expert software development, digital transformation, UI/UX design, cloud solutions, and enterprise app development to help businesses innovate and grow."
         />
         <meta
           name="keywords"
-          content="AppXperts, AppXperts Enterprise Solutions, software development, enterprise solutions, digital transformation, UI UX design, web development, mobile apps, cloud technology"
+          content="AppXperts, <strong>AppXperts Enterprise Solutions (Xperts Software Solutions Private Limited)</strong>, software development, enterprise solutions, digital transformation, UI UX design, web development, mobile apps, cloud technology"
         />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="AppXperts – Digital Solutions & Enterprise Software Development" />

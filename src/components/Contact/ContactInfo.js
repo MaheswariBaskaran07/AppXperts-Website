@@ -63,7 +63,7 @@ const ContactInfo = () => {
 
           {/* Registered office info (centered, 2 lines on desktop) */}
           <div className="contact-registered">
-            <strong>Registered office at:</strong> Xperts Software Solutions Private Limited, D.51, Iron Steel Market Sathangadu, Manali,<br />
+            <strong>Registered office at:</strong> <strong>Xperts Software Solutions Private Limited</strong>, D.51, Iron Steel Market Sathangadu, Manali,<br />
             Tiruvallur, Ambattur, Tamil Nadu, 600068
           </div>
 

@@ -15,7 +15,7 @@ const AboutUsPage = () => {
   <title>About AppXperts – Who We Are & Our Mission</title>
   <meta
     name="description"
-    content="Learn about AppXperts Enterprise Solutions — our vision, mission, and expert team dedicated to providing innovative digital and enterprise solutions."
+    content="Learn about <strong>AppXperts Enterprise Solutions (Xperts Software Solutions Private Limited)</strong> — our vision, mission, and expert team dedicated to providing innovative digital and enterprise solutions."
   />
   <meta property="og:url" content="https://www.appxes.com/about" />
   <link rel="canonical" href="https://www.appxes.com/about" />

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/images/AX-LOGO.png";
+import logo from "../assets/images/Xperts SOFTWARE Side Text.png";
 import mail from "../assets/Footer/mail.png";
 import linkedIn from "../assets/Footer/linkedin-in.png";
 import call from "../assets/Footer/call.png";
@@ -210,7 +210,7 @@ const Footer = () => {
           gap: 20,
         }}
       >
-        <div>© {currentYear} AppXperts. All rights reserved.</div>
+        <div style={{fontSize:"14px"}}>© {currentYear} AppXperts (Xperts). All rights reserved.</div>
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
       <a 
   href="https://www.facebook.com/AppXes" 

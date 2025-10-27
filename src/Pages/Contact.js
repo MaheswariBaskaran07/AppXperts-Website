@@ -17,7 +17,7 @@ const ContactPage = () => {
   <title>Contact AppXperts – Let’s Build Your Digital Future</title>
   <meta
     name="description"
-    content="Get in touch with AppXperts Enterprise Solutions. Reach our team for inquiries, project discussions, or support for your digital transformation needs."
+    content="Get in touch with <strong>AppXperts Enterprise Solutions (Xperts Software Solutions Private Limited)</strong>. Reach our team for inquiries, project discussions, or support for your digital transformation needs."
   />
   <meta property="og:url" content="https://www.appxes.com/contact" />
   <link rel="canonical" href="https://www.appxes.com/contact" />

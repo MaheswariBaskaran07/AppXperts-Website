@@ -130,7 +130,7 @@ const Clients = () => {
           <p
            className="client-sub"
           >
-            From startups to global enterprises, our clients choose AppXperts
+            From startups to global enterprises, our clients choose <strong>AppXperts (Xperts Software Solutions Private Limited)</strong>
             for innovative solutions, reliable delivery, and lasting results.
           </p>
       </div>
