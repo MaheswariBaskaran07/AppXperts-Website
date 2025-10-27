@@ -192,35 +192,30 @@ const Roadmap = () => {
 
         .content ul {
           margin: 0;
-          padding-left: 18px;
+          padding-left: 18px; /* default bullet indentation */
           color: #334155;
           font-size: 14px;
           line-height: 1.5;
+          list-style: disc outside; /* ensure bullets are outside by default */
+          text-align: left;
         }
 
-        /* ✅ Bullet alignment fix for LEFT cards */
-        .timeline-item.left .content ul {
-          padding-left: 0;
-          padding-right: 18px;
-          list-style-position: inside;
-          direction: rtl;
-          text-align: right;
-        }
+        .content ul li { margin: 2px 0; }
+        .content ul li::marker { color: #2563eb; }
 
-        .timeline-item.left .content ul li {
-          direction: ltr;
-          text-align: right;
-        }
-            .timeline-item.left .content ul li::marker {
-  color: #2563eb;
-}
-   .timeline-item.right .content ul li::marker {
-  color: #2563eb;
-}
-
-
-        .content ul li {
-          margin: 2px 0;
+        /* Desktop/tablet only: mirror left cards so bullets align to the inner edge */
+        @media (min-width: 769px) {
+          .timeline-item.left .content ul {
+            padding-left: 0;
+            padding-right: 18px;
+            list-style-position: inside;
+            direction: rtl;
+            text-align: right;
+          }
+          .timeline-item.left .content ul li {
+            direction: ltr;
+            text-align: right;
+          }
         }
 
         .coming {
@@ -268,25 +263,13 @@ const Roadmap = () => {
     left: 0;
   }
 
-  .timeline-item .dot {
-    left: 20px;
-  }
+  /* Force all dots to sit exactly on the mobile timeline line */
+  .timeline-item .dot { left: 20px; transform: translate(-50%, -50%); }
+  .timeline-item.right .dot, .timeline-item.left .dot { left: 20px; transform: translate(-50%, -50%); }
 
-  /* ✅ Fix left card bullet alignment on mobile */
-  .timeline-item.left .content ul,
-  .timeline-item.right .content ul {
-    direction: ltr !important;
-    text-align: left !important;
-    padding-left: 18px !important;
-    padding-right: 0 !important;
-    list-style-position: outside !important;
-  }
-
-  .timeline-item.left .content ul li,
-  .timeline-item.right .content ul li {
-    direction: ltr !important;
-    text-align: left !important;
-  }
+  /* ✅ Mobile: standard left-aligned bullets for all cards */
+  .timeline-item .content ul { padding-left: 18px; padding-right: 0; list-style-position: outside; direction: ltr; text-align: left; }
+  .timeline-item .content ul li { direction: ltr; text-align: left; }
 
   .content {
     margin-bottom: 20px;
