@@ -68,7 +68,7 @@ const OurService = () => {
           lineHeight: "1.6",
         }}
       >
-        At Appyxperts, we specialize in delivering smart, scalable, and seamless
+        At <strong>AppXperts (Xperts Software Solutions Private Limited)</strong>, we specialize in delivering smart, scalable, and seamless
         digital solutions tailored to your business needs. Whether you're
         launching a startup, streamlining enterprise workflows, or building your
         online presence, our team brings innovation and reliability to every

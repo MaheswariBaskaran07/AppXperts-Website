@@ -56,7 +56,7 @@ const Home = () => {
           lineHeight: 1.7,
           width: '100%'
         }}>
-          At AppXperts, we blend cutting-edge technology with innovative design to build software that powers your business growth. From custom applications to enterprise solutions, we help businesses digitally transform with confidence.
+          At <strong>AppXperts (Xperts Software Solutions Private Limited)</strong>, we blend cutting-edge technology with innovative design to build software that powers your business growth. From custom applications to enterprise solutions, we help businesses digitally transform with confidence.
         </p>
         <div className="home-btn-row" style={{ display: 'flex', alignItems: 'center', gap: 18, marginBottom: 14, width: '100%' }}>
           <a href="/about" className='submit-button'>Know More</a>

@@ -164,7 +164,8 @@ const Service = () => {
                 </h1>
 
                 {/* Description */}
-                <p
+        <p
+        className="service-desc"
                 style={{
                     fontSize: "16px",
                     maxWidth: "800px",
@@ -173,7 +174,7 @@ const Service = () => {
                     color: "#333",
                 }}
                 >
-                From concept to execution, AppXperts delivers end-to-end digital services that power your growth. Whether it’s mobile apps, web platforms, UI/UX, or branding — we build future-ready solutions tailored to your vision.
+                From concept to execution, <strong>AppXperts (Xperts Software Solutions Private Limited)</strong> delivers end-to-end digital services that power your growth. Whether it’s mobile apps, web platforms, UI/UX, or branding we build future-ready solutions tailored to your vision.
                 </p>
       </div>
 
@@ -193,18 +194,30 @@ const Service = () => {
           zIndex: 1,
         }}
       />
-        <style>{` .about-people-img {
-          position: static !important;
-          top: unset !important;
-          right: unset !important;
-          left: unset !important;
-          transform: none !important;
-          width: 100% !important;
-          max-width: 1500px !important;
-          margin: 12px auto 0 auto !important;
-          display: block !important;
-          z-index: 1 !important;
-        }`}</style>
+        <style>{`
+          .about-people-img {
+            position: static !important;
+            top: unset !important;
+            right: unset !important;
+            left: unset !important;
+            transform: none !important;
+            width: 100% !important;
+            max-width: 1500px !important;
+            margin: 12px auto 0 auto !important;
+            display: block !important;
+            z-index: 1 !important;
+          }
+
+          /* Clamp service description to 2 lines on laptop/desktop; keep mobile unchanged */
+          @media (min-width: 701px) {
+            .service-desc {
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+          }
+        `}</style>
     </div>
    <OurService />
          <CallToAction />

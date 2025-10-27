@@ -246,7 +246,7 @@ const About = () => {
             paddingBottom: "30px"
           }}
         >
-          At AppXperts, we blend cutting-edge technology with innovative design
+          At <strong>AppXperts (Xperts Software Solutions Private Limited)</strong>, we blend cutting-edge technology with innovative design
           to build software that powers your business growth. From custom
           applications to enterprise solutions, we help businesses digitally
           transform with confidence.
@@ -478,7 +478,7 @@ const About = () => {
             marginBottom: "30px",
           }}
         >
-          At AppXperts, we bridge creativity with functionality. Whether you’re
+          At <strong>Appxperts (Xperts Software Solutions Private Limited)</strong>, we bridge creativity with functionality. Whether you’re
           launching a product, building a platform, or crafting your brand story
           — we help you bring your vision to life with precision, clarity, and
           style.
@@ -577,7 +577,7 @@ const About = () => {
           margin: "0 auto 50px auto",
         }}
       >
-        At AppXperts, we don’t just build digital products — we craft solutions
+        At <strong>Appxperts (Xperts Software Solutions Private Limited)</strong>, we don’t just build digital products — we craft solutions
         that <br/>matter. Here’s why businesses trust us:
       </p>
 

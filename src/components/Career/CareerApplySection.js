@@ -94,7 +94,7 @@ const CareerSection = () => {
             margin: 0,
           }}
         >
-          At AppXperts, we believe that great products start with great people.
+          At <strong>AppXperts (Xperts Software Solutions Private Limited)</strong>, we believe that great products start with great people.
           Our culture is built on trust, creativity, and a shared passion for
           delivering impactful digital solutions. Whether you’re a developer,
           designer, marketer, or strategist, you’ll find the space to innovate,
