@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState} from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../components/Career/apply.css"; // we’ll add responsive CSS here
@@ -15,7 +15,22 @@ export default function BookNowPopup({ open, setOpen }) {
     Type: "Demo",
   });
 
-  if (!open) return null;
+
+  const resetForm = () =>
+    setFormData({
+      FirstName: "",
+      LastName: "",
+      EmailId: "",
+      MobileNo: "",
+      Subject: "",
+      Message: "",
+      Type: "Demo",
+    });
+
+  const handleClose = () => {
+    resetForm();
+    setOpen(false);
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -48,16 +63,7 @@ export default function BookNowPopup({ open, setOpen }) {
       if (data.Status === true) {
         toast.success("Booking submitted successfully");
         setTimeout(() => {
-          setOpen(false);
-          setFormData({
-            FirstName: "",
-            LastName: "",
-            EmailId: "",
-            MobileNo: "",
-            Subject: "",
-            Message: "",
-            Type: "Demo",
-          });
+          handleClose();
         }, 1500);
       } else {
         toast.error("Failed to submit booking ❌");
@@ -67,11 +73,51 @@ export default function BookNowPopup({ open, setOpen }) {
     }
   };
 
+  // Close on Escape key
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") {
+        handleClose();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
+  if (!open) return null;
+
   return (
     <>
       <ToastContainer position="top-center" autoClose={2000} />
-      <div className="popup-overlay" onClick={() => setOpen(false)}>
-        <div className="popup-container" onClick={(e) => e.stopPropagation()}>
+      <div className="popup-overlay" onClick={handleClose}>
+        <div className="popup-container" onClick={(e) => e.stopPropagation()} style={{ position: "relative" }}>
+          {/* Close Button */}
+          <button
+            type="button"
+            aria-label="Close"
+            onClick={handleClose}
+            style={{
+              position: "absolute",
+              top: 12,
+              right: 12,
+              width: 36,
+              height: 36,
+              borderRadius: "50%",
+              border: "none",
+              background: "#f3f4f6",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 1px 2px rgba(0,0,0,0.06)",
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
           {/* LEFT SIDE */}
           <div className="popup-left">
             <h2>Book Your Demo <br /> Now</h2>

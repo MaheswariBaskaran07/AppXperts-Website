@@ -186,41 +186,10 @@ const Footer = () => {
               <div style={{ marginLeft: 28 }}>+971 508554043</div>
             </div>
           </div>
-          {/* Common Mail + Social Icons */}
-          <div className="footer-mail-social" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginTop: 16, flexWrap: 'wrap' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <img src={mail} alt="mail" style={{ width: 20 }} />
-              <span>info@appxes.com</span>
-            </div>
-
-            <div className="footer-social-icons" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <a 
-                href="https://www.facebook.com/AppXes" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}
-              >
-                <img src={fb} alt="fb" style={{ width: 40, height: 40 }} />
-              </a>
-
-              <a 
-                href="https://www.instagram.com/appxperts.solutions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}
-              >
-                <img src={insta} alt="insta" style={{ width: 40, height: 40 }} />
-              </a>
-
-              <a 
-                href="https://www.linkedin.com/company/appxperts-enterprise-solutions/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}
-              >
-                <img src={linkedIn} alt="linkedin" style={{ width: 22, height: 22 }} />
-              </a>
-            </div>
+          {/* Common Mail */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 16 }}>
+            <img src={mail} alt="mail" style={{ width: 20 }} />
+            <span>info@appxes.com</span>
           </div>
         </div>
       </div>
@@ -238,11 +207,39 @@ const Footer = () => {
           fontSize: 16,
           color: "#888",
           flexWrap: "wrap",
-          gap: 10,
+          gap: 20,
         }}
       >
-        <div>© {currentYear}  <strong>AppXperts (Xperts Software Solutions Private Limited)</strong>. All rights reserved.</div>
-       
+        <div style={{fontSize:"14px"}}>© {currentYear} AppXperts (Xperts). All rights reserved.</div>
+        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+      <a 
+  href="https://www.facebook.com/AppXes" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}
+>
+  <img src={fb} alt="fb" style={{ width: 40, height: 40 }} />
+</a>
+
+<a 
+  href="https://www.instagram.com/appxperts.solutions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}
+>
+  <img src={insta} alt="insta" style={{ width: 40, height: 40 }} />
+</a>
+
+<a 
+  href="https://www.linkedin.com/company/appxperts-enterprise-solutions/" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}
+>
+  <img src={linkedIn} alt="linkedin" style={{ width: 22, height: 22 }} />
+</a>
+
+        </div>
         <a
           href="#top"
           className="submit-button"
@@ -281,15 +278,6 @@ const Footer = () => {
             flex-direction: column;
             gap: 12px;
             min-width: unset;
-          }
-          /* Stack social icons below mail on mobile */
-          .footer-mail-social {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
-          }
-          .footer-social-icons {
-            margin-left: 28px; /* align with text under call icons */
           }
           .footer-bottom-row {
             flex-direction: column;

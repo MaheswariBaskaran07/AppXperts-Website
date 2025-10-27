@@ -287,7 +287,7 @@ const About = () => {
         </h1>
 
         <p className="who-paragraph" style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "20px", textAlign: "justify" }}>
-          AppXperts Enterprise Solutions is a Software Development company which offers next-generation IT Services that could empower your businesses to become self-reliant and sufficient. It’s what we do, and we do it well. We address our clients’ unique needs with a healthy mix of tried and true methods, and progressive, innovative technologies evinced by our team of expert software developers. We pride ourselves in our ability to turn the most complex business requirements into intuitive software solutions, empowering our clients with the tools they need to seamlessly support and enhance their business operations. Whether a project requires
+          <strong>AppXperts Enterprise Solutions (Xperts Software Solutions Private Limited)</strong> is a Software Development company which offers next-generation IT Services that could empower your businesses to become self-reliant and sufficient. It’s what we do, and we do it well. We address our clients’ unique needs with a healthy mix of tried and true methods, and progressive, innovative technologies evinced by our team of expert software developers. We pride ourselves in our ability to turn the most complex business requirements into intuitive software solutions, empowering our clients with the tools they need to seamlessly support and enhance their business operations. Whether a project requires
         </p>
 
         <p className="who-paragraph" style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "30px", textAlign: "justify" }}>
