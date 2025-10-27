@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/images/AX-LOGO.png";
+import logo from "../assets/images/Xperts SOFTWARE Side Text.png";
 import "../App.css";
 import BookNowPopup from "./BookNowPopup";
 

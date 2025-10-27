@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/images/AX-LOGO.png";
+import logo from "../assets/images/Xperts SOFTWARE Side Text.png";
 import mail from "../assets/Footer/mail.png";
 import linkedIn from "../assets/Footer/linkedin-in.png";
 import call from "../assets/Footer/call.png";
