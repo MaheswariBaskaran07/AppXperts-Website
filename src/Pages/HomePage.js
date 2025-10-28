@@ -17,7 +17,7 @@ const HomePage = () => {
     <>
       {/* ✅ SEO Meta Tags */}
       <Helmet>
-        <title>AppXperts – Digital Solutions & Enterprise Software Development</title>
+        <title>Xperts – Digital Solutions & Enterprise Software Development</title>
         <meta
           name="description"
           content="<strong>AppXperts Enterprise Solutions (Xperts Software Solutions Private Limited)</strong> offers expert software development, digital transformation, UI/UX design, cloud solutions, and enterprise app development to help businesses innovate and grow."

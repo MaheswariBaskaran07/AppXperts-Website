@@ -14,10 +14,10 @@ const ServicesPage = () => {
   return (
     <>
     <Helmet>
-  <title>Our Services – AppXperts Enterprise Software & Digital Solutions</title>
+  <title>Our Services – Xperts Software Solutions Private Limited</title>
   <meta
     name="description"
-    content="Explore AppXperts' range of services including software development, cloud solutions, mobile apps, and UI/UX design tailored to your business needs."
+    content="Explore Xperts Software Solutions Private Limited's range of services including software development, cloud solutions, mobile apps, and UI/UX design tailored to your business needs."
   />
   <meta property="og:url" content="https://www.appxes.com/services" />
   <link rel="canonical" href="https://www.appxes.com/services" />

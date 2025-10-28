@@ -6,7 +6,7 @@ const Roadmap = () => {
       quarter: "Dec 2021",
       title: "AppXperts Incorporated",
       location: "Nagapattinam, India",
-      items: ["Foundation of the company", "Registered corporate entity"],
+      items: ["Company founded", "Registered as a corporate entity"],
     },
     {
       quarter: "Mar 2022",
@@ -18,7 +18,7 @@ const Roadmap = () => {
       quarter: "Sep 2022",
       title: "Incorporated in Singapore",
       location: "Singapore",
-      items: ["Regional presence established", "Cross-border engagements"],
+      items: ["Established regional presence", "Initiated cross-border engagements"],
     },
     {
       quarter: "Jan 2024",
@@ -29,7 +29,7 @@ const Roadmap = () => {
       quarter: "Nov 2024",
       title: "Incorporated in UAE",
       location: "Sharjah, UAE",
-      items: ["Middle East expansion", "New partnerships"],
+      items: ["Expanded into the Middle East", "New partnerships"],
     },
     {
       quarter: "Aug 2025",
@@ -39,7 +39,7 @@ const Roadmap = () => {
     {
       quarter: "Coming Soon",
       title: "USA Incorporation",
-      items: ["Planned expansion into North America"],
+      items: ["Planned expansion into the United States"],
       final: true,
     },
   ];

@@ -160,7 +160,7 @@ const Career = () => {
             color: "#000",
           }}
         >
-       At <strong>AppXperts (Xperts Software Solutions Private Limited)</strong>, we’re more than just a workplace — we’re a community
+       At <strong>AppXperts (Xperts Software Solutions Private Limited)</strong>, we’re more than just a workplace we’re a community
             of innovators, problem-solvers, and dreamers. Join us to create
             cutting-edge digital solutions while building a career that inspires
             you every day.

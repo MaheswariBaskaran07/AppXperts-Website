@@ -12,7 +12,7 @@ const AboutUsPage = () => {
   return (
     <>
     <Helmet>
-  <title>About AppXperts – Who We Are & Our Mission</title>
+  <title>About Xperts – Who We Are & Our Mission</title>
   <meta
     name="description"
     content="Learn about <strong>AppXperts Enterprise Solutions (Xperts Software Solutions Private Limited)</strong> — our vision, mission, and expert team dedicated to providing innovative digital and enterprise solutions."

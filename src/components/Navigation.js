@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/images/Xperts SOFTWARE Side Text.png";
+import logo from "../assets/images/Side icon.png";
 import "../App.css";
 import BookNowPopup from "./BookNowPopup";
 
@@ -70,7 +70,7 @@ const Navigation = () => {
           z-index: 10;
         }
         .nav-logo img {
-          width: 140px;
+          width: 200px;
           height: auto;
           object-fit: contain;
           display: block;
@@ -91,7 +91,7 @@ const Navigation = () => {
             padding: 14px 18px;
           }
           .nav-logo img {
-            width: 110px;
+            width: 150px;
           }
           .nav-list {
             gap: 18px;

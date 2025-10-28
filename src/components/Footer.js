@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/images/Xperts SOFTWARE Side Text.png";
+import logo from "../assets/images/Side icon.png";
 import mail from "../assets/Footer/mail.png";
 import linkedIn from "../assets/Footer/linkedin-in.png";
 import call from "../assets/Footer/call.png";
@@ -66,7 +66,7 @@ const Footer = () => {
               color: "#555",
               fontSize: 16,
               marginBottom: 8,
-              textAlign: "justify",
+              textAlign: "left",
               maxWidth: 220,
               lineHeight: 1.6,
               fontFamily: "Poppins, sans-serif",
