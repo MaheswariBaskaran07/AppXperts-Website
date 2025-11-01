@@ -12,6 +12,7 @@ export default function JobApplicationPopup({ open, setOpen }) {
     Email: "",
     MobileNo: "",
     ApplyingPosition: "",
+    OtherPosition: "",
     TotalExperience: "",
     RelevantExperience: "",
     TechicalSkills: "",
@@ -68,64 +69,140 @@ export default function JobApplicationPopup({ open, setOpen }) {
   };
 
   // ✅ handle submit with validation
-  const handleSubmit = async (e) => {
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   // Phone: max 13 digits, only numbers
+  //   const phone = formData.MobileNo;
+  //   if (!/^[0-9]{1,13}$/.test(phone)) {
+  //     toast.error("Phone number must be up to 13 digits and contain only numbers");
+  //     return;
+  //   }
+  //   // Email: regex validation
+  //   const email = formData.Email;
+  //   const emailRegex = /^[\w-.]+@[\w-]+\.[a-zA-Z]{2,}$/;
+  //   if (!emailRegex.test(email)) {
+  //     toast.error("Please enter a valid email address");
+  //     return;
+  //   }
+  //   // Salary: min 0
+  //   if (Number(formData.CurrentCTC) < 0 || Number(formData.ExpectedCTC) < 0) {
+  //     toast.error("Salary must be 0 or greater");
+  //     return;
+  //   }
+  //   try {
+  //     const res = await fetch("http://localhost:3015/api/job-applications", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(formData),
+  //     });
+  //     const data = await res.json();
+
+  //     if (data.success) {
+  //       toast.success("Application submitted successfully");
+  //       setTimeout(() => {
+  //         setOpen(false); // close popup
+  //         setFormData({
+  //           FirstName: "",
+  //           LastName: "",
+  //           Email: "",
+  //           MobileNo: "",
+  //           ApplyingPosition: "",
+  //           TotalExperience: "",
+  //           RelevantExperience: "",
+  //           TechicalSkills: "",
+  //           CurrentCTC: "",
+  //           ExpectedCTC: "",
+  //           NoticePeriod: "",
+  //           CurrentLocation: "",
+  //           UploadResume: null,
+  //           Status: "Applied",
+  //           Remarks: "",
+  //           CreateDate: new Date().toISOString(),
+  //         });
+  //       }, 1500);
+  //     } else {
+  //       toast.error("Failed to submit ❌");
+  //     }
+  //   } catch (err) {
+  //     console.error("Error submitting form:", err);
+  //     toast.error("Server error ❌");
+  //   }
+  // };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Phone: max 13 digits, only numbers
+
+    // ✅ Phone validation: max 13 digits, only numbers
     const phone = formData.MobileNo;
     if (!/^[0-9]{1,13}$/.test(phone)) {
       toast.error("Phone number must be up to 13 digits and contain only numbers");
       return;
     }
-    // Email: regex validation
+
+    // ✅ Email validation
     const email = formData.Email;
     const emailRegex = /^[\w-.]+@[\w-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
       toast.error("Please enter a valid email address");
       return;
     }
-    // Salary: min 0
+
+    // ✅ Salary validation
     if (Number(formData.CurrentCTC) < 0 || Number(formData.ExpectedCTC) < 0) {
       toast.error("Salary must be 0 or greater");
       return;
     }
-    try {
-      const res = await fetch("http://localhost:3015/api/job-applications", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      const data = await res.json();
 
-      if (data.success) {
-        toast.success("Application submitted successfully");
-        setTimeout(() => {
-          setOpen(false); // close popup
-          setFormData({
-            FirstName: "",
-            LastName: "",
-            Email: "",
-            MobileNo: "",
-            ApplyingPosition: "",
-            TotalExperience: "",
-            RelevantExperience: "",
-            TechicalSkills: "",
-            CurrentCTC: "",
-            ExpectedCTC: "",
-            NoticePeriod: "",
-            CurrentLocation: "",
-            UploadResume: null,
-            Status: "Applied",
-            Remarks: "",
-            CreateDate: new Date().toISOString(),
-          });
-        }, 1500);
-      } else {
-        toast.error("Failed to submit ❌");
-      }
-    } catch (err) {
-      console.error("Error submitting form:", err);
-      toast.error("Server error ❌");
-    }
+    const finalPosition =
+      formData.ApplyingPosition === "Others"
+        ? formData.OtherPosition
+        : formData.ApplyingPosition;
+
+    // ✅ WhatsApp Message
+    const whatsappNumber = "+919952746738"; // ← change to your HR/company number (no '+')
+    const message = `*New Job Application Submitted* 👩‍💼
+    Name: ${formData.FirstName} ${formData.LastName}
+    Email: ${formData.Email}
+    Mobile: ${formData.MobileNo}
+    Applying For: ${finalPosition}
+    Total Experience: ${formData.TotalExperience}
+    Relevant Experience: ${formData.RelevantExperience}
+    Skills: ${formData.TechicalSkills}
+    Current CTC: ${formData.CurrentCTC}
+    Expected CTC: ${formData.ExpectedCTC}
+    Notice Period: ${formData.NoticePeriod}
+    Current Location: ${formData.CurrentLocation}
+    Remarks: ${formData.Remarks || "N/A"}`;
+
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    // ✅ Open WhatsApp chat
+    window.open(whatsappURL, "_blank");
+
+    // ✅ Reset the form after sending
+    setTimeout(() => {
+      toast.success("Application sent to WhatsApp ✅");
+      setFormData({
+        FirstName: "",
+        LastName: "",
+        Email: "",
+        MobileNo: "",
+        ApplyingPosition: "",
+        OtherPosition: "",
+        TotalExperience: "",
+        RelevantExperience: "",
+        TechicalSkills: "",
+        CurrentCTC: "",
+        ExpectedCTC: "",
+        NoticePeriod: "",
+        CurrentLocation: "",
+        UploadResume: null,
+        Status: "Applied",
+        Remarks: "",
+        CreateDate: new Date().toISOString(),
+      });
+      setOpen(false);
+    }, 1500);
   };
 
   return (
@@ -246,7 +323,22 @@ export default function JobApplicationPopup({ open, setOpen }) {
               <option value="Flutter Developer">Flutter Developer</option>
               <option value="Java Developer">Java Developer</option>
               <option value="UI/UX Designer">UI/UX Designer</option>
-            </select>
+              <option value="Others">Others</option>
+              </select>
+              {formData.ApplyingPosition === "Others" && (
+        <div>
+          <label style={labelStyle}>Please specify</label>
+          <input
+            type="text"
+            name="OtherPosition"
+            style={inputStyle}
+            placeholder="Enter the position"
+            value={formData.OtherPosition}
+            onChange={handleChange}
+            required
+          />
+        </div>
+      )}
           </div>
 
           {/* Experience */}

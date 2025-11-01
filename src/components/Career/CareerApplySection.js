@@ -51,21 +51,21 @@ const CareerSection = () => {
 
   const phoneNumber = "+919952746738"; // ✅ Replace with your WhatsApp number (with country code, no '+' sign)
 
-  const handleWhatsAppApply = (jobTitle) => {
-    const message = `Hello, I'm interested in applying for the ${jobTitle} position at AppXperts. 
+  // const handleWhatsAppApply = (jobTitle) => {
+  //   const message = `Hello, I'm interested in applying for the ${jobTitle} position at AppXperts. 
 
-    I have attached my cv and following details for your reference.
+  //   I have attached my cv and following details for your reference.
 
-    Full name 
-    Total experience 
-    current salary and expected salary take home monthly
-    Notice period
-    Technology you know
-    Location
-    Contact details`;
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-  };
+  //   Full name 
+  //   Total experience 
+  //   current salary and expected salary take home monthly
+  //   Notice period
+  //   Technology you know
+  //   Location
+  //   Contact details`;
+  //   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  //   window.open(url, "_blank");
+  // };
 
   return (
     <section
@@ -131,8 +131,8 @@ const CareerSection = () => {
             </div>
             <button
               className="apply-btn"
-              onClick={() => handleWhatsAppApply(job.title)}
-              // onClick={() => setIsOpen(true)}
+              // onClick={() => handleWhatsAppApply(job.title)}
+              onClick={() => setIsOpen(true)}
             >
               Apply Now →
             </button>
