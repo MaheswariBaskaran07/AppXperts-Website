@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FloatingWhatsApp = ({ phone = '+918825528905', message = 'Hi, I would like to know more about your services.' }) => {
+const FloatingWhatsApp = ({ phone = '+919952746738', message = 'Hi, I would like to know more about your services.' }) => {
   const href = `https://wa.me/${phone.replace(/[^\d]/g, '')}?text=${encodeURIComponent(message)}`;
   return (
     <a
