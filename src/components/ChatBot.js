@@ -20,7 +20,7 @@ const Input = ({ placeholder, value, onChange, onKeyDown, ...props }) => (
       outline: "none",
       transition: "border-color 0.2s",
     }}
-    onFocus={(e) => e.target.style.borderColor = "#8b5cf6"}
+    onFocus={(e) => e.target.style.borderColor = "linear-gradient(180deg, #263fe3, #00a9e5"}
     onBlur={(e) => e.target.style.borderColor = "#d1d5db"}
     {...props}
   />
@@ -33,7 +33,7 @@ const Button = ({ onClick, disabled, children, ...props }) => (
     disabled={disabled}
     style={{
       padding: "8px 12px",
-      backgroundColor: disabled ? "#9ca3af" : "#8b5cf6",
+      background: disabled ? "#9ca3af" : "linear-gradient(180deg, #263fe3, #00a9e5",
       color: "white",
       border: "none",
       borderRadius: "6px",
@@ -50,7 +50,7 @@ const Button = ({ onClick, disabled, children, ...props }) => (
     }}
     onMouseLeave={(e) => {
       if (!disabled) {
-        e.target.style.backgroundColor = "#8b5cf6";
+        e.target.style.background = "linear-gradient(180deg, #263fe3, #00a9e5";
       }
     }}
     {...props}
@@ -190,16 +190,31 @@ export default function ChatBot() {
       }}
     >
       {!open && (
-        <button
-          onClick={() => { 
-            setOpen(true); 
-            pushEvent("chatbot:open_toggle", { open: true }); 
-          }}
-          className="chatbot-toggle-btn"
-          aria-label="Open chat"
-        >
-          <MessageCircle className="w-5 h-5" />
-        </button>
+     <button
+  onClick={() => { 
+    setOpen(true); 
+    pushEvent("chatbot:open_toggle", { open: true }); 
+  }}
+  style={{position: "fixed",
+  bottom: "80px",
+  right: "20px",
+  width: "56px",
+  height: "56px",
+  borderRadius: "50%",
+  background: "linear-gradient(180deg, #263fe3, #00a9e5)",
+  color: "#fff",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+  border: "none",
+  cursor: "pointer",
+  transition: "all 0.3s ease"}}
+  aria-label="Open chat"
+>
+  <MessageCircle className="chatbot-icon" />
+</button>
+
       )}
 
       {open && (
@@ -250,7 +265,7 @@ export default function ChatBot() {
                     maxWidth: "80%",
                     padding: "8px 12px",
                     borderRadius: "12px",
-                    backgroundColor: m.by === "user" ? "#8b5cf6" : "#f3f4f6",
+                    background: m.by === "user" ? "linear-gradient(180deg, #263fe3, #00a9e5" : "#f3f4f6",
                     color: m.by === "user" ? "white" : "#374151",
                     fontSize: "14px",
                     lineHeight: "1.4"
@@ -351,7 +366,7 @@ export default function ChatBot() {
               align-items: center;
               justify-content: space-between;
               padding: 12px 16px;
-              background: #8b5cf6;
+              background: linear-gradient(180deg, #263fe3, #00a9e5);
               color: white;
             }
             
@@ -394,30 +409,63 @@ export default function ChatBot() {
               }
             }
             
-            .chatbot-toggle-btn {
-              background: #8b5cf6;
-              color: white;
-              border-radius: 50%;
-              padding: 16px;
-              border: none;
-              box-shadow: 0 8px 24px rgba(139, 92, 246, 0.45);
-              cursor: pointer;
-              transition: transform 0.15s ease, box-shadow 0.15s ease;
-              width: 56px;
-              height: 56px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              position: relative;
-              z-index: 1;
-            }
-            .chatbot-toggle-btn:hover {
-              transform: scale(1.05) translateY(-2px);
-              box-shadow: 0 12px 28px rgba(139, 92, 246, 0.5);
-            }
+           .chatbot-toggle-btn {
+  position: fixed;
+  bottom: 100px; /* adjust so it sits above WhatsApp button */
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #2563eb; /* blue fill */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chatbot-toggle-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(37,99,235,0.4);
+}
+
+.chatbot-toggle-btn .chatbot-icon {
+  width: 26px;
+  height: 26px;
+  color: #fff; /* white icon */
+  stroke-width: 2.2;
+}
+
             .chatbot-toggle-btn:active {
               transform: scale(0.95);
             }
+              .chatbot-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #2563eb; /* Blue fill */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid white; /* White outline */
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3); /* Outer circle glow/ring */
+  transition: all 0.3s ease;
+}
+
+.chatbot-toggle-btn:hover .chatbot-icon-circle {
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.45);
+  transform: scale(1.05);
+}
+
+.chatbot-icon {
+  width: 22px;
+  height: 22px;
+  color: white; /* White icon inside blue circle */
+  stroke-width: 2.2;
+}
+
             
             /* Custom scrollbar for chat messages */
             .chatbot-messages::-webkit-scrollbar {
