@@ -89,7 +89,7 @@ export default function JobApplicationPopup({ open, setOpen }) {
       return;
     }
     try {
-      const res = await fetch("http://localhost:3015/api/job-applications", {
+      const res = await fetch("https://emailapi.appxes-erp.in/api/jobapplications/CreateApplication", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

@@ -73,6 +73,18 @@ export default function ChatBot() {
   });
   const [isSending, setIsSending] = useState(false);
 
+  // Auto-scroll to latest message
+  useEffect(() => {
+    if (messages.length > 0) {
+      const messagesContainer = document.getElementById("chat-messages");
+      if (messagesContainer) {
+        setTimeout(() => {
+          messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }, 100);
+      }
+    }
+  }, [messages]);
+
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
@@ -128,29 +140,28 @@ export default function ChatBot() {
     setIsSending(true);
     pushEvent("chatbot:free_text_sent", { text: msg });
 
+    // Use the same API structure as BookNowPopup
     const payload = {
       FirstName: "Website Chat",
-      LastName: "",
-      EmailId: email || "",
-      PhoneNo: "",
-      CompanyName: "Website Chat",
-      NoOfEmployee: 0,
-      HearAboutUsId: 0,
-      InterestedInId: 4,
+      LastName: "User",
+      EmailId: email || "chat@appxperts.com",
+      MobileNo: "",
+      Subject: "Chatbot Inquiry",
       Message: msg,
+      Type: "Chat",
     };
 
     try {
-      const res = await fetch("https://appxpertsweb.appxes-erp.in/api/CustomerInquiry/addCustomerInquiry", {
+      const res = await fetch("https://emailapi.appxes-erp.in/api/booking/AddBooking", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
       const data = await res.json();
-      if (res.ok) {
+      if (data.Status === true) {
         // show bot acknowledgement
-        const botText = data?.message || "Thanks — we've received your message. Our team will contact you soon.";
+        const botText = "Thanks for reaching out! We've received your message and will get back to you soon.";
         setMessages((m) => [
           ...m,
           { id: String(Date.now()), by: "bot", text: botText, time: Date.now() },
@@ -158,8 +169,8 @@ export default function ChatBot() {
         toast.success("Message sent! We'll get back to you soon.");
         pushEvent("chatbot:free_text_replied", { text: botText });
       } else {
-        toast.error(data?.message || "Failed to send message. Please try again later.");
-        pushEvent("chatbot:free_text_failed", { status: res.status });
+        toast.error("Failed to send message. Please try again later.");
+        pushEvent("chatbot:free_text_failed", { status: "api_error" });
       }
     } catch (e) {
       toast.error("Network error. Unable to send your message right now.");

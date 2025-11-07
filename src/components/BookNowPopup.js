@@ -53,7 +53,7 @@ export default function BookNowPopup({ open, setOpen }) {
     }
 
     try {
-      const res = await fetch("http://localhost:3015/api/booking/AddBooking", {
+      const res = await fetch("https://emailapi.appxes-erp.in/api/booking/AddBooking", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
