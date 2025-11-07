@@ -6,6 +6,7 @@ import FeaturesCRM from '../components/ProuctDetails/FeaturesCRM';
 import ProductHM from '../components/ProuctDetails/ProductHM';
 import FeaturesHM from '../components/ProuctDetails/FeaturesHM';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
+import ChatBot from '../components/ChatBot';
 
 const ProductDetailsHM = () => {
      useEffect(() => {
@@ -19,6 +20,7 @@ const ProductDetailsHM = () => {
       <BookingSection />
       <Footer />
        <FloatingWhatsApp phone={'+91 88255 28905'} />
+       <ChatBot />
     </div>
   )
 }
