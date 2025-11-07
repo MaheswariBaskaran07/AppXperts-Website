@@ -1,6 +1,8 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import HomePage from './Pages/HomePage';
 import AboutUsPage from './Pages/AboutUsPage';
@@ -36,6 +38,17 @@ function App() {
           <Route path="/career" element={<CareerPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </BrowserRouter>
     </HelmetProvider>
   );

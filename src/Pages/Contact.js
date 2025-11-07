@@ -5,6 +5,7 @@ import ContactUs from '../components/Contact/ContactUs';
 import ContactForm from '../components/Contact/ContactForm';
 import ContactInfo from '../components/Contact/ContactInfo';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
+import ChatBot from '../components/ChatBot';
 import { Helmet } from "react-helmet-async";
 
 const ContactPage = () => {
@@ -40,6 +41,7 @@ const ContactPage = () => {
       <ContactInfo />
       <Footer />
       <FloatingWhatsApp phone={'+91 88255 28905'} />
+      <ChatBot />
     </div>
     </>
   )

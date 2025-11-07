@@ -5,6 +5,7 @@ import Career from '../components/Career/Career';
 import CareerApplySection from '../components/Career/CareerApplySection';
 import ReadyToMakeSection from '../components/Career/ReadyToMakeSection';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
+import ChatBot from '../components/ChatBot';
 
 
 const CareerPage = () => {
@@ -20,6 +21,7 @@ const CareerPage = () => {
      <ReadyToMakeSection/>
      <Footer/>
      <FloatingWhatsApp phone={'+91 88255 28905'} />
+     <ChatBot />
     </div>
   );
 };

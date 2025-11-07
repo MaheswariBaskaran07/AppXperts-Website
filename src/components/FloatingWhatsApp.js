@@ -25,7 +25,7 @@ const FloatingWhatsApp = ({ phone = '+918825528905', message = 'Hi, I would like
           justify-content: center;
           color: #fff;
           box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
-          z-index: 1000;
+          z-index: 1001;
           transition: transform 0.15s ease, box-shadow 0.15s ease;
         }
         .floating-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5); }

@@ -3,6 +3,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import About from '../components/About';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
+import ChatBot from '../components/ChatBot';
 import { Helmet } from "react-helmet-async";
 
 const AboutUsPage = () => {
@@ -26,6 +27,7 @@ const AboutUsPage = () => {
         <About />
         <Footer/>
         <FloatingWhatsApp phone={'+91 88255 28905'} />
+        <ChatBot />
     </div>
     </>
   )
