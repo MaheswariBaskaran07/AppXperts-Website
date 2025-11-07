@@ -94,24 +94,24 @@ export default function ChatBot() {
 
   const faqs = [
     {
-      q: "What is ERP?",
-      a: "ERP (Enterprise Resource Planning) is an integrated software system that manages core business processes like accounting, inventory, HR, and sales in one platform.",
+      q: "What services does AppXperts offer?",
+      a: "AppXperts (Xperts Software Solutions Private Limited) provides comprehensive digital solutions including custom software development, ERP systems, mobile app development, UI/UX design, cloud solutions, and enterprise technology consulting.",
     },
     {
-      q: "How does ERP help my business?",
-      a: "ERP helps you centralize operations, reduce manual work, and get real-time insights across departments, improving efficiency and decision-making.",
+      q: "Do you develop custom software?",
+      a: "Yes! We specialize in building custom applications tailored to your business needs. From web applications to mobile apps and enterprise solutions, we create software that powers your business growth.",
     },
     { 
-      q: "Can I use ERP on mobile?", 
-      a: "Yes, our ERP supports mobile access via responsive web design and mobile apps." 
+      q: "What industries do you serve?", 
+      a: "We serve various industries including retail, healthcare, education, manufacturing, and service sectors. Our solutions are designed to adapt to different business requirements and industry-specific needs." 
     },
     { 
-      q: "How do I log in to ERP?", 
-      a: "Visit your company's ERP URL, enter your user ID and password, and click 'Login.' Contact your admin if you face issues." 
+      q: "How can I get a quote?", 
+      a: "You can get a quote by clicking the 'Book Now' button on our website, filling out our contact form, or directly messaging us here. We'll discuss your requirements and provide a customized proposal." 
     },
     { 
-      q: "How to back up ERP data?", 
-      a: "Data is automatically backed up daily. You can also export manually under Settings → Backup." 
+      q: "Do you provide ongoing support?", 
+      a: "Absolutely! We provide comprehensive post-deployment support including maintenance, updates, bug fixes, and feature enhancements to ensure your software continues to meet your evolving business needs." 
     },
   ];
 
