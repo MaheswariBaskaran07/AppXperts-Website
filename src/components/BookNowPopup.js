@@ -39,9 +39,14 @@ export default function BookNowPopup({ open, setOpen }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // ✅ phone validation
-    if (!/^[0-9]{1,13}$/.test(formData.MobileNo)) {
-      toast.error("Phone number must be up to 13 digits and contain only numbers");
+    // ✅ phone validation (min 6, max 15 digits)
+    if (formData.MobileNo.length < 6 || formData.MobileNo.length > 15) {
+      toast.error("Phone number must be between 6 and 15 digits");
+      return;
+    }
+
+    if (!/^[0-9]+$/.test(formData.MobileNo)) {
+      toast.error("Phone number must contain only digits");
       return;
     }
 
@@ -157,7 +162,7 @@ export default function BookNowPopup({ open, setOpen }) {
                     onChange={(e) =>
                       setFormData({
                         ...formData,
-                        MobileNo: e.target.value.replace(/[^0-9]/g, "").slice(0, 13),
+                        MobileNo: e.target.value.replace(/[^0-9]/g, "").slice(0, 15),
                       })
                     }
                     required
