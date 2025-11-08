@@ -3,6 +3,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import ReactGA from "react-ga4";
 
 import HomePage from './Pages/HomePage';
 import AboutUsPage from './Pages/AboutUsPage';
@@ -19,10 +22,16 @@ import ProductDetailsEcommerce from './Pages/ProductDetailsEcommerce';
 import ProductDetailsSchool from './Pages/ProductDetailsSchool';
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.send({ hitType: "pageview", page: location.pathname });
+  }, [location]);
+  
   return (
     // ✅ HelmetProvider enables all <Helmet> tags in your pages
     <HelmetProvider>
-      <BrowserRouter basename="/">
+      {/* <BrowserRouter basename="/"> */}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
@@ -49,7 +58,7 @@ function App() {
           draggable
           pauseOnHover
         />
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
     </HelmetProvider>
   );
 }
