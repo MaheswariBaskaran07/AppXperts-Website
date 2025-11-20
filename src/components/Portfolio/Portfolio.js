@@ -253,7 +253,10 @@ const Portfolio = () => {
       {/* Grid */}
       <div className="portfolio-grid">
         {filteredProjects.map((project, index) => (
-          <div className="portfolio-card" key={index}>
+          <div
+            className={`portfolio-card${filteredProjects.length === 1 ? ' enlarged' : ''}`}
+            key={index}
+          >
             <div className="card-header">
               <span className="card-initial">
                 {project.title.substring(0, 2)}
