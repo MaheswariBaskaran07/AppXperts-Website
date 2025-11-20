@@ -7,7 +7,7 @@
 .portfolio-hero {
   text-align: center;
   padding: 120px 20px;
-  background: linear-gradient(135deg, #4a90e2, #8f6be8);
+  background: linear-gradient(135deg, #263fe3, #00a9e5);
   color: white;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .tab-btn.active {
-  background: linear-gradient(90deg, #ff7bd5, #8f6be8);
+  background: linear-gradient(90deg, #263fe3, #00a9e5);
   color: white;
   border-color: transparent;
 }
@@ -72,7 +72,7 @@
 /* Header Block */
 .card-header {
   height: 180px;
-  background: linear-gradient(135deg, #f5b7ff40, #7db9ff40);
+  background: linear-gradient(135deg, #263fe320, #00a9e520);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,7 +81,7 @@
 .card-initial {
   font-size: 65px;
   font-weight: 700;
-  color: #8f6be880;
+  color: #263fe380;
 }
 
 /* Content */
@@ -93,7 +93,7 @@
   font-size: 11px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #8f6be8;
+  color: #263fe3;
 }
 
 .card-title {
@@ -116,8 +116,8 @@
 }
 
 .tech-chip {
-  background: #8f6be820;
-  color: #8f6be8;
+  background: #263fe320;
+  color: #263fe3;
   padding: 4px 10px;
   font-size: 12px;
   border-radius: 20px;
