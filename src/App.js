@@ -20,6 +20,8 @@ import ProductDetailsHRMS from './Pages/ProductDetailsHRMS';
 import ProductDetailsHM from './Pages/ProductDetailsHM';
 import ProductDetailsEcommerce from './Pages/ProductDetailsEcommerce';
 import ProductDetailsSchool from './Pages/ProductDetailsSchool';
+import Portfolio from './components/Portfolio/Portfolio';
+import PortfolioPage from './Pages/PortfolioPage';
 
 function App() {
   const location = useLocation();
@@ -46,6 +48,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/career" element={<CareerPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
         </Routes>
         <ToastContainer
           position="top-right"

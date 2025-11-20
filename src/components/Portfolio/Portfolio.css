@@ -1,0 +1,132 @@
+.portfolio-card.enlarged {
+  grid-column: 1 / -1;
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 400px;
+  font-size: 1.15em;
+  box-shadow: 0 8px 32px rgba(38, 63, 227, 0.15);
+}
+/* Wrapper */
+.portfolio-wrapper {
+  font-family: "Inter", sans-serif;
+}
+
+/* Hero */
+.portfolio-hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #263fe3, #00a9e5);
+  color: white;
+}
+
+.portfolio-hero h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.portfolio-hero p {
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 10px 25px;
+  border-radius: 30px;
+  border: 2px solid #ccc;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.tab-btn.active {
+  background: linear-gradient(90deg, #263fe3, #00a9e5);
+  color: white;
+  border-color: transparent;
+}
+
+/* Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 25px;
+  padding: 40px 40px 80px;
+}
+
+/* Card */
+.portfolio-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: 0.3s;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Block */
+.card-header {
+  height: 180px;
+  background: linear-gradient(135deg, #263fe320, #00a9e520);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-initial {
+  font-size: 65px;
+  font-weight: 700;
+  color: #263fe380;
+}
+
+/* Content */
+.card-content {
+  padding: 20px 25px;
+}
+
+.card-category {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #263fe3;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.card-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+/* Tech Chips */
+.tech-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tech-chip {
+  background: #263fe320;
+  color: #263fe3;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+}
