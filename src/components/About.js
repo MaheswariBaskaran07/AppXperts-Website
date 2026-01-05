@@ -7,7 +7,7 @@ import CEO from '../assets/About/AASIF.png';
 import Flutter from '../assets/About/Joe.png';
 import BackEndDev from '../assets/About/Rajeshwari.png';
 import Maheswari  from '../assets/About/Maheshwari.png';
-import Keerthana from '../assets/About/Maheshwari (1).png';
+import Keerthana from '../assets/About/Keerthana.png';
 import Karthi from '../assets/About/Karthi.png';
 import Prakash from '../assets/About/Prakash.png';
 import Rabi from '../assets/About/Rabi.png';

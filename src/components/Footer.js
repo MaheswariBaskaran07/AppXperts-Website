@@ -61,6 +61,7 @@ const Footer = () => {
               marginBottom: 14,
             }}
           />
+          <div className="footer-tagline" style={{marginBottom:8}}>We make IT possible, your IT xperts</div>
           <p
             style={{
               color: "#555",
@@ -285,6 +286,11 @@ const Footer = () => {
             gap: 12px;
             padding: 18px 8px 24px 8px;
           }
+        }
+        .footer-tagline {
+          color: #1a3fa6;
+          font-weight: 600;
+          font-size: 12px;
         }
       `}</style>
     </footer>

@@ -26,6 +26,7 @@ const Navigation = () => {
     <nav className="nav-responsive">
       <div className="nav-logo">
         <img src={logo} alt="AppXperts Logo" />
+        <div className="nav-tagline">We make IT possible, your IT xperts</div>
       </div>
       <div className="nav-menu-center">
         <ul className={`nav-list${menuOpen ? " nav-list-open" : ""}`}>
@@ -75,6 +76,13 @@ const Navigation = () => {
           height: auto;
           object-fit: contain;
           display: block;
+        }
+        .nav-tagline {
+          font-size: 14px;
+          color: #1a3fa6;
+          margin-top: 6px;
+          font-weight: 600;
+          text-align: left;
         }
         .nav-menu-center {
           flex: 1;
