@@ -256,11 +256,11 @@ const Clients = () => {
             </div>
           ))}
         </div>
-        <div
+       {/*  <div
         className="client-circle"
         >
           Clients <br /> 300+
-        </div>
+        </div> */}
           <style>
         {`
     @keyframes floatAnimX0 {
