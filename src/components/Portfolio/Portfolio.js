@@ -88,7 +88,7 @@ const projects = [
     link: "#",
   },
   {
-    title: "TVK Political Platform",
+    title: "TMK Political Platform",
     category: "Web",
     description: "Political party website with admin dashboard and analytics",
     tech: ["React", "Node.js", "MySQL", "Chart.js"],
