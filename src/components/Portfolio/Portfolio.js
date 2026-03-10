@@ -8,6 +8,14 @@ import "./Portfolio.css";
 import B2B from "../../assets/Portfolio/B2B.png"
 import ERP from "../../assets/Portfolio/erp.png"
 import Ecommerce from "../../assets/Portfolio/ecommerce.png"
+import beauty from "../../assets/Portfolio/beauty.png"
+import vsb from "../../assets/Portfolio/vsb.png"
+import altraclean from "../../assets/Portfolio/jpb1.png"
+import skp from "../../assets/Portfolio/skp.png"
+import networkcourier from "../../assets/Portfolio/networkcourier.png"
+import jpb from "../../assets/Portfolio/jpb.png"
+import tvk from "../../assets/Portfolio/tvk.png"
+import B2C from "../../assets/Portfolio/mob.png"
 
 const categories = ["All", "Websites", "Web", "Mobile"];
 
@@ -18,15 +26,15 @@ const projects = [
     category: "Websites",
     description: "Professional beauty parlour website with booking system",
     tech: ["React", "CSS3", "Node.js"],
-    image: null, // Add image path here
-    link: "#", // Add project link here
+    image: beauty,
+    link: "#",
   },
   {
     title: "VSB Building Website",
     category: "Websites",
     description: "Corporate website for building construction company",
     tech: ["React", "Bootstrap", "Express"],
-    image: null,
+    image: vsb,
     link: "#",
   },
   {
@@ -34,7 +42,7 @@ const projects = [
     category: "Websites",
     description: "Cleaning services website with service bookings",
     tech: ["React", "CSS3", "Firebase"],
-    image: null,
+    image: altraclean,
     link: "#",
   },
   {
@@ -42,7 +50,7 @@ const projects = [
     category: "Websites",
     description: "Hardware store website with product catalog",
     tech: ["React", "Tailwind CSS", "MongoDB"],
-    image: null,
+    image: skp,
     link: "#",
   },
   {
@@ -50,7 +58,7 @@ const projects = [
     category: "Websites",
     description: "Courier service website with tracking system",
     tech: ["React", "Node.js", "MySQL"],
-    image: null,
+    image: networkcourier,
     link: "#",
   },
   
@@ -68,7 +76,7 @@ const projects = [
     category: "Web",
     description: "Dual platform for maid agency management and client portal",
     tech: ["React", "Express", "MongoDB", "Socket.io"],
-    image: null,
+    image: jpb,
     link: "#",
   },
   {
@@ -80,19 +88,11 @@ const projects = [
     link: "#",
   },
   {
-    title: "Hotel ERP",
-    category: "Web",
-    description: "Complete hotel management system with booking and POS",
-    tech: ["React", "Python", "PostgreSQL", "Docker"],
-    image: ERP,
-    link: "#",
-  },
-  {
     title: "TVK Political Platform",
     category: "Web",
     description: "Political party website with admin dashboard and analytics",
     tech: ["React", "Node.js", "MySQL", "Chart.js"],
-    image: null,
+    image: tvk,
     link: "#",
   },
   {
@@ -108,7 +108,7 @@ const projects = [
     category: "Web",
     description: "Business-to-consumer e-commerce solution",
     tech: ["React", "Node.js", "PostgreSQL", "AWS S3"],
-    image: null,
+    image: B2C,
     link: "#",
   },
   {
@@ -119,7 +119,14 @@ const projects = [
     image: Ecommerce,
     link: "#",
   },
-  
+  {
+    title: "Hotel ERP",
+    category: "Web",
+    description: "Complete hotel management system with booking and POS",
+    tech: ["React", "Python", "PostgreSQL", "Docker"],
+    image: ERP,
+    link: "#",
+  },
   // Mobile Applications
   {
     title: "Mobile ERP",
@@ -134,7 +141,7 @@ const projects = [
     category: "Mobile",
     description: "Content Management System mobile application",
     tech: ["Flutter", "Firebase", "Cloud Functions"],
-    image: null,
+    image: B2C,
     link: "#",
   },
   {
@@ -384,7 +391,7 @@ const Portfolio = () => {
               </div>
 
               {/* View Project Link */}
-              {project.link && (
+             {/* {project.link && (
                 <a
                   href={project.link}
                   target="_blank"
@@ -393,7 +400,7 @@ const Portfolio = () => {
                 >
                   View Project →
                 </a>
-              )}
+              )} */}
             </div>
           </div>
         ))}
