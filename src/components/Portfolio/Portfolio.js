@@ -5,45 +5,145 @@ import lamp from "../../assets/Product/freepik--Lamps--inject-229.png";
 import people from "../../assets/Product/Product presentation-bro (1) 1.png";
 import rope from "../../assets/Product/rope.png";
 import "./Portfolio.css";
+import B2B from "../../assets/Portfolio/B2B.png"
+import ERP from "../../assets/Portfolio/erp.png"
+import Ecommerce from "../../assets/Portfolio/ecommerce.png"
 
-const categories = ["All", "Web Apps", "Mobile Apps", "ERP", "Cloud"];
+const categories = ["All", "Websites", "Web", "Mobile"];
 
 const projects = [
+  // Websites
   {
-    title: "E-Commerce Platform",
-    category: "Web Apps",
-    description: "Full-featured online marketplace with real-time inventory",
-    tech: ["React", "Node.js", "MongoDB"],
+    title: "Parveen Beauty Parlour",
+    category: "Websites",
+    description: "Professional beauty parlour website with booking system",
+    tech: ["React", "CSS3", "Node.js"],
+    image: null, // Add image path here
+    link: "#", // Add project link here
   },
   {
-    title: "Healthcare Management System",
-    category: "ERP",
-    description: "Comprehensive hospital management with patient records",
-    tech: ["Angular", "PostgreSQL", "AWS"],
+    title: "VSB Building Website",
+    category: "Websites",
+    description: "Corporate website for building construction company",
+    tech: ["React", "Bootstrap", "Express"],
+    image: null,
+    link: "#",
   },
   {
-    title: "Delivery Tracking App",
-    category: "Mobile Apps",
-    description: "Real-time package tracking for logistics companies",
-    tech: ["React Native", "Firebase", "Maps API"],
+    title: "Altraclean",
+    category: "Websites",
+    description: "Cleaning services website with service bookings",
+    tech: ["React", "CSS3", "Firebase"],
+    image: null,
+    link: "#",
   },
   {
-    title: "Cloud Migration Project",
-    category: "Cloud",
-    description: "Enterprise infrastructure migration to AWS",
-    tech: ["AWS", "Docker", "Kubernetes"],
+    title: "SKP Singapore Hardware",
+    category: "Websites",
+    description: "Hardware store website with product catalog",
+    tech: ["React", "Tailwind CSS", "MongoDB"],
+    image: null,
+    link: "#",
   },
   {
-    title: "Financial Dashboard",
-    category: "Web Apps",
-    description: "Analytics platform for financial institutions",
-    tech: ["Vue.js", "D3.js", "Python"],
+    title: "NetworkCourier",
+    category: "Websites",
+    description: "Courier service website with tracking system",
+    tech: ["React", "Node.js", "MySQL"],
+    image: null,
+    link: "#",
+  },
+  
+  // Web Applications
+  {
+    title: "ERP System",
+    category: "Web",
+    description: "Enterprise Resource Planning solution for business management",
+    tech: ["React", "Node.js", "PostgreSQL", "AWS"],
+    image: ERP,
+    link: "#",
   },
   {
-    title: "Manufacturing ERP",
-    category: "ERP",
-    description: "Complete production planning and inventory system",
-    tech: ["Java", "Spring", "Oracle"],
+    title: "JPB Maid Agency",
+    category: "Web",
+    description: "Dual platform for maid agency management and client portal",
+    tech: ["React", "Express", "MongoDB", "Socket.io"],
+    image: null,
+    link: "#",
+  },
+  {
+    title: "CatchyFive",
+    category: "Web",
+    description: "Full-featured e-commerce platform with payment integration",
+    tech: ["React", "Node.js", "Stripe", "Redis"],
+    image: Ecommerce,
+    link: "#",
+  },
+  {
+    title: "Hotel ERP",
+    category: "Web",
+    description: "Complete hotel management system with booking and POS",
+    tech: ["React", "Python", "PostgreSQL", "Docker"],
+    image: ERP,
+    link: "#",
+  },
+  {
+    title: "TVK Political Platform",
+    category: "Web",
+    description: "Political party website with admin dashboard and analytics",
+    tech: ["React", "Node.js", "MySQL", "Chart.js"],
+    image: null,
+    link: "#",
+  },
+  {
+    title: "B2B Platform",
+    category: "Web",
+    description: "Business-to-business marketplace and management system",
+    tech: ["React", "Express", "MongoDB", "Elasticsearch"],
+    image: B2B,
+    link: "#",
+  },
+  {
+    title: "B2C Platform",
+    category: "Web",
+    description: "Business-to-consumer e-commerce solution",
+    tech: ["React", "Node.js", "PostgreSQL", "AWS S3"],
+    image: null,
+    link: "#",
+  },
+  {
+    title: "E-commerce Platform",
+    category: "Web",
+    description: "Scalable online marketplace with real-time inventory",
+    tech: ["React", "GraphQL", "MongoDB", "Kubernetes"],
+    image: Ecommerce,
+    link: "#",
+  },
+  
+  // Mobile Applications
+  {
+    title: "Mobile ERP",
+    category: "Mobile",
+    description: "Mobile ERP solution for on-the-go business management",
+    tech: ["React Native", "Node.js", "PostgreSQL"],
+    image: ERP,
+    link: "#",
+  },
+  {
+    title: "Mobile CMS",
+    category: "Mobile",
+    description: "Content Management System mobile application",
+    tech: ["Flutter", "Firebase", "Cloud Functions"],
+    image: null,
+    link: "#",
+  },
+  {
+    title: "B2B Mobile App",
+    category: "Mobile",
+    description: "Business-to-business mobile platform for trade management",
+    tech: ["React Native", "Express", "MongoDB", "AWS"],
+    image: B2B,
+    link: "#",
   },
 ];
 
@@ -257,11 +357,18 @@ const Portfolio = () => {
             className={`portfolio-card${filteredProjects.length === 1 ? ' enlarged' : ''}`}
             key={index}
           >
-            <div className="card-header">
-              <span className="card-initial">
-                {project.title.substring(0, 2)}
-              </span>
-            </div>
+            {/* Project Image */}
+            {project.image ? (
+              <div className="card-image">
+                <img src={project.image} alt={project.title} />
+              </div>
+            ) : (
+              <div className="card-header">
+                <span className="card-initial">
+                  {project.title.substring(0, 2)}
+                </span>
+              </div>
+            )}
 
             <div className="card-content">
               <span className="card-category">{project.category}</span>
@@ -275,6 +382,18 @@ const Portfolio = () => {
                   </span>
                 ))}
               </div>
+
+              {/* View Project Link */}
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="view-project-btn"
+                >
+                  View Project →
+                </a>
+              )}
             </div>
           </div>
         ))}
