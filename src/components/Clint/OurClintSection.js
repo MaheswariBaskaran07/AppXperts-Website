@@ -29,6 +29,9 @@ import Logo24 from "../../assets/Client/Clint-Logos/Logo 24.png";
 import Logo25 from "../../assets/Client/Clint-Logos/Logo 25.png";
 import Logo26 from "../../assets/Client/Clint-Logos/Logo 26.png";
 import Logo27 from "../../assets/Client/Clint-Logos/Logo 27.png";
+import Logo28 from "../../assets/Client/Clint-Logos/Logo 28.png";
+import Logo29 from "../../assets/Client/Clint-Logos/Logo 29.png";
+import Logo30 from "../../assets/Client/Clint-Logos/Logo 30.png";
 
 import Testimonials from "./Testimonial";
 
@@ -62,6 +65,9 @@ const ClientLogoSction = () => {
     { logo: Logo25, name: "Reddot Rebar" },
     { logo: Logo26, name: "Reddot Skybot" },
     { logo: Logo27, name: "Reddot Technologies" },
+    { logo: Logo28, name: "Reddot Innovations" },
+    { logo: Logo29, name: "Reddot Solutions" },
+    { logo: Logo30, name: "Reddot Enterprises" },
   ];
 
   return (

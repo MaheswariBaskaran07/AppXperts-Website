@@ -11,10 +11,8 @@ import Keerthana from '../assets/About/Keerthana.png';
 import Karthi from '../assets/About/Karthi.png';
 import Prakash from '../assets/About/Prakash.png';
 import Rabi from '../assets/About/Rabi.png';
-import Karthika from '../assets/About/Karthika.png';
 import Fathima from '../assets/About/Fathima.png';
 import Reshma from "../assets/About/UIUX.png";
-import KeerthanaDevi from '../assets/About/Keerthana Devi.png';
 import ved from "../assets/About/about.mp4";
 import lamp from "../assets/Product/freepik--Lamps--inject-229.png"
 import rope from "../assets/Product/rope.png";
@@ -35,9 +33,7 @@ const About = () => {
     { img: Keerthana,  title: "Keerthana M",        role: "Web Developer",          about: "Front-end developer with one year of experience in React.js. Dedicated to building responsive, user-friendly web applications and passionate about exploring modern technologies.", linkedin: "https://www.linkedin.com/in/keerthana-manikandan-a9baa7214?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
     { img: Reshma,     title: "Reshma R",           role: "UI/UX Designer",         about: "Detail-oriented UI/UX designer with a strong foundation in wireframing, prototyping, user research, and accessibility. ", linkedin: "https://www.linkedin.com/in/reshma-ravikumar-874617207?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
     { img: Prakash,    title: "Prakash N",          role: "QA Engineer",            about: "I'm a passionate Software Engineer and Odoo Developer specializing in ERP solutions and business process automation.", linkedin: "https://www.linkedin.com/in/prakash-natarajan-261b69262/" },
-    { img: Karthika,   title: "Karthika K",         role: "Mobile Developer",     about: "Passionate Flutter Developer with 2 of experience in building cross-platform mobile applications.", linkedin: "http://www.linkedin.com/in/kkarthika06" },
-  { img: KeerthanaDevi, title: "Keerthana\nDevi R",     role: "Backend Developer",      about: "Backend Developer skilled in Node.js, SQL Server, and API development. Passionate about creating clean, maintainable code and learning new technologies.", linkedin: "https://www.linkedin.com/in/keerthanadevi1711" },
-  ];
+   ];
 
   // Fix: aboutBadgeVisible for About Us badge animation
   const [aboutBadgeVisible, setAboutBadgeVisible] = useState(false);
@@ -761,7 +757,7 @@ const About = () => {
           max-width: 1200px;
           margin: 0 auto;
           display: grid;
-          grid-template-columns: repeat(6, minmax(0, 1fr));
+          grid-template-columns: repeat(5, minmax(0, 1fr));
           gap: 20px;
         }
 
@@ -863,7 +859,6 @@ const About = () => {
         }
 
         /* Breakpoints */
-        @media (max-width: 1300px) { .team-grid { grid-template-columns: repeat(5, 1fr); } }
         @media (max-width: 1100px) { .team-grid { grid-template-columns: repeat(4, 1fr); } }
         @media (max-width: 900px)  { .team-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (max-width: 600px)  { .team-grid { grid-template-columns: repeat(2, 1fr); } }
