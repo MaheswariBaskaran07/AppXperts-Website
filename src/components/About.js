@@ -6,7 +6,7 @@ import Frame from '../assets/About/Frame.png';
 import CEO from '../assets/About/AASIF.png';
 import Flutter from '../assets/About/Joe.png';
 import BackEndDev from '../assets/About/Rajeshwari.png';
-import Maheswari  from '../assets/About/Maheshwari.png';
+import Maheswari  from '../assets/About/Mahi.png';
 import Keerthana from '../assets/About/Keerthana.png';
 import Karthi from '../assets/About/Karthi.png';
 import Prakash from '../assets/About/Prakash.png';

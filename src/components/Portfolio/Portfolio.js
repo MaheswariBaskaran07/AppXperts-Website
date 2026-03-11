@@ -16,8 +16,15 @@ import networkcourier from "../../assets/Portfolio/networkcourier.png"
 import jpb from "../../assets/Portfolio/jpb.png"
 import tvk from "../../assets/Portfolio/tvk.png"
 import B2C from "../../assets/Portfolio/mob.png"
+import visitingCard from "../../assets/Portfolio/ui/ux/Business Card Vijaya Devi Page 1.png"
+import visitingCardBack from "../../assets/Portfolio/ui/ux/Page 2 Business Card.png"
+import NB from "../../assets/Portfolio/ui/ux/NISHABALA 3.png"
+import cal1 from "../../assets/Portfolio/ui/ux/Calendar 1.png"
+import cal2 from "../../assets/Portfolio/ui/ux/CALENDAR 3.png"
+import zune from "../../assets/Portfolio/ui/ux/PNG Zune Ventures.png"
+import shiv from "../../assets/Portfolio/ui/ux/Shivedha spaces Final Logo with out Background.png" 
 
-const categories = ["All", "Websites", "Web", "Mobile"];
+const categories = ["All", "Websites", "Web", "Mobile", "UI/UX"];
 
 const projects = [
   // Websites
@@ -151,6 +158,71 @@ const projects = [
     tech: ["React Native", "Express", "MongoDB", "AWS"],
     image: B2B,
     link: "#",
+  },
+  
+  // UI/UX Design
+  {
+    title: "Visiting Card Design",
+    category: "UI/UX",
+    description: "Professional business card design for Vijaya Devi",
+    tech: ["Adobe Illustrator", "Photoshop", "Print Design"],
+    image: visitingCard,
+    link: "#",
+    aspectRatio: "rectangle",
+  },
+  {
+    title: "Visiting Card Back Design",
+    category: "UI/UX",
+    description: "Back side design for business card with contact details",
+    tech: ["Adobe Illustrator", "Typography", "Print Design"],
+    image: visitingCardBack,
+    link: "#",
+    aspectRatio: "rectangle",
+  },
+  {
+    title: "Nishabala Brand Design",
+    category: "UI/UX",
+    description: "Brand identity and logo design for Nishabala",
+    tech: ["Adobe Illustrator", "Branding", "Logo Design"],
+    image: NB,
+    link: "#",
+    aspectRatio: "square",
+  },
+  {
+    title: "Calendar Design 2024",
+    category: "UI/UX",
+    description: "Custom calendar design with modern aesthetics",
+    tech: ["Adobe InDesign", "Photoshop", "Print Design"],
+    image: cal1,
+    link: "#",
+    aspectRatio: "square",
+  },
+  {
+    title: "Calendar Design Collection",
+    category: "UI/UX",
+    description: "Creative calendar design with unique layout",
+    tech: ["Adobe InDesign", "Illustration", "Print Design"],
+    image: cal2,
+    link: "#",
+    aspectRatio: "square",
+  },
+  {
+    title: "Zune Ventures Logo",
+    category: "UI/UX",
+    description: "Modern logo design for Zune Ventures brand",
+    tech: ["Adobe Illustrator", "Branding", "Logo Design"],
+    image: zune,
+    link: "#",
+    aspectRatio: "square",
+  },
+  {
+    title: "Shivedha Spaces Logo",
+    category: "UI/UX",
+    description: "Corporate logo design for Shivedha Spaces real estate company",
+    tech: ["Adobe Illustrator", "Branding", "Logo Design"],
+    image: shiv,
+    link: "#",
+    aspectRatio: "square",
   },
 ];
 
@@ -366,7 +438,7 @@ const Portfolio = () => {
           >
             {/* Project Image */}
             {project.image ? (
-              <div className="card-image">
+              <div className={`card-image ${project.aspectRatio === 'rectangle' ? 'rectangle-aspect' : project.aspectRatio === 'square' ? 'square-aspect' : ''}`}>
                 <img src={project.image} alt={project.title} />
               </div>
             ) : (
