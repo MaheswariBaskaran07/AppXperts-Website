@@ -65,9 +65,9 @@ const ClientLogoSction = () => {
     { logo: Logo25, name: "Reddot Rebar" },
     { logo: Logo26, name: "Reddot Skybot" },
     { logo: Logo27, name: "Reddot Technologies" },
-    { logo: Logo28, name: "Reddot Innovations" },
-    { logo: Logo29, name: "Reddot Solutions" },
-    { logo: Logo30, name: "Reddot Enterprises" },
+    { logo: Logo28, name: "HOTEL RIVER VIEW" },
+    { logo: Logo29, name: "GRAND NEYATT" },
+    { logo: Logo30, name: "HOTEL LE COMFORT " },
   ];
 
   return (
