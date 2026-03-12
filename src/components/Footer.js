@@ -11,13 +11,13 @@ const Footer = () => {
   return (
     <footer
       style={{
-        background: " #d4f0f8ff",
-        borderTop: "1px solid #e3e8ee",
-        padding: "40px 0 0 0",
+        background: "linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%)",
+        borderTop: "2px solid #e2e8f0",
+        padding: "60px 0 0 0",
         fontFamily: "Poppins, sans-serif",
-        color: "#222",
-        fontSize: 16,
-        marginTop: 60,
+        color: "#334155",
+        fontSize: 15,
+        marginTop: 80,
         width: "100%",
         boxSizing: "border-box",
         overflowX: "hidden",
@@ -31,10 +31,10 @@ const Footer = () => {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "flex-start",
-          maxWidth: 1200,
+          maxWidth: 1240,
           margin: "0 auto",
-          padding: "0 40px 32px 40px",
-          borderBottom: "1px solid #e3e8ee",
+          padding: "0 40px 50px 40px",
+          gap: 60,
           flexWrap: "wrap",
         }}
       >
@@ -42,8 +42,8 @@ const Footer = () => {
         <div
           className="footer-logo-desc"
           style={{
-            flex: 1,
-            minWidth: 200,
+            flex: "1 1 300px",
+            maxWidth: 320,
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
@@ -55,252 +55,391 @@ const Footer = () => {
             alt="AppXperts Logo"
             style={{
               width: "auto",
-              maxWidth: 220,
+              maxWidth: 200,
               objectFit: "contain",
               display: "block",
-              marginBottom: 14,
+              marginBottom: 20,
             }}
           />
-          <div className="footer-tagline" style={{marginBottom:8}}>We make IT possible, your IT xperts</div>
+          <div 
+            className="footer-tagline" 
+            style={{
+              marginBottom: 12,
+              fontSize: 13,
+              fontWeight: 600,
+              color: "#1a3fa6",
+              letterSpacing: "0.5px"
+            }}
+          >
+            We make IT possible, your IT xperts
+          </div>
           <p
             style={{
-              color: "#555",
-              fontSize: 16,
-              marginBottom: 8,
+              color: "#64748b",
+              fontSize: 14,
+              marginBottom: 20,
               textAlign: "left",
-              maxWidth: 220,
-              lineHeight: 1.6,
+              lineHeight: 1.7,
               fontFamily: "Poppins, sans-serif",
             }}
           >
-            <span style={{ fontStyle: "bold",   fontSize:16, fontWeight: 600, color: "#222" }}>
+            <span style={{ fontSize: 15, fontWeight: 600, color: "#1e293b", display: "block", marginBottom: 8 }}>
               Smart Solutions. Real Results.
             </span>
-            <br />
             We craft intelligent digital products and services that power
             business growth globally.
           </p>
+          
+          {/* Social Media Icons */}
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 8 }}>
+            <a 
+              href="https://www.facebook.com/AppXes" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="social-icon"
+              style={{ 
+                display: 'inline-flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                width: 42, 
+                height: 42, 
+                borderRadius: '50%', 
+                background: '#f1f5f9',
+                transition: 'all 0.3s ease',
+                border: '1px solid #e2e8f0'
+              }}
+            >
+              <img src={fb} alt="Facebook" style={{ width: 38, height: 38 }} />
+            </a>
+            <a 
+              href="https://www.instagram.com/appxperts.solutions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="social-icon"
+              style={{ 
+                display: 'inline-flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                width: 42, 
+                height: 42, 
+                borderRadius: '50%', 
+                background: '#f1f5f9',
+                transition: 'all 0.3s ease',
+                border: '1px solid #e2e8f0'
+              }}
+            >
+              <img src={insta} alt="Instagram" style={{ width: 38, height: 38 }} />
+            </a>
+            <a 
+              href="https://www.linkedin.com/company/appxperts-enterprise-solutions/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="social-icon"
+              style={{ 
+                display: 'inline-flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                width: 42, 
+                height: 42, 
+                borderRadius: '50%', 
+                background: '#f1f5f9',
+                transition: 'all 0.3s ease',
+                border: '1px solid #e2e8f0'
+              }}
+            >
+              <img src={linkedIn} alt="LinkedIn" style={{ width: 20, height: 20 }} />
+            </a>
+          </div>
         </div>
 
         {/* Center: Quick Links */}
         <div
           className="footer-quick-links"
           style={{
-            flex: 2,
-            minWidth: 320,
+            flex: "0 1 200px",
             display: "flex",
-            justifyContent: "center",
+            flexDirection: "column",
             fontFamily: "Poppins, sans-serif",
           }}
         >
-          <div>
-            <h4 style={{ fontSize:16, fontWeight: 600,fontStyle: "bold", marginBottom: 10 }}>Quick Links</h4>
-            <div style={{ display: "flex", gap: 48 }}>
-              <ul
-                style={{
-                  listStyle: "none",
-                  padding: 0,
-                  margin: 0,
-                  color: "#1a3fa6",
-                  fontWeight: 400,
-                  fontSize: 16,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 10,
-                  minWidth: 120
-                }}
-              >
-                <li>
-                  <a href="/" style={{ color: "#1a3fa6", textDecoration: "none" }}>Home</a>
-                </li>
-                <li>
-                  <a href="/about" style={{ color: "#1a3fa6", textDecoration: "none" }}>About</a>
-                </li>
-                <li>
-                  <a href="/services" style={{ color: "#1a3fa6", textDecoration: "none" }}>Services</a>
-                </li>
-                <li>
-                  <a href="/products" style={{ color: "#1a3fa6", textDecoration: "none" }}>Products</a>
-                </li>
-              </ul>
-              <ul
-                style={{
-                  listStyle: "none",
-                  padding: 0,
-                  margin: 0,
-                  color: "#1a3fa6",
-                  fontWeight: 400,
-                  fontSize: 16,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 10,
-                  minWidth: 120
-                }}
-              >
-                <li>
-                  <a href="/clients" style={{ color: "#1a3fa6", textDecoration: "none" }}>Clients</a>
-                </li>
-                <li>
-                  <a href="/career" style={{ color: "#1a3fa6", textDecoration: "none" }}>Career</a>
-                </li>
-                <li>
-                  <a href="/contact" style={{ color: "#1a3fa6", textDecoration: "none" }}>Contact Us</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <h4 style={{ 
+            fontSize: 17, 
+            fontWeight: 700, 
+            marginBottom: 20,
+            color: "#1e293b",
+            letterSpacing: "0.3px"
+          }}>
+            Quick Links
+          </h4>
+          <ul
+            style={{
+              listStyle: "none",
+              padding: 0,
+              margin: 0,
+              display: "flex",
+              flexDirection: "column",
+              gap: 12,
+            }}
+          >
+            <li>
+              <a href="/" className="footer-link" style={{ color: "#64748b", textDecoration: "none", fontSize: 14, transition: "color 0.3s ease" }}>Home</a>
+            </li>
+            <li>
+              <a href="/about" className="footer-link" style={{ color: "#64748b", textDecoration: "none", fontSize: 14, transition: "color 0.3s ease" }}>About</a>
+            </li>
+            <li>
+              <a href="/services" className="footer-link" style={{ color: "#64748b", textDecoration: "none", fontSize: 14, transition: "color 0.3s ease" }}>Services</a>
+            </li>
+            <li>
+              <a href="/products" className="footer-link" style={{ color: "#64748b", textDecoration: "none", fontSize: 14, transition: "color 0.3s ease" }}>Products</a>
+            </li>
+            <li>
+              <a href="/clients" className="footer-link" style={{ color: "#64748b", textDecoration: "none", fontSize: 14, transition: "color 0.3s ease" }}>Clients</a>
+            </li>
+            <li>
+              <a href="/career" className="footer-link" style={{ color: "#64748b", textDecoration: "none", fontSize: 14, transition: "color 0.3s ease" }}>Career</a>
+            </li>
+            <li>
+              <a href="/contact" className="footer-link" style={{ color: "#64748b", textDecoration: "none", fontSize: 14, transition: "color 0.3s ease" }}>Contact Us</a>
+            </li>
+          </ul>
         </div>
 
-  {/* Right: Get in Touch - Split by Country */}
-  <div className="footer-get-in-touch" style={{ fontFamily:"Poppins, sans-serif", flex: 2.5, minWidth: 260 }}>
-          <h4 style={{ fontSize:16, fontWeight: 600, fontStyle: "bold", marginBottom: 10 }}>Get in Touch</h4>
-          <div className="footer-contact-row" style={{ display: 'flex', gap: 32, flexWrap: 'nowrap', minWidth: 540 }}>
+        {/* Legal Links */}
+        <div
+          className="footer-legal-links"
+          style={{
+            flex: "0 1 200px",
+            display: "flex",
+            flexDirection: "column",
+            fontFamily: "Poppins, sans-serif",
+          }}
+        >
+          <h4 style={{ 
+            fontSize: 17, 
+            fontWeight: 700, 
+            marginBottom: 20,
+            color: "#1e293b",
+            letterSpacing: "0.3px"
+          }}>
+            Legal
+          </h4>
+          <ul
+            style={{
+              listStyle: "none",
+              padding: 0,
+              margin: 0,
+              display: "flex",
+              flexDirection: "column",
+              gap: 12,
+            }}
+          >
+            <li>
+              <a href="/terms" className="footer-link" style={{ color: "#64748b", textDecoration: "none", fontSize: 14, transition: "color 0.3s ease" }}>Terms & Conditions</a>
+            </li>
+            <li>
+              <a href="/privacy" className="footer-link" style={{ color: "#64748b", textDecoration: "none", fontSize: 14, transition: "color 0.3s ease" }}>Privacy Policy</a>
+            </li>
+            <li>
+              <a href="/refund" className="footer-link" style={{ color: "#64748b", textDecoration: "none", fontSize: 14, transition: "color 0.3s ease" }}>Refund Policy</a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Right: Get in Touch */}
+        <div className="footer-get-in-touch" style={{ 
+          fontFamily: "Poppins, sans-serif", 
+          flex: "1 1 320px",
+          maxWidth: 380
+        }}>
+          <h4 style={{ 
+            fontSize: 17, 
+            fontWeight: 700, 
+            marginBottom: 20,
+            color: "#1e293b",
+            letterSpacing: "0.3px"
+          }}>
+            Get in Touch
+          </h4>
+          
+          {/* Contact Cards */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             {/* India */}
-            <div style={{ minWidth: 180, flex: 1 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                <img src={call} alt="call" style={{ width: 20 }} />
-                <span style={{ fontWeight: 400, color: '#1a3fa6' }}>India</span>
+            <div style={{ 
+              background: '#f8fafc',
+              padding: '14px 16px',
+              borderRadius: '10px',
+              border: '1px solid #e2e8f0'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
+                <img src={call} alt="call" style={{ width: 18, height: 18 }} />
+                <span style={{ fontWeight: 600, color: '#1a3fa6', fontSize: 14 }}>India</span>
               </div>
-              <div style={{ color: '#222', marginBottom: 4, marginLeft: 28 }}>+91 88255 28905</div>
-              {/* <div style={{ display: 'flex', alignItems: 'flex-start', gap: 8, marginLeft: 0 }}>
-                <img src={location} alt="location" style={{ width: 20, marginTop: 2 }} />
-                <span style={{ color: '#555' }}>
-                  No 32, 2nd Floor, Swathika Flats,<br />
-                  Rukmani Nagar, Perumbakkam, Chennai - 600100
-                </span>
-              </div> */}
+              <div style={{ color: '#475569', marginLeft: 28, fontSize: 14 }}>+91 88255 28905</div>
             </div>
+            
             {/* Singapore */}
-            <div style={{ minWidth: 180, flex: 1 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                <img src={call} alt="call" style={{ width: 20 }} />
-                <span style={{ fontWeight: 400, color: '#1a3fa6' }}>Singapore</span>
+            <div style={{ 
+              background: '#f8fafc',
+              padding: '14px 16px',
+              borderRadius: '10px',
+              border: '1px solid #e2e8f0'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
+                <img src={call} alt="call" style={{ width: 18, height: 18 }} />
+                <span style={{ fontWeight: 600, color: '#1a3fa6', fontSize: 14 }}>Singapore</span>
               </div>
-              <div style={{  marginLeft: 28 }}>+65 84399317</div>
+              <div style={{ color: '#475569', marginLeft: 28, fontSize: 14 }}>+65 84399317</div>
             </div>
-            {/* UAE - now in same row */}
-            <div style={{ minWidth: 180, flex: 1 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                <img src={call} alt="call" style={{ width: 20 }} />
-                <span style={{ fontWeight: 400, color: '#1a3fa6' }}>UAE</span>
+            
+            {/* UAE */}
+            <div style={{ 
+              background: '#f8fafc',
+              padding: '14px 16px',
+              borderRadius: '10px',
+              border: '1px solid #e2e8f0'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
+                <img src={call} alt="call" style={{ width: 18, height: 18 }} />
+                <span style={{ fontWeight: 600, color: '#1a3fa6', fontSize: 14 }}>UAE</span>
               </div>
-              <div style={{ marginLeft: 28 }}>+971 508554043</div>
+              <div style={{ color: '#475569', marginLeft: 28, fontSize: 14 }}>+971 508554043</div>
             </div>
-          </div>
-          {/* Common Mail */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 16 }}>
-            <img src={mail} alt="mail" style={{ width: 20 }} />
-            <span>info@appxes.com</span>
+            
+            {/* Email */}
+            <div style={{ 
+              background: '#f8fafc',
+              padding: '14px 16px',
+              borderRadius: '10px',
+              border: '1px solid #e2e8f0'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <img src={mail} alt="mail" style={{ width: 18, height: 18 }} />
+                <a href="mailto:info@appxes.com" style={{ color: '#1a3fa6', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
+                  info@appxes.com
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Bottom Row */}
       <div
-        className="footer-bottom-row"
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          maxWidth: 1200,
-          margin: "0 auto",
-          padding: "18px 40px 24px 40px",
-          fontSize: 16,
-          color: "#888",
-          flexWrap: "wrap",
-          gap: 20,
+          borderTop: '1px solid #e2e8f0',
+          background: '#f8fafc'
         }}
       >
-        <div style={{fontSize:"14px"}}>© {currentYear} AppXperts (Xperts). All rights reserved.</div>
-        <div style={{ display: "flex", alignItems: "center", gap: 18, fontSize: '14px' }}>
-          <a href="/terms" style={{ color: '#1a3fa6', textDecoration: 'none' }}>Terms & Conditions</a>
-          <span style={{ color: '#ddd' }}>|</span>
-          <a href="/privacy" style={{ color: '#1a3fa6', textDecoration: 'none' }}>Privacy Policy</a>
-          <span style={{ color: '#ddd' }}>|</span>
-          <a href="/refund" style={{ color: '#1a3fa6', textDecoration: 'none' }}>Refund Policy</a>
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-      <a 
-  href="https://www.facebook.com/AppXes" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}
->
-  <img src={fb} alt="fb" style={{ width: 40, height: 40 }} />
-</a>
-
-<a 
-  href="https://www.instagram.com/appxperts.solutions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}
->
-  <img src={insta} alt="insta" style={{ width: 40, height: 40 }} />
-</a>
-
-<a 
-  href="https://www.linkedin.com/company/appxperts-enterprise-solutions/" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: '50%', background: '#f3f4f6' }}
->
-  <img src={linkedIn} alt="linkedin" style={{ width: 22, height: 22 }} />
-</a>
-
-        </div>
-        <a
-          href="#top"
-          className="submit-button"
+        <div
+          className="footer-bottom-row"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            maxWidth: 1240,
+            margin: "0 auto",
+            padding: "24px 40px",
+            fontSize: 14,
+            color: "#64748b",
+            flexWrap: "wrap",
+            gap: 20,
+          }}
         >
-          Back to Top <span style={{ fontSize: 16, marginLeft: 6 }}>↑</span>
-        </a>
+          <div style={{ fontSize: "14px", color: "#475569" }}>
+            © {currentYear} <span style={{ fontWeight: 600, color: "#1e293b" }}>AppXperts (Xperts)</span>. All rights reserved.
+          </div>
+          
+          <a
+            href="#top"
+            className="back-to-top"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 8,
+              padding: '10px 20px',
+              background: '#1a3fa6',
+              color: 'white',
+              borderRadius: '25px',
+              textDecoration: 'none',
+              fontSize: 13,
+              fontWeight: 500,
+              transition: 'all 0.3s ease',
+              border: 'none'
+            }}
+          >
+            Back to Top <span style={{ fontSize: 16 }}>↑</span>
+          </a>
+        </div>
       </div>
       {/* Responsive Footer Styles */}
       <style>{`
-        @media (max-width: 900px) {
-          .footer-top-row {
-            padding: 0 18px 32px 18px;
-          }
-          .footer-bottom-row {
-            padding: 18px 18px 24px 18px;
-          }
+        .footer-link:hover {
+          color: #1a3fa6 !important;
+          padding-left: 4px;
         }
-        @media (max-width: 700px) {
+        
+        .social-icon:hover {
+          background: #1a3fa6 !important;
+          transform: translateY(-4px);
+          box-shadow: 0 4px 12px rgba(26, 63, 166, 0.25);
+        }
+        
+        .back-to-top:hover {
+          background: #0f2d7a !important;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(26, 63, 166, 0.3);
+        }
+        
+        @media (max-width: 1024px) {
           .footer-top-row {
-            flex-direction: column;
-            align-items: stretch;
-            padding: 0 8px 24px 8px;
+            gap: 40px !important;
           }
           .footer-logo-desc {
-            align-items: center;
-            margin-bottom: 24px;
-          }
-          .footer-quick-links {
-            justify-content: flex-start;
-            margin-bottom: 24px;
-          }
-          .footer-get-in-touch {
-            margin-bottom: 24px;
-          }
-          .footer-contact-row {
-            flex-direction: column;
-            gap: 12px;
-            min-width: unset;
-          }
-          .footer-bottom-row {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 18px 8px 24px 8px;
-          }
-          .footer-bottom-row > div:nth-child(2) {
-            flex-wrap: wrap;
+            max-width: 100% !important;
           }
         }
-        .footer-tagline {
-          color: #1a3fa6;
-          font-weight: 600;
-          font-size: 12px;
+        
+        @media (max-width: 768px) {
+          .footer-top-row {
+            padding: 0 20px 40px 20px !important;
+            gap: 32px !important;
+          }
+          .footer-bottom-row {
+            padding: 20px 20px !important;
+            justify-content: center !important;
+            text-align: center;
+          }
+          .footer-logo-desc {
+            align-items: center !important;
+            text-align: center !important;
+          }
+          .footer-logo-desc p {
+            text-align: center !important;
+          }
+          .footer-quick-links,
+          .footer-legal-links {
+            flex: 1 1 45% !important;
+          }
+          .footer-get-in-touch {
+            flex: 1 1 100% !important;
+            max-width: 100% !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .footer-top-row {
+            padding: 0 16px 32px 16px !important;
+          }
+          .footer-bottom-row {
+            padding: 16px 16px !important;
+            flex-direction: column;
+            gap: 16px !important;
+          }
+          .footer-quick-links,
+          .footer-legal-links {
+            flex: 1 1 100% !important;
+          }
         }
       `}</style>
     </footer>
