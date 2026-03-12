@@ -12,6 +12,7 @@ import Prakash from '../assets/About/Prakash.png';
 import Rabi from '../assets/About/Rabi.png';
 import Fathima from '../assets/About/Fathima.png';
 import Reshma from "../assets/About/UIUX.png";
+import Faizan from "../assets/About/Faizan.png";
 import ved from "../assets/About/about.mp4";
 import lamp from "../assets/Product/freepik--Lamps--inject-229.png"
 import rope from "../assets/Product/rope.png";
@@ -31,7 +32,8 @@ const About = () => {
     { img: Keerthana,  title: "Keerthana M",        role: "Web Developer",          about: "Front-end developer with one year of experience in React.js. Dedicated to building responsive, user-friendly web applications and passionate about exploring modern technologies.", linkedin: "https://www.linkedin.com/in/keerthana-manikandan-a9baa7214?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
     { img: Reshma,     title: "Reshma R",           role: "UI/UX Designer",         about: "Detail-oriented UI/UX designer with a strong foundation in wireframing, prototyping, user research, and accessibility. ", linkedin: "https://www.linkedin.com/in/reshma-ravikumar-874617207?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
     { img: Prakash,    title: "Prakash N",          role: "QA Engineer",            about: "I'm a passionate Software Engineer and Odoo Developer specializing in ERP solutions and business process automation.", linkedin: "https://www.linkedin.com/in/prakash-natarajan-261b69262/" },
-   ];
+  {img: Faizan, title: "Faizan", role: "Mobile Developer", about: "Experienced Flutter developer in building cross-platform mobile applications. Skilled in Dart programming and passionate about creating seamless user experiences.", linkedin: "" }, 
+  ];
 
   // Fix: aboutBadgeVisible for About Us badge animation
   const [aboutBadgeVisible, setAboutBadgeVisible] = useState(false);
