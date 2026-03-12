@@ -4,7 +4,6 @@ import image from '../assets/About/ERP.png';
 import Quality from '../assets/About/Quality.png';
 import Frame from '../assets/About/Frame.png';
 import CEO from '../assets/About/AASIF.png';
-import Flutter from '../assets/About/Joe.png';
 import BackEndDev from '../assets/About/Rajeshwari.png';
 import Maheswari  from '../assets/About/Mahi.png';
 import Keerthana from '../assets/About/Keerthana.png';
@@ -26,7 +25,6 @@ const About = () => {
     { img: CEO,        title: "Mohammed Aasif",   role: "Founder & CEO",          about: "Experienced IT leader with a decade of expertise in software solutions, digital transformation, and client relations. Passionate about driving innovation and delivering value through technology.", linkedin: "https://www.linkedin.com/in/mohamed-aasif-b9039773/" },
     { img: Rabi,       title: "Abdul Samadu Mohamed Rabi",    role: "Backend Engineer",       about: "Strategic ERP Implementation Leader | 30+ Years of Expertise Driving Manufacturing Transformation.", linkedin: "https://www.linkedin.com/in/rabi-india-631ba85b/" },
     { img: BackEndDev, title: "Rajeshwari S",       role: "Backend Engineer",       about: "Backend leader skilled in architecting robust server-side solutions over 4.6 years of experience. Passionate about optimizing performance and driving engineering excellence.", linkedin: "https://www.linkedin.com/in/rajeswari-selvaraj-65bb866b/" },
-  { img: Flutter,    title: "NagaJothika S",      role: "Mobile Developer",       about: "Flutter developer building high-performance cross-platform apps; strong in state management, API integration, and modern UI/UX.", linkedin: "https://www.linkedin.com/in/nagajothika-s-31414125b" },
   { img: Maheswari,  title: "Maheswari B",        role: "Web Developer",          about: "React‑focused frontend developer crafting responsive, reusable UI and scalable apps. Collaborates closely with clients to deliver high‑impact results.", linkedin: "https://www.linkedin.com/in/maheswari-baskaran" },
     { img: Fathima,    title: "Fathima R",          role: "Business Developer",    about: "I genuinely enjoy understanding people what they need, how they feel. I use that to build strong relationships, solve problems, and help brands connect in a more real way.", linkedin: "https://www.linkedin.com/in/fathima-r-03353b170/" },
     { img: Karthi,     title: "Karthikeyan S ",          role: "Web Developer",          about: "Skilled in React.js. Passionate about building responsive, user-friendly web applications and continuously learning modern frontend technologies", linkedin: "https://www.linkedin.com/in/karthikeyan-s-996b11267" },
