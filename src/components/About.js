@@ -12,7 +12,7 @@ import Prakash from '../assets/About/Prakash.png';
 import Rabi from '../assets/About/Rabi.png';
 import Fathima from '../assets/About/Fathima.png';
 import Reshma from "../assets/About/UIUX.png";
-import Faizan from "../assets/About/Faizan.png";
+import Faizan from "../assets/About/Faizon.png";
 import ved from "../assets/About/about.mp4";
 import lamp from "../assets/Product/freepik--Lamps--inject-229.png"
 import rope from "../assets/Product/rope.png";
