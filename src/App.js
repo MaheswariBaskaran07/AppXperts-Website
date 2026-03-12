@@ -22,6 +22,9 @@ import ProductDetailsEcommerce from './Pages/ProductDetailsEcommerce';
 import ProductDetailsSchool from './Pages/ProductDetailsSchool';
 import Portfolio from './components/Portfolio/Portfolio';
 import PortfolioPage from './Pages/PortfolioPage';
+import TermsPage from './Pages/TermsPage';
+import PrivacyPage from './Pages/PrivacyPage';
+import RefundPage from './Pages/RefundPage';
 
 function App() {
   const location = useLocation();
@@ -49,6 +52,9 @@ function App() {
           <Route path="/career" element={<CareerPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/refund" element={<RefundPage />} />
         </Routes>
         <ToastContainer
           position="top-right"

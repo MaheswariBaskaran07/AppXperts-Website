@@ -212,6 +212,13 @@ const Footer = () => {
         }}
       >
         <div style={{fontSize:"14px"}}>© {currentYear} AppXperts (Xperts). All rights reserved.</div>
+        <div style={{ display: "flex", alignItems: "center", gap: 18, fontSize: '14px' }}>
+          <a href="/terms" style={{ color: '#1a3fa6', textDecoration: 'none' }}>Terms & Conditions</a>
+          <span style={{ color: '#ddd' }}>|</span>
+          <a href="/privacy" style={{ color: '#1a3fa6', textDecoration: 'none' }}>Privacy Policy</a>
+          <span style={{ color: '#ddd' }}>|</span>
+          <a href="/refund" style={{ color: '#1a3fa6', textDecoration: 'none' }}>Refund Policy</a>
+        </div>
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
       <a 
   href="https://www.facebook.com/AppXes" 
@@ -285,6 +292,9 @@ const Footer = () => {
             align-items: flex-start;
             gap: 12px;
             padding: 18px 8px 24px 8px;
+          }
+          .footer-bottom-row > div:nth-child(2) {
+            flex-wrap: wrap;
           }
         }
         .footer-tagline {
