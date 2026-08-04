@@ -65,7 +65,8 @@ const ContactInfo = () => {
           <div className="contact-registered">
             <div><strong>Registered office at:</strong></div>
             <div><strong>Xperts Software Solutions Private Limited</strong></div>
-            <div>D.51, Iron Steel Market Sathangadu, Manali, Tiruvallur, Ambattur, Tamil Nadu, 600068</div>
+            <div>20/2, RamaSamy Street, Pulianthope, Chennai, Tamil Nadu - 600012</div>
+            {/* <div>D.51, Iron Steel Market Sathangadu, Manali, Tiruvallur, Ambattur, Tamil Nadu, 600068</div> */}
           </div>
 
           <div className="contact-socials">

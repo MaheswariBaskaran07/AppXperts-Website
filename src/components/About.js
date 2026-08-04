@@ -22,17 +22,17 @@ import people from "../assets/About/Group 2188.png";
 import Roadmap from "./roadmap";
 
 const About = () => {
-  const slides = [
-    { img: CEO,        title: "Mohammed Aasif",   role: "Founder & CEO",          about: "Experienced IT leader with a decade of expertise in software solutions, digital transformation, and client relations. Passionate about driving innovation and delivering value through technology.", linkedin: "https://www.linkedin.com/in/mohamed-aasif-b9039773/" },
-    { img: Rabi,       title: "Abdul Samadu Mohamed Rabi",    role: "Backend Engineer",       about: "Strategic ERP Implementation Leader | 30+ Years of Expertise Driving Manufacturing Transformation.", linkedin: "https://www.linkedin.com/in/rabi-india-631ba85b/" },
-    { img: BackEndDev, title: "Rajeshwari S",       role: "Backend Engineer",       about: "Backend leader skilled in architecting robust server-side solutions over 4.6 years of experience. Passionate about optimizing performance and driving engineering excellence.", linkedin: "https://www.linkedin.com/in/rajeswari-selvaraj-65bb866b/" },
-    { img: Fathima,    title: "Fathima R",          role: "Business Developer",    about: "I genuinely enjoy understanding people what they need, how they feel. I use that to build strong relationships, solve problems, and help brands connect in a more real way.", linkedin: "https://www.linkedin.com/in/fathima-r-03353b170/" },
-    { img: Karthi,     title: "Karthikeyan S ",          role: "Web Developer",          about: "Skilled in React.js. Passionate about building responsive, user-friendly web applications and continuously learning modern frontend technologies", linkedin: "https://www.linkedin.com/in/karthikeyan-s-996b11267" },
-    { img: Keerthana,  title: "Keerthana M",        role: "Web Developer",          about: "Front-end developer with hands-on experience in React.js. Focused on building responsive, user-friendly web applications and passionate about exploring modern technologies.", linkedin: "https://www.linkedin.com/in/keerthana-manikandan-a9baa7214?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-    { img: Reshma,     title: "Reshma R",           role: "UI/UX Designer",         about: "Detail-oriented UI/UX designer with a strong foundation in wireframing, prototyping, user research, and accessibility. ", linkedin: "https://www.linkedin.com/in/reshma-ravikumar-874617207?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-    { img: Prakash,    title: "Prakash N",          role: "QA Engineer",            about: "I'm a passionate Software Engineer and Odoo Developer specializing in ERP solutions and business process automation.", linkedin: "https://www.linkedin.com/in/prakash-natarajan-261b69262/" },
-  {img: Faizan, title: "Faizan", role: "Mobile Developer", about: "Experienced Flutter developer in building cross-platform mobile applications. Skilled in Dart programming and passionate about creating seamless user experiences.", linkedin: "" }, 
-  ];
+  // const slides = [
+  //   { img: CEO,        title: "Mohammed Aasif",   role: "Founder & CEO",          about: "Experienced IT leader with a decade of expertise in software solutions, digital transformation, and client relations. Passionate about driving innovation and delivering value through technology.", linkedin: "https://www.linkedin.com/in/mohamed-aasif-b9039773/" },
+  //   { img: Rabi,       title: "Abdul Samadu Mohamed Rabi",    role: "Backend Engineer",       about: "Strategic ERP Implementation Leader | 30+ Years of Expertise Driving Manufacturing Transformation.", linkedin: "https://www.linkedin.com/in/rabi-india-631ba85b/" },
+  //   { img: BackEndDev, title: "Rajeshwari S",       role: "Backend Engineer",       about: "Backend leader skilled in architecting robust server-side solutions over 4.6 years of experience. Passionate about optimizing performance and driving engineering excellence.", linkedin: "https://www.linkedin.com/in/rajeswari-selvaraj-65bb866b/" },
+  //   { img: Fathima,    title: "Fathima R",          role: "Business Developer",    about: "I genuinely enjoy understanding people what they need, how they feel. I use that to build strong relationships, solve problems, and help brands connect in a more real way.", linkedin: "https://www.linkedin.com/in/fathima-r-03353b170/" },
+  //   { img: Karthi,     title: "Karthikeyan S ",          role: "Web Developer",          about: "Skilled in React.js. Passionate about building responsive, user-friendly web applications and continuously learning modern frontend technologies", linkedin: "https://www.linkedin.com/in/karthikeyan-s-996b11267" },
+  //   { img: Keerthana,  title: "Keerthana M",        role: "Web Developer",          about: "Front-end developer with hands-on experience in React.js. Focused on building responsive, user-friendly web applications and passionate about exploring modern technologies.", linkedin: "https://www.linkedin.com/in/keerthana-manikandan-a9baa7214?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+  //   { img: Reshma,     title: "Reshma R",           role: "UI/UX Designer",         about: "Detail-oriented UI/UX designer with a strong foundation in wireframing, prototyping, user research, and accessibility. ", linkedin: "https://www.linkedin.com/in/reshma-ravikumar-874617207?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+  //   { img: Prakash,    title: "Prakash N",          role: "QA Engineer",            about: "I'm a passionate Software Engineer and Odoo Developer specializing in ERP solutions and business process automation.", linkedin: "https://www.linkedin.com/in/prakash-natarajan-261b69262/" },
+  // {img: Faizan, title: "Faizan", role: "Mobile Developer", about: "Experienced Flutter developer in building cross-platform mobile applications. Skilled in Dart programming and passionate about creating seamless user experiences.", linkedin: "" }, 
+  // ];
 
   // Fix: aboutBadgeVisible for About Us badge animation
   const [aboutBadgeVisible, setAboutBadgeVisible] = useState(false);
@@ -661,7 +661,7 @@ const About = () => {
       </div>
     </div>
 <Roadmap/>
-    <div
+    {/* <div
       className="about-team-row"
       style={{
         background: "linear-gradient(to right, #f8f9fa, #eef5f9)",
@@ -669,8 +669,8 @@ const About = () => {
         textAlign: "center",
         fontFamily: "Poppins, sans-serif",
       }}
-    >
-      <span
+    > */}
+      {/* <span
         style={{
           display: "inline-block",
           background: "linear-gradient(180deg, #2ecbfa 0%, #1a3fa6 100%)",
@@ -694,9 +694,9 @@ const About = () => {
             }
           `}
         </style>
-      </span>
+      </span> */}
 
-      <h2
+      {/* <h2
         style={{
           fontSize: "48px",
           fontWeight: "bold",
@@ -705,10 +705,10 @@ const About = () => {
         }}
       >
         The Brains Behind <br /> the Build
-      </h2>
+      </h2> */}
 
       {/* Team Grid (6 per row on desktop) */}
-      <div className="team-grid">
+      {/* <div className="team-grid">
         {slides.map((m, i) => (
           <div
             className="team-card"
@@ -718,7 +718,6 @@ const About = () => {
             onClick={(e) => e.currentTarget.classList.toggle("is-flipped")}
           >
             <div className="card-inner">
-              {/* Front */}
               <div className="card-face card-front">
                 <img className="team-photo" src={m.img} alt={m.title} />
                 <div className="team-info">
@@ -726,14 +725,12 @@ const About = () => {
                   <p className="team-role">{m.role}</p>
                 </div>
               </div>
-              {/* Back */}
               <div className="card-face card-back">
                 <h3 className="team-name">{m.title}</h3>
                 <p className="team-role">{m.role}</p>
                 <p className="team-about">{m.about}</p>
               </div>
             </div>
-            {/* LinkedIn icon overlay */}
             <a
               className={`team-linkedin${m.linkedin ? '' : ' is-disabled'}`}
               href={m.linkedin || '#'}
@@ -747,10 +744,10 @@ const About = () => {
             </a>
           </div>
         ))}
-      </div>
+      </div> */}
 
       {/* Grid + flip styles */}
-      <style>{`
+      {/* <style>{`
         .team-grid {
           width: 100%;
           max-width: 1200px;
@@ -758,10 +755,10 @@ const About = () => {
           display: grid;
           grid-template-columns: repeat(5, minmax(0, 1fr));
           gap: 20px;
-        }
-
-        /* Card container provides height via aspect-ratio */
-        .team-card {
+        } */}
+{/* 
+        /* Card container provides height via aspect-ratio */}
+        {/* .team-card {
           background: transparent;
           border-radius: 14px;
           perspective: 1000px;
@@ -817,8 +814,8 @@ const About = () => {
           font-size: 16px;
           font-weight: 600;
           color: #111;
-          white-space: pre-line; /* allow "\n" in names to break line */
-        }
+          white-space: pre-line; /* allow "\n" in names to break line */ }
+        {/* }
         .team-role {
           margin: 0;
           font-size: 13px;
@@ -832,38 +829,34 @@ const About = () => {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: flex-start; /* top align so scroll area sits below headings */
-          text-align: center;
+          justify-content: flex-start; /* top align so scroll area sits below headings */ }
+          {/* text-align: center;
           box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
-          overflow: hidden; /* contain inner scroll */
-        }
-        .team-about {
+          overflow: hidden; 
+        } */}
+        {/* .team-about {
           margin: 10px 0 0;
           font-size: 12.5px;
           line-height: 1.55;
           color: #334155;
-          flex: 1 1 auto; /* take remaining height */
-          overflow-y: auto; /* enable scroll for long content */
+          flex: 1 1 auto;
+          overflow-y: auto;
           width: 100%;
         }
-        /* slim, unobtrusive scrollbar for long bios */
         .team-about::-webkit-scrollbar { width: 6px; }
         .team-about::-webkit-scrollbar-track { background: transparent; }
         .team-about::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 8px; }
         .team-about { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.3) transparent; }
 
-        /* Hover elevation */
         .team-card:hover .card-inner {
           box-shadow: 0 12px 28px rgba(0,0,0,0.12);
         }
 
-        /* Breakpoints */
         @media (max-width: 1100px) { .team-grid { grid-template-columns: repeat(4, 1fr); } }
         @media (max-width: 900px)  { .team-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (max-width: 600px)  { .team-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 380px)  { .team-grid { grid-template-columns: 1fr; } }
 
-        /* LinkedIn icon overlay */
         .team-linkedin {
           position: absolute;
           top: 8px;
@@ -886,7 +879,7 @@ const About = () => {
         .team-linkedin.is-disabled { opacity: 0.6; cursor: default; }
         .team-linkedin.is-disabled:hover { transform: none; box-shadow: 0 6px 14px rgba(10,102,194,0.35); }
       `}</style>
-    </div>
+    </div> */}
 
     {/* Responsive About Styles */}
     <style>{`
