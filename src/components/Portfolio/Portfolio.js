@@ -5,24 +5,43 @@ import lamp from "../../assets/Product/freepik--Lamps--inject-229.png";
 import people from "../../assets/Product/Product presentation-bro (1) 1.png";
 import rope from "../../assets/Product/rope.png";
 import "./Portfolio.css";
-import B2B from "../../assets/Portfolio/B2B.png"
-import ERP from "../../assets/Portfolio/erp.png"
-import Ecommerce from "../../assets/Portfolio/ecommerce.png"
-import beauty from "../../assets/Portfolio/beauty.png"
+import B2B from "../../assets/Portfolio/B2BImage.png"
+import B2BMobile from "../../assets/Portfolio/B2BMobile.jpeg"
+import ERP from "../../assets/Portfolio/ERPImage.png"
+import HotelERP from "../../assets/Portfolio/HotelErp.png"
+import Ecommerce from "../../assets/Portfolio/EcommerceImage.png"
+import beauty from "../../assets/Portfolio/PraveenBeauty.png"
+import CMSMobile from "../../assets/Portfolio/CMSMobile.jpeg"
+import ERPMobile from "../../assets/Portfolio/ERPMobile.jpeg"
 import vsb from "../../assets/Portfolio/vsb.png"
-import altraclean from "../../assets/Portfolio/jpb1.png"
-import skp from "../../assets/Portfolio/skp.png"
+import altraclean from "../../assets/Portfolio/AltraClean.png"
+import skp from "../../assets/Portfolio/SKPERP.png"
+import Advocate from "../../assets/Portfolio/Advocateimage.png"
+import ars from "../../assets/Portfolio/ARS.png"
+import Dhanas from "../../assets/Portfolio/DhanasImage.png"
 import networkcourier from "../../assets/Portfolio/networkcourier.png"
 import jpb from "../../assets/Portfolio/jpb.png"
-import tvk from "../../assets/Portfolio/tvk.png"
-import B2C from "../../assets/Portfolio/mob.png"
+import tvk from "../../assets/Portfolio/TMK.png"
+import B2C from "../../assets/Portfolio/B2CImage.png"
+import appxpertsCard from '../../assets/Portfolio/appxpertsCard.jpg'
+import appxpertsCardBack from '../../assets/Portfolio/appxpertsCardBack.jpg'
 import visitingCard from "../../assets/Portfolio/ui/ux/Business Card Vijaya Devi Page 1.png"
 import visitingCardBack from "../../assets/Portfolio/ui/ux/Page 2 Business Card.png"
+import visitingCard1 from "../../assets/Portfolio/advocatecard.jpg"
+import visitingCardBack1 from "../../assets/Portfolio/advocatecardBack.jpg"
+import visitingCard2 from "../../assets/Portfolio/alankarnacard.jpg"
+import visitingCardBack2 from "../../assets/Portfolio/alankarnacardBack.jpg"
+import visitingCard3 from "../../assets/Portfolio/arscard.jpg"
+import visitingCardBack3 from "../../assets/Portfolio/arscardBack.jpg"
 import NB from "../../assets/Portfolio/ui/ux/NISHABALA 3.png"
 import cal1 from "../../assets/Portfolio/ui/ux/Calendar 1.png"
 import cal2 from "../../assets/Portfolio/ui/ux/CALENDAR 3.png"
 import zune from "../../assets/Portfolio/ui/ux/PNG Zune Ventures.png"
 import shiv from "../../assets/Portfolio/ui/ux/Shivedha spaces Final Logo with out Background.png" 
+import Alankarna from "../../assets/Portfolio/AlankarnaLogo.jpeg"
+import ARSLogo from "../../assets/Portfolio/ArsLogo.jpeg"
+import JaiMakeup from "../../assets/Portfolio/JaiLogo.jpeg"
+import FutureBiologics from '../../assets/Portfolio/FuturLogo.jpeg'
 
 const categories = ["All", "Websites", "Web", "Mobile", "UI/UX"];
 
@@ -37,11 +56,12 @@ const projects = [
     link: "#",
   },
   {
-    title: "VSB Building Website",
+    title: "Malar Legal Chambers",
     category: "Websites",
-    description: "Corporate website for building construction company",
-    tech: ["React", "Bootstrap", "Express"],
-    image: vsb,
+    description:
+      "Professional advocate website showcasing legal services, practice areas, and legal consultation for clients.",
+    tech: ["React", "Tailwind CSS", "TypeScript"],
+    image: Advocate,
     link: "#",
   },
   {
@@ -61,11 +81,12 @@ const projects = [
     link: "#",
   },
   {
-    title: "NetworkCourier",
+    title: "ARS Uniforms",
     category: "Websites",
-    description: "Courier service website with tracking system",
-    tech: ["React", "Node.js", "MySQL"],
-    image: networkcourier,
+    description:
+      "Professional uniform website showcasing a wide range of uniforms, product collections, and customized apparel solutions.",
+    tech: ["React", "Tailwind CSS", "TypeScript"],
+    image: ars,
     link: "#",
   },
   
@@ -78,22 +99,32 @@ const projects = [
     image: ERP,
     link: "#",
   },
+
   {
-    title: "JPB Maid Agency",
-    category: "Web",
-    description: "Dual platform for maid agency management and client portal",
-    tech: ["React", "Express", "MongoDB", "Socket.io"],
-    image: jpb,
+    title: "Dhanas E-commerce",
+    category: "Websites",
+    description:
+      "E-commerce website featuring a seamless online shopping experience with product listings, product details, shopping cart, and an easy checkout process.",
+    tech: ["React", "Tailwind CSS", "TypeScript"],
+    image: Dhanas,
     link: "#",
   },
-  {
-    title: "CatchyFive",
-    category: "Web",
-    description: "Full-featured e-commerce platform with payment integration",
-    tech: ["React", "Node.js", "Stripe", "Redis"],
-    image: Ecommerce,
-    link: "#",
-  },
+  // {
+  //   title: "JPB Maid Agency",
+  //   category: "Web",
+  //   description: "Dual platform for maid agency management and client portal",
+  //   tech: ["React", "Express", "MongoDB", "Socket.io"],
+  //   image: jpb,
+  //   link: "#",
+  // },
+  // {
+  //   title: "CatchyFive",
+  //   category: "Web",
+  //   description: "Full-featured e-commerce platform with payment integration",
+  //   tech: ["React", "Node.js", "Stripe", "Redis"],
+  //   image: "",
+  //   link: "#",
+  // },
   {
     title: "TMK Political Platform",
     category: "Web",
@@ -131,7 +162,7 @@ const projects = [
     category: "Web",
     description: "Complete hotel management system with booking and POS",
     tech: ["React", "Python", "PostgreSQL", "Docker"],
-    image: ERP,
+    image: HotelERP,
     link: "#",
   },
   // Mobile Applications
@@ -140,7 +171,7 @@ const projects = [
     category: "Mobile",
     description: "Mobile ERP solution for on-the-go business management",
     tech: ["React Native", "Node.js", "PostgreSQL"],
-    image: ERP,
+    image: ERPMobile,
     link: "#",
   },
   {
@@ -148,7 +179,7 @@ const projects = [
     category: "Mobile",
     description: "Content Management System mobile application",
     tech: ["Flutter", "Firebase", "Cloud Functions"],
-    image: B2C,
+    image: CMSMobile,
     link: "#",
   },
   {
@@ -156,7 +187,7 @@ const projects = [
     category: "Mobile",
     description: "Business-to-business mobile platform for trade management",
     tech: ["React Native", "Express", "MongoDB", "AWS"],
-    image: B2B,
+    image: B2BMobile,
     link: "#",
   },
   
@@ -164,20 +195,106 @@ const projects = [
   {
     title: "Visiting Card Design",
     category: "UI/UX",
-    description: "Professional business card design for Vijaya Devi",
+    description: "Professional business card design for Mohamed Aasif",
     tech: ["Adobe Illustrator", "Photoshop", "Print Design"],
-    image: visitingCard,
+    image: appxpertsCard,
+    backImage: appxpertsCardBack,
     link: "#",
     aspectRatio: "rectangle",
   },
   {
-    title: "Visiting Card Back Design",
+    title: "Visiting Card Design",
     category: "UI/UX",
-    description: "Back side design for business card with contact details",
-    tech: ["Adobe Illustrator", "Typography", "Print Design"],
-    image: visitingCardBack,
+    description: "Professional business card design for Vijaya Devi",
+    tech: ["Adobe Illustrator", "Photoshop", "Print Design"],
+    image: visitingCard,
+    backImage: visitingCardBack,
     link: "#",
     aspectRatio: "rectangle",
+  },
+  {
+    title: "Visiting Card Design",
+    category: "UI/UX",
+    description: "Professional business card design for Dr.V.Malarvizhi",
+    tech: ["Adobe Illustrator", "Photoshop", "Print Design"],
+    image: visitingCard1,
+    backImage: visitingCardBack1,
+    link: "#",
+    aspectRatio: "rectangle",
+  },
+  {
+    title: "Visiting Card Design",
+    category: "UI/UX",
+    description: "Professional business card design for Revathy sivakumar",
+    tech: ["Adobe Illustrator", "Photoshop", "Print Design"],
+    image: visitingCard2,
+    backImage: visitingCardBack2,
+    link: "#",
+    aspectRatio: "rectangle",
+  },
+  {
+    title: "Visiting Card Design",
+    category: "UI/UX",
+    description: "Professional business card design for Revathy sivakumar",
+    tech: ["Adobe Illustrator", "Photoshop", "Print Design"],
+    image: visitingCard3,
+    backImage: visitingCardBack3,
+    link: "#",
+    aspectRatio: "rectangle",
+  },
+  {
+    title: "Zune Ventures Logo",
+    category: "UI/UX",
+    description: "Modern logo design for Zune Ventures brand",
+    tech: ["Adobe Illustrator", "Branding", "Logo Design"],
+    image: zune,
+    link: "#",
+    aspectRatio: "square",
+  },
+  {
+    title: "Shivedha Spaces Logo",
+    category: "UI/UX",
+    description: "Corporate logo design for Shivedha Spaces real estate company",
+    tech: ["Adobe Illustrator", "Branding", "Logo Design"],
+    image: shiv,
+    link: "#",
+    aspectRatio: "square",
+  },
+  {
+    title: "Alankarna Brand Design",
+    category: "UI/UX",
+    description: "Brand identity and logo design for Alakarna",
+    tech: ["Adobe Illustrator", "Branding", "Logo Design"],
+    image: Alankarna,
+    link: "#",
+    aspectRatio: "square",
+  },
+  {
+    title: "ARS Brand Design",
+    category: "UI/UX",
+    description: "Brand identity and logo design for ARS",
+    tech: ["Adobe Illustrator", "Branding", "Logo Design"],
+    image: ARSLogo,
+    link: "#",
+    aspectRatio: "square",
+  },
+  {
+    title: "Jai Makeup Brand Design",
+    category: "UI/UX",
+    description: "Brand identity and logo design for Jai Makeup",
+    tech: ["Adobe Illustrator", "Branding", "Logo Design"],
+    image: JaiMakeup,
+    link: "#",
+    aspectRatio: "square",
+  },
+  {
+    title: "Future Biologics Brand Design",
+    category: "UI/UX",
+    description: "Brand identity and logo design for Future Biologics",
+    tech: ["Adobe Illustrator", "Branding", "Logo Design"],
+    image: FutureBiologics,
+    link: "#",
+    aspectRatio: "square",
   },
   {
     title: "Nishabala Brand Design",
@@ -206,24 +323,7 @@ const projects = [
     link: "#",
     aspectRatio: "square",
   },
-  {
-    title: "Zune Ventures Logo",
-    category: "UI/UX",
-    description: "Modern logo design for Zune Ventures brand",
-    tech: ["Adobe Illustrator", "Branding", "Logo Design"],
-    image: zune,
-    link: "#",
-    aspectRatio: "square",
-  },
-  {
-    title: "Shivedha Spaces Logo",
-    category: "UI/UX",
-    description: "Corporate logo design for Shivedha Spaces real estate company",
-    tech: ["Adobe Illustrator", "Branding", "Logo Design"],
-    image: shiv,
-    link: "#",
-    aspectRatio: "square",
-  },
+  
 ];
 
 const Portfolio = () => {
@@ -438,8 +538,19 @@ const Portfolio = () => {
           >
             {/* Project Image */}
             {project.image ? (
-              <div className={`card-image ${project.aspectRatio === 'rectangle' ? 'rectangle-aspect' : project.aspectRatio === 'square' ? 'square-aspect' : ''}`}>
+              <div
+                className={`card-image ${project.aspectRatio === 'rectangle' ? 'rectangle-aspect' : project.aspectRatio === 'square' ? 'square-aspect' : ''} ${project.backImage ? 'double-sided' : ''}`}
+                tabIndex={project.backImage ? 0 : undefined}
+                aria-label={project.backImage ? `${project.title}, focus or hover to view the back` : undefined}
+              >
                 <img src={project.image} alt={project.title} />
+                {project.backImage && (
+                  <img
+                    className="card-image-back"
+                    src={project.backImage}
+                    alt={`${project.title} back`}
+                  />
+                )}
               </div>
             ) : (
               <div className="card-header">

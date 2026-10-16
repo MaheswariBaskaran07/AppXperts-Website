@@ -124,6 +124,31 @@
   transition: transform 0.3s ease;
 }
 
+.card-image.double-sided {
+  position: relative;
+}
+
+.card-image.double-sided img {
+  object-fit: contain;
+}
+
+.card-image.double-sided .card-image-back {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-image.double-sided:hover .card-image-back,
+.card-image.double-sided:focus-visible .card-image-back {
+  opacity: 1;
+}
+
+.card-image.double-sided:focus-visible {
+  outline: 2px solid #263fe3;
+  outline-offset: -2px;
+}
+
 .portfolio-card:hover .card-image img {
   transform: scale(1.05);
 }
